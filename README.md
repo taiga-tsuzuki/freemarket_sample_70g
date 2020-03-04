@@ -37,7 +37,6 @@ belongs_to :user
 |Column|Type|Options|
 |------|----|-------|
 |user|references|null: false, foreign_key: true|
-|image|references|null: false, foreign_key: true|
 |item_name|string|null: false|
 |description|text|null: false|
 |category|references|null: false, foreign_key: true|
