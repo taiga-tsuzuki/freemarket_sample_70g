@@ -41,7 +41,7 @@ belongs_to :user
 |description|text|null: false|
 |category|references|null: false, foreign_key: true|
 |brand|references|foreign_key: true||
-|price|intefer|null: false||
+|price|string|null: false||
 |size|string||
 |condition|string|null: false|
 |shipping_fee_payer|string|null: false|
@@ -104,13 +104,13 @@ has_ancestry
 |Column|Type|Options|
 |------|----|-------|
 |user|reference|null: false, foreign_key: true|
-number|intenger|
-cvc|intenger|
-exp_year|intenger|
-exp_month|intenger|
-amount|intenger|　　#支払金額
-card|intenger|　　　#顧客ID
-currency|string|　　#通貨
+|number|integer|
+|cvc|intenger|
+|exp_year|integer|
+|exp_month|integer|
+|amount|integer|　　#支払金額
+|card|integer|　　　#顧客ID
+|currency|string|　　#通貨
 
 ### Association
 belongs_to :user
@@ -125,7 +125,7 @@ belongs_to :user
 |family_name_kana|string|null: false|
 |first_name_kana|string|null: false|
 |postal_code|integer|null: false|
-|prefectures|string|null: false|
+|prefecture|string|null: false|
 |city|string|null: false|
 |address|integer|null: false|
 |building_name|string| |
