@@ -51,7 +51,7 @@ belongs_to :user
 ### Association
 - belongs_to :user
 - has_many :images
-- has_many :categories
+- belongs_to :category
 - belongs_to :brand
 - has_many :comments
 
