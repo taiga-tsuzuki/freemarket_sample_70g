@@ -8,7 +8,7 @@
 |password|string|null: false|             ※devise導入時に自動生成
 
 ### Association
-- has_many :items
+- has_many :items, dependent: :destroy
 - has_one :profile
 - has_many :comments
 - has_one :credit_card
