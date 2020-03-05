@@ -71,7 +71,7 @@ belongs_to :user
 ## Brandテーブル
 |Column|Type|Options|
 |------|----|-------|
-|name|string| - |
+|name|string|null: false|
 
 ### Association
 has_many :items
