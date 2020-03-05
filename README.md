@@ -108,9 +108,9 @@ has_ancestry
 |cvc|intenger|
 |exp_year|integer|
 |exp_month|integer|
-|amount|integer|　　#支払金額
-|card|integer|　　　#顧客ID
-|currency|string|　　#通貨
+|amount|integer|    #支払金額
+|card|integer|      #顧客ID
+|currency|string|   #通貨
 
 ### Association
 belongs_to :user
