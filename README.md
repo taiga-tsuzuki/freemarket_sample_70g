@@ -37,10 +37,10 @@ belongs_to :user
 |Column|Type|Options|
 |------|----|-------|
 |user|references|null: false, foreign_key: true|
+|category|references|null: false, foreign_key: true|
+|brand|references|null: false,foreign_key: true||
 |item_name|string|null: false|
 |description|text|null: false|
-|category|references|null: false, foreign_key: true|
-|brand|references|foreign_key: true||
 |price|string|null: false||
 |size|string||
 |condition|string|null: false|
@@ -90,8 +90,8 @@ has_many :items
 ## categoriesテーブル  ※gem ancestryを使う
 |Column|Type|Options|
 |------|----|-------|
-|name|string||
-|ancestry|string||
+|name|string|| ※
+|ancestry|string|| ※
 
 ▼modelに以下を記述
 has_ancestry
@@ -103,14 +103,14 @@ has_ancestry
 ## creditcardsテーブル  ※gem 'payjp'を使う
 |Column|Type|Options|
 |------|----|-------|
-|user|reference|null: false, foreign_key: true|
-|number|integer|
-|cvc|intenger|
-|exp_year|integer|
-|exp_month|integer|
-|amount|integer|    #支払金額
-|card|integer|      #顧客ID
-|currency|string|   #通貨
+|user|reference|null: false|
+|number|integer|null: false|
+|cvc|integer|null: false|
+|exp_year|integer|null: false|
+|exp_month|integer|null: false|
+|amount|integer|null: false|                    #支払金額
+|card|reference|null: false, foreign_key: true| #顧客ID
+|currency|string|null: false|                   #通貨
 
 ### Association
 belongs_to :user
