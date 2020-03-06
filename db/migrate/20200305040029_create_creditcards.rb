@@ -1,7 +1,7 @@
 class CreateCreditcards < ActiveRecord::Migration[5.2]
   def change
     create_table :creditcards do |t|
-      t.references :user, null: false, foreign_key:true
+      t.references :user,foreign_key:true
       t.integer :number, null: false
       t.integer :cvc, null: false
       t.integer :exp_year, null: false
