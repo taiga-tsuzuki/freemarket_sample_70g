@@ -1,7 +1,7 @@
 class CreateLocations < ActiveRecord::Migration[5.2]
   def change
     create_table :locations do |t|
-      t.references :user, foreign_key:true, type: :integer
+      t.bigint :user_id, foreign_key:true
       t.string :family_name, null: false
       t.string :first_name, null: false
       t.string :family_name_kana, null: false
