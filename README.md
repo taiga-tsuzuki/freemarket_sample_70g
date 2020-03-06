@@ -27,7 +27,7 @@
 |birth_day|date|null: false|
 |introduction|text| - |
 |user_image|string| - |
-|user|references|foreign_key:true|
+|user|references|foreign_key:true, type: :integer|
 
 ### Association
 belongs_to :user
@@ -36,9 +36,9 @@ belongs_to :user
 ## itemsテーブル
 |Column|Type|Options|
 |------|----|-------|
-|user|references|foreign_key: true|
-|category|references|foreign_key: true|
-|brand|references|foreign_key: true||
+|user|references|foreign_key:true, type: :integer|
+|category|references|foreign_key:true, type: :integer|
+|brand|references|foreign_key:true, type: :integer||
 |item_name|string|null: false|
 |description|text|null: false|
 |price|string|null: false||
@@ -59,8 +59,8 @@ belongs_to :user
 ## commentsテーブル
 |Column|Type|Options|
 |------|----|-------|
-|user|references|foreign_key:true|
-|item|references|foreign_key:true|
+|user|references|foreign_key:true, type: :integer|
+|item|references|foreign_key:true, type: :integer|
 |content|text|null: false|
 
 ### bAssociation
@@ -81,7 +81,7 @@ has_many :items
 |Column|Type|Options|
 |------|----|-------|
 |image|string|null: false|
-|item|references|foreign_key: true|
+|item|references|foreign_key:true, type: :integer|
 
 ### Association
 - belongs_to :item
@@ -103,13 +103,13 @@ has_ancestry
 ## creditcardsテーブル  ※gem 'payjp'を使う
 |Column|Type|Options|
 |------|----|-------|
-|user|reference|null: false|
+|user|reference|foreign_key:true, type: :integer|
 |number|integer|null: false|
 |cvc|integer|null: false|
 |exp_year|integer|null: false|
 |exp_month|integer|null: false|
 |amount|integer|null: false|                    #支払金額
-|card|reference|foreign_key: true| #顧客ID
+|card|reference|foreign_key:true, type: :integer| #顧客ID
 |currency|string|null: false|                   #通貨
 
 ### Association
@@ -119,7 +119,7 @@ belongs_to :user
 ## locationテーブル  ※配送先
 |Column|Type|Options|
 |------|----|-------|
-|user|reference|foreign_key: true|
+|user|reference|foreign_key:true, type: :integer|
 |family_name|string|null: false|
 |first_name|string|null: false|
 |family_name_kana|string|null: false|
