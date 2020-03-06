@@ -19,7 +19,7 @@
     .container__main__registration
       登録情報入力
     .container__main__form-frame
-      = form_for(@user, url: user_registration_path) do |f|
+      = form_with url: "#" do |f|
         = render "devise/shared/error_messages", resource: @user
         .form-group
           = f.label :ニックネーム 
@@ -71,4 +71,4 @@
             に同意したものとみなします
           = f.submit '次へ進む', class: "btn-default btn", url: "address_path"
   .container__footer
-    = image_tag("white-logo.png",width:"134",height:"36")
+    = image_tag("logo-white.png",width:"134",height:"36")

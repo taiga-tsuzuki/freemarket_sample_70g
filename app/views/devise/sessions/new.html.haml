@@ -2,7 +2,7 @@
   .login__header
     =link_to image_tag("logo.png",width:"134",height:"36"), root_path
   .login__no-account
-    = render "users/shared/links"
+    = render "devise/shared/links"
   .login__box
     = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
       .login__box__field
@@ -20,6 +20,6 @@
       .login__box__actions
         = f.submit "ログイン",class: 'login-btn'
       .login__box__forget-passward
-        = render "users/shared/links2"
+        = render "devise/shared/links2"
   .login__footer
 
