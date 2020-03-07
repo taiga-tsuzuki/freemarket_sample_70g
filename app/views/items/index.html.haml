@@ -1,12 +1,12 @@
 .header
   .header__box
     .header__box__main
-      =link_to "#" do
-        %img.logo{src: "/material/logo/logo.png"}
+      = link_to "#" do
+        = image_tag src= "/material/logo/logo.png", size: "140x40"
       = form_with url: "#", class: "search__box" do |f|
         = f.text_field :content, class: 'search__box__form', placeholder: ' キーワードから探す'
-      =link_to "#" do
-        %img.search__box__btn{src: "/material/icon/icon-search 1.png"}
+      = link_to "#" do
+        = image_tag src="/material/icon/icon-search 1.png", size: "24x24", class: "search__box__btn"
     .header__box__sub
       %ul.lists__left
         %li
@@ -36,10 +36,10 @@
         %br/
         フリマアプリです
       .content__btn
-        =link_to "#" do
-          %img.abtn{src: "/material/badge/Download_on_the_App_Store_Badge.svg"}
-        =link_to "#" do
-          %img.gbtn{src: "/material/badge/google-play-badge.png"}
+        = link_to "#" do
+          = image_tag src= "/material/badge/Download_on_the_App_Store_Badge.svg", class: "abtn"
+        = link_to "#" do
+          = image_tag src= "/material/badge/google-play-badge.png", class: "gbtn"
 
 
   .top__introduction
@@ -49,7 +49,7 @@
     %ul.lists
       %li.list
         .list__pictuer
-          %img{src: "/material/pict/pict-reason-01.jpg", height: "300px", width: "300px"}
+          = image_tag src= "/material/pict/pict-reason-01.jpg", size: "300x300"
           .nummber
             1
         %h1.list__title
@@ -61,9 +61,9 @@
 
       %li.list
         .list__pictuer
-          %img{src: "/material/pict/pict-reason-02.jpg", height: "300px", width: "300px"}
-            .nummber
-              2
+          = image_tag src= "/material/pict/pict-reason-02.jpg", size: "300x300"
+          .nummber
+            2
         %h1.list__title
           %span
             シンプル
@@ -71,9 +71,9 @@
         %p.list__text
           めんどくさい入力は必要なく、検索も購入もスムーズ！
 
-      %li.list.list--last
+      %li.list
         .list__pictuer
-          %img{src: "/material/pict/pict-reason-03.jpg", height: "300px", width: "300px"}
+          = image_tag src= "/material/pict/pict-reason-03.jpg", size: "300x300"
           .nummber
             3
         %h1.list__title
@@ -96,10 +96,10 @@
         %br/
         ほしかったあの商品に出会えるかもしれません。
       .content__btn
-        =link_to "#" do
-          %img.abtn{src: "/material/badge/Download_on_the_App_Store_Badge.svg"}
-        =link_to "#" do
-          %img.gbtn{src: "/material/badge/google-play-badge.png"}
+        = link_to "#" do
+          = image_tag src= "/material/badge/Download_on_the_App_Store_Badge.svg", class: "abtn"
+        = link_to "#" do
+          = image_tag src= "/material/badge/google-play-badge.png", class: "gbtn"
 
   .top__key__features
     .head
@@ -107,19 +107,19 @@
       .head__after
     .items
       .item
-        %img.item__img{src: "/material/icon/icon-01.png"}
+        = image_tag src= "/material/icon/icon-01.png", size: "216x332", class: "item__img"
         %h3.item__subtitle
           簡単に売り買いできる
         %p.item__detail
           スマホひとつで、いつでもどこでも簡単に出品・購入が可能！
       .item
-        %img.item__img{src: "/material/icon/icon-03.png"}
+        = image_tag src= "/material/icon/icon-03.png", size: "216x332", class: "item__img"
         %h3.item__subtitle
           売上金は即日振込みに対応
         %p.item__detail
           午前9時までに振込を依頼いただければ、翌日に指定の口座に入金いたします!
       .item
-        %img.item__img{src: "/material/icon/icon-04.png"}
+        = image_tag src= "/material/icon/icon-04.png", size: "216x332", class: "item__img"
         %h3.item__subtitle
           様々な支払いに対応
         %p.item__detail
@@ -133,7 +133,7 @@
           新規投稿商品
         .product__lists
           .product__list
-            =link_to "#" do
+            = link_to "#" do
               .product__list__img
               .product__list__text
                 .item__name
@@ -147,7 +147,7 @@
                   %p
                     (税込)
           .product__list
-            =link_to "#" do
+            = link_to "#" do
               .product__list__img
               .product__list__text
                 .item__name
@@ -162,7 +162,7 @@
                     (税込)
 
           .product__list
-            =link_to "#" do
+            = link_to "#" do
               .product__list__img
               .product__list__text
                 .item__name
@@ -184,7 +184,7 @@
           アーカイバー
         .product__lists
           .product__list
-            =link_to "#" do
+            = link_to "#" do
               .product__list__img
               .product__list__text
                 .item__name
@@ -199,7 +199,7 @@
                     (税込)
 
           .product__list
-            =link_to "#" do
+            = link_to "#" do
               .product__list__img
               .product__list__text
                 .item__name
@@ -214,7 +214,7 @@
                     (税込)
               
           .product__list
-            =link_to "#" do
+            = link_to "#" do
               .product__list__img
               .product__list__text
                 .item__name
@@ -239,10 +239,10 @@
     %p.inner__text
       今すぐ無料ダウンロード！
     .inner__btn
-      =link_to "#" do
-        %img.abtn{src: "/material/badge/Download_on_the_App_Store_Badge.svg"}
-      =link_to "#" do
-        %img.gbtn{src: "/material/badge/google-play-badge.png"}
+      = link_to "#" do
+        = image_tag src= "/material/badge/Download_on_the_App_Store_Badge.svg", class: "abtn"
+      = link_to "#" do
+        = image_tag src= "/material/badge/google-play-badge.png", class: "gbtn"
 
 
 
@@ -255,43 +255,42 @@
         FURIMAについて
       %ul.lists
         %li.list
-          =link_to "#", class: "list" do
+          = link_to "#", class: "list" do
             会社概要（運営会社）
         %li.list
-          =link_to "#", class: "list" do
+          = link_to "#", class: "list" do
             プライバシーポリシー
         %li.list
-          =link_to "#", class: "list" do
+          = link_to "#", class: "list" do
             FURIMA利用規約
         %li.list
-          =link_to "#", class: "list" do
+          = link_to "#", class: "list" do
             ポイントに関する特約
     %li.content
       %h1.title
         FURIMAを見る
       %ul.lists
         %li.list
-          =link_to "#", class: "list" do
+          = link_to "#", class: "list" do
             カテゴリー一覧
         %li.list
-          =link_to "#", class: "list" do
+          = link_to "#", class: "list" do
             ブランド一覧
     %li.content
       %h1.title
         ヘルプ＆ガイド
       %ul.lists
         %li.list
-          =link_to "#", class: "list" do
+          = link_to "#", class: "list" do
             FURIMAガイド
         %li.list
-          =link_to "#", class: "list" do
+          = link_to "#", class: "list" do
             FURIMAロゴ利用ガイドライン
         %li.list
-          =link_to "#", class: "list" do
+          = link_to "#", class: "list" do
             お知らせ
-
-  =link_to "#" do
-    %img.footer__logo{src: "/material/logo/logo-white.png"}
+  = link_to "#" do
+    = image_tag src= "/material/logo/logo-white.png", size: "160x46", class: "footer__logo"
 
 
 
@@ -301,8 +300,8 @@
 
 
 
-%a(href="#")
+= link_to "#" do
   .exhibit
     .text
       出品する
-    %img.exhibit__icon{src: "/material/icon/icon_camera.png"}
+    = image_tag src= "/material/icon/icon_camera.png", class: "exhibit__icon"
