@@ -1,0 +1,307 @@
+.header
+  .header__box
+    .header__box__main
+      = link_to "#" do
+        = image_tag src= "/material/logo/logo.png", size: "140x40"
+      = form_with url: "#", class: "search__box" do |f|
+        = f.text_field :content, class: 'search__box__form', placeholder: ' キーワードから探す'
+      = link_to "#" do
+        = image_tag src="/material/icon/icon-search 1.png", size: "24x24", class: "search__box__btn"
+    .header__box__sub
+      %ul.lists__left
+        %li
+          = link_to "#",class: "category" do
+            カテゴリー
+        %li
+          = link_to "#",class: "brand" do
+            ブランド
+      %ul.lists__right
+        %li
+          = link_to "#",class: "login" do
+            ログイン
+        %li
+          = link_to "#",class: "signin" do
+            新規会員登録
+
+
+
+.main
+  .main__visual
+    .main__visual__picture
+    .content
+      .content__subtitle
+        人生を変えるフリマアプリ
+      .content__text
+        FURIMAはだれでもかんたんに出品・購入できる
+        %br/
+        フリマアプリです
+      .content__btn
+        = link_to "#" do
+          = image_tag src= "/material/badge/Download_on_the_App_Store_Badge.svg", class: "abtn"
+        = link_to "#" do
+          = image_tag src= "/material/badge/google-play-badge.png", class: "gbtn"
+
+
+  .top__introduction
+    .subtitle
+      FURIMAが選ばれる3つの理由
+      .subtitle__after
+    %ul.lists
+      %li.list
+        .list__pictuer
+          = image_tag src= "/material/pict/pict-reason-01.jpg", size: "300x300"
+          .nummber
+            1
+        %h1.list__title
+          %span
+            3分 
+          ですぐに出品
+        %p.list__text
+          スマホで入力するだけで簡単に出品できる！
+
+      %li.list
+        .list__pictuer
+          = image_tag src= "/material/pict/pict-reason-02.jpg", size: "300x300"
+          .nummber
+            2
+        %h1.list__title
+          %span
+            シンプル
+          で使いやすい
+        %p.list__text
+          めんどくさい入力は必要なく、検索も購入もスムーズ！
+
+      %li.list
+        .list__pictuer
+          = image_tag src= "/material/pict/pict-reason-03.jpg", size: "300x300"
+          .nummber
+            3
+        %h1.list__title
+          手数料
+          %span
+            業界最安
+        %p.list__text
+          最大3%でお得に出品&購入！
+
+
+  .top__middle__dl
+    .top__middle__dl__picture
+    .top__middle__dl__content
+      .content__subtitle
+        会員数日本一位
+      .content__text
+        FURIMAは、フリマアプリで最も人気。
+        %br/
+        出品・購入回数も業界最多です！
+        %br/
+        ほしかったあの商品に出会えるかもしれません。
+      .content__btn
+        = link_to "#" do
+          = image_tag src= "/material/badge/Download_on_the_App_Store_Badge.svg", class: "abtn"
+        = link_to "#" do
+          = image_tag src= "/material/badge/google-play-badge.png", class: "gbtn"
+
+  .top__key__features
+    .head
+      FURIMAの特徴
+      .head__after
+    .items
+      .item
+        = image_tag src= "/material/icon/icon-01.png", size: "216x332", class: "item__img"
+        %h3.item__subtitle
+          簡単に売り買いできる
+        %p.item__detail
+          スマホひとつで、いつでもどこでも簡単に出品・購入が可能！
+      .item
+        = image_tag src= "/material/icon/icon-03.png", size: "216x332", class: "item__img"
+        %h3.item__subtitle
+          売上金は即日振込みに対応
+        %p.item__detail
+          午前9時までに振込を依頼いただければ、翌日に指定の口座に入金いたします!
+      .item
+        = image_tag src= "/material/icon/icon-04.png", size: "216x332", class: "item__img"
+        %h3.item__subtitle
+          様々な支払いに対応
+        %p.item__detail
+          お支払いは、クレジットカードだけでなく、ポイントや売上金など多彩な方法があります。
+  .pickup__container
+    .pickup__container__category
+      .head
+        ピックアップカテゴリー
+      .product
+        .product__title
+          新規投稿商品
+        .product__lists
+          .product__list
+            = link_to "#" do
+              .product__list__img
+              .product__list__text
+                .item__name
+                  サンタ
+                .item__details
+                  %ul
+                    %li
+                      3000円
+                    %li
+                      ★1
+                  %p
+                    (税込)
+          .product__list
+            = link_to "#" do
+              .product__list__img
+              .product__list__text
+                .item__name
+                  サンタ
+                .item__details
+                  %ul
+                    %li
+                      3000円
+                    %li
+                      ★2
+                  %p
+                    (税込)
+
+          .product__list
+            = link_to "#" do
+              .product__list__img
+              .product__list__text
+                .item__name
+                  サンタ
+                .item__details
+                  %ul
+                    %li
+                      3000円
+                    %li
+                      ★3
+                  %p
+                    (税込)
+
+    .pickup__container__brand
+      .head
+        ピックアップブランド
+      .product
+        .product__title
+          アーカイバー
+        .product__lists
+          .product__list
+            = link_to "#" do
+              .product__list__img
+              .product__list__text
+                .item__name
+                  サンタ
+                .item__details
+                  %ul
+                    %li
+                      3000円
+                    %li
+                      ★4
+                  %p
+                    (税込)
+
+          .product__list
+            = link_to "#" do
+              .product__list__img
+              .product__list__text
+                .item__name
+                  サンタ
+                .item__details
+                  %ul
+                    %li
+                      3000円
+                    %li
+                      ★5
+                  %p
+                    (税込)
+              
+          .product__list
+            = link_to "#" do
+              .product__list__img
+              .product__list__text
+                .item__name
+                  サンタ
+                .item__details
+                  %ul
+                    %li
+                      3000円
+                    %li
+                      ★6
+                  %p
+                    (税込)
+
+
+
+
+
+.appbanner
+  .appbanner__inner
+    %h1.inner__title
+      だれでもかんたん、人生を変えるフリマアプリ
+    %p.inner__text
+      今すぐ無料ダウンロード！
+    .inner__btn
+      = link_to "#" do
+        = image_tag src= "/material/badge/Download_on_the_App_Store_Badge.svg", class: "abtn"
+      = link_to "#" do
+        = image_tag src= "/material/badge/google-play-badge.png", class: "gbtn"
+
+
+
+
+
+.footer
+  %ul.footer__contents
+    %li.content
+      %h1.title
+        FURIMAについて
+      %ul.lists
+        %li.list
+          = link_to "#", class: "list" do
+            会社概要（運営会社）
+        %li.list
+          = link_to "#", class: "list" do
+            プライバシーポリシー
+        %li.list
+          = link_to "#", class: "list" do
+            FURIMA利用規約
+        %li.list
+          = link_to "#", class: "list" do
+            ポイントに関する特約
+    %li.content
+      %h1.title
+        FURIMAを見る
+      %ul.lists
+        %li.list
+          = link_to "#", class: "list" do
+            カテゴリー一覧
+        %li.list
+          = link_to "#", class: "list" do
+            ブランド一覧
+    %li.content
+      %h1.title
+        ヘルプ＆ガイド
+      %ul.lists
+        %li.list
+          = link_to "#", class: "list" do
+            FURIMAガイド
+        %li.list
+          = link_to "#", class: "list" do
+            FURIMAロゴ利用ガイドライン
+        %li.list
+          = link_to "#", class: "list" do
+            お知らせ
+  = link_to "#" do
+    = image_tag src= "/material/logo/logo-white.png", size: "160x46", class: "footer__logo"
+
+
+
+  %p
+    © FURIMA
+
+
+
+
+= link_to "#" do
+  .exhibit
+    .text
+      出品する
+    = image_tag src= "/material/icon/icon_camera.png", class: "exhibit__icon"
