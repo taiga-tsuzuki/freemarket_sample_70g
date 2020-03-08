@@ -1,3 +1,476 @@
-// Place all the styles related to the item controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+a {
+  text-decoration: none;
+}
+
+.header {
+  height: 100px;
+  width: 100%;
+  &__box {
+    height: 100%;
+    width: 65%;
+    margin: 0 auto;
+    padding: 15px 0 0;
+    &__main {
+      height: 40px;
+      width: 100%;
+      display: flex;
+      line-height: 40px;
+      .logo {
+        position: relative;
+        display: flex;
+        align-items: center;
+      }
+      .search__box {
+        width: 100%;
+        margin-left: 30px;
+        display: flex;
+        &__form {
+          width: 100%;
+        }
+        &__btn {
+          background-color: #3CCACE;
+          padding: 8px;
+        }
+      }
+    }
+    &__sub {
+      height: 35px;
+      margin: 10px 0;
+      font-size: 15px;
+      display: flex;
+      justify-content: space-between;
+      .lists__left {
+        line-height: 35px;
+        display: flex;
+        .category {
+          margin-left: 10px;
+          color: black;
+        }
+        .brand {
+          margin-left: 50px;
+          color: black;
+        }
+      }
+      .lists__right {
+        line-height: 35px;
+        display: flex;
+        .login {
+          margin-right: 50px;
+          color: black;
+        }
+        .signin {
+          margin-right: 10px;
+          color: black;
+        }
+      }
+    }
+  }
+}
+
+
+
+
+.main {
+  &__visual {
+    height: 570px;
+    background-image: url("/material/pict/bg-mainVisual-pict_pc.jpg");
+    background-size: cover;
+    position: relative;
+    &__picture {
+      height: 100%;
+      width: 100vw;
+      background-size: cover;
+      overflow: hidden;
+    }
+    .content {
+      top: 200px;
+      left: 60px;
+      color: white;
+      text-shadow: 0 0 5px rgba(0,0,0,0.4);
+      position: absolute;
+      &__subtitle {
+        font-size: 60px;
+      }
+      &__text {
+        font-size: 20px;
+        margin-top: 5px;
+      }
+      &__btn {
+        height: 70px;
+        .abtn {
+          height: 100%;
+          width:  auto;
+        }
+        .abtn:hover {
+          opacity: 0.5 ;
+        }    
+        .gbtn {
+          height: 100%;
+          width:  auto;
+          margin-left: 50px;
+          transform: scale(1.45);
+        }
+        .gbtn:hover {
+          opacity: 0.5 ;
+        }
+      }
+    }
+  }
+  .top__introduction {
+    height: 500px;
+    padding: 60px 20px;
+    .subtitle {
+      font-size: 26px;
+      margin-bottom: 25px;
+      text-align: center;
+      font-weight: bold;
+      &__after {
+        height: 4px;
+        width: 70px;
+        background-color: #3CCACE;
+        margin-top: 10px;
+        position: absolute;
+        left: 48%;
+      }
+    }
+    .lists {
+      width: 100%;
+      max-width: 1020px;
+      margin: 0 auto;
+      text-align: center;
+      display: flex;
+      .list {
+        width: 30%;
+        margin: 16px 5% 0 0;
+        text-align: left;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        .list__pictuer {
+          margin-bottom: 20px;
+          background-size: cover;
+          position: relative;
+          .nummber {
+            top: 0;
+            left: 0;
+            font-size: 30px;
+            text-align: center;
+            margin: 0 5px 0 0;
+            padding: 10px 20px;
+            border-radius: 4%;
+            color: #fff;
+            background-color: #3CCACE;
+            position: absolute;
+          }
+        }
+        .list__title {
+          font-size: 24px;
+          font-weight: bold;
+          span {
+            color: #3CCACE;
+          }
+        }
+        .list__text {
+          font-size: 18px;
+          margin-top: 16px;
+        }
+      }
+      
+    }
+  }
+  .top__middle__dl {
+    height: 400px;
+    position: relative;
+    &__picture {
+      height: 100%;
+      width: 100%;
+      background-image: url("/material/pict/bg-topMiddleDl-pict.jpg");
+      background-size: cover;
+      background-position: center;
+    }
+    &__content {
+      top: 90px;
+      left: 100px;
+      color: white;
+      text-shadow: 0 0 5px rgba(0,0,0,0.4);
+      position: absolute;
+      .content__subtitle {
+        font-size: 26px;
+        font-weight: bold;
+      }
+      .content__text {
+        margin-top: 20px;
+      }
+      .content__btn {
+        height: 70px;
+        .abtn {
+          height: 100%;
+          width:  auto;
+        }
+        .abtn:hover {
+          opacity: 0.5 ;
+        }    
+        .gbtn {
+          height: 100%;
+          width:  auto;
+          margin-left: 50px;
+          transform: scale(1.45);
+        }
+        .gbtn:hover {
+          opacity: 0.5 ;
+        }
+      }
+    }
+  }
+  .top__key__features {
+    height: 510px;
+    padding: 60px 200px;
+    margin: 60px 150px;
+    .head {
+      text-align: center;
+      font-size: 27px;
+      font-weight: bold;
+      position: relative;
+      &__after {
+        margin-top: 5px;
+        content: "";
+        height: 4px;
+        width: 70px;
+        left: 50%;
+        background-color: #3CCACE;
+        position: absolute;
+        transform: translateX(-50%)
+      }
+    }
+    .items {
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-around;
+      .item {
+        width: calc(100% / 3);
+        padding: 0 20px;
+        &__img {
+
+        }
+        &__subtitle {
+          font-size: large;
+          font-weight: bold;
+        }
+        &__detail {
+
+        }
+      }
+    }
+  }
+  .pickup__container {
+    height: 1000px;
+    background-color: rgb(228, 228, 228);
+    &__category {
+      height: 420px;
+      padding: 80px 0 0;
+      text-align: center;
+      font-weight: bold;
+      .head {
+        font-size: 28px;
+        line-height: 28px;
+      }
+      .product {
+        &__title {
+          font-size: 23px;
+          color: rgb(60, 202, 206);
+        }
+        &__lists {
+          display: flex;
+          justify-content: center;
+          .product__list {
+            margin: 15px 15px;
+            &__img {
+              height: 150px;
+              width: 220px;
+              background-image: url("https://cdn.pixabay.com/photo/2014/09/16/01/19/girl-447701_1280.jpg");
+              background-size: cover;
+            }
+            &__text {
+              font-size: 16px;
+              padding: 16px;
+              color: #333;
+              background-color: white;
+              .item__name {
+                margin-left: 0px;
+                text-align: left;
+              }
+              .item__details {
+                ul {
+                  display: flex;
+                  justify-content: space-between;
+                  li {
+
+                  }
+                }
+                p {
+                  text-align: left;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+    &__brand {
+      height: 420px;
+      padding: 80px 0 0;
+      text-align: center;
+      font-weight: bold;
+      .head {
+        font-size: 28px;
+        line-height: 28px;
+      }
+      .product {
+        &__title {
+          font-size: 23px;
+          color: rgb(60, 202, 206);
+        }
+        &__lists {
+          display: flex;
+          justify-content: center;
+          .product__list {
+            margin: 15px 15px;
+            &__img {
+              height: 150px;
+              width: 220px;
+              background-image: url("https://cdn.pixabay.com/photo/2014/09/16/01/19/girl-447701_1280.jpg");
+              background-size: cover;
+            }
+            &__text {
+              font-size: 16px;
+              padding: 16px;
+              color: #333;
+              background-color: white;
+              .item__name {
+                margin-left: 0px;
+                text-align: left;
+              }
+              .item__details {
+                ul {
+                  display: flex;
+                  justify-content: space-between;
+                  li {
+
+                  }
+                }
+                p {
+                  text-align: left;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+
+
+
+.appbanner {
+  height: 150px;
+  width: auto;
+  padding: 100px 40px;
+  background-image: url("/material/pict/bg-appBanner-pict.jpg");
+  background-size: cover;
+  background-position: center;
+  &__inner {
+    color: white;
+    text-align: center;
+    .inner__title {
+      font-size: 24px;
+      text-shadow: 0 0 5px rgba(0,0,0,0.4);
+      font-weight: bold;
+    }
+    .inner__text {
+      font-size: 35px;
+      text-shadow: 0 0 5px rgba(0,0,0,0.4)
+    }
+    .inner__btn {
+      height: 70px;
+      .abtn {
+        height: 100%;
+        width:  auto;
+      }
+      .abtn:hover {
+        opacity: 0.5 ;
+      }  
+      .gbtn {
+        height: 100%;
+        width:  auto;
+        margin-left: 50px;
+        transform: scale(1.45);
+      }
+      .gbtn:hover {
+        opacity: 0.5 ;
+      }
+    }
+  }
+}
+
+
+
+
+.footer {
+  height: 230px;
+  padding: 60px 0;
+  background-color: black;
+  &__contents {
+    padding: 0 350px;
+    display: flex;
+    justify-content: space-around;
+    .content {
+      .title {
+        margin-bottom: 23px;
+        font-weight: bold;
+        color: white;
+      }
+      .lists {
+        text-align: center;
+        .list {
+          font-size: 10px;
+          margin-top: 15px;
+          color: white;
+        }
+      }
+    }
+  }
+  .footer__logo {
+    margin-left: 750px;
+  }
+  p {
+    color: white;
+    text-align: center;
+  }  
+}
+
+
+
+
+
+a {
+  .exhibit {
+    width: 85px;
+    padding: 15px;
+    background: #3CCACE;
+    text-align: center;
+    border-radius: 4%;
+    position: fixed;
+    bottom: 32px;
+    right: 32px;
+    .text {
+      margin-bottom: 5px;
+      font-size: 18px;
+      color: #fff;
+    }
+    &__icon {
+      width: 60%;
+    }
+  }
+}
