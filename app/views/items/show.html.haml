@@ -1,35 +1,34 @@
 .product
   .header
-    .headerbox
-      .headerboxmain
-        =link_to "#" do
-          %img.logo{src: "/material/logo/logo.png"}
-        = form_with url: "#", class: "searchbox" do |f|
-          = f.text_field :content, class: 'searchboxform', placeholder: ' キーワードから探す'
-        =link_to "#" do
-          %img.searchboxbtn{src: "/material/icon/icon-search 1.png"}
-      .headerboxsub
-        %ul.listsleft
+  .header__box
+    .header__box__main
+      = link_to "#" do
+        = image_tag src= "/material/logo/logo.png", size: "140x40"
+      = form_with url: "#", class: "search__box" do |f|
+        = f.text_field :content, class: 'search__box__form', placeholder: ' キーワードから探す'
+      = link_to "#" do
+        = image_tag src="/material/icon/icon-search 1.png", size: "24x24", class: "search__box__btn"
+    .header__box__sub
+      %ul.lists__left
         %li
-        = link_to "#",class: "category" do
-          カテゴリー
+          = link_to "#",class: "category" do
+            カテゴリー
         %li
-        = link_to "#",class: "brand" do
-          ブランド
-        %ul.listsright
+          = link_to "#",class: "brand" do
+            ブランド
+      %ul.lists__right
         %li
-        = link_to "#",class: "login" do
-          ログイン
+          = link_to "#",class: "login" do
+            ログイン
         %li
-        = link_to "#",class: "signin" do
-          新規会員登録
+          = link_to "#",class: "signin" do
+            新規会員登録
   .product-contents
     .product-contents__inner
       .product-contents__inner__mainbox
         .product-contents__inner__mainbox__name
-          商品名
+          胸筋
         .product-contents__inner__mainbox__main-image
-          image
         .product-contents__inner__mainbox__other-images
           .product-contents__inner__mainbox__other-images__three-images
             .product-contents__inner__mainbox__other-images__three-images__first
@@ -40,116 +39,148 @@
         .product-contents__inner__mainbox__additional-price
           (税込) 送料込み
         .product-contents__inner__mainbox__description
-          商品説明
+          お腹空いたし、マクドナルドでも行こうかと考えながら歩いていると結局健康のこととか
+          考えてしまって、食べたい物も食べれない毎日が意外と嫌いじゃなかったりする。このような
+          どうでもいい内容でこの欄を埋めようとタイピングしている時間って世界で一番無駄な時間なの
+          ではないかと思い始めたのでそろそろやめようと思う。親要素の半分くらいは埋まっているはず
+          なのできっと商品説明みたいな感じになっているでしょう。上の三つの小さい写真のサイズ調整
+          が上手くいかない。どうせ仮置きの写真だから変えなくてもいいかな。
         .product-contents__inner__mainbox__table
           .product-contents__inner__mainbox__table__box
             .leftbox
               出品者
             .rightbox
+              マッチョ
           .product-contents__inner__mainbox__table__box
             .leftbox
               カテゴリー
             .rightbox
+              マッチョ
           .product-contents__inner__mainbox__table__box
             .leftbox
               ブランド
             .rightbox
+              マッスル
           .product-contents__inner__mainbox__table__box
             .leftbox
               商品のサイズ
             .rightbox
+              XL
           .product-contents__inner__mainbox__table__box
             .leftbox
               商品の状態
             .rightbox
+              ちょっとパンプアップしてます
           .product-contents__inner__mainbox__table__box
             .leftbox
               配送料の負担
             .rightbox
+              マッチョ
           .product-contents__inner__mainbox__table__box
             .leftbox
               発送元の地域
             .rightbox
+              茨城県
           .product-contents__inner__mainbox__table__box
             .leftbox
               発送日の目安
             .rightbox
+              11月29日
         .product-contents__inner__mainbox__links
           .product-contents__inner__mainbox__links__favorite
             .product-contents__inner__mainbox__links__favorite__icon
+              = icon('fa', 'star',class: 'star-icon')
             .product-contents__inner__mainbox__links__favorite__letter
               お気に入り 0
           .product-contents__inner__mainbox__links__report
             .product-contents__inner__mainbox__links__report__icon
+              = icon('fa', 'flag',class: 'flag-icon')
             .product-contents__inner__mainbox__links__report__letter
               不適切な商品の通報
       .product-contents__inner__commentbox
         .product-contents__inner__commentbox__content
         .product-contents__inner__commentbox__warning
+          相手のことを考え丁寧なコメントを心がけましょう.
+          %br/
+          不快な言葉遣いなどは利用制限や退会処分となることがあります。
         .product-contents__inner__commentbox__comment
           .product-contents__inner__commentbox__comment__icon
+            = icon('fa', 'comment',class: 'comment-icon')
           .product-contents__inner__commentbox__comment__btn
+            コメントする
       .product-contents__inner__lowerbox1
+        .product-contents__inner__lowerbox1__left
+          < 前の商品
+        .product-contents__inner__lowerbox1__right
+          次の商品 >
       .product-contents__inner__lowerbox2
-  .imagecontent
-    .inner
-      .innertitle
-      だれでもかんたん、人生を変えるフリマアプリ
-      .innertext
-      今すぐ無料ダウンロード！
-      .innericon
-      %a.linkIcon-abtn(href="#")
-      %img(width="180px" height="58px" src="Apple.svg" alt="")/
-      %a.linkIcon-gbtn(href="#")
-      %img(width="200px" height="80px" src="Google.png" alt="")/
+        レディースをもっと見る
+  .appbanner
+    .appbanner__inner
+      %h1.inner__title
+        だれでもかんたん、人生を変えるフリマアプリ
+      %p.inner__text
+        今すぐ無料ダウンロード！
+      .inner__btn
+        = link_to "#" do
+          = image_tag src= "/material/badge/Download_on_the_App_Store_Badge.svg", class: "abtn"
+        = link_to "#" do
+          = image_tag src= "/material/badge/google-play-badge.png", class: "gbtn"
+
   .footer
-    .contents
-      .content
-        .contenthead
-        FURIMAについて
-        %ul
-        %li.contentmain
-        %a.contentrink(href="#")
-        会社概要（運営会社）
-        %li.contentmain
-        %a.contentrink(href="#")
-        プライバシーポリシー
-        %li.contentmain
-        %a.contentrink(href="#")
-        FURIMA利用規約
-        %li.contentmain
-        %a.contentrink(href="#")
-        ポイントに関する制約
-        .content
-        .contenthead
-        FURIMAを見る
-        %ul
-        %li.contentmain
-        %a.contentrink(href="#")
-        カテゴリー一覧
-        %li.contentmain
-        %a.contentrink(href="#")
-        ブランド一覧
-      .content
-        .contenthead
-        ヘルプ＆ガイドライン
-        %ul
-        %li.contentmain
-        %a.contentrink(href="#")
-        FURIMAガイド
-        %li.contentmain
-        %a.contentrink(href="#")
-        FURIMAロゴ利用ガイドライン
-        %li.contentmain
-        %a.contentrink(href="#")
-        お知らせ
-    .footerlogo
-      %a(href="#")
-      %img(width="160px" height="46px" src="/material/logo/logo-white.png" alt="")/
-      %p.logounder
-      ©︎FURIMA
-      %a.footer-sell-btn(href="#")
-        .purchasebtn
-          .purchasebtntext
-            出品する
-            %img.purchasebtnicon(src="/material/icon/icon_camera.png" alt="")/
+    %ul.footer__contents
+      %li.content
+        %h1.title
+          FURIMAについて
+        %ul.lists
+          %li.list
+            = link_to "#", class: "list" do
+              会社概要（運営会社）
+          %li.list
+            = link_to "#", class: "list" do
+              プライバシーポリシー
+          %li.list
+            = link_to "#", class: "list" do
+              FURIMA利用規約
+          %li.list
+            = link_to "#", class: "list" do
+              ポイントに関する特約
+      %li.content
+        %h1.title
+          FURIMAを見る
+        %ul.lists
+          %li.list
+            = link_to "#", class: "list" do
+              カテゴリー一覧
+          %li.list
+            = link_to "#", class: "list" do
+              ブランド一覧
+      %li.content
+        %h1.title
+          ヘルプ＆ガイド
+        %ul.lists
+          %li.list
+            = link_to "#", class: "list" do
+              FURIMAガイド
+          %li.list
+            = link_to "#", class: "list" do
+              FURIMAロゴ利用ガイドライン
+          %li.list
+            = link_to "#", class: "list" do
+              お知らせ
+    = link_to "#" do
+      = image_tag src= "/material/logo/logo-white.png", size: "160x46", class: "footer__logo"
+
+
+
+    %p
+      © FURIMA
+
+
+
+
+  = link_to "#" do
+    .exhibit
+      .text
+        出品する
+      = image_tag src= "/material/icon/icon_camera.png", class: "exhibit__icon"
