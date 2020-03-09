@@ -39,111 +39,111 @@
       %li.itemtype2
         マイページ
   .main
-    .left
-      .mypage-nav
-        %ul.mypage-nav-lists
-          %li.mypage-nav-list
+    .main__left
+      .main__left__nav
+        %ul.nav__lists
+          %li.nav__lists__list
             =link_to "#",class: "moji" do
               マイページ
-          %li.mypage-nav-list
+          %li.nav__lists__list
             =link_to "#",class: "moji" do
               お知らせ
-          %li.mypage-nav-list
+          %li.nav__lists__list
             =link_to "#",class: "moji" do
               やることリスト
-          %li.mypage-nav-list
+          %li.nav__lists__list
             =link_to "#",class: "moji" do
               いいね！一覧
-          %li.mypage-nav-list
+          %li.nav__lists__list
             =link_to "#",class: "moji" do
               出品する
-          %li.mypage-nav-list
+          %li.nav__lists__list
             =link_to "#",class: "moji" do
               出品した商品-出品中
-          %li.mypage-nav-list
+          %li.nav__lists__list
             =link_to "#",class: "moji" do
               出品した商品-取引中
-          %li.mypage-nav-list
+          %li.nav__lists__list
             =link_to "#",class: "moji" do
               出品した商品-売却済み
-          %li.mypage-nav-list
+          %li.nav__lists__list
             =link_to "#",class: "moji" do
               購入した商品-取引中
-          %li.mypage-nav-list
+          %li.nav__lists__list
             =link_to "#",class: "moji" do
               購入した商品-過去の取引
-          %li.mypage-nav-list
+          %li.nav__lists__list
             =link_to "#",class: "moji" do
               ニュース一覧
-          %li.mypage-nav-list
+          %li.nav__lists__list
             =link_to "#",class: "moji" do
               評価一覧
-          %li.mypage-nav-list
+          %li.nav__lists__list
             =link_to "#",class: "moji" do
               ガイド
-          %li.mypage-nav-list
+          %li.nav__lists__list
             =link_to "#",class: "moji" do
               お問い合わせ
-          %li.mypage-nav-list
+          %li.nav__lists__list
             =link_to "#",class: "moji" do
               売上・振込申請
-          %li.mypage-nav-list
+          %li.nav__lists__list
             =link_to "#",class: "moji" do
               ポイント
-          %li.mypage-nav-list
+          %li.nav__lists__list
             =link_to "#",class: "moji" do
               プロフィール
-          %li.mypage-nav-list
+          %li.nav__lists__list
             =link_to "#",class: "moji" do
               発送元・お届け先住所変更
-          %li.mypage-nav-list
+          %li.nav__lists__list
             =link_to "#",class: "moji" do
               支払い方法
-          %li.mypage-nav-list
+          %li.nav__lists__list
             =link_to "#",class: "moji" do
               メール/パスワード
-          %li.mypage-nav-list
+          %li.nav__lists__list
             =link_to "#",class: "moji" do
               本人情報
-          %li.mypage-nav-list
+          %li.nav__lists__list
             =link_to "#",class: "moji" do
               電話番号の確認
-          %li.mypage-nav-list
+          %li.nav__lists__list
             =link_to "#",class: "moji" do
               ログアウト
-    .right
-      .user-icon
+    .main__right
+      .main__right__userIcon
         =link_to "#",class: "button" do
-          .mypage-icon-top
-            = image_tag "//static.mercdn.net/images/member_photo_noimage_thumb.png", class: "mypage-icon-top1"
-          .button-name
+          .button__top
+            = image_tag "//static.mercdn.net/images/member_photo_noimage_thumb.png", class: "button__top__icon"
+          .button__name
             ほし
-          .mypage-number
-            .mypage-number1
-              .mypage-number-son
+          .button__number
+            .button__number__box
+              .box1
                 評価 0
-              .mypage-number-son2
+              .box2
                 出品数 0
-      .tab-todo
-        .mypage-tabs
-          .info
+      .main__right__tabTodo
+        .tabTodo
+          .tabTodo__info
             お知らせ
-          .todo-lists
+          .tabTodo__todo-lists
             やることリスト
-        .tab-content
-          .benefit-info
-          .mypage-go-lists
+        .tabContent
+          .tabContent__info
+          .tabContent__go-lists
             =link_to "#",class: "go-list" do
               一覧を見る
-      .item-info
+      .main__right__itemInfo
         .tab-head
           購入した商品
-        %ul.mypage-tabs
-          %li.active
-            =link_to "#",class: "active-moji" do
+        %ul.mypage__tabs
+          %li.mypage__tabs__active
+            =link_to "#",class: "mypage__tabs__active__moji" do
               取引中
-          %li.past
-            =link_to "#",class: "past-moji" do
+          %li.mypage__tabs__past
+            =link_to "#",class: "mypage__tabs__past__moji" do
               過去の取引
         .tab-content
   .appbanner

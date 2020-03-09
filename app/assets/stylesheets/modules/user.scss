@@ -107,14 +107,14 @@
     background-color: #f5f5f5;
     display: flex;
     margin: 40px 210px 0 210px;
-    .left {
+    &__left {
       background-color: #ffffff;
       width: 280px;
       margin-right: 40px;
       height: 1104px;
-      .mypage-nav {
-        .mypage-nav-lists {
-          .mypage-nav-list {
+      &__nav {
+        .nav__lists {
+          &__list {
             width: 248px;
             height: 15px;
             border-bottom: 1px solid #eee;
@@ -125,16 +125,15 @@
               font-weight: 600;
               text-decoration: none;
               color: #333;
-              // padding: 16px;
             }
           }
         }
       }
     }
-    .right {
+    &__right {
       height: 865px;
       width: 700px;
-      .user-icon {
+      &__userIcon {
         background-image: url(/material/pict/bg-topMiddleDl-pict.jpg);
         width: 660px;
         height: 200px;
@@ -146,50 +145,50 @@
           text-align: center;
           margin-top: 45px;
           text-decoration: none;
-          .mypage-icon-top {
-            .mypage-icon-top1 {
+          &__top {
+            &__icon {
               height: 60px;
               width: 60px;
             }
           }
-          .button-name {
+          &__name {
             text-decoration: none;
             color: #333;
           }
-          .mypage-number {
+          &__number {
             display: flex;
             text-align: center;
-            .mypage-number1 {
+            &__box {
               margin-left: 255px;
               display: flex;
               width: 200px;
               color: #333;
-              .mypage-number-son {
+              .box1 {
                 margin-right: 40px;
               }
-              .mypage-number-son2 {
+              .box2 {
                 
               }
             }
           }
         }
       }
-      .tab-todo {
+      &__tabTodo {
         width: 700px;
         height: 243px;
         background-color: hotpink;
-        .mypage-tabs {
+        .tabTodo {
           height: 74px;
           background-color: #fff;
           display: flex;
-          .info {
+          &__info {
             width: 350px;
             height: 74px;
             line-height: 74px;
             text-align: center;
             border-top: 2px solid #ea352d;
           }
-          .todo-lists {
+          &__todo-lists {
             width: 350px;
             height: 74px;
             background-color: #eeeeee;
@@ -197,15 +196,15 @@
             text-align: center;
           }
         }
-        .tab-content {
+        .tabContent {
           height: 169px;
           background-color: #ffffff;
-          .benefit-info {
+          &__info {
             width: 700px;
             height: 81px;
             border-bottom: 1px solid #eee;
           }
-          .mypage-go-lists {
+          &__go-lists {
             width: 636px;
             height: 56px;
             background-color: #eeeeee;
@@ -218,7 +217,7 @@
           }
         }
       }
-      .item-info {
+      &__itemInfo {
         width: 700px;
         height: 382px;
         margin-top: 40px;
@@ -230,24 +229,24 @@
           line-height: 72px;
           padding: 0 16px;
         }
-        .mypage-tabs {
+        .mypage__tabs {
           height: 74px;
           background-color: #fff;
           display: flex;
-          .active {
+          &__active {
             width: 350px;
             border-top: 2px solid #ea352d;
-            .active-moji {
+            &__moji {
               text-decoration: none;
               color: #333;
               line-height: 74px;
               padding-left: 151px;
             }
           }
-          .past {
+          &__past {
             width: 350px;
             background-color: #eeeeee;
-            .past-moji {
+            &__moji {
               text-decoration: none;
               color: #333;
               line-height: 74px;
