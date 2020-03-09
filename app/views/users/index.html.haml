@@ -1,0 +1,227 @@
+.body
+  .header
+    .header__box
+      .header__box__main
+        =link_to "#" do
+          = image_tag "/material/logo/logo.png", class: 'logo'
+        = form_with url: "#", class: "search__box" do |f|
+          = f.text_field :content, class: 'search__box__form', placeholder: ' キーワードから探す'
+        =link_to "#" do
+          = image_tag "/material/icon/icon-search 1.png", class: 'search__box__btn'
+      .header__box__sub
+        %ul.lists__left
+          %li
+            = link_to "#",class: "category" do
+              カテゴリー
+          %li
+            = link_to "#",class: "brand" do
+              ブランド
+        %ul.lists__right
+          %li
+            = link_to "#",class: "like__list" do
+              いいね！一覧
+          %li
+            = link_to "#",class: "info__list" do
+              お知らせ
+          %li
+            = link_to "#",class: "todo__list" do
+              やることリスト
+          %li
+            = link_to "#",class: "mypage" do
+              マイページ
+  .nav
+    %ul.itemscope
+      %li.itemtype
+        %a.navgation{:href => "#", :itemprop => "url"}
+          FURIMA
+        .icon-arrow-right
+          　>　
+      %li.itemtype2
+        マイページ
+  .main
+    .left
+      .mypage-nav
+        %ul.mypage-nav-lists
+          %li.mypage-nav-list
+            =link_to "#",class: "moji" do
+              マイページ
+          %li.mypage-nav-list
+            =link_to "#",class: "moji" do
+              お知らせ
+          %li.mypage-nav-list
+            =link_to "#",class: "moji" do
+              やることリスト
+          %li.mypage-nav-list
+            =link_to "#",class: "moji" do
+              いいね！一覧
+          %li.mypage-nav-list
+            =link_to "#",class: "moji" do
+              出品する
+          %li.mypage-nav-list
+            =link_to "#",class: "moji" do
+              出品した商品-出品中
+          %li.mypage-nav-list
+            =link_to "#",class: "moji" do
+              出品した商品-取引中
+          %li.mypage-nav-list
+            =link_to "#",class: "moji" do
+              出品した商品-売却済み
+          %li.mypage-nav-list
+            =link_to "#",class: "moji" do
+              購入した商品-取引中
+          %li.mypage-nav-list
+            =link_to "#",class: "moji" do
+              購入した商品-過去の取引
+          %li.mypage-nav-list
+            =link_to "#",class: "moji" do
+              ニュース一覧
+          %li.mypage-nav-list
+            =link_to "#",class: "moji" do
+              評価一覧
+          %li.mypage-nav-list
+            =link_to "#",class: "moji" do
+              ガイド
+          %li.mypage-nav-list
+            =link_to "#",class: "moji" do
+              お問い合わせ
+          %li.mypage-nav-list
+            =link_to "#",class: "moji" do
+              売上・振込申請
+          %li.mypage-nav-list
+            =link_to "#",class: "moji" do
+              ポイント
+          %li.mypage-nav-list
+            =link_to "#",class: "moji" do
+              プロフィール
+          %li.mypage-nav-list
+            =link_to "#",class: "moji" do
+              発送元・お届け先住所変更
+          %li.mypage-nav-list
+            =link_to "#",class: "moji" do
+              支払い方法
+          %li.mypage-nav-list
+            =link_to "#",class: "moji" do
+              メール/パスワード
+          %li.mypage-nav-list
+            =link_to "#",class: "moji" do
+              本人情報
+          %li.mypage-nav-list
+            =link_to "#",class: "moji" do
+              電話番号の確認
+          %li.mypage-nav-list
+            =link_to "#",class: "moji" do
+              ログアウト
+    .right
+      .user-icon
+        =link_to "#",class: "button" do
+          .mypage-icon-top
+            = image_tag "//static.mercdn.net/images/member_photo_noimage_thumb.png", class: "mypage-icon-top1"
+          .button-name
+            ほし
+          .mypage-number
+            .mypage-number1
+              .mypage-number-son
+                評価 0
+              .mypage-number-son2
+                出品数 0
+      .tab-todo
+        .mypage-tabs
+          .info
+            お知らせ
+          .todo-lists
+            やることリスト
+        .tab-content
+          .benefit-info
+          .mypage-go-lists
+            =link_to "#",class: "go-list" do
+              一覧を見る
+      .item-info
+        .tab-head
+          購入した商品
+        %ul.mypage-tabs
+          %li.active
+            =link_to "#",class: "active-moji" do
+              取引中
+          %li.past
+            =link_to "#",class: "past-moji" do
+              過去の取引
+        .tab-content
+  .appbanner
+    .appbanner__inner
+      %h1.inner__title
+        だれでもかんたん、人生を変えるフリマアプリ
+      %p.inner__text
+        今すぐ無料ダウンロード！
+      .inner__btn
+        = link_to "#" do
+          = image_tag src= "/material/badge/Download_on_the_App_Store_Badge.svg", class: "abtn"
+        = link_to "#" do
+          = image_tag src= "/material/badge/google-play-badge.png", class: "gbtn"
+  -# .imagecontent
+  -#   .inner
+  -#     .inner__title
+  -#       だれでもかんたん、人生を変えるフリマアプリ
+  -#     .inner__text
+  -#       今すぐ無料ダウンロード！
+  -#     .inner__icon
+  -#       =link_to "#",class: "linkIcon-abtn" do
+  -#         = image_tag "/badge/Download_on_the_App_Store_Badge_US-UK_RGB_blk_092917.svg", width: "170px"
+  -#       =link_to "#",class: "linkIcon-gbtn" do
+  -#         = image_tag "/badge/google-play-badge.png", width: "200px"
+  .footer
+    .contents
+      .content
+        .content__head
+          FURIMAについて
+        %ul
+          %li.content__main
+            =link_to "#",class: "content__rink" do
+              会社概要（運営会社）
+          %li.content__main
+            =link_to "#",class: "content__rink" do
+              プライバシーポリシー
+          %li.content__main
+            =link_to "#",class: "content__rink" do
+              FURIMA利用規約
+          %li.content__main
+            =link_to "#",class: "content__rink" do
+              ポイントに関する制約
+      .content
+        .content__head
+          FURIMAを見る
+        %ul
+          %li.content__main
+            =link_to "#",class: "content__rink" do
+              カテゴリー一覧
+          %li.content__main
+            =link_to "#",class: "content__rink" do
+              ブランド一覧
+      .content
+        .content__head
+          ヘルプ＆ガイドライン
+        %ul
+          %li.content__main
+            =link_to "#",class: "content__rink" do
+              FURIMAガイド
+          %li.content__main
+            =link_to "#",class: "content__rink" do
+              FURIMAロゴ利用ガイドライン
+          %li.content__main
+            =link_to "#",class: "content__rink" do
+              お知らせ
+    .footer__logo
+      =link_to "#" do
+        = image_tag "/material/logo/logo-white.png", width: "160px", height: "46px"
+    %p.logo__under
+      ©︎　FURIMA
+
+  = link_to "#" do
+    .exhibit
+      .text
+        出品する
+      = image_tag src= "/material/icon/icon_camera.png", class: "exhibit__icon"
+    -# =link_to "#",class: "footer-sell-btn" do
+    -#   .purchasebtn
+    -#     .purchasebtn__text
+    -#       出品する
+    -#     = image_tag "/material/icon/icon_camera.png", class: ".purchasebtn__icon"
