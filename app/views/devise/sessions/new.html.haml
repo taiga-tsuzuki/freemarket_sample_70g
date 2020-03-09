@@ -1,17 +1,25 @@
-%h2 Log in
-= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
-  .field
-    = f.label :email
-    %br/
-    = f.email_field :email, autofocus: true, autocomplete: "email"
-  .field
-    = f.label :password
-    %br/
-    = f.password_field :password, autocomplete: "current-password"
-  - if devise_mapping.rememberable?
-    .field
-      = f.check_box :remember_me
-      = f.label :remember_me
-  .actions
-    = f.submit "Log in"
-= render "devise/shared/links"
+.login
+  .login__header
+    =link_to image_tag("logo.png",width:"134",height:"36"), root_path
+  .login__no-account
+    = render "devise/shared/links"
+  .login__box
+    = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
+      .login__box__field
+        = f.label :email
+        %br/
+        = f.email_field :email, autofocus: true, autocomplete: "email"
+      .login__box__field
+        = f.label :password
+        %br/
+        = f.password_field :password, autocomplete: "current-password"
+          - if devise_mapping.rememberable?
+      .login__box__field
+        = f.check_box :remember_me
+        = f.label :remember_me
+      .login__box__actions
+        = f.submit "ログイン",class: 'login-btn'
+      .login__box__forget-passward
+        = render "devise/shared/links2"
+  .login__footer
+
