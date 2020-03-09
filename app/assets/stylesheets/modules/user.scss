@@ -304,56 +304,6 @@
       }
     }
   }
-  // .imagecontent {
-  //   width: auto;
-  //   height: 160px;
-  //   padding: 100px 0 100px 40px;
-  //   background-image: url(bg-appBanner-pict.jpg);
-  //   background-size: cover;
-  //   background-position: center;
-  //   .inner {
-  //     width: 1360px;
-  //     height: 159px;
-  //     text-align: center;
-  //     color: #ffffff;
-  //     font-family: "Source Sans Pro", Helvetica, Arial, "游ゴシック体", "YuGothic", "メイリオ", "Meiryo", sans-serif;;
-  //     &__title {
-  //       height: 33px;
-  //       font-size: 24px;
-  //       font-weight: bold;
-  //       text-shadow: 0 0 5px rgba(0,0,0,0.4);
-  //     }
-  //     &__text {
-  //       height: 53px;
-  //       font-size: 35px;
-  //       text-shadow: 0 0 5px rgba(0,0,0,0.4);
-  //       font-weight: bold;
-  //     }
-  //     &__icon {
-  //       height: 53px;
-  //       display: flex;
-  //       .linkIcon-abtn {
-  //         display: block;
-  //         height: 53px;
-  //         width: 180px;
-  //         margin: 10px 10px 0 485px;
-  //         .abtn-son {
-  //           width: 180px;
-  //           height: 53px;
-  //         }
-  //       }
-  //       .linkIcon-gbtn {
-  //         display: block;
-  //         height: 53px;
-  //         width: 180px;
-  //         .gbtn-son {
-  //           width: 200px;
-  //           height: 180px;
-  //         }
-  //       }
-  //     }
-  //   }
-  // }
   .footer {
     width: auto;
     height: 234px;
@@ -419,27 +369,4 @@
       }
     }
   }
-  // .footer-sell-btn {
-  //   .purchasebtn {
-  //     width: 90px;
-  //     height: 86px;
-  //     background-color: #3ccace;
-  //     text-align: center;
-  //     position: fixed;
-  //     padding: 15px;
-  //     right: 32px;
-  //     bottom: 32px;
-  //     border-radius: 4%;
-  //     &__text {
-  //       width: 90px;
-  //       height: 27px;
-  //       text-decoration: none;
-  //       color: #fff;
-  //     }
-  //     &__icon {
-  //       width: 54px;
-  //       height: 54px;
-  //     }
-  //   }
-  // }
 }
