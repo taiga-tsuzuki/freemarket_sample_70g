@@ -220,7 +220,46 @@
         height: 500px;
         width: 700px;
         margin: auto;
+        margin-top: 20px;
         background-color: lightcoral;
+        position: relative;
+        &__content{
+          height: 100px;
+          width: 600px;
+          background-color: blue;
+          margin: auto;
+          box-sizing: border-box;
+          position: absolute;
+          top: 30px;
+          left: 50px;
+        }
+        &__warning{
+          height: 80px;
+          width: 600px;
+          background-color: blue;
+          margin: auto;
+          position: absolute;
+          left: 50px;
+          top: 160px;
+        }
+        &__comment{
+          height: 50px;
+          width: 450px;
+          background-color: cadetblue;
+          margin: auto;
+          position: absolute;
+          left: 125px;
+          top: 320px;
+          display: flex;
+          &__icon{
+            width: 50px;
+            height: 50px;
+            background-color: gold;
+          }
+          &__btn{
+            コメントする
+          }
+        }
       }
       &__lowerbox1{
         height: 250px;
