@@ -1,0 +1,358 @@
+*{
+  text-decoration: none;
+.header {
+  height: 100px;
+  width: 100%;
+  &box {
+  height: 100%;
+  width: 65%;
+  margin: 0 auto;
+  padding: 15px 0 0;
+  &main {
+  height: 40px;
+  width: 100%;
+  display: flex;
+  line-height: 40px;
+  .logo {
+  width: 140px;
+  margin-right: 40px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  }
+  .searchbox {
+  display: flex;
+  width: 100%;
+  &form {
+  width: 100%;
+  }
+  &btn {
+  display: block;
+  width: 24px;
+  background-color: #3CCACE;
+  padding: 8px;
+  }
+  }
+  }
+  &sub {
+  font-size: 15px;
+  height: 35px;
+  display: flex;
+  justify-content: space-between;
+  margin: 10px 0;
+  .listsleft {
+  display: flex;
+  line-height: 35px;
+  .category {
+  margin-left: 10px;
+  color: black;
+  }
+  .brand {
+  margin-left: 50px;
+  color: black;
+  }
+  }
+  .listsright {
+  display: flex;
+  line-height: 35px;
+  .login {
+  margin-right: 50px;
+  color: black;
+  }
+  .signin {
+  margin-right: 10px;
+  color: black;
+  }
+  }
+  }
+  }
+  }
+
+.product-contents{
+  height: 2500px;
+  width: 100%;
+  background-color: greenyellow;
+    &__inner{
+      height: 2500px;
+      width: 800px;
+      background-color: hotpink;
+      margin: auto;
+      &__mainbox{
+        height: 1500px;
+        width: 700px;
+        margin: auto;
+        background-color: lightblue;
+        &__name{
+          margin: auto;
+          height: 100px;
+          width: 600px;
+          background-color: blueviolet;
+          text-align: center;
+          line-height: 100px;
+          font-size: 30px;
+          font-weight: bold;
+        }
+        &__main-image{
+          margin: auto;
+          height: 300px;
+          width: 600px;
+          background-color: brown;
+        }
+        &__other-images{
+          margin: auto;
+          height: 150px;
+          background-color: cadetblue;
+          width: 550px;
+          &__three-images{
+            display: flex;
+            &__first{
+              height: 150px;
+              width: 183px;
+              background-color: coral;
+            }
+            &__second{
+              height: 150px;
+              width: 183px;
+              background-color: cyan;
+            }
+            &__third{
+              height: 150px;
+              width: 183px;
+              background-color: darkmagenta;
+            }
+          }
+        }
+        &__price{
+          height: 100px;
+          line-height: 100px;
+          width: 600px;
+          background-color: darkorange;
+          margin: auto;
+          font-size: 50px;
+          font-weight: bold;
+          text-align: center;
+        }
+        &__additional-price{
+          height: 40px;
+          line-height: 40px;
+          width: 600px;
+          margin: auto;
+          text-align: center;
+          background-color: darksalmon;
+        }
+        &__description{
+          height: 300px;
+          width: 600px;
+          background-color: darkseagreen;
+          margin: auto;
+          
+        }
+        &__table{
+          height: 300px;
+          width: 600px;
+          background-color: darkslateblue;
+          margin: auto;
+          border: solid 1px gainsboro;
+          &__box{
+            display: flex;
+            .leftbox{
+              height: 37.5px;
+              line-height: 37.5px;
+              width: 150px;
+              background-color: lightgray;
+              text-align: center;
+              border-right: solid 1px gainsboro;
+              border-bottom: solid 1px gainsboro;
+            }
+            .rightbox{
+              height: 37.5px;
+              width: 450px;
+              background-color: white;
+              border-bottom: solid 1px gainsboro;
+            }
+          }
+        }
+        &__links{
+          height: 50px;
+          width: 600px;
+          background-color: gold;
+          margin: auto;
+          margin-top: 50px;
+          display: flex;
+          justify-content: space-between;
+          &__favorite{
+            height: 50px;
+            width:200px;
+            background-color: green;
+            display: flex;
+            &__icon{
+              height: 50px;
+              width: 50px;
+              background-color: lightcyan;
+            }
+            &__letter{
+              height: 50px;
+              line-height: 50px;
+              width: 150px;
+              background-color: lightskyblue;
+            }
+          }
+          &__report{
+            height: 50px;
+            width: 200px;
+            background-color: lightcoral;
+            display: flex;
+            &__icon{
+              height: 50px;
+              width: 50px;
+              background-color: lightcyan;
+            }
+            &__letter{
+              height: 50px;
+              line-height: 50px;
+              width: 150px;
+              background-color: lightskyblue;
+            }
+          }
+        }
+      }
+      &__commentbox{
+        height: 500px;
+        width: 700px;
+        margin: auto;
+        background-color: lightcoral;
+      }
+      &__lowerbox1{
+        height: 250px;
+        width: 700px;
+        margin: auto;
+        background-color: red;
+      }
+      &__lowerbox2{
+        height: 250px;
+        width: 700px;
+        margin: auto;
+        background-color: blue;
+      }
+    }
+  }
+
+
+
+
+
+
+
+
+
+.imagecontent {
+  width: 100%;
+  height: 160px;
+  padding: 100px 0 100px 40px;
+  background-image: url(bg-appBanner-pict.jpg);
+  background-size: cover;
+  background-position: center;
+  .inner {
+    width: 1360px;
+    height: 159px;
+    text-align: center;
+    color: #ffffff;
+    font-family: "Source Sans Pro", Helvetica, Arial, "游ゴシック体", "YuGothic", "メイリオ", "Meiryo", sans-serif;;
+    &__title {
+      height: 33px;
+      font-size: 24px;
+      font-weight: bold;
+      text-shadow: 0 0 5px rgba(0,0,0,0.4);
+    }
+    &__text {
+      height: 53px;
+      font-size: 35px;
+      text-shadow: 0 0 5px rgba(0,0,0,0.4);
+      font-weight: bold;
+    }
+    &__icon {
+      height: 53px;
+      display: flex;
+      .linkIcon-abtn {
+        display: block;
+        height: 53px;
+        width: 180px;
+        margin: 10px 10px 0 485px;
+      }
+      .linkIcon-gbtn {
+        display: block;
+        height: 53px;
+        width: 180px;
+      }
+    }
+  }
+}
+.footer {
+  width: 100%;
+  height: 234px;
+  background-color: #272727;
+  padding: 60px 0;
+  .contents {
+    display: flex;
+    width: 840px;
+    height: 172px;
+    margin: 0 auto;
+    color: #fff;
+    text-align: center;
+    font-family: "Source Sans Pro", Helvetica, Arial, "游ゴシック体", "YuGothic", "メイリオ", "Meiryo", sans-serif;;
+    .content {
+      margin: 0 2% 0 0;
+      width: 263px;
+      height: 172px;
+      &__head {
+        width: 263px;
+        height: 24px;
+        margin: 0 0 20px;
+      }
+      &__main {
+        height: 32px;
+        .content__rink {
+          text-decoration: none;
+          color: #fff;
+          font-size: 12px;
+        }
+      }
+    }
+  }
+  &__logo {
+    width: 160px;
+    height: 46px;
+    margin: 0 auto;
+  }
+  .logo__under {
+    text-align: center;
+    height: 16px;
+    color: #fff;
+
+  }
+}
+
+.footer-sell-btn {
+  .purchasebtn {
+    width: 90px;
+    height: 86px;
+    background-color: #3ccace;
+    text-align: center;
+    position: fixed;
+    padding: 15px;
+    right: 32px;
+    bottom: 32px;
+    border-radius: 4%;
+    &__text {
+      width: 90px;
+      height: 27px;
+      text-decoration: none;
+      color: #fff;
+    }
+    &__icon {
+      width: 54px;
+      height: 54px;
+    }
+  }
+}
+}
