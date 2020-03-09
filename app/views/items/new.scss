@@ -1,0 +1,667 @@
+.body {
+  min-height: 100vh;
+  background-color: #FFF;
+  overflow: scroll;
+
+  .header {
+    height: 128px;
+    background-color: #EEEEEE;
+
+    &__logo {
+      line-height: 128px;
+      text-align: center;
+    }
+  }
+
+  .main-content {
+    background-color: #EEEEEE;
+    
+    &__box {
+      margin: 0 auto;
+      background-color: #EEEEEE;
+      height: 100%;
+      width: 700px;
+
+      &__image-content {
+        height: 300px;
+        width: 700px;
+        background-color: #FFF;
+        position: relative;
+
+        &__field {
+          height: 220px;
+          width: 620px;
+          position: absolute;
+          left: 0;
+          right: 0;
+          top: 0;
+          bottom :0;
+          margin:  auto;
+
+          &__subtitle {
+            height: 19px;
+            width: 620px;
+            display: flex;
+
+            .index {
+              font-size: 14px;
+              font-weight: bold;            
+            }
+
+            .caution {
+              height: 16px;
+              width: 32px;
+              border-radius: 2px;
+              font-size: 12px;
+              font-weight: bold;
+              margin-left: 8px;
+              background-color: red;
+              color: white;
+              text-align: center;
+            }
+          }
+          
+          .memo {
+            margin: 16px 0 0;
+            font-size: 14px;
+            color: #555555;
+          }
+
+          .image-field {
+            height: 150px;
+            width: 620px;
+            background-color: #EEEEEE;
+            border: dashed 2px #CCCCCC;
+            text-align: center;
+            position: relative;
+            margin-top: 10px;
+            box-sizing: border-box;
+            padding-top: 50px;
+            cursor: pointer;
+
+            &__label {
+
+              i {
+                font-size: 22px;
+                cursor: pointer;               
+              }
+
+              .image-field__label__hidden {
+                display: none;
+                height: 20px;
+              }
+            } 
+            .image-upload-description-box {
+              font-size: 12px;
+              height: 16px;
+              color: #333333;
+              
+            }         
+          }
+
+
+        }
+
+      }
+
+      &__item-info-content {
+        height: 416px;
+        width: 700px;
+        background-color: #FFF;
+        margin-top: 2px;
+
+        &__subtitle {
+          height: 19px;
+          width: 620px;
+          display: flex;
+          margin: 0 auto;
+          padding-top: 40px;
+
+          .index {
+            font-size: 14px;
+            font-weight: bold;
+          }
+
+          .caution {
+            height: 16px;
+            width: 32px;
+            border-radius: 2px;
+            font-size: 12px;
+            font-weight: bold;
+            margin-left: 8px;
+            background-color: red;
+            color: white;
+            text-align: center;
+          }
+        }
+        .item-info-form {
+
+        }
+        .name-input-box {
+          width: 628px;
+          height: 48px;
+          margin: 20px 40px;
+          outline: none;
+          box-sizing: border-box;
+          padding: 7px 30px 7px 10px;
+        }
+
+        &__description {
+          height: 19px;
+          width: 620px;
+          display: flex;
+          margin: 0 55px;
+          padding-top: 10px;
+
+          .index {
+            font-size: 14px;
+            font-weight: bold;
+          }
+
+          .caution {
+            height: 16px;
+            width: 32px;
+            border-radius: 2px;
+            font-size: 12px;
+            font-weight: bold;
+            margin-left: 8px;
+            background-color: red;
+            color: white;
+            text-align: center;
+          }
+        }
+
+        .item-descriptaion-form {
+
+        }
+        .description-input-box {
+          width: 628px;
+          height: 156px;
+          margin: 20px 40px;
+          line-height: 1.5;
+          outline: none;
+          border-color: #CCCCCC;
+          box-sizing: border-box;
+          padding: 7px 30px 7px 10px;
+        }
+      }
+//-------------商品詳細-------------------
+      &__item-detail-content {
+        height: 560px;
+        width: 700px;
+        background-color: #FFF;
+        margin-top: 2px;
+
+        &__field {
+          width: 620px;
+          height: 420px;
+          margin: 0 40px;
+          padding-top: 40px;
+
+          &__subtitle {
+            color: gray;
+            font-weight: bold;
+            font-size: 14px;
+          }
+
+          .category-box {
+            height: 19px;
+            width: 620px;
+            display: flex;
+            padding-top: 10px;
+            margin-bottom: 20px;
+
+            .index {
+              font-size: 14px;
+              font-weight: bold;
+            }
+  
+            .caution {
+              height: 16px;
+              width: 32px;
+              border-radius: 2px;
+              font-size: 12px;
+              font-weight: bold;
+              margin-left: 8px;
+              background-color: red;
+              color: white;
+              text-align: center;
+            }
+          
+          }
+          .category-form-field {
+          }
+          .category-select-box {
+          }
+
+          select {
+            -webkit-appearance: none; 
+            -moz-appearance: none; 
+            appearance: none; 
+            background-color: #FFF; 
+            margin-bottom: 20px;
+            padding: 7px 30px 7px 10px;
+            font-size: 16px; 
+            border-radius: 4px; 
+            border-color: #CCCCCC;         
+            background-image: url(/assets/download.png);
+            background-repeat: no-repeat;
+            background-size: 20px 10px;
+            background-position: right 10px center;
+            width: 100%;
+            height: 48px; 
+            outline: none;
+          }
+
+          .brand-box {
+            display: flex;
+            margin-top: 20px;
+
+            .index {
+              font-size: 14px;
+              font-weight: bold;  
+            }
+  
+            .caution {
+              height: 16px;
+              width: 32px;
+              border-radius: 2px;
+              font-size: 12px;
+              font-weight: bold;
+              margin-left: 8px;
+              background-color: #CCCCCC;
+              color: white;
+              text-align: center;
+            }
+          }
+
+          .brand-form-field {   
+          }
+          .brand-input-box {
+            width: 100%;
+            height: 48px;
+            margin-top: 20px;
+            box-sizing: border-box;
+            padding: 7px 30px 7px 10px;
+          }
+
+          .size-box {
+            display: flex;
+            margin-top: 20px;
+
+            .index {
+              font-size: 14px;
+              font-weight: bold;  
+            }
+  
+            .caution {
+              height: 16px;
+              width: 32px;
+              border-radius: 2px;
+              font-size: 12px;
+              font-weight: bold;
+              margin-left: 8px;
+              background-color: #CCCCCC;
+              color: white;
+              text-align: center;
+            }
+          }
+
+          .size-form-field {
+
+          }
+          .size-input-box {
+            width: 100%;
+            height: 48px;
+            margin-top: 20px;
+            box-sizing: border-box;
+            padding: 7px 30px 7px 10px;
+          }
+
+          .condition-box {
+            display: flex;
+            margin-top: 20px;
+
+            .index {
+              font-size: 14px;
+              font-weight: bold;  
+            }
+  
+            .caution {
+              height: 16px;
+              width: 32px;
+              border-radius: 2px;
+              font-size: 12px;
+              font-weight: bold;
+              margin-left: 8px;
+              background-color: red;
+              color: white;
+              text-align: center;
+            }
+          }
+
+          .condetion-form-field {
+            margin-top: 20px;
+          }
+        
+        }
+
+      }
+//-------------発送について-------------------
+      &__delivery-info-content {
+        height: 444px;
+        width: 700px;
+        background-color: #FFF;
+        margin-top: 2px;
+
+        &__field {
+          width: 620px;
+          height: 420px;
+          margin: 0 40px;
+          padding-top: 40px;
+
+          &__subtitle-box {
+            display: flex;
+          }
+
+          &__subtitle {
+            color: gray;
+            font-weight: bold;
+            font-size: 14px;
+            
+          }
+
+          .faq-icon {
+            text-decoration: none;
+            color: #A4C6FF;
+            margin:0 0 0 4px;
+            font-size: 14px;
+          }
+
+          
+          .shipping-fee-payer-box {
+            display: flex;
+
+            .index {
+              font-size: 14px;
+              font-weight: bold;
+            }
+  
+            .caution {
+              height: 16px;
+              width: 32px;
+              border-radius: 2px;
+              font-size: 12px;
+              font-weight: bold;
+              margin-left: 8px;
+              background-color: red;
+              color: white;
+              text-align: center;
+            }
+          }
+
+          select {
+            -webkit-appearance: none; 
+            -moz-appearance: none; 
+            appearance: none; 
+            background-color: #FFF; 
+            margin-bottom: 20px;
+            padding: 7px 30px 7px 10px;
+            font-size: 16px; 
+            border-radius: 4px; 
+            border-color: #CCCCCC;         
+            background-image: url(/assets/download.png);
+            background-repeat: no-repeat;
+            background-size: 20px 10px;
+            background-position: right 10px center;
+            background-color: white;
+            width: 100%;
+            height: 48px; 
+            outline: none;
+          }
+
+          .shipping-location-box {
+            display: flex;
+            margin-bottom: 20px;
+
+            .index {
+              font-size: 14px;
+              font-weight: bold;
+            }
+  
+            .caution {
+              height: 16px;
+              width: 32px;
+              border-radius: 2px;
+              font-size: 12px;
+              font-weight: bold;
+              margin-left: 8px;
+              background-color: red;
+              color: white;
+              text-align: center;
+            }
+          }  
+        }
+
+          .shipping-fee-payer-box {
+            height: 19px;
+            width: 620px;
+            display: flex;
+            padding-top: 10px;
+            margin-bottom: 20px;
+          }
+      }
+//-------------販売価格について-------------------
+      &__cost-info-content {
+        height: 558px;
+        width: 700px;
+        background-color: #FFF;
+        margin-top: 2px;
+
+        &__subtitle-box {
+          display: flex;
+          padding: 40px 40px;
+
+          &__subtitle {
+            color: gray;
+            font-weight: bold;
+            font-size: 14px;
+          }
+
+          .faq-icon {
+            font-size: 14px;
+            text-decoration: none;
+            color: #A4C6FF;
+            margin:0 0 0 4px;
+          }
+        }
+
+        .price-info-box {
+          display: flex;
+          justify-content: space-between;
+          margin: 0 40px;
+          height: 58px;
+
+          &__left {
+            display: flex;
+            
+
+            .index {
+              font-size: 14px;
+              font-weight: bold;
+              text-align: center;
+              line-height: 58px;
+            }
+
+            .caution {
+              height: 16px;
+              width: 32px;
+              border-radius: 2px;
+              font-size: 12px;
+              font-weight: bold;
+              margin-left: 8px;
+              background-color: red;
+              color: white;
+              text-align: center;
+              margin-top: 20px;
+            }
+
+          }
+
+          &__right {
+            display: flex;
+            
+            .currency {
+              font-size: 14px;
+              color: #333333;
+              text-align: center;
+              line-height: 58px;
+              margin-right: 8px;
+            }
+  
+            .price-input-box {
+              border: 1px solid #ccc;
+              border-radius: 4px;
+              box-sizing: border-box;
+              font-family: inherit;
+              font-size: inherit;
+              height: 48px;
+              margin: 0;
+              outline: none;
+              padding: 0 16px;
+              width: 285px;          
+            }
+
+          }
+
+        }
+
+        .sales-commission-info {
+          display: flex;
+          justify-content: space-between;
+          font-size: 14px;
+          margin: 40px;
+          color: #333333;
+          height: 50px;
+          border-bottom: solid 1px #CCCCCC;
+          
+
+          .sales-commission-tax {
+            
+          }
+
+          .sales-commission-calc {
+
+          }
+
+        }
+        
+        .sales-profit-info {
+          display: flex;
+          justify-content: space-between;
+          font-size: 14px;
+          margin: 20px 40px;
+          color: #333333;
+
+          .sales-profit-subtitle {
+            
+          }
+
+          .sales-profit-calc {
+
+          }
+        }
+
+        .sell-btn {
+          background-color: red;
+          color: white;
+          font-weight: bold;
+          width: 360px;
+          height: 48px;
+          border-radius: 4px;
+          outline: none;
+          border-style: none;
+          margin: 20px 170px;
+        }
+
+        .return-btn {
+          background-color: #DDDDDD;
+          font-weight: bold;
+          width: 360px;
+          height: 48px;
+          border-radius: 4px;
+          outline: none;
+          border-style: none;
+          margin: 5px 170px;
+
+        }
+
+        .terms-info-box {
+          font-size: 12px;
+          color: #333333;
+          margin: 20px 40px;
+        }
+      }      
+    }
+  }
+
+  .lower-content {
+    height: 220px;
+    bottom: 0;
+    background-color: #EEEEEE;
+    padding: 40px 0 41px;
+    
+    .legal-info-box {
+      width: 100%;      
+      font-size: 12px;
+
+      .hoge {
+        text-align: center;
+        display: flex;
+        margin: 0 auto;
+        width: 500px;
+
+        a {
+          text-decoration: none;
+          color: #333333;
+
+          .privacy-policy-box {
+            margin-right: 50px;
+    
+          }
+    
+          .terms-box {
+            margin-right: 50px;
+    
+          }
+    
+          .specified-commercial-transaction-act-box {
+    
+          }
+        
+        }
+
+
+        
+
+      }
+
+      
+
+    } 
+    .footer__logo {
+
+      .logo-img {
+        text-align: center;
+        padding-top: 50px;
+
+      }
+
+      .logo-text {
+        font-size: 12px;
+        text-align: center;
+      }
+    }
+  }
+}
+
