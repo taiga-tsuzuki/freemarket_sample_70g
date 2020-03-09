@@ -41,7 +41,7 @@
   .main
     .main__left
       .main__left__nav
-        %ul.nav__lists
+        .nav__lists
           %li.nav__lists__list
             =link_to "#",class: "moji" do
               マイページ
@@ -158,45 +158,45 @@
         = link_to "#" do
           = image_tag src= "/material/badge/google-play-badge.png", class: "gbtn"
   .footer
-    .contents
-      .content
-        .content__head
+    %ul.footer__contents
+      %li.content
+        %h1.title
           FURIMAについて
-        %ul
-          %li.content__main
-            =link_to "#",class: "content__rink" do
+        %ul.lists
+          %li.list
+            = link_to "#", class: "list" do
               会社概要（運営会社）
-          %li.content__main
-            =link_to "#",class: "content__rink" do
+          %li.list
+            = link_to "#", class: "list" do
               プライバシーポリシー
-          %li.content__main
-            =link_to "#",class: "content__rink" do
+          %li.list
+            = link_to "#", class: "list" do
               FURIMA利用規約
-          %li.content__main
-            =link_to "#",class: "content__rink" do
-              ポイントに関する制約
-      .content
-        .content__head
+          %li.list
+            = link_to "#", class: "list" do
+              ポイントに関する特約
+      %li.content
+        %h1.title
           FURIMAを見る
-        %ul
-          %li.content__main
-            =link_to "#",class: "content__rink" do
+        %ul.lists
+          %li.list
+            = link_to "#", class: "list" do
               カテゴリー一覧
-          %li.content__main
-            =link_to "#",class: "content__rink" do
+          %li.list
+            = link_to "#", class: "list" do
               ブランド一覧
-      .content
-        .content__head
-          ヘルプ＆ガイドライン
-        %ul
-          %li.content__main
-            =link_to "#",class: "content__rink" do
+      %li.content
+        %h1.title
+          ヘルプ＆ガイド
+        %ul.lists
+          %li.list
+            = link_to "#", class: "list" do
               FURIMAガイド
-          %li.content__main
-            =link_to "#",class: "content__rink" do
+          %li.list
+            = link_to "#", class: "list" do
               FURIMAロゴ利用ガイドライン
-          %li.content__main
-            =link_to "#",class: "content__rink" do
+          %li.list
+            = link_to "#", class: "list" do
               お知らせ
     .footer__logo
       =link_to "#" do
