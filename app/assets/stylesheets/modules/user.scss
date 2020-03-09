@@ -1,11 +1,11 @@
-// Place all the styles related to the user controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
 .body {
   background-color: #f5f5f5;
   .header {
     height: 100px;
     width: auto;
+    background-color: #ffffff;
+    border-bottom: 1px solid;
+    color: #f5f5f5;
     &__box {
       height: 100%;
       width: 65%;
@@ -297,33 +297,26 @@
     }
   }
   .footer {
-    width: auto;
-    height: 234px;
-    background-color: #272727;
+    height: 230px;
     padding: 60px 0;
-    .contents {
+    background-color: #333;
+    &__contents {
+      padding: 0 350px;
       display: flex;
-      width: 840px;
-      height: 172px;
-      margin: 0 auto;
-      color: #fff;
-      text-align: center;
-      font-family: "Source Sans Pro", Helvetica, Arial, "游ゴシック体", "YuGothic", "メイリオ", "Meiryo", sans-serif;
+      justify-content: space-around;
       .content {
-        margin: 0 2% 0 0;
-        width: 263px;
-        height: 172px;
-        &__head {
-          width: 263px;
-          height: 24px;
-          margin: 0 0 20px;
+        .title {
+          margin-bottom: 23px;
+          font-weight: bold;
+          color: white;
         }
-        &__main {
-          height: 32px;
-          .content__rink {
-            text-decoration: none;
-            color: #fff;
-            font-size: 12px;
+        .lists {
+          text-align: center;
+          display: block;
+          .list {
+            font-size: 10px;
+            margin-top: 15px;
+            color: white;
           }
         }
       }
