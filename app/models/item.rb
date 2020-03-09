@@ -4,4 +4,6 @@ class Item < ApplicationRecord
   belongs_to :user
   belongs_to :category
   belongs_to :brand
+
+  validates :item_name, {presence: true, {length: {maximum: 40}}}
 end
