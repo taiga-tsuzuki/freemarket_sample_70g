@@ -11,5 +11,5 @@ Rails.application.routes.draw do
       resources :location, only: :index
     end
     resources :brand, only: :index
-    resources :category, only: :index
+    resources :category, only: :index 
 end
