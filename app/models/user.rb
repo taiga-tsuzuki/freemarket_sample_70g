@@ -10,5 +10,4 @@ class User < ApplicationRecord
   has_one :profile
   has_one :credit_card
   has_one :location
-  has_one :user_address
 end
