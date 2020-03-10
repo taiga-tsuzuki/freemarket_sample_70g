@@ -1,7 +1,7 @@
 .body
   .items-new-header
     .items-new-header__logo
-      = image_tag src="/logo.png", size: "185x49"
+      = image_tag "/logo.png", size: "185x49"
 
   .main-confirm-contents
     = form_with url:"#" do |f|
@@ -9,7 +9,7 @@
         .main-confirm-content__header
           %h2 購入内容の確認
         .main-confirm-content__buy-item
-          =image_tag src= "https://cdn.pixabay.com/photo/2014/09/16/01/19/girl-447701_1280.jpg", class: "main-confirm-content__buy-item__photo"
+          =image_tag "https://cdn.pixabay.com/photo/2014/09/16/01/19/girl-447701_1280.jpg", class: "main-confirm-content__buy-item__photo"
           .main-confirm-content__buy-item__group
             .main-confirm-content__buy-item__group__item-name
               %h3 ラストサンタ ラストサンタ ラストサンタ ラストサンタ
@@ -46,5 +46,5 @@
           .specified-commercial-transaction-act-box 特定商取引に関する表記
     .footer__logo
       .logo-img
-        = image_tag src="/logo-white.png", size: "160x46"
+        = image_tag "/logo-white.png", size: "160x46"
       .logo-text ©FURIMA
