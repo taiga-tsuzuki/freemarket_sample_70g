@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   devise_for :users
-    root "items#show"
+    root "items#index"
     resources :items do
       collection do
         post :confirm
