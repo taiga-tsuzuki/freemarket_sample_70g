@@ -4,7 +4,7 @@
       = image_tag src="/logo.png", size: "185x49"
 
   .main-content
-    = form_with url: "@item" do |f|
+    = form_with model: @item do |f|
       .main-content__box
         .main-content__box__image-content
           .main-content__box__image-content__field
@@ -57,16 +57,13 @@
 
 
 
-
-
             .category-box
               .index カテゴリー
               .caution 必須
             .category-form-field
               = f.fields_for :category do |c|
-                = c.select :category_id, "選択してください", class:"category-select-box"
+                = c.select :category_id, placeholder:"選択してください", class:"category-select-box"
                 %br/
-
 
               -# = f.select :category_id, placeholder:"選択してください", class:"category-select-box"
               

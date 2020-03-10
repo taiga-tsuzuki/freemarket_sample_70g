@@ -14,7 +14,7 @@ class Item < ApplicationRecord
   accepts_nested_attributes_for :brand, allow_destroy: true
 
 
-
+  validates :item_name, presence: true
 # # 商品名、商品詳細、商品状態、配送料、配送元、配送日時、商品化価格のバリデーション
 #   validates :item_name, :description, :condition, :shipping_fee_payer, :shipping_location, :shipping_days, :price, presence: true
 
