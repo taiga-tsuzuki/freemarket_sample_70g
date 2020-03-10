@@ -5,4 +5,12 @@ class ItemsController < ApplicationController
   
   def new
   end
+
+  def confirm
+  end
+  
+  def show
+  end
+
+
 end
