@@ -3,7 +3,7 @@ Rails.application.routes.draw do
     root "items#index"
     resources :items do
       resources :comments, only: :create
-      resources :images, olny: [:index,:create]
+      resources :images, only: [:index,:create]
     end
     resources :users, only: [:show] do
       resources :profile, only: :index
