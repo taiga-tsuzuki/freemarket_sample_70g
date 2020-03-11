@@ -83,7 +83,9 @@
 
               i {
                 font-size: 22px;
-                cursor: pointer;              
+                cursor: pointer;
+                height: 150px;
+                width: 620px;
               }
 
               .image-field__label__hidden {
@@ -94,8 +96,11 @@
             .image-upload-description-box {
               font-size: 12px;
               height: 16px;
-              color: #333333;              
-            }         
+              color: #333333;
+              position: absolute;
+              top: 50%;
+              left: 30%;
+            }
           }
         }
       }
