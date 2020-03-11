@@ -13,15 +13,15 @@
               .caution 必須
             %p.memo 
               最大
-              / 
+              /
               10
-              / 
+              /
               枚までアップロードできます
 
 
 
 
-            .image-field 
+            .image-field
               = f.fields_for :images do |i|
                 = i.label :image, class: 'image-field__label' do
                   = icon('fas', 'camera', class: 'camera-icon')
@@ -42,13 +42,13 @@
           .main-content__box__item-info-content__subtitle
             .index 商品名
             .caution 必須
-          .item-info-form        
-            = f.text_field :item_name, placeholder: "40文字まで", class: "name-input-box", size: 40 
+          .item-info-form
+            = f.text_field :item_name, placeholder: "40文字まで", class: "name-input-box", size: 40
 
           .main-content__box__item-info-content__description
             .index 商品の説明
             .caution 必須
-          .item-descriptaion-form          
+          .item-descriptaion-form
             = f.text_area :description, placeholder: "商品の説明(必須 1,000文字以内)(色、素材、重さ、低下、注意点など)例)2010年頃に1万円で購入したジャケットです。ライトグレーで傷はありません。合わせやすいのでおすすめです。", class: "description-input-box",rows:"25", cols:"40"
             
         .main-content__box__item-detail-content
@@ -62,7 +62,7 @@
               .caution 必須
             .category-form-field
               = f.fields_for :@category do |c|
-                = c.select :category_id, placeholder:"選択してください", class:"category-select-box"
+                = c.select :ancestry, ["選択してください","レディース","メンズ","ベイビー・キッズ","インテリア"]
                 %br/
 
 
@@ -79,7 +79,7 @@
               .caution 任意
             .brand-form-field
               = f.fields_for :@brand do |b|
-                = b.text_field :brand, placeholder:"例）シャネル", class:"brand-input-box"
+                = b.text_field :name, placeholder:"例）シャネル", class:"brand-input-box"
                 %br/
 
               -# = f.text_field :brand, placeholder:"例）シャネル", class:"brand-input-box"
@@ -117,8 +117,8 @@
             .shipping-fee-payer-box
               .index 配送料の負担
               .caution 必須
-            .shipping-fee-payer-form-field            
-              = f.select :shipping_fee_payer,  
+            .shipping-fee-payer-form-field
+              = f.select :shipping_fee_payer,
               {選択してください:"選択してください",
               送料込み（出品者負担）:"送料込み（出品者負担）",
               着払い（購入者負担）:"着払い（購入者負担）",}
@@ -126,8 +126,8 @@
             .shipping-location-box
               .index 配送元の地域
               .caution 必須
-            .shipping-location-form-field            
-              = f.select :shipping_location,  
+            .shipping-location-form-field
+              = f.select :shipping_location,
               {選択してください:"選択してください",
               北海道:"北海道",
               青森県:"青森県",
@@ -181,8 +181,8 @@
             .shipping-fee-payer-box
               .index 発送までの日数
               .caution 必須
-            .shipping-days-form-field            
-              = f.select :shipping_days,  
+            .shipping-days-form-field
+              = f.select :shipping_days,
               {選択してください:"選択してください",
               １〜２日で発送:"１〜２日で発送",
               ２〜３日で発送:"２〜３日で発送",
@@ -201,14 +201,14 @@
               .hoge
                 .caution 必須
             .price-info-box__right
-              %span.currency ¥              
+              %span.currency ¥
               = f.number_field :price, placeholder:"0", class:"price-input-box", min: 300, max:9999999
           
           .sales-commission-info
             .sales-commission-tax 販売手数料（10%）
             .sales-commission-calc ー
             
-          .sales-profit-info 
+          .sales-profit-info
             .sales-profit-subtitle 販売利益
             .sales-profit-calc ー
 
@@ -219,9 +219,9 @@
           .terms-info-box
             %p.tems-info-description 
               禁止されている行為および出品物を必ずご確認ください。
-              / 
+              /
               偽ブランドや盗品物などの販売は犯罪であり、法律により処罰される可能性があります。
-              / 
+              /
               また、出品をもちまして加盟店規約に同意したことになります。
 
   .lower-content
