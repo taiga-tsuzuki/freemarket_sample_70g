@@ -19,7 +19,7 @@
     .container__main__registration
       登録情報入力
     .container__main__form-frame
-      = form_with url: "#" do |f|
+      = form_with(model: @users,local:true) do |f|
         = render "devise/shared/error_messages", resource: @user
         .form-group
           = f.label :ニックネーム 
