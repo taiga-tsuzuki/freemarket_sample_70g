@@ -61,14 +61,14 @@
               .index カテゴリー
               .caution 必須
             .category-form-field
-              = f.fields_for :@category do |c|
-                = c.select :ancestry, ["選択してください","レディース","メンズ","ベイビー・キッズ","インテリア"]
-                %br/
+              -# = f.fields_for :category, @category do |c|
+              -#   = c.select :ancestry, ["選択してください","レディース","メンズ","ベイビー・キッズ","インテリア"]
+              -#   %br/
 
 
 
 
-              -# = f.select :category_id, placeholder:"選択してください", class:"category-select-box"
+              = f.select :category_id, placeholder:"選択してください", id:"1"
               
 
 
@@ -78,7 +78,7 @@
               .index ブランド
               .caution 任意
             .brand-form-field
-              = f.fields_for :@brand do |b|
+              = f.fields_for :brand, @brand do |b|
                 = b.text_field :name, placeholder:"例）シャネル", class:"brand-input-box"
                 %br/
 
