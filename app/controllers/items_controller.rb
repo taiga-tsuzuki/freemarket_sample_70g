@@ -4,8 +4,11 @@ class ItemsController < ApplicationController
     @images = Image.includes(:item).limit(3).order('created_at DESC')
   end
 
+  def confirm
+  end
+  
   def show
   end
 
-  
+
 end
