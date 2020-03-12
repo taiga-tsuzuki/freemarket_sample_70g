@@ -7,9 +7,11 @@ class ItemsController < ApplicationController
   def new
     @item = Item.new
     @item.images.new
+    @parents = Category.all
+    # @item.build_brand
+    # @brand = Brand.new
     # @item.category.new
     # @item.brand.new
-    @brand = Brand.new
   end
 
   def create
@@ -17,7 +19,7 @@ class ItemsController < ApplicationController
     # @brand = Brand.create
     # binding.pry
 
-    if @item.save
+    if @item.save!
       redirect_to root_path
     else
       render :new
@@ -32,7 +34,9 @@ class ItemsController < ApplicationController
 
   private
   def item_params
-    params.require(:item).permit(:item_name, :description, :category_id, :brand_id, :size, :condition, :shipping_fee_payer, :shipping_location, :shipping_days, :price, images_attributes: [:image], categories_attributes: [:ancestry], brands_attributes: [:name]).merge(user_id: 1)
+    params.require(:item).permit(:item_name, :description, :category_id, :brand_name, :size, :condition,
+                                  :shipping_fee_payer, :shipping_location, :shipping_days, :price,
+                                  images_attributes: [:image], categories_attributes: [:name]).merge(user_id: 1)
   end
 
 end

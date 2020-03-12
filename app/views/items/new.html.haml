@@ -65,11 +65,16 @@
               -#   = c.select :ancestry, ["選択してください","レディース","メンズ","ベイビー・キッズ","インテリア"]
               -#   %br/
 
+              -# = f.select :category_id, 選択してください:"0", レディース:"1", メンズ:"2"
 
-
-
-              = f.select :category_id, placeholder:"選択してください", id:"1"
+              = f.collection_select :category_ids, @parents.order("ancestry ASC").limit(13), :id, :name,{prompt: "---"}, class: "select-default", id: "parent-form", name: 'item[category_ids][]'
+              = f.collection_select :category_ids, @parents.order("ancestry ASC"), :id, :name,{prompt: "---"}, class: "select-default", id: "children-form", name: 'item[category_ids][]'
+              = f.collection_select :category_ids, @parents.order("ancestry ASC"), :id, :name,{prompt: "---"}, class: "select-default", id: "grand-children-form", name: 'item[category_ids][]'
+    
               
+              -# = f.select :category, @category_parent_array, {}, {class: 'listing-select-wrapper__box--select', id: 'parent_category'}
+              -#   %i.fas.fa-chevron-down.listing-select-wrapper__box--arrow-down
+
 
 
 
@@ -78,12 +83,11 @@
               .index ブランド
               .caution 任意
             .brand-form-field
-              = f.fields_for :brand, @brand do |b|
-                = b.text_field :name, placeholder:"例）シャネル", class:"brand-input-box"
-                %br/
+              -# = f.fields_for :@brand do |b|
+              -#   = b.text_field :brand_name, placeholder:"例）シャネル", class:"brand-input-box"
+              -#   %br/
 
-              -# = f.text_field :brand, placeholder:"例）シャネル", class:"brand-input-box"
-            
+              = f.text_field :brand_name, placeholder:"例）シャネル", class:"brand-input-box"
 
 
 
