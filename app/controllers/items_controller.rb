@@ -8,7 +8,7 @@ class ItemsController < ApplicationController
     @item = Item.new
     @item.images.new
     # @parents = Category.all.order("id ASC").limit(13)
-    @category = Category.all.order("id ASC").limit(13)
+    @category = Category.all.order("ancestry ASC").limit(13)
   end
 
   def create

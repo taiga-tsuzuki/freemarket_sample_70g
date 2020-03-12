@@ -48,16 +48,20 @@
           .main-content__box__item-detail-content__field 
             .main-content__box__item-detail-content__field__subtitle 商品詳細
 
-            .product_select-details
-              .product_select-group
-                .product_header
-                  カテゴリー
-                .product_require
-                  必須
-              .product_category-select
-                = f.collection_select :category, @category, :id, :name, { prompt: "---" }, { class: "category_select-box", id: "category_select" }
-                %i.fa.fa-chevron-down
-              .product_select-children
+            -# .product_select-details
+            -#   .product_select-group
+            -#     .product_header
+            -#       カテゴリー
+            -#     .product_require
+            -#       必須
+
+            .category-box
+              .index カテゴリー
+              .caution 必須
+            .product_category-select
+              = f.collection_select :category, @category, :id, :name, { prompt: "---" }, { class: "category_select-box", id: "category_select" }
+              %i.fa.fa-chevron-down
+            .product_select-children
 
             -# .category-box
             -#   .index カテゴリー
