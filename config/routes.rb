@@ -1,9 +1,10 @@
 Rails.application.routes.draw do
   devise_for :users
-    root "items#show"
+    root "items#index"
     resources :items do
       collection do
-        post :confirm
+        get "confirm"
+        get "done"
       end
       resources :comments, only: :create
       resources :images, only: [:index,:create]

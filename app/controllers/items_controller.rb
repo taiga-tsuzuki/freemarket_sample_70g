@@ -1,6 +1,7 @@
 class ItemsController < ApplicationController
+
   def index
-    @item = Item.select('item_name, price').limit(3).order('id DESC')
+    @items = Item.includes(:user).order(:item_purchaser_id,:id=>:desc).limit(3)
   end
   
   def new
@@ -12,5 +13,7 @@ class ItemsController < ApplicationController
   def show
   end
 
+  def done
+  end
 
 end

@@ -1,34 +1,35 @@
 .product
   .header
-  .header__box
-    .header__box__main
-      = link_to "#" do
-        = image_tag src= "/material/logo/logo.png", size: "140x40"
-      = form_with url: "#", class: "search__box" do |f|
-        = f.text_field :content, class: 'search__box__form', placeholder: ' キーワードから探す'
-      = link_to "#" do
-        = image_tag src="/material/icon/icon-search 1.png", size: "24x24", class: "search__box__btn"
-    .header__box__sub
-      %ul.lists__left
-        %li
-          = link_to "#",class: "category" do
-            カテゴリー
-        %li
-          = link_to "#",class: "brand" do
-            ブランド
-      %ul.lists__right
-        %li
-          = link_to "#",class: "login" do
-            ログイン
-        %li
-          = link_to "#",class: "signin" do
-            新規会員登録
+    .header__box
+      .header__box__main
+        = link_to "#" do
+          = image_tag src= "/material/logo/logo.png", size: "140x40"
+        = form_with url: "#", class: "search__box" do |f|
+          = f.text_field :content, class: 'search__box__form', placeholder: ' キーワードから探す'
+        = link_to "#" do
+          = image_tag src="/material/icon/icon-search 1.png", size: "24x24", class: "search__box__btn"
+      .header__box__sub
+        %ul.lists__left
+          %li
+            = link_to "#",class: "category" do
+              カテゴリー
+          %li
+            = link_to "#",class: "brand" do
+              ブランド
+        %ul.lists__right
+          %li
+            = link_to "#",class: "login" do
+              ログイン
+          %li
+            = link_to "#",class: "signin" do
+              新規会員登録
   .product-contents
     .product-contents__inner
       .product-contents__inner__mainbox
         .product-contents__inner__mainbox__name
           胸筋
         .product-contents__inner__mainbox__main-image
+          
         .product-contents__inner__mainbox__other-images
           .product-contents__inner__mainbox__other-images__three-images
             .product-contents__inner__mainbox__other-images__three-images__first
@@ -38,6 +39,8 @@
           ¥10,000,000
         .product-contents__inner__mainbox__additional-price
           (税込) 送料込み
+        = link_to confirm_items_path,class: "item-buy-btn" do
+          購入画面に進む
         .product-contents__inner__mainbox__description
           お腹空いたし、マクドナルドでも行こうかと考えながら歩いていると結局健康のこととか
           考えてしまって、食べたい物も食べれない毎日が意外と嫌いじゃなかったりする。このような
