@@ -1,0 +1,39 @@
+$(function() {
+
+
+  <select class="select-default" id="parent-form" name="item[category_ids][]"><option value="">---</option>
+<option value="1">レディース</option>
+<option value="2">トップス</option>
+<option value="3">Tシャツ/カットソー(半袖/袖なし)</option>
+<option value="4">Tシャツ/カットソー(七分/長袖)</option>
+<option value="5">シャツ/ブラウス(半袖/袖なし)</option>
+<option value="6">シャツ/ブラウス(七分/長袖)</option>
+<option value="7">ポロシャツ</option>
+<option value="8">キャミソール</option>
+<option value="9">タンクトップ</option>
+<option value="10">ホルターネック</option>
+<option value="11">ニット/セーター</option>
+<option value="12">チュニック</option>
+<option value="13">カーディガン/ボレロ</option></select>
+
+  $("#parent-form").on("change",function(){
+    // 親ボックスのidを取得してそのidをAjax通信でコントローラーへ送る
+    var parentValue = $(this).value;
+    //  ("parent-form")は親ボックスのid属性
+    $.ajax({
+      url: '/items/search',
+      type: "GET",
+      data: {
+        parent_id: parentValue // 親ボックスの値をparent_idという変数にする。
+      },
+      dataType: 'json'
+      //json形式を指定
+    })
+    .done(function(data){
+      var html = buildHTML(data);
+    })
+    .fail(function() {
+      alert("メッセージを入力してください");
+    })
+  })
+});

@@ -18,9 +18,6 @@
               /
               枚までアップロードできます
 
-
-
-
             .image-field
               = f.fields_for :images do |i|
                 = i.label :image, class: 'image-field__label' do
@@ -33,10 +30,6 @@
               .image-upload-description-box
                 %p.first-line ドラッグアンドドロップ
                 %p.second-line またはクリックしてファイルをアップロード
-
-
-
-
             
         .main-content__box__item-info-content
           .main-content__box__item-info-content__subtitle
@@ -55,21 +48,31 @@
           .main-content__box__item-detail-content__field 
             .main-content__box__item-detail-content__field__subtitle 商品詳細
 
+            .product_select-details
+              .product_select-group
+                .product_header
+                  カテゴリー
+                .product_require
+                  必須
+              .product_category-select
+                = f.collection_select :category, @category, :id, :name, { prompt: "---" }, { class: "category_select-box", id: "category_select" }
+                %i.fa.fa-chevron-down
+              .product_select-children
 
-
-            .category-box
-              .index カテゴリー
-              .caution 必須
-            .category-form-field
+            -# .category-box
+            -#   .index カテゴリー
+            -#   .caution 必須
+            -# .category-form-field
+            -#   = f.collection_select :category_ids, @parents, :id, :name,{prompt: "---"}, class: "select-default", id: "parent-form", name: 'item[category_ids][]'
               -# = f.fields_for :category, @category do |c|
               -#   = c.select :ancestry, ["選択してください","レディース","メンズ","ベイビー・キッズ","インテリア"]
               -#   %br/
 
               -# = f.select :category_id, 選択してください:"0", レディース:"1", メンズ:"2"
 
-              = f.collection_select :category_ids, @parents.order("ancestry ASC").limit(13), :id, :name,{prompt: "---"}, class: "select-default", id: "parent-form", name: 'item[category_ids][]'
-              = f.collection_select :category_ids, @parents.order("ancestry ASC"), :id, :name,{prompt: "---"}, class: "select-default", id: "children-form", name: 'item[category_ids][]'
-              = f.collection_select :category_ids, @parents.order("ancestry ASC"), :id, :name,{prompt: "---"}, class: "select-default", id: "grand-children-form", name: 'item[category_ids][]'
+              -# = f.collection_select :category_ids, @parents.order("ancestry ASC").limit(13), :id, :name,{prompt: "---"}, class: "select-default", id: "parent-form", name: 'item[category_ids][]'
+              -# = f.collection_select :category_ids, @parents.order("ancestry ASC"), :id, :name,{prompt: "---"}, class: "select-default", id: "children-form", name: 'item[category_ids][]'
+              -# = f.collection_select :category_ids, @parents.order("ancestry ASC"), :id, :name,{prompt: "---"}, class: "select-default", id: "grand-children-form", name: 'item[category_ids][]'
     
               
               -# = f.select :category, @category_parent_array, {}, {class: 'listing-select-wrapper__box--select', id: 'parent_category'}
@@ -83,14 +86,10 @@
               .index ブランド
               .caution 任意
             .brand-form-field
+              = f.text_field :brand_name, placeholder:"例）シャネル", class:"brand-input-box"
               -# = f.fields_for :@brand do |b|
               -#   = b.text_field :brand_name, placeholder:"例）シャネル", class:"brand-input-box"
               -#   %br/
-
-              = f.text_field :brand_name, placeholder:"例）シャネル", class:"brand-input-box"
-
-
-
 
             .size-box
               .index サイズ

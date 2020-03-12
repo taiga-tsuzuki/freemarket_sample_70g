@@ -7,11 +7,8 @@ class ItemsController < ApplicationController
   def new
     @item = Item.new
     @item.images.new
-    @parents = Category.all
-    # @item.build_brand
-    # @brand = Brand.new
-    # @item.category.new
-    # @item.brand.new
+    # @parents = Category.all.order("id ASC").limit(13)
+    @category = Category.all.order("id ASC").limit(13)
   end
 
   def create
@@ -19,7 +16,7 @@ class ItemsController < ApplicationController
     # @brand = Brand.create
     # binding.pry
 
-    if @item.save!
+    if @item.save
       redirect_to root_path
     else
       render :new
@@ -30,6 +27,25 @@ class ItemsController < ApplicationController
   end
   
   def show
+  end
+
+  def category_children  
+    @category_children = Category.find(params[:productcategory]).children 
+    end
+  # Ajax通信で送られてきたデータをparamsで受け取り､childrenで子を取得
+
+  def category_grandchildren
+    @category_grandchildren = Category.find(params[:productcategory]).children
+  end
+
+  def search
+    respond_to do |format|
+      format.html
+      format.json do
+        @children = Category.find(params[:parent_id]).children
+        #親ボックスのidから子ボックスのidの配列を作成してインスタンス変数で定義
+      end
+    end
   end
 
   private
