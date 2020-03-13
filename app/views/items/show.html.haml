@@ -3,11 +3,11 @@
     .header__box
       .header__box__main
         = link_to "#" do
-          = image_tag src= "/material/logo/logo.png", size: "140x40"
+          = image_tag "/material/logo/logo.png", size: "140x40"
         = form_with url: "#", class: "search__box" do |f|
           = f.text_field :content, class: 'search__box__form', placeholder: ' キーワードから探す'
         = link_to "#" do
-          = image_tag src="/material/icon/icon-search 1.png", size: "24x24", class: "search__box__btn"
+          = image_tag "/material/icon/icon-search 1.png", size: "24x24", class: "search__box__btn"
       .header__box__sub
         %ul.lists__left
           %li
