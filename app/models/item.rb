@@ -3,13 +3,15 @@ class Item < ApplicationRecord
   has_many :images
   belongs_to :user
   belongs_to :category, dependent: :destroy, optional: true
-  # belongs_to :brand, optional: true
+  belongs_to :brand, optional: true
+  accepts_nested_attributes_for :images, allow_destroy: true
 
-
+  extend ActiveHash::Associations::ActiveRecordExtensions
+  belongs_to_active_hash :prefecture
 
 # fields_forを使うためのメソッドaccepts_nested_attributes_for
 # allow_destroy: trueで、親(item)が削除されると紐づいているimage,category,brandが消える
-  accepts_nested_attributes_for :images, allow_destroy: true
+
   # accepts_nested_attributes_for :brand, allow_destroy: true
 
 
