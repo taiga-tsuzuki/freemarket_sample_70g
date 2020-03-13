@@ -1,14 +1,12 @@
 # frozen_string_literal: true
 class Users::RegistrationsController < Devise::RegistrationsController
   before_action :configure_sign_up_params, only: [:create]
-  # before_action :configure_account_update_params, only: [:update]
 
   # GET /resource/sign_up
   def new
     @user = User.new
   end
   
-
   # POST /resource@
   def create
     @user = User.new(sign_up_params)
@@ -68,8 +66,6 @@ class Users::RegistrationsController < Devise::RegistrationsController
   def location_params
     params.require(:location).permit(:family_name,:first_name,:family_name_kana,:first_name_kana,:postal_code, :prefecture,:city,:building_name,:phone_name)
   end
-
-
 
   # If you have extra params to permit, append them to the sanitizer.
   # def configure_account_update_params
