@@ -1,7 +1,7 @@
 .container
   .container__header
     %h1.container__header__logo
-    =link_to image_tag("logo.png",width:"134",height:"36"), root_path 
+    =link_to image_tag("/material/logo/logo.png",width:"134",height:"36"), root_path 
     %ul.container__header__progress
       %li.container__header__progress__text--active{ id: "first" }
         会員情報
@@ -71,4 +71,4 @@
             に同意したものとみなします
           = f.submit '次へ進む', class: "btn-default btn"
   .container__footer
-    = image_tag("logo-white.png",width:"134",height:"36")
+    = image_tag("/material/logo/logo-white.png",width:"134",height:"36")
