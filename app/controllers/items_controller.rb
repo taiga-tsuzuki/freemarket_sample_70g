@@ -1,10 +1,7 @@
 class ItemsController < ApplicationController
 
   def index
-    @items = Item.includes(:user).order(:item_purchaser_id,:id=>:desc).limit(3)
-  end
-  
-  def new
+    @items = Item.includes(:images).order(:item_purchaser_id, "id DESC").limit(3)   
   end
 
   def confirm
@@ -24,3 +21,4 @@ class ItemsController < ApplicationController
   end
 
 end
+
