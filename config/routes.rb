@@ -6,10 +6,12 @@ Rails.application.routes.draw do
     get 'locations', to: 'users/registrations#new_location'
     post 'locations', to: 'users/registrations#create_location'
   end
+
     root "items#index"
     resources :items do
       collection do
-        post :confirm
+        get "confirm"
+        get "done"
       end
       resources :comments, only: :create
       resources :images, only: [:index,:create]
