@@ -28,8 +28,8 @@
       .product-contents__inner__mainbox
         .product-contents__inner__mainbox__top
           .product-contents__inner__mainbox__top__name
-            = (@item.item_name)
-          - if 3 < 5
+            = @item.item_name
+          - if user_signed_in? && current_user.id == @item.user_id
             .product-contents__inner__mainbox__top__itemManage
               = link_to "編集", edit_item_path(@item.id), class: "itemManage__edit"
               = link_to "削除", item_path(@item.id), method: :delete, class: "itemManage__delete"
@@ -41,7 +41,7 @@
             .product-contents__inner__mainbox__other-images__three-images__second
             .product-contents__inner__mainbox__other-images__three-images__thrid
         .product-contents__inner__mainbox__price
-          = (@item.price)
+          = @item.price
         .product-contents__inner__mainbox__additional-price
           (税込) 送料込み
         - if user_signed_in? && current_user.id == @item.user_id
@@ -51,48 +51,48 @@
           = link_to confirm_items_path,class: "item-buy-btn" do
             購入画面に進む
         .product-contents__inner__mainbox__description
-          = (@item.description)
+          = @item.description
         .product-contents__inner__mainbox__table
           .product-contents__inner__mainbox__table__box
             .leftbox
               出品者
             .rightbox
-              = (@item.user.nickname)
+              = @item.user.nickname
           .product-contents__inner__mainbox__table__box
             .leftbox
               カテゴリー
             .rightbox
-              = (@item.category_id)
+              = @item.category_id
           .product-contents__inner__mainbox__table__box
             .leftbox
               ブランド
             .rightbox
-              = (@item.brand_id)
+              = @item.brand_id
           .product-contents__inner__mainbox__table__box
             .leftbox
               商品のサイズ
             .rightbox
-              = (@item.size)
+              = @item.size
           .product-contents__inner__mainbox__table__box
             .leftbox
               商品の状態
             .rightbox
-              = (@item.condition)
+              = @item.condition
           .product-contents__inner__mainbox__table__box
             .leftbox
               配送料の負担
             .rightbox
-              = (@item.shipping_fee_payer)
+              = @item.shipping_fee_payer
           .product-contents__inner__mainbox__table__box
             .leftbox
               発送元の地域
             .rightbox
-              = (@item.shipping_location)
+              = @item.shipping_location
           .product-contents__inner__mainbox__table__box
             .leftbox
               発送日の目安
             .rightbox
-              = (@item.shipping_days)
+              = @item.shipping_days
         .product-contents__inner__mainbox__links
           .product-contents__inner__mainbox__links__favorite
             .product-contents__inner__mainbox__links__favorite__icon
