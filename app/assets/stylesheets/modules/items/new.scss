@@ -23,7 +23,7 @@
       width: 700px;
 
       &__image-content {
-        height: 300px;
+        height: 350px;
         width: 700px;
         background-color: #FFF;
         position: relative;
@@ -31,11 +31,12 @@
         &__field {
           height: 220px;
           width: 620px;
-          position: absolute;
-          left: 0;
-          right: 0;
-          top: 0;
-          bottom :0;
+          padding-top: 40px;
+          // position: absolute;
+          // left: 0;
+          // right: 0;
+          // top: 0;
+          // bottom :0;
           margin:  auto;
 
           &__subtitle {
@@ -62,45 +63,59 @@
           }
           
           .memo {
-            margin: 16px 0 0;
+            margin-top: 2px;
+            margin-bottom: 10px;
             font-size: 14px;
             color: #555555;
+            display: flex;
           }
 
-          .image-field {
-            height: 150px;
-            width: 620px;
-            background-color: #EEEEEE;
-            border: dashed 2px #CCCCCC;
-            text-align: center;
-            position: relative;
-            margin-top: 10px;
-            box-sizing: border-box;
-            padding-top: 50px;
-            cursor: pointer;
+          .image-upload-group{
+            width: 570px;
+            height: 228px;
+            background-color: purple;
+            margin: 0 auto;
 
-            &__label {
-
-              i {
-                font-size: 22px;
-                cursor: pointer;
-                height: 150px;
-                width: 620px;
-              }
-
-              .image-field__label__hidden {
-                display: none;
-                height: 20px;
-              }
-            } 
-            .image-upload-description-box {
-              font-size: 12px;
-              height: 16px;
-              color: #333333;
-              position: absolute;
-              top: 50%;
-              left: 30%;
+            .item-image{
+              display: inline-block;
+              border: 1px solid black;
+              width: 112px;
+              height: 112px;
             }
+            #image-box__container {
+              // height: 150px;
+              // width: 620px;
+              background-color: #EEEEEE;
+              border: dashed 2px #CCCCCC;
+              text-align: center;
+              position: relative;
+              box-sizing: border-box;
+              padding-top: 50px;
+              cursor: pointer;
+  
+              &__label {
+  
+                i {
+                  font-size: 22px;
+                  cursor: pointer;
+                  height: 150px;
+                  width: 620px;
+                }
+  
+                .image-field__label__hidden {
+                  display: none;
+                  height: 20px;
+                }
+              } 
+              .image-upload-description-box {
+                font-size: 12px;
+                height: 16px;
+                color: #333333;
+                position: absolute;
+                top: 50%;
+                left: 30%;
+              }
+          }
           }
         }
       }

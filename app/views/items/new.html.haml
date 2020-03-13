@@ -17,20 +17,30 @@
               10
               /
               枚までアップロードできます
+            .image-upload-group
+              .item-num-0#image-box__container
+                = f.fields_for :images do |i|
+                  = i.label :image, class: 'image-field__label' do
+                    = icon('fas', 'camera', class: 'camera-icon img-file')
+                    = i.file_field :image, class: 'image-field__label__hidden img-file'
+                    %br/
 
-            .image-field
-              = f.fields_for :images do |i|
-                = i.label :image, class: 'image-field__label' do
-                  = icon('fas', 'camera', class: 'camera-icon')
-                  = i.file_field :image, class: 'image-field__label__hidden'
-                  %br/
-              -# = f.label :image, class: 'image-field__label' do
-              -#   = icon('fas', 'camera', class: 'camera-icon')
-              -#   = f.file_field :image, class: 'image-field__label__hidden'
-              .image-upload-description-box
-                %p.first-line ドラッグアンドドロップ
-                %p.second-line またはクリックしてファイルをアップロード
+                .image-upload-description-box
+                  %p.first-line ドラッグアンドドロップ
+                  %p.second-line またはクリックしてファイルをアップロード
             
+
+              -# .item-image
+              -# .item-image
+              -# .item-image
+              -# .item-image
+              -# .item-image
+              -# .item-image
+              -# .item-image
+              -# .item-image
+              -# .item-image
+              -# .item-image
+
         .main-content__box__item-info-content
           .main-content__box__item-info-content__subtitle
             .index 商品名
