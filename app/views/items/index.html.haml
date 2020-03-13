@@ -139,7 +139,7 @@
                 = link_to item_path(item.id) do
 
                   .product__list__img
-                    = image_tag "/uploads/#{item.images[0].image.identifier}", alt: "テスト", size: "220x150"
+                    = image_tag item.images[0].image.url, alt: "テスト"
                   
                   .product__list__text
                     .item__name
