@@ -28,8 +28,12 @@ class Users::RegistrationsController < Devise::RegistrationsController
       render :new_location and return
     end 
     @user.build_location(@location.attributes)
-    @user.save
-    sign_in(:user, @user)
+    if @user.save
+      sign_in(:user, @user)
+    else
+      flash.now[:error] = 'ユーザー情報の保存に失敗しました'
+      render :create
+    end
   end
 
   # GET /resource/edit
