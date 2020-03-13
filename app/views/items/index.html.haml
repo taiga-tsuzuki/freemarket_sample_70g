@@ -135,6 +135,7 @@
           - @items.each do |item|
             .product__list
               - if item.item_purchaser_id.blank?
+
                 = link_to "/items/#{item.id}" do
 
                   .product__list__img
@@ -153,7 +154,6 @@
                         (税込)
 
                   
-
     .pickup__container__brand
       .head
         ピックアップブランド
