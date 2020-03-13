@@ -3,7 +3,7 @@ Rails.application.routes.draw do
     root "items#index"
     resources :items do
       collection do
-        post :confirm
+        get :confirm
       end
       resources :comments, only: :create
       resources :images, only: [:index,:create]
