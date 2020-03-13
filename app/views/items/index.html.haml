@@ -136,7 +136,7 @@
             .product__list
               - if item.item_purchaser_id.blank?
 
-                = link_to "/items/#{item.id}" do
+                = link_to item_path(item.id) do
 
                   .product__list__img
                     = image_tag "/uploads/#{item.images[0].image.identifier}", alt: "テスト", size: "220x150"
@@ -281,4 +281,4 @@
     .exhibit
       .text
         出品する
-      = image_tag src= "/material/icon/icon_camera.png", class: "exhibit__icon"
+      = image_tag "/material/icon/icon_camera.png", class: "exhibit__icon"
