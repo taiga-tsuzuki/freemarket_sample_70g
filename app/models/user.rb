@@ -5,10 +5,9 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
 
-  validates :user_family_name, :user_first_name, :user_family_name_kana, :user_first_name_kana, presence: true
-  validates :email, uniqueness: true, format: { with: /\A([a-zA-Z0-9])+([a-zA-Z0-9\._-])*@([a-zA-Z0-9_-])+([a-zA-Z0-9\._-]+)+\z/ }
-  validates :encrypted_password, length: { minimum: 7 }
-  validates :user_family_name, :user_first_name, :user_family_name_kana, :user_first_name_kana, format: { with: /\A[ぁ-んァ-ヶー一-龠]+\z/ }
+  # validates :user_family_name, :user_first_name, :user_family_name_kana, :user_first_name_kana, presence: true
+  # validates :email, uniqueness: true, format: { with: /\A([a-zA-Z0-9])+([a-zA-Z0-9\._-])*@([a-zA-Z0-9_-])+([a-zA-Z0-9\._-]+)+\z/ }
+  # validates :user_family_name, :user_first_name, :user_family_name_kana, :user_first_name_kana, format: { with: /\A[ぁ-んァ-ヶー一-龠]+\z/ }
 
 
 
