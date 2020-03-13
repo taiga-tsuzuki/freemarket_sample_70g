@@ -33,7 +33,6 @@
               %h3 登録してください
             .main-confirm-content__payment__group__submit
               = link_to "購入する", {controller: 'items', action: 'done'}, {method: :get, class: "confirm-submit"}
-              -# = f.submit '購入する', class: "confirm-submit"
               = link_to "もどる", :back,{class: "return-btn"}
           
   .lower-content
