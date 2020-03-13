@@ -11,9 +11,16 @@ class ItemsController < ApplicationController
   end
   
   def show
+    @item = Item.includes(:user).find(params[:id])
   end
 
   def done
+  end
+
+  def edit
+  end
+
+  def destroy
   end
 
 end
