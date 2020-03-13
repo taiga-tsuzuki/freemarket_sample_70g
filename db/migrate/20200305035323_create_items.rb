@@ -10,7 +10,7 @@ class CreateItems < ActiveRecord::Migration[5.2]
       t.string :size
       t.string :condition, null: false
       t.string :shipping_fee_payer, null: false
-      t.string :shipping_location, null: false
+      # t.string :shipping_location, null: false
       t.string :shipping_days, null: false
       t.timestamps
     end
