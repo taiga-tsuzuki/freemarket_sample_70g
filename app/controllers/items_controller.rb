@@ -1,7 +1,7 @@
 class ItemsController < ApplicationController
 
-
   def index
+    @items = Item.includes(:images).order(:item_purchaser_id, "id DESC").limit(3)   
   end
 
   def new
@@ -27,6 +27,10 @@ class ItemsController < ApplicationController
   end
   
   def show
+    @item = Item.includes(:user).find(params[:id])
+  end
+
+  def done
   end
 
   def category_children  
@@ -48,6 +52,12 @@ class ItemsController < ApplicationController
     end
   end
 
+  def edit
+  end
+
+  def destroy
+  end
+
   private
   def item_params
     params.require(:item).permit(:item_name, :description, :category_id, :brand_name, :size, :condition,
@@ -57,3 +67,5 @@ class ItemsController < ApplicationController
 
 end
   
+
+end

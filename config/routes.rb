@@ -4,6 +4,7 @@ Rails.application.routes.draw do
     resources :items do
       collection do
         get :confirm
+        get :done
         get :category_children
         get :category_grandchildren
       end

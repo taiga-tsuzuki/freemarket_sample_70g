@@ -2,6 +2,7 @@ class CreateItems < ActiveRecord::Migration[5.2]
   def change
     create_table :items do |t|
       t.bigint :user_id, foreign_key:true
+      t.bigint :item_purchaser_id, foreign_key:true
       t.bigint :category_id, foreign_key:true
       t.string :brand_name
       t.string :item_name, null: false

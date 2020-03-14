@@ -58,6 +58,7 @@
             .category-box
               .index カテゴリー
               .caution 必須
+              
             .product_category-select
               = f.collection_select :category, @category, :id, :name, { prompt: "---" }, { class: "category_select-box", id: "category_select" }
               %i.fa.fa-chevron-down
