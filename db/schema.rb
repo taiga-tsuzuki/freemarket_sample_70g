@@ -60,7 +60,7 @@ ActiveRecord::Schema.define(version: 2020_03_13_041808) do
     t.bigint "user_id"
     t.bigint "item_purchaser_id"
     t.bigint "category_id"
-    t.bigint "brand_id"
+    t.string "brand_name"
     t.string "item_name", null: false
     t.text "description", null: false
     t.string "price", null: false
