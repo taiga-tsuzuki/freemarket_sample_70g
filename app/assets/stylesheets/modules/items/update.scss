@@ -1,0 +1,165 @@
+.update-body {
+  background-color: gainsboro;
+  .header {
+    height: 100px;
+    width: 100%;
+    color: #dcdcdc;
+    background-color: #fff;
+    &__box {
+      height: 100%;
+      width: 65%;
+      margin: 0 auto;
+      padding: 15px 0 0;
+      &__main {
+        height: 40px;
+        width: 100%;
+        display: flex;
+        line-height: 40px;
+        .logo {
+          position: relative;
+          display: flex;
+          align-items: center;
+        }
+        .search__box {
+          width: 100%;
+          margin-left: 30px;
+          display: flex;
+          &__form {
+            width: 100%;
+          }
+          &__btn {
+            background-color: #3CCACE;
+            padding: 8px;
+          }
+        }
+      }
+      &__sub {
+        height: 35px;
+        margin: 10px 0;
+        font-size: 15px;
+        display: flex;
+        justify-content: space-between;
+        .lists__left {
+          line-height: 35px;
+          display: flex;
+          .category {
+            margin-left: 10px;
+            color: black;
+          }
+          .brand {
+            margin-left: 50px;
+            color: black;
+          }
+        }
+        .lists__right {
+          line-height: 35px;
+          display: flex;
+          .login {
+            margin-right: 50px;
+            color: black;
+          }
+          .signin {
+            margin-right: 10px;
+            color: black;
+          }
+        }
+      }
+    }
+  }
+  .success {
+    width: 700px;
+    height: 100px;
+    background-color: #fff;
+    text-align: center;
+    margin: 0 auto;
+    margin-top: 50px;
+    margin-bottom: 300px;
+    &__message {
+      padding-top: 15px;
+      margin-bottom: 20px;
+    }
+    &__btn {
+      text-decoration: none;
+      color: #3CCACE;
+      border: 1px solid;
+      padding: 10px;
+    }
+  }
+  .appbanner {
+    height: 150px;
+    width: auto;
+    padding: 100px 40px;
+    background-image: url("/material/pict/bg-appBanner-pict.jpg");
+    background-size: cover;
+    background-position: center;
+    &__inner {
+      color: white;
+      text-align: center;
+      .inner__title {
+        font-size: 24px;
+        text-shadow: 0 0 5px rgba(0,0,0,0.4);
+        font-weight: bold;
+      }
+      .inner__text {
+        font-size: 35px;
+        text-shadow: 0 0 5px rgba(0,0,0,0.4)
+      }
+      .inner__btn {
+        height: 70px;
+        .abtn {
+          height: 100%;
+          width:  auto;
+        }
+        .abtn:hover {
+          opacity: 0.5 ;
+        }  
+        .gbtn {
+          height: 100%;
+          width:  auto;
+          margin-left: 50px;
+          transform: scale(1.45);
+        }
+        .gbtn:hover {
+          opacity: 0.5 ;
+        }
+      }
+    }
+  }
+
+
+
+
+  .footer {
+    height: 230px;
+    padding: 60px 0;
+    background-color: black;
+    &__contents {
+      padding: 0 350px;
+      display: flex;
+      justify-content: space-around;
+      .content {
+        .title {
+          margin-bottom: 23px;
+          font-weight: bold;
+          color: white;
+        }
+        .lists {
+          text-align: center;
+          display: block;
+          .list {
+            font-size: 10px;
+            margin-top: 15px;
+            color: white;
+          }
+        }
+      }
+    }
+    .footer__logo {
+      margin-left: 750px;
+    }
+    p {
+      color: white;
+      text-align: center;
+    }  
+  }
+}
