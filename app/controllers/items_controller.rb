@@ -7,7 +7,6 @@ class ItemsController < ApplicationController
   def new
     @item = Item.new
     @item.images.new
-    # @parents = Category.all.order("id ASC").limit(13)
     @category = Category.all.order("ancestry ASC").limit(13)
   end
 
@@ -35,7 +34,7 @@ class ItemsController < ApplicationController
 
   def category_children  
     @category_children = Category.find(params[:productcategory]).children 
-    end
+  end
   # Ajax通信で送られてきたデータをparamsで受け取り､childrenで子を取得
 
   def category_grandchildren
@@ -66,6 +65,4 @@ class ItemsController < ApplicationController
   end
 
 end
-  
 
-end
