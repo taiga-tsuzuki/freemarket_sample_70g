@@ -67,6 +67,7 @@ ActiveRecord::Schema.define(version: 2020_03_13_041808) do
     t.string "size"
     t.string "condition", null: false
     t.string "shipping_fee_payer", null: false
+    t.bigint "prefecture_id"
     t.string "shipping_days", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
