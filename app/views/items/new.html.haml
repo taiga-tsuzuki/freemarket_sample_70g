@@ -28,18 +28,6 @@
                     .image-upload-description-box
                       %p.first-line ドラッグアンドドロップ
                       %p.second-line またはクリックしてファイルをアップロード
-            
-
-              -# .item-image
-              -# .item-image
-              -# .item-image
-              -# .item-image
-              -# .item-image
-              -# .item-image
-              -# .item-image
-              -# .item-image
-              -# .item-image
-              -# .item-image
 
         .main-content__box__item-info-content
           .main-content__box__item-info-content__subtitle
@@ -58,13 +46,6 @@
           .main-content__box__item-detail-content__field 
             .main-content__box__item-detail-content__field__subtitle 商品詳細
 
-            -# .product_select-details
-            -#   .product_select-group
-            -#     .product_header
-            -#       カテゴリー
-            -#     .product_require
-            -#       必須
-
             .category-box
               .index カテゴリー
               .caution 必須
@@ -73,37 +54,11 @@
               %i.fa.fa-chevron-down
             .product_select-children
 
-            -# .category-box
-            -#   .index カテゴリー
-            -#   .caution 必須
-            -# .category-form-field
-            -#   = f.collection_select :category_ids, @parents, :id, :name,{prompt: "---"}, class: "select-default", id: "parent-form", name: 'item[category_ids][]'
-              -# = f.fields_for :category, @category do |c|
-              -#   = c.select :ancestry, ["選択してください","レディース","メンズ","ベイビー・キッズ","インテリア"]
-              -#   %br/
-
-              -# = f.select :category_id, 選択してください:"0", レディース:"1", メンズ:"2"
-
-              -# = f.collection_select :category_ids, @parents.order("ancestry ASC").limit(13), :id, :name,{prompt: "---"}, class: "select-default", id: "parent-form", name: 'item[category_ids][]'
-              -# = f.collection_select :category_ids, @parents.order("ancestry ASC"), :id, :name,{prompt: "---"}, class: "select-default", id: "children-form", name: 'item[category_ids][]'
-              -# = f.collection_select :category_ids, @parents.order("ancestry ASC"), :id, :name,{prompt: "---"}, class: "select-default", id: "grand-children-form", name: 'item[category_ids][]'
-    
-              
-              -# = f.select :category, @category_parent_array, {}, {class: 'listing-select-wrapper__box--select', id: 'parent_category'}
-              -#   %i.fas.fa-chevron-down.listing-select-wrapper__box--arrow-down
-
-
-
-
-
             .brand-box
               .index ブランド
               .caution 任意
             .brand-form-field
               = f.text_field :brand_name, placeholder:"例）シャネル", class:"brand-input-box"
-              -# = f.fields_for :@brand do |b|
-              -#   = b.text_field :brand_name, placeholder:"例）シャネル", class:"brand-input-box"
-              -#   %br/
 
             .size-box
               .index サイズ
@@ -155,7 +110,6 @@
               １〜２日で発送:"１〜２日で発送",
               ２〜３日で発送:"２〜３日で発送",
               ４〜７日で発送:"４〜７日で発送",}
-              
       
         .main-content__box__cost-info-content
           .main-content__box__cost-info-content__subtitle-box
@@ -181,7 +135,6 @@
             .sales-profit-calc ー
 
           = f.submit value: "出品する", class: "sell-btn"
-          -# %input.sell-btn{type: "submit", value: "出品する"}
           %input.return-btn{type: "button", value: "もどる"}
 
           .terms-info-box
@@ -205,280 +158,3 @@
       .logo-img
         = image_tag src="/logo-white.png", size: "160x46"
       .logo-text ©FURIMA
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  -#     .body
-  -# .items-new-header
-  -#   .items-new-header__logo
-  -#     = image_tag src="/logo.png", size: "185x49"
-
-  -# .main-content
-  -#   = form_with url:"#" do |f|
-  -#     .main-content__box
-  -#       .main-content__box__image-content
-  -#         .main-content__box__image-content__field
-  -#           .main-content__box__image-content__field__subtitle
-  -#             .index 商品画像
-  -#             .caution 必須
-  -#           %p.memo 
-  -#             最大
-  -#             / 
-  -#             10
-  -#             / 
-  -#             枚までアップロードできます
-
-  -#           .image-field 
-              
-  -#             = f.label :image, class: 'image-field__label' do
-  -#               = icon('fas', 'camera', class: 'camera-icon')
-  -#               = f.file_field :image, class: 'image-field__label__hidden'
-  -#             .image-upload-description-box
-  -#               %p.first-line ドラッグアンドドロップ
-  -#               %p.second-line またはクリックしてファイルをアップロード
-            
-  -#       .main-content__box__item-info-content
-  -#         .main-content__box__item-info-content__subtitle
-  -#           .index 商品名
-  -#           .caution 必須
-  -#         .item-info-form        
-  -#           = f.text_field :item_name, placeholder: "40文字まで", class: "name-input-box", size: 40 
-
-  -#         .main-content__box__item-info-content__description
-  -#           .index 商品の説明
-  -#           .caution 必須
-  -#         .item-descriptaion-form          
-  -#           = f.text_area :description, placeholder:  "商品の説明(必須 1,000文字以内)(色、素材、重さ、低下、注意点など)例)2010年頃に1万円で購入したジャケットです。ライトグレーで傷はありません。合わせやすいのでおすすめです。", class: "description-input-box",rows:"25", cols:"40"
-            
-  -#       .main-content__box__item-detail-content
-  -#         .main-content__box__item-detail-content__field 
-  -#           .main-content__box__item-detail-content__field__subtitle 商品詳細
-
-  -#           .category-box
-  -#             .index カテゴリー
-  -#             .caution 必須
-  -#           .category-form-field
-  -#             = f.select :category_id, placeholder:"選択してください", class:"category-select-box"
-              
-  -#           .brand-box
-  -#             .index ブランド
-  -#             .caution 任意
-  -#           .brand-form-field            
-  -#             = f.text_field :brand, placeholder:"例）シャネル", class:"brand-input-box"
-            
-  -#           .size-box
-  -#             .index サイズ
-  -#             .caution 任意
-  -#           .size-form-field            
-  -#             = f.text_field :size, placeholder:"サイズを入力してください", class:"size-input-box"
-
-  -#           .condition-box
-  -#             .index 商品の状態
-  -#             .caution 必須
-  -#           .condetion-form-field            
-  -#             = f.select :condition,  
-  -#             {選択してください:"選択してください",
-  -#             新品、未使用:"新品、未使用",
-  -#             未使用に近い:"未使用に近い",
-  -#             目立った傷や汚れなし:"目立った傷や汚れなし",
-  -#             やや傷や汚れあり:"やや傷や汚れあり",
-  -#             傷や汚れあり:"傷や汚れあり",
-  -#             全体的に状態が悪い:"全体的に状態が悪い",}
-
-  -#       .main-content__box__delivery-info-content
-  -#         .main-content__box__delivery-info-content__field 
-  -#           .main-content__box__delivery-info-content__field__subtitle-box
-  -#             .main-content__box__delivery-info-content__field__subtitle 配送について
-  -#             = link_to "#", class:"faq-icon" do
-  -#               = icon('fas', 'question-circle', class: 'faq-btn')
-
-  -#           .shipping-fee-payer-box
-  -#             .index 配送料の負担
-  -#             .caution 必須
-  -#           .shipping-fee-payer-form-field            
-  -#             = f.select :shipping_fee_payer,  
-  -#             {選択してください:"選択してください",
-  -#             送料込み（出品者負担）:"送料込み（出品者負担）",
-  -#             着払い（購入者負担）:"着払い（購入者負担）",}
-
-  -#           .shipping-location-box
-  -#             .index 配送元の地域
-  -#             .caution 必須
-  -#           .shipping-location-form-field            
-  -#             = f.select :shipping_location,  
-  -#             {選択してください:"選択してください",
-  -#             北海道:"北海道",
-  -#             青森県:"青森県",
-  -#             岩手県:"岩手県",
-  -#             宮城県:"宮城県",
-  -#             秋田県:"秋田県",
-  -#             山形県:"山形県",
-  -#             福島県:"福島県",
-  -#             茨城県:"茨城県",
-  -#             栃木県:"栃木県",
-  -#             群馬県:"群馬県",
-  -#             埼玉県:"埼玉県",
-  -#             千葉県:"千葉県",
-  -#             東京都:"東京都",
-  -#             神奈川県:"神奈川県",
-  -#             新潟県:"新潟県",
-  -#             富山県:"富山県",
-  -#             石川県:"石川県",
-  -#             福井県:"福井県",
-  -#             山梨県:"山梨県",
-  -#             長野県:"長野県",
-  -#             岐阜県:"岐阜県",
-  -#             静岡県:"静岡県",
-  -#             愛知県:"愛知県",
-  -#             三重県:"三重県",
-  -#             滋賀県:"滋賀県",
-  -#             京都府:"京都府",
-  -#             大阪府:"大阪府",
-  -#             兵庫県:"兵庫県",
-  -#             奈良県:"奈良県",
-  -#             和歌山県:"和歌山県",
-  -#             鳥取県:"鳥取県",
-  -#             島根県:"島根県",
-  -#             岡山県:"岡山県",
-  -#             広島県:"広島県",
-  -#             山口県:"山口県",
-  -#             徳島県:"徳島県",
-  -#             香川県:"香川県",
-  -#             愛媛県:"愛媛県",
-  -#             高知県:"高知県",
-  -#             福島県:"福島県",
-  -#             佐賀県:"佐賀県",
-  -#             長崎県:"長崎県",
-  -#             熊本県:"熊本県",
-  -#             大分県:"大分県",
-  -#             宮崎県:"宮崎県",
-  -#             鹿児島県:"鹿児島県",
-  -#             沖縄県:"沖縄県",
-  -#             未定:"未定",}
-
-  -#           .shipping-fee-payer-box
-  -#             .index 発送までの日数
-  -#             .caution 必須
-  -#           .shipping-days-form-field            
-  -#             = f.select :shipping_days,  
-  -#             {選択してください:"選択してください",
-  -#             １〜２日で発送:"１〜２日で発送",
-  -#             ２〜３日で発送:"２〜３日で発送",
-  -#             ４〜７日で発送:"４〜７日で発送",}
-              
-      
-  -#       .main-content__box__cost-info-content
-  -#         .main-content__box__cost-info-content__subtitle-box
-  -#           .main-content__box__cost-info-content__subtitle-box__subtitle 販売価格 (¥300〜¥9,999,999)
-  -#           = link_to "#", class:"faq-icon" do
-  -#             = icon('fas', 'question-circle', class: 'faq-btn')
-            
-  -#         .price-info-box
-  -#           .price-info-box__left
-  -#             .index 販売価格
-  -#             .hoge
-  -#               .caution 必須
-  -#           .price-info-box__right
-  -#             %span.currency ¥              
-  -#             = f.number_field :price, placeholder:"0", class:"price-input-box", min: 300, max:9999999
-          
-  -#         .sales-commission-info
-  -#           .sales-commission-tax 販売手数料（10%）
-  -#           .sales-commission-calc ー
-            
-  -#         .sales-profit-info 
-  -#           .sales-profit-subtitle 販売利益
-  -#           .sales-profit-calc ー
-
-  -#         %input.sell-btn{type: "submit", value: "出品する"}
-  -#         %input.return-btn{type: "button", value: "もどる"}
-
-  -#         .terms-info-box
-  -#           %p.tems-info-description 
-  -#             禁止されている行為および出品物を必ずご確認ください。
-  -#             / 
-  -#             偽ブランドや盗品物などの販売は犯罪であり、法律により処罰される可能性があります。
-  -#             / 
-  -#             また、出品をもちまして加盟店規約に同意したことになります。
-
-  -# .lower-content
-  -#   .legal-info-box
-  -#     .hoge
-  -#       = link_to "#" do
-  -#         .privacy-policy-box プライバシーポリシー
-  -#       = link_to "#" do  
-  -#         .terms-box FURIMA利用規約
-  -#       = link_to "#" do
-  -#         .specified-commercial-transaction-act-box 特定商取引に関する表記
-  -#   .footer__logo
-  -#     .logo-img
-  -#       = image_tag src="/logo-white.png", size: "160x46"
-  -#     .logo-text ©FURIMA
