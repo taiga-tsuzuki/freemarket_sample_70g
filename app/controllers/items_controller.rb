@@ -7,15 +7,11 @@ class ItemsController < ApplicationController
   def new
     @item = Item.new
     @item.images.new
-    # @parents = Category.all.order("id ASC").limit(13)
     @category = Category.all.order("ancestry ASC").limit(13)
   end
 
   def create
     @item = Item.new(item_params)
-    # @brand = Brand.create
-    # binding.pry
-
     if @item.save
       redirect_to root_path
     else

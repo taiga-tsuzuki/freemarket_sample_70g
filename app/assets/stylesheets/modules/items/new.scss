@@ -7,9 +7,16 @@
     height: 128px;
     background-color: #EEEEEE;
 
+    a{
+      margin:0 auto;
+      display:block;
+      width: 200px;
+      padding-top: 35px;
+    }
     &__logo {
-      line-height: 128px;
-      text-align: center;
+      margin:0 auto;
+      display:block;
+
     }
   }
   .main-content {
@@ -537,6 +544,7 @@
           outline: none;
           border-style: none;
           margin: 20px 170px;
+          cursor: pointer;
         }
 
         .return-btn {
@@ -548,6 +556,7 @@
           outline: none;
           border-style: none;
           margin: 5px 170px;
+          cursor: pointer;
         }
 
         .terms-info-box {

@@ -1,10 +1,11 @@
 .body
   .items-new-header
-    .items-new-header__logo
-      = image_tag src="/logo.png", size: "185x49"
+    =link_to root_path do
+      = image_tag "/logo.png", size: "185x49"
 
   .main-content
     = form_with model: @item, local:true do |f|
+      -# - if group.errors.any?
       .main-content__box
         .main-content__box__image-content
           .main-content__box__image-content__field
@@ -50,7 +51,7 @@
               .index カテゴリー
               .caution 必須
             .product_category-select
-              = f.collection_select :category, @category, :id, :name, { prompt: "---" }, { class: "category_select-box", id: "category_select" }
+              = f.collection_select :category, @category, :id, :name, { prompt: "選択してください" }, { class: "category_select-box", id: "category_select" }
               %i.fa.fa-chevron-down
             .product_select-children
 
@@ -134,7 +135,7 @@
             .sales-profit-subtitle 販売利益
             .sales-profit-calc ー
 
-          = f.submit value: "出品する", class: "sell-btn"
+          = f.submit "出品する", class: "sell-btn"
           %input.return-btn{type: "button", value: "もどる"}
 
           .terms-info-box
