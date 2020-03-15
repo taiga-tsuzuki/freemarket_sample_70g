@@ -7,6 +7,7 @@ Rails.application.routes.draw do
         get :done
         get :category_children
         get :category_grandchildren
+
       end
       resources :comments, only: :create
       resources :images, only: [:index,:create]
