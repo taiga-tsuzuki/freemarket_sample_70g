@@ -59,6 +59,7 @@ ActiveRecord::Schema.define(version: 2020_03_13_041808) do
 
   create_table "items", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.bigint "user_id"
+    t.bigint "item_purchaser_id"
     t.bigint "category_id"
     t.string "brand_name"
     t.string "item_name", null: false
@@ -67,6 +68,7 @@ ActiveRecord::Schema.define(version: 2020_03_13_041808) do
     t.string "size"
     t.string "condition", null: false
     t.string "shipping_fee_payer", null: false
+    t.bigint "prefecture_id"
     t.string "shipping_days", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
