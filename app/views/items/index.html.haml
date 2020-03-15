@@ -1,12 +1,12 @@
 .header
   .header__box
     .header__box__main
-      = link_to "#" do
-        = image_tag src= "/material/logo/logo.png", size: "140x40"
+      = link_to root_path do
+        = image_tag "/material/logo/logo.png", size: "140x40"
       = form_with url: "#", class: "search__box" do |f|
         = f.text_field :content, class: 'search__box__form', placeholder: ' キーワードから探す'
       = link_to "#" do
-        = image_tag src="/material/icon/icon-search 1.png", size: "24x24", class: "search__box__btn"
+        = image_tag "/material/icon/icon-search 1.png", size: "24x24", class: "search__box__btn"
     .header__box__sub
       %ul.lists__left
         %li
@@ -17,12 +17,11 @@
             ブランド
       %ul.lists__right
         %li
-          = link_to "#",class: "login" do
+          = link_to new_user_session_path, class: "login" do
             ログイン
         %li
-          = link_to "#",class: "signin" do
+          = link_to new_user_registration_path, class: "signin" do
             新規会員登録
-
 
 
 .main
@@ -218,9 +217,9 @@
       今すぐ無料ダウンロード！
     .inner__btn
       = link_to "#" do
-        = image_tag src= "/material/badge/Download_on_the_App_Store_Badge.svg", class: "abtn"
+        = image_tag "/material/badge/Download_on_the_App_Store_Badge.svg", class: "abtn"
       = link_to "#" do
-        = image_tag src= "/material/badge/google-play-badge.png", class: "gbtn"
+        = image_tag "/material/badge/google-play-badge.png", class: "gbtn"
 
 
 
@@ -277,7 +276,7 @@
 
 
 
-  = link_to "#" do
+  = link_to new_item_path do
     .exhibit
       .text
         出品する
