@@ -12,7 +12,6 @@
       text-align: center;
     }
   }
-
   .main-content {
     background-color: #EEEEEE;
     
@@ -32,11 +31,6 @@
           height: 220px;
           width: 620px;
           padding-top: 40px;
-          // position: absolute;
-          // left: 0;
-          // right: 0;
-          // top: 0;
-          // bottom :0;
           margin:  auto;
 
           &__subtitle {
@@ -61,7 +55,6 @@
               text-align: center;
             }
           }
-          
           .memo {
             margin-top: 2px;
             margin-bottom: 10px;
@@ -97,8 +90,6 @@
               text-align: center;
               position: relative;
               box-sizing: border-box;
-              // padding-top: 50px;
-              
   
               .image-field__label{
                 width:100%;
@@ -109,10 +100,8 @@
                 i {
                   position: absolute;
                   top: 40%;
-
                   font-size: 30px;
                 }
-  
                 #img-file {
                   height: 100%;
                   width: 100%;
@@ -151,7 +140,6 @@
             font-size: 14px;
             font-weight: bold;
           }
-
           .caution {
             height: 16px;
             width: 32px;
@@ -164,7 +152,6 @@
             text-align: center;
           }
         }
-
         .name-input-box {
           width: 628px;
           height: 48px;
@@ -173,7 +160,6 @@
           box-sizing: border-box;
           padding: 7px 30px 7px 10px;
         }
-
         &__description {
           height: 19px;
           width: 620px;
@@ -185,7 +171,6 @@
             font-size: 14px;
             font-weight: bold;
           }
-
           .caution {
             height: 16px;
             width: 32px;
@@ -198,7 +183,6 @@
             text-align: center;
           }
         }
-
         .description-input-box {
           width: 628px;
           height: 156px;
@@ -252,9 +236,7 @@
               color: white;
               text-align: center;
             }
-          
           }
-
           select {
             -webkit-appearance: none; 
             -moz-appearance: none; 
@@ -273,7 +255,6 @@
             height: 48px; 
             outline: none;
           }
-
           .brand-box {
             display: flex;
             margin-top: 20px;
@@ -282,7 +263,6 @@
               font-size: 14px;
               font-weight: bold;  
             }
-  
             .caution {
               height: 16px;
               width: 32px;
@@ -295,7 +275,6 @@
               text-align: center;
             }
           }
-
           .brand-input-box {
             width: 100%;
             height: 48px;
@@ -303,7 +282,6 @@
             box-sizing: border-box;
             padding: 7px 30px 7px 10px;
           }
-
           .size-box {
             display: flex;
             margin-top: 20px;
@@ -312,7 +290,6 @@
               font-size: 14px;
               font-weight: bold;  
             }
-  
             .caution {
               height: 16px;
               width: 32px;
@@ -325,7 +302,6 @@
               text-align: center;
             }
           }
-
           .size-input-box {
             width: 100%;
             height: 48px;
@@ -333,7 +309,6 @@
             box-sizing: border-box;
             padding: 7px 30px 7px 10px;
           }
-
           .condition-box {
             display: flex;
             margin-top: 20px;
@@ -342,7 +317,6 @@
               font-size: 14px;
               font-weight: bold;  
             }
-  
             .caution {
               height: 16px;
               width: 32px;
@@ -355,7 +329,6 @@
               text-align: center;
             }
           }
-
           .condetion-form-field {
             margin-top: 20px;
           }       
@@ -390,8 +363,6 @@
             margin:0 0 0 4px;
             font-size: 14px;
           }
-
-          
           .shipping-fee-payer-box {
             display: flex;
 
@@ -399,7 +370,6 @@
               font-size: 14px;
               font-weight: bold;
             }
-  
             .caution {
               height: 16px;
               width: 32px;
@@ -412,7 +382,6 @@
               text-align: center;
             }
           }
-
           select {
             -webkit-appearance: none; 
             -moz-appearance: none; 
@@ -432,7 +401,6 @@
             height: 48px; 
             outline: none;
           }
-
           .shipping-location-box {
             display: flex;
             margin-bottom: 20px;
@@ -441,7 +409,6 @@
               font-size: 14px;
               font-weight: bold;
             }
-  
             .caution {
               height: 16px;
               width: 32px;
@@ -455,7 +422,6 @@
             }
           }  
         }
-
           .shipping-fee-payer-box {
             height: 19px;
             width: 620px;
@@ -480,7 +446,6 @@
             font-weight: bold;
             font-size: 14px;
           }
-
           .faq-icon {
             font-size: 14px;
             text-decoration: none;
@@ -488,7 +453,6 @@
             margin:0 0 0 4px;
           }
         }
-
         .price-info-box {
           display: flex;
           justify-content: space-between;
@@ -497,7 +461,6 @@
 
           &__left {
             display: flex;
-            
 
             .index {
               font-size: 14px;
@@ -555,7 +518,7 @@
           height: 50px;
           border-bottom: solid 1px #CCCCCC;         
         }
-        
+
         .sales-profit-info {
           display: flex;
           justify-content: space-between;
@@ -595,7 +558,6 @@
       }      
     }
   }
-
   .lower-content {
     height: 220px;
     bottom: 0;
@@ -640,10 +602,3 @@
     }
   }
 }
-
-// #children-form {
-//   display: none;
-// }
-// #grand-children-form {
-//   display: none;
-// }
