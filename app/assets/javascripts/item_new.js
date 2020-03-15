@@ -4,7 +4,7 @@ $(function(){
   //querySelectorでfile_fieldを取得
   var file_field = document.querySelector('input[type=file]')
   //fileが選択された時に発火するイベント
-  $('.img-file').change(function(){
+  $('#img-file').change(function(){
     //選択したfileのオブジェクトをpropで取得
     var files = $('input[type="file"]').prop('files')[0];
     $.each(this.files, function(i, file){
@@ -28,7 +28,7 @@ $(function(){
         var html= `<div class='item-image' data-image="${file.name}">
                     <div class=' item-image__content'>
                       <div class='item-image__content--icon'>
-                        <img src=${src} width="114" height="80" >
+                        <img src=${src} width="112" height="80" >
                       </div>
                     </div>
                     <div class='item-image__operation'>

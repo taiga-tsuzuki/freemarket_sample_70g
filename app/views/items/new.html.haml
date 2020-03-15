@@ -4,7 +4,7 @@
       = image_tag src="/logo.png", size: "185x49"
 
   .main-content
-    = form_with model: @item do |f|
+    = form_with model: @item, local:true do |f|
       .main-content__box
         .main-content__box__image-content
           .main-content__box__image-content__field
@@ -22,12 +22,12 @@
                 = f.fields_for :images do |i|
                   = i.label :image, class: 'image-field__label' do
                     = icon('fas', 'camera', class: 'camera-icon img-file')
-                    = i.file_field :image, class: 'image-field__label__hidden img-file'
+                    = i.file_field :image, type: 'file', name: "item[images_attributes][][image]", id:"img-file"
                     %br/
 
-                .image-upload-description-box
-                  %p.first-line ドラッグアンドドロップ
-                  %p.second-line またはクリックしてファイルをアップロード
+                    .image-upload-description-box
+                      %p.first-line ドラッグアンドドロップ
+                      %p.second-line またはクリックしてファイルをアップロード
             
 
               -# .item-image

@@ -71,51 +71,65 @@
           }
 
           .image-upload-group{
-            width: 570px;
-            height: 228px;
-            background-color: purple;
+            width: 580px;
+            height: 232px;
+            // background-color: purple;
             margin: 0 auto;
 
             .item-image{
               display: inline-block;
-              border: 1px solid black;
+              border: 1px solid rgb(151, 151, 151);
+              margin: 1px;
               width: 112px;
               height: 112px;
+              background-color: rgb(243, 243, 243);
+              &__operation--delete{
+                font-weight: bold;
+                color: rgb(39, 180, 192);
+                
+                text-align: center;
+                cursor: pointer;
+              }
             }
             #image-box__container {
-              // height: 150px;
-              // width: 620px;
               background-color: #EEEEEE;
               border: dashed 2px #CCCCCC;
               text-align: center;
               position: relative;
               box-sizing: border-box;
-              padding-top: 50px;
-              cursor: pointer;
+              // padding-top: 50px;
+              
   
-              &__label {
-  
+              .image-field__label{
+                width:100%;
+                height: 100%;
+                display: flex;
+                justify-content: center;
+                align-items: center;
                 i {
-                  font-size: 22px;
-                  cursor: pointer;
-                  height: 150px;
-                  width: 620px;
+                  position: absolute;
+                  top: 40%;
+
+                  font-size: 30px;
                 }
   
-                .image-field__label__hidden {
-                  display: none;
-                  height: 20px;
+                #img-file {
+                  height: 100%;
+                  width: 100%;
+                  opacity: 0;
+                  outline: none;
+                  cursor: pointer;
+                }
+                .image-upload-description-box {
+                  font-size: 12px;
+                  height: 16px;
+                  color: #333333;
+                  position: absolute;
+                  top: 60%;
+                  left: 30%;
                 }
               } 
-              .image-upload-description-box {
-                font-size: 12px;
-                height: 16px;
-                color: #333333;
-                position: absolute;
-                top: 50%;
-                left: 30%;
-              }
-          }
+            }
           }
         }
       }
