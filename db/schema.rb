@@ -19,14 +19,6 @@ ActiveRecord::Schema.define(version: 2020_03_13_041808) do
     t.datetime "updated_at", null: false
   end
 
-
-  create_table "addresses", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.integer "prefecture_id"
-    t.string "city"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
   create_table "brands", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name", null: false
     t.datetime "created_at", null: false
@@ -55,7 +47,6 @@ ActiveRecord::Schema.define(version: 2020_03_13_041808) do
     t.string "card_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["user_id"], name: "index_creditcards_on_user_id"
   end
 
   create_table "images", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -76,7 +67,7 @@ ActiveRecord::Schema.define(version: 2020_03_13_041808) do
     t.string "size"
     t.string "condition", null: false
     t.string "shipping_fee_payer", null: false
-    t.bigint "prefecture_id"
+    t.bigint "prefecture_id", null: false
     t.string "shipping_days", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -131,6 +122,5 @@ ActiveRecord::Schema.define(version: 2020_03_13_041808) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
-  add_foreign_key "creditcards", "users"
   add_foreign_key "profiles", "users"
 end
