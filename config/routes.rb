@@ -3,8 +3,8 @@ Rails.application.routes.draw do
     root "items#index"
     resources :items do
       collection do
-
         get :confirm
+        get :done
         get :category_children
         get :category_grandchildren
 

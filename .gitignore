@@ -27,4 +27,5 @@
 /config/master.key
 
 #画像が以下に保存されるたびにGitHub Desktopにあがってしまのを防ぐ
-public/uploads
+/public/uploads/*
+

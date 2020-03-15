@@ -7,10 +7,12 @@ class ItemsController < ApplicationController
   def new
     @item = Item.new
     @item.images.new
+
   end
 
   def create
     @item = Item.new(item_params)
+
     if @item.save
       redirect_to root_path
     else
@@ -31,6 +33,7 @@ class ItemsController < ApplicationController
   def category_children  
     @category_children = Category.find(params[:productcategory]).children 
     end
+
   # Ajax通信で送られてきたデータをparamsで受け取り､childrenで子を取得
 
   def category_grandchildren
@@ -59,4 +62,5 @@ class ItemsController < ApplicationController
                                   :shipping_fee_payer, :shipping_days, :price,
                                   images_attributes: [:image, :_destroy, :id], categories_attributes: [:name]).merge(user_id: 1)
   end
+
 end

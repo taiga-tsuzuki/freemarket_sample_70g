@@ -4,10 +4,14 @@ class Item < ApplicationRecord
   belongs_to :user
   belongs_to :category, dependent: :destroy, optional: true
 
+  belongs_to :brand, optional: true
+  accepts_nested_attributes_for :images, allow_destroy: true
+
   extend ActiveHash::Associations::ActiveRecordExtensions
   belongs_to_active_hash :prefecture
 
 # fields_forを使うためのメソッドaccepts_nested_attributes_for
+
 # allow_destroy: trueで、親(item)が削除されると紐づいているimage,category
   accepts_nested_attributes_for :images, allow_destroy: true
 
@@ -27,6 +31,7 @@ class Item < ApplicationRecord
   validates :price, presence: true, numericality: { only_integer: true,
     greater_than: 300, less_than: 9999999
     }
+
 
 
 end
