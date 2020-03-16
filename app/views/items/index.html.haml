@@ -15,14 +15,17 @@
         %li
           = link_to "#",class: "brand" do
             ブランド
-      %ul.lists__right
-        %li
-          = link_to "#",class: "login" do
-            ログイン
-        %li
-          = link_to new_user_registration_path ,class: "signin" do
-            新規会員登録
 
+      - if user_signed_in?
+        %ul.lists__right
+          %li
+            = link_to "ログアウト",destroy_user_session_path,method: :delete, class: 'login'
+      - else
+        %ul.lists__right
+          %li
+            = link_to "ログイン",new_user_session_path, class: 'login'
+          %li
+            = link_to "新規登録",new_user_registration_path, class: 'signin'
 
 
 .main
@@ -132,6 +135,7 @@
         .product__title
           新規投稿商品
         .product__lists
+
           - @items.last(3).each do |item|
             - item.images.first(1).each do |image|
               .product__list
@@ -217,8 +221,7 @@
         = image_tag "/material/badge/Download_on_the_App_Store_Badge.svg", class: "abtn"
       = link_to "#" do
         = image_tag "/material/badge/google-play-badge.png", class: "gbtn"
-
-
+        
 .footer
   %ul.footer__contents
     %li.content
@@ -262,12 +265,12 @@
             お知らせ
   = link_to "#" do
     = image_tag "/material/logo/logo-white.png", size: "160x46", class: "footer__logo"
-
   %p
     © FURIMA
 
-  = link_to "#" do
+  = link_to new_item_path do
     .exhibit
       .text
         出品する
       = image_tag "/material/icon/icon_camera.png", class: "exhibit__icon"
+
