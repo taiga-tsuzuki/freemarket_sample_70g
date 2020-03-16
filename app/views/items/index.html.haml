@@ -2,11 +2,11 @@
   .header__box
     .header__box__main
       = link_to "#" do
-        = image_tag src= "/material/logo/logo.png", size: "140x40"
+        = image_tag "/material/logo/logo.png", size: "140x40"
       = form_with url: "#", class: "search__box" do |f|
         = f.text_field :content, class: 'search__box__form', placeholder: ' キーワードから探す'
       = link_to "#" do
-        = image_tag src="/material/icon/icon-search 1.png", size: "24x24", class: "search__box__btn"
+        = image_tag "/material/icon/icon-search 1.png", size: "24x24", class: "search__box__btn"
     .header__box__sub
       %ul.lists__left
         %li
@@ -15,12 +15,19 @@
         %li
           = link_to "#",class: "brand" do
             ブランド
-      %ul.lists__right
-        %li
-          = link_to "ログイン",new_user_session_path, class: 'login'
-        %li
-          = link_to "新規登録",new_user_registration_path, class: 'signin'
-            
+      - if user_signed_in?
+        %ul.lists__right
+          %li
+            = link_to "ログアウト",destroy_user_session_path,method: :delete, class: 'login'
+      - else
+        %ul.lists__right
+          %li
+            = link_to "ログイン",new_user_session_path, class: 'login'
+          %li
+            = link_to "新規登録",new_user_registration_path, class: 'signin'
+
+
+
 .main
   .main__visual
     .main__visual__picture
@@ -33,9 +40,10 @@
         フリマアプリです
       .content__btn
         = link_to "#" do
-          = image_tag src= "/material/badge/Download_on_the_App_Store_Badge.svg", class: "abtn"
+          = image_tag "/material/badge/Download_on_the_App_Store_Badge.svg", class: "abtn"
         = link_to "#" do
-          = image_tag src= "/material/badge/google-play-badge.png", class: "gbtn"
+          = image_tag "/material/badge/google-play-badge.png", class: "gbtn"
+
 
   .top__introduction
     .subtitle
@@ -44,7 +52,7 @@
     %ul.lists
       %li.list
         .list__pictuer
-          = image_tag src= "/material/pict/pict-reason-01.jpg", size: "300x300"
+          = image_tag "/material/pict/pict-reason-01.jpg", size: "300x300"
           .nummber
             1
         %h1.list__title
@@ -56,7 +64,7 @@
 
       %li.list
         .list__pictuer
-          = image_tag src= "/material/pict/pict-reason-02.jpg", size: "300x300"
+          = image_tag "/material/pict/pict-reason-02.jpg", size: "300x300"
           .nummber
             2
         %h1.list__title
@@ -68,7 +76,7 @@
 
       %li.list
         .list__pictuer
-          = image_tag src= "/material/pict/pict-reason-03.jpg", size: "300x300"
+          = image_tag "/material/pict/pict-reason-03.jpg", size: "300x300"
           .nummber
             3
         %h1.list__title
@@ -77,6 +85,7 @@
             業界最安
         %p.list__text
           最大3%でお得に出品&購入！
+
 
   .top__middle__dl
     .top__middle__dl__picture
@@ -91,9 +100,9 @@
         ほしかったあの商品に出会えるかもしれません。
       .content__btn
         = link_to "#" do
-          = image_tag src= "/material/badge/Download_on_the_App_Store_Badge.svg", class: "abtn"
+          = image_tag "/material/badge/Download_on_the_App_Store_Badge.svg", class: "abtn"
         = link_to "#" do
-          = image_tag src= "/material/badge/google-play-badge.png", class: "gbtn"
+          = image_tag "/material/badge/google-play-badge.png", class: "gbtn"
 
   .top__key__features
     .head
@@ -101,19 +110,19 @@
       .head__after
     .items
       .item
-        = image_tag src= "/material/icon/icon-01.png", size: "216x332", class: "item__img"
+        = image_tag "/material/icon/icon-01.png", size: "216x332", class: "item__img"
         %h3.item__subtitle
           簡単に売り買いできる
         %p.item__detail
           スマホひとつで、いつでもどこでも簡単に出品・購入が可能！
       .item
-        = image_tag src= "/material/icon/icon-03.png", size: "216x332", class: "item__img"
+        = image_tag "/material/icon/icon-03.png", size: "216x332", class: "item__img"
         %h3.item__subtitle
           売上金は即日振込みに対応
         %p.item__detail
           午前9時までに振込を依頼いただければ、翌日に指定の口座に入金いたします!
       .item
-        = image_tag src= "/material/icon/icon-04.png", size: "216x332", class: "item__img"
+        = image_tag "/material/icon/icon-04.png", size: "216x332", class: "item__img"
         %h3.item__subtitle
           様々な支払いに対応
         %p.item__detail
@@ -129,8 +138,12 @@
           - @items.each do |item|
             .product__list
               - if item.item_purchaser_id.blank?
+
                 = link_to item_path(item.id) do
+
                   .product__list__img
+                    = image_tag "/uploads/#{item.images[0].image.identifier}", alt: "テスト", size: "220x150"
+                  
                   .product__list__text
                     .item__name
                       = item.item_name
@@ -139,9 +152,11 @@
                         %li
                           = item.price
                         %li
-                          ★1
+                          ★2
                       %p
                         (税込)
+
+                  
     .pickup__container__brand
       .head
         ピックアップブランド
@@ -194,6 +209,10 @@
                   %p
                     (税込)
 
+
+
+
+
 .appbanner
   .appbanner__inner
     %h1.inner__title
@@ -202,9 +221,13 @@
       今すぐ無料ダウンロード！
     .inner__btn
       = link_to "#" do
-        = image_tag src= "/material/badge/Download_on_the_App_Store_Badge.svg", class: "abtn"
+        = image_tag "/material/badge/Download_on_the_App_Store_Badge.svg", class: "abtn"
       = link_to "#" do
-        = image_tag src= "/material/badge/google-play-badge.png", class: "gbtn"
+        = image_tag "/material/badge/google-play-badge.png", class: "gbtn"
+
+
+
+
 
 .footer
   %ul.footer__contents
@@ -248,13 +271,17 @@
           = link_to "#", class: "list" do
             お知らせ
   = link_to "#" do
-    = image_tag src= "/material/logo/logo-white.png", size: "160x46", class: "footer__logo"
+    = image_tag "/material/logo/logo-white.png", size: "160x46", class: "footer__logo"
+
+
 
   %p
     © FURIMA
 
-= link_to "#" do
-  .exhibit
-    .text
-      出品する
-    = image_tag src= "/material/icon/icon_camera.png", class: "exhibit__icon"
+
+
+  = link_to "#" do
+    .exhibit
+      .text
+        出品する
+      = image_tag "/material/icon/icon_camera.png", class: "exhibit__icon"
