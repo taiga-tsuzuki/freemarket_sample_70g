@@ -70,15 +70,14 @@ a {
 .product-contents{
   height: 2100px;
   width: 100%;
+  padding-top: 20px;
   position: relative;
   background-color: gainsboro;
     &__inner{
       height: 2100px;
       width: 800px;
       background-color: gainsboro;
-      margin: auto;
-      position: absolute;
-      left: 400px;
+      margin: 0 auto;
       &__mainbox{
         height: 1500px;
         width: 700px;
@@ -91,7 +90,7 @@ a {
           background-color: white;
           text-align: center;
           font-weight: bold;
-          margin-top: 20px;
+          // margin-top: 20px;
           &__name {
             height: 70px;
             font-size: 40px;
@@ -160,6 +159,9 @@ a {
           font-size: 50px;
           font-weight: bold;
           text-align: center;
+          &::after{
+            content: '円';
+          }
         }
         &__additional-price{
           height: 40px;
@@ -359,6 +361,7 @@ a {
     &__inner {
       color: white;
       text-align: center;
+      
       .inner__title {
         font-size: 24px;
         text-shadow: 0 0 5px rgba(0,0,0,0.4);
