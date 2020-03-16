@@ -25,3 +25,7 @@
 
 # Ignore master key for decrypting credentials and more.
 /config/master.key
+
+#画像が以下に保存されるたびにGitHub Desktopにあがってしまのを防ぐ
+/public/uploads/*
+
