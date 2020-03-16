@@ -1,5 +1,12 @@
 Rails.application.routes.draw do
-  devise_for :users
+  devise_for :users, controllers: {
+    registrations: 'users/registrations',
+  }
+  devise_scope :user do
+    get 'locations', to: 'users/registrations#new_location'
+    post 'locations', to: 'users/registrations#create_location'
+  end
+
     root "items#index"
     resources :items do
       collection do
@@ -16,4 +23,6 @@ Rails.application.routes.draw do
       resources :creditcards, only: :index
       resources :location, only: :index
     end
+    resources :brand, only: :index
+    resources :category, only: :index
 end
