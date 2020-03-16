@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_03_05_040029) do
+ActiveRecord::Schema.define(version: 2020_03_13_041808) do
 
   create_table "brands", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name", null: false
@@ -53,14 +53,14 @@ ActiveRecord::Schema.define(version: 2020_03_05_040029) do
     t.bigint "user_id"
     t.bigint "item_purchaser_id"
     t.bigint "category_id"
-    t.bigint "brand_id"
+    t.string "brand_name"
     t.string "item_name", null: false
     t.text "description", null: false
     t.string "price", null: false
     t.string "size"
     t.string "condition", null: false
     t.string "shipping_fee_payer", null: false
-    t.string "shipping_location", null: false
+    t.bigint "prefecture_id", null: false
     t.string "shipping_days", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -77,6 +77,11 @@ ActiveRecord::Schema.define(version: 2020_03_05_040029) do
     t.string "city", null: false
     t.integer "building_name", null: false
     t.integer "phone_name", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "prefectures", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -105,6 +110,10 @@ ActiveRecord::Schema.define(version: 2020_03_05_040029) do
     t.datetime "remember_created_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "user_family_name", null: false
+    t.string "user_first_name", null: false
+    t.string "user_family_name_kana", null: false
+    t.string "user_first_name_kana", null: false
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end

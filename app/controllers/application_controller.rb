@@ -6,10 +6,14 @@ class ApplicationController < ActionController::Base
 
   protected
 
+  def after_sign_out_path_for(resource＆scope)
+    root_path
+  end
+
   def configure_permitted_parameters
     devise_parameter_sanitizer.permit(:sign_up, keys: [:nickname])
   end
-
+  
   private
 
   def production?
@@ -21,4 +25,5 @@ class ApplicationController < ActionController::Base
       username == ENV["BASIC_AUTH_USER"] && password == ENV["BASIC_AUTH_PASSWORD"]
     end
   end
+
 end

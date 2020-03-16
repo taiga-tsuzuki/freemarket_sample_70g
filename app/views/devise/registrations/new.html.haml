@@ -19,7 +19,7 @@
     .container__main__registration
       登録情報入力
     .container__main__form-frame
-      = form_with url: "#" do |f|
+      = form_with(model: @user, url: user_registration_path, method: :post, local:true) do |f|
         = render "devise/shared/error_messages", resource: @user
         .form-group
           = f.label :ニックネーム 
@@ -49,13 +49,13 @@
         .form-group
           = f.label :"お名前(全角)"
           %span.form-group__require 必須
-        = f.text_field :last_name, {placeholder:"例) 山田",class:'form-group__input--half'}
-        = f.text_field :first_name, {placeholder:"例) 彩",class:'form-group__input--half'}
+        = f.text_field :user_family_name, {placeholder:"例) 山田",class:'form-group__input--half'}
+        = f.text_field :user_first_name, {placeholder:"例) 彩",class:'form-group__input--half'}
         .form-group
           = f.label :"お名前カナ(全角)"
           %span.form-group__require 必須
-        = f.text_field :last_name_kana, {placeholder:"例) ヤマダ",class:'form-group__input--half'}
-        = f.text_field :first_name_kana, {placeholder:"例) アヤ",class:'form-group__input--half'}
+        = f.text_field :user_family_name_kana, {placeholder:"例) ヤマダ",class:'form-group__input--half'}
+        = f.text_field :user_first_name_kana, {placeholder:"例) アヤ",class:'form-group__input--half'}
         .form-group
           = f.label :"生年月日"
           %span.form-group__require 必須
@@ -69,6 +69,6 @@
             「次へ進む」のボタンを押すことにより、
             = link_to "利用規約", "#" , target:"_blank"
             に同意したものとみなします
-          = f.submit '次へ進む', class: "btn-default btn", url: "address_path"
+          = f.submit '次へ進む', class: "btn-default btn"
   .container__footer
     = image_tag("/material/logo/logo-white.png",width:"134",height:"36")
