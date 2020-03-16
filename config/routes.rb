@@ -23,6 +23,4 @@ Rails.application.routes.draw do
       resources :creditcards, only: :index
       resources :location, only: :index
     end
-    resources :brand, only: :index
-    resources :category, only: :index
 end
