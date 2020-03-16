@@ -132,26 +132,25 @@
         .product__title
           新規投稿商品
         .product__lists
-          - @items.each do |item|
-            .product__list
-              - if item.item_purchaser_id.blank?
-
-                = link_to item_path(item.id) do
-
-                  .product__list__img
-                    = image_tag "/uploads/#{item.images[0].image.identifier}", alt: "テスト", size: "220x150"
-                  
-                  .product__list__text
-                    .item__name
-                      = item.item_name
-                    .item__details
-                      %ul
-                        %li
-                          = item.price
-                        %li
-                          ★2
-                      %p
-                        (税込)
+          - @items.last(3).each do |item|
+            - item.images.first(1).each do |image|
+              .product__list
+                - if item.item_purchaser_id.blank?
+                  = link_to item_path(item.id) do
+                    .product__list__img
+                      = image_tag "#{image.image}", alt: "テスト", size: "220x150"
+                    
+                    .product__list__text
+                      .item__name
+                        = item.item_name
+                      .item__details
+                        %ul
+                          %li
+                            = item.price
+                          %li
+                            ★2
+                        %p
+                          (税込)
 
                   
     .pickup__container__brand
@@ -282,3 +281,4 @@
       .text
         出品する
       = image_tag "/material/icon/icon_camera.png", class: "exhibit__icon"
+
