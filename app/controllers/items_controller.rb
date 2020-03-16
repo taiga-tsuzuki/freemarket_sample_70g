@@ -23,6 +23,7 @@ class ItemsController < ApplicationController
   
   def show
     @item = Item.includes(:user).find(params[:id])
+    @items = @item.images
   end
 
   def done

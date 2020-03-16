@@ -62,12 +62,13 @@
             .leftbox
               カテゴリー
             .rightbox
-              = @item.category_id
+              = "#{@item.category.parent.parent.name}/#{@item.category.parent.name}/#{@item.category.name}"
+              
           .product-contents__inner__mainbox__table__box
             .leftbox
               ブランド
             .rightbox
-              = @item.brand_id
+              = @item.brand_name
           .product-contents__inner__mainbox__table__box
             .leftbox
               商品のサイズ
@@ -87,7 +88,7 @@
             .leftbox
               発送元の地域
             .rightbox
-              = @item.shipping_location
+              = @item.prefecture.name
           .product-contents__inner__mainbox__table__box
             .leftbox
               発送日の目安
