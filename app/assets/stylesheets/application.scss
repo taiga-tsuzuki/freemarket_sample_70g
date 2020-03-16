@@ -5,12 +5,14 @@
 @import "modules/brand";
 @import "modules/location";
 @import "modules/profile";
-@import "modules/users/registrations";
+@import "modules/users/registrations/new";
+@import "modules/users/registrations/new_location";
 @import "modules/users/sessions";
 @import "modules/items/show";
 @import "modules/items/edit";
 @import "modules/items/update";
 @import "modules/items/new";
+@import "modules/items/new_imageupload";
 @import "modules/items/confirm";
 @import "modules/user";
 @import "font-awesome-sprockets";

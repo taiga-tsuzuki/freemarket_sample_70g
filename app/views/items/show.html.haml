@@ -18,8 +18,7 @@
               ブランド
         %ul.lists__right
           %li
-            = link_to "#",class: "login" do
-              ログイン
+            = link_to "ログアウト","#", method: :delete, class: 'logout'
           %li
             = link_to "#",class: "signin" do
               新規会員登録
@@ -29,7 +28,7 @@
         .product-contents__inner__mainbox__top
           .product-contents__inner__mainbox__top__name
             = @item.item_name
-          - if user_signed_in? && current_user.id == @item.user_id
+          -# - if user_signed_in? && current_user.id == @item.user_id
             .product-contents__inner__mainbox__top__itemManage
               = link_to "編集", edit_item_path(@item.id), class: "itemManage__edit"
               = link_to "削除", item_path(@item.id), method: :delete, class: "itemManage__delete"
@@ -62,12 +61,13 @@
             .leftbox
               カテゴリー
             .rightbox
-              = @item.category_id
+              = "#{@item.category.parent.parent.name}/#{@item.category.parent.name}/#{@item.category.name}"
+              
           .product-contents__inner__mainbox__table__box
             .leftbox
               ブランド
             .rightbox
-              = @item.brand_id
+              = @item.brand_name
           .product-contents__inner__mainbox__table__box
             .leftbox
               商品のサイズ
@@ -87,7 +87,7 @@
             .leftbox
               発送元の地域
             .rightbox
-              = @item.shipping_location
+              = @item.prefecture.name
           .product-contents__inner__mainbox__table__box
             .leftbox
               発送日の目安
@@ -178,15 +178,10 @@
     = link_to "#" do
       = image_tag "/material/logo/logo-white.png", size: "160x46", class: "footer__logo"
 
-
-
     %p
       © FURIMA
 
-
-
-
-  = link_to "#" do
+  = link_to new_item_path do
     .exhibit
       .text
         出品する
