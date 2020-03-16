@@ -28,7 +28,8 @@
                 %h3 ■ポイントを使用 (所持ポイント: P0)
             .main-confirm-content__payment__group__way
               %h2 支払い方法
-              %h3 登録してください
+              = link_to pay_creditcards_path do
+                %h3 登録してください
             .main-confirm-content__payment__group__location
               %h2 配送先
               %h3 登録してください
