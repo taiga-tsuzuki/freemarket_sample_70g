@@ -4,10 +4,7 @@ before_action :set_item, only: [:edit, :update]
 before_action :set_user, only: [:edit, :update]
 
   def index
-    @items = Item.includes(:user).order(:item_purchaser_id,:id=>:desc).limit(3)
-  end
-  
-  def new
+    @items = Item.includes(:images).order(:item_purchaser_id, "id DESC").limit(3)   
   end
 
   def confirm
@@ -50,3 +47,4 @@ before_action :set_user, only: [:edit, :update]
   end
 
 end
+
