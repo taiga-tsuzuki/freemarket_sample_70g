@@ -19,9 +19,6 @@ Rails.application.routes.draw do
       resources :comments, only: :create
       resources :images, only: [:index,:create]
     end
-    resources :comments, only: :create
-    resources :images, only: [:index,:create]
-  end
   resources :users, only: [:show] do
     resources :profile, only: :index
     resources :creditcards, only: :index
