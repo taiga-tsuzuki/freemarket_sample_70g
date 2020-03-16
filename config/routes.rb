@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'creditcards/new'
+  get 'creditcards/show'
   devise_for :users
     root "items#index"
     resources :items do
