@@ -132,28 +132,27 @@
         .product__title
           新規投稿商品
         .product__lists
-          - @items.each do |item|
-            .product__list
-              - if item.item_purchaser_id.blank?
+          - @items.last(3).each do |item|
+            - item.images.first(1).each do |image|
+              .product__list
+                - if item.item_purchaser_id.blank?
+                  = link_to item_path(item.id) do
+                    .product__list__img
+                      = image_tag "#{image.image}", alt: "テスト", size: "220x150"
+                    
+                    .product__list__text
+                      .item__name
+                        = item.item_name
+                      .item__details
+                        %ul
+                          %li
+                            = item.price
+                          %li
+                            ★2
+                        %p
+                          (税込)
 
-                = link_to item_path(item.id) do
 
-                  .product__list__img
-                    = image_tag "/uploads/#{item.images[0].image.identifier}", alt: "テスト", size: "220x150"
-                  
-                  .product__list__text
-                    .item__name
-                      = item.item_name
-                    .item__details
-                      %ul
-                        %li
-                          = item.price
-                        %li
-                          ★2
-                      %p
-                        (税込)
-
-                  
     .pickup__container__brand
       .head
         ピックアップブランド
@@ -207,9 +206,6 @@
                     (税込)
 
 
-
-
-
 .appbanner
   .appbanner__inner
     %h1.inner__title
@@ -221,9 +217,6 @@
         = image_tag "/material/badge/Download_on_the_App_Store_Badge.svg", class: "abtn"
       = link_to "#" do
         = image_tag "/material/badge/google-play-badge.png", class: "gbtn"
-
-
-
 
 
 .footer
@@ -270,12 +263,8 @@
   = link_to "#" do
     = image_tag "/material/logo/logo-white.png", size: "160x46", class: "footer__logo"
 
-
-
   %p
     © FURIMA
-
-
 
   = link_to "#" do
     .exhibit
