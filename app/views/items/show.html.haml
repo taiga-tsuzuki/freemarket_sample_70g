@@ -1,3 +1,5 @@
+%link{ rel: "stylesheet", href: "https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.0.7/css/swiper.min.css"}
+%script{src: "https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.0.7/js/swiper.min.js"}
 .product
   .header
     .header__box
@@ -33,13 +35,26 @@
             .product-contents__inner__mainbox__top__itemManage
               = link_to "編集", edit_item_path(@item.id), class: "itemManage__edit"
               = link_to "削除", item_path(@item.id), method: :delete, class: "itemManage__delete"
-        .product-contents__inner__mainbox__main-image
-          
-        .product-contents__inner__mainbox__other-images
-          .product-contents__inner__mainbox__other-images__three-images
-            .product-contents__inner__mainbox__other-images__three-images__first
-            .product-contents__inner__mainbox__other-images__three-images__second
-            .product-contents__inner__mainbox__other-images__three-images__thrid
+        -# .product-contents__inner__mainbox__main-image
+
+        .swiper-container
+          .swiper-wrapper
+            .swiper-slide
+              = image_tag "https://tech-master.s3.amazonaws.com/uploads/curriculums/images/Rails1-4/sample.jpg",class: "main-image"
+            .swiper-slide
+              = image_tag "https://dol.ismcdn.jp/mwimgs/c/8/670m/img_c8dad835c4b9134b067cc8b8efcab22f143142.jpg",class: "main-image"
+            .swiper-slide
+              = image_tag "https://tech-master.s3.amazonaws.com/uploads/curriculums/images/Rails1-4/sample.jpg",class: "main-image"
+
+          .swiper-my-pagination
+        -# .product-contents__inner__mainbox__other-images
+        -#   .product-contents__inner__mainbox__other-images__three-images
+        -#     .product-contents__inner__mainbox__other-images__three-images__first
+        -#     .product-contents__inner__mainbox__other-images__three-images__second
+        -#     .product-contents__inner__mainbox__other-images__three-images__thrid
+
+
+
         .product-contents__inner__mainbox__price
           = @item.price
         .product-contents__inner__mainbox__additional-price
@@ -192,3 +207,14 @@
       .text
         出品する
       = image_tag "/material/icon/icon_camera.png", class: "exhibit__icon"
+
+:javascript
+  var swiper = new Swiper('.swiper-container', {
+    pagination: {
+      el: '.swiper-my-pagination',
+      clickable: true,
+      renderBullet: function (index, className) {
+        return '<span class="' + className + '">' + '<img src="https://haniwaman.com/wp-content/uploads/2018/05/swiper-thumbnail' + (index + 1) + '.png" alt="">' + '</span>';
+      },
+    },
+  });
