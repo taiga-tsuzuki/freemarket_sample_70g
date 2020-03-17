@@ -2,7 +2,7 @@
   .header
     .header__box
       .header__box__main
-        =link_to "#" do
+        =link_to root_path do
           = image_tag "/material/logo/logo.png", class: 'logo'
         = form_with url: "#", class: "search__box" do |f|
           = f.text_field :content, class: 'search__box__form', placeholder: ' キーワードから探す'
