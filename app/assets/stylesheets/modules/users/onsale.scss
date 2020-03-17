@@ -145,7 +145,7 @@
           height: 74px;
           background-color: #fff;
           display: flex;
-          &__onsale {
+          .onsale {
             width: 233px;
             height: 74px;
             line-height: 74px;
@@ -153,8 +153,9 @@
             border-top: 2px solid #ea352d;
             color: #333333;
             font-weight: bold;
+            text-decoration: none;
           }
-          &__dealing {
+          .dealing {
             width: 233px;
             height: 74px;
             background-color: #eeeeee;
@@ -163,7 +164,7 @@
             color: #333333;
             font-weight: bold;
           }
-          &__sold {
+          .sold {
             width: 233px;
             height: 74px;
             background-color: #eeeeee;

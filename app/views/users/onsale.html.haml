@@ -116,12 +116,12 @@
         出品した商品
       .main__right__tabTodo
         .tabTodo
-          .tabTodo__onsale
-            出品中
-          .tabTodo__dealing
-            取引中
-          .tabTodo__sold
-            売却済み
+          = link_to "出品中", "", class: 'onsale'
+
+          = link_to "取引中", "", class: 'dealing'
+
+          = link_to "売却済み", "", class: 'sold'
+
         .tabContent
           .tabContent__info
           .tabContent__lists
