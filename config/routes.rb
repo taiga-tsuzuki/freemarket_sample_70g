@@ -16,17 +16,13 @@ Rails.application.routes.draw do
       get :category_children
       get :category_grandchildren
     end
-    resources :users, only: [:show] do
-      collection do
-        get :onsale
-      end
-      resources :profile, only: :index
-      resources :creditcards, only: :index
-      resources :location, only: :index
     resources :comments, only: :create
     resources :images, only: [:index,:create]
   end
   resources :users, only: [:show] do
+    collection do
+      get :onsale
+    end
     resources :profile, only: :index
     resources :creditcards, only: :index
     resources :location, only: :index
