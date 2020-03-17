@@ -6,5 +6,6 @@ class UsersController < ApplicationController
   end
 
   def onsale
+    @items = Item.all
   end
 end

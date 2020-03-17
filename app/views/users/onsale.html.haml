@@ -124,8 +124,17 @@
 
         .tabContent
           .tabContent__info
-          .tabContent__lists
-            一覧を見る
+            - @items.each do |item|
+              - item.images.first(1).each do |image|      
+                - if item.item_purchaser_id.blank?
+                  = link_to item_path(item.id) do
+                    .tabContent__lists
+                      .tabContent__lists__img
+                        = image_tag "#{image.image}", alt: "テスト", size: "150x70"
+                      .tabContent__lists__product-name
+                        = item.item_name
+                        .onsale-sign
+                          出品中
 
   .appbanner
     .appbanner__inner
