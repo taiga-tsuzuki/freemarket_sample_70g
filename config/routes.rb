@@ -19,6 +19,9 @@ Rails.application.routes.draw do
       resources :images, only: [:index,:create]
     end
     resources :users, only: [:show] do
+      collection do
+        get :onsale
+      end
       resources :profile, only: :index
       resources :creditcards, only: :index
       resources :location, only: :index
