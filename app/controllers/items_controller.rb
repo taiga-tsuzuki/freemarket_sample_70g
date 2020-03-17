@@ -1,7 +1,7 @@
 class ItemsController < ApplicationController
 
   def index
-    @items = Item.includes(:images).order(:item_purchaser_id, "id DESC").limit(3)   
+    @items = Item.includes(:images).order(:item_purchaser_id, "id DESC").limit(3)
   end
 
   def new
@@ -15,7 +15,7 @@ class ItemsController < ApplicationController
       redirect_to root_path
     else
       render :new
-    end  
+    end
   end
 
   def confirm
@@ -29,8 +29,8 @@ class ItemsController < ApplicationController
   def done
   end
 
-  def category_children  
-    @category_children = Category.find(params[:productcategory]).children 
+  def category_children
+    @category_children = Category.find(params[:productcategory]).children
     end
 
   # Ajax通信で送られてきたデータをparamsで受け取り､childrenで子を取得
@@ -61,6 +61,6 @@ class ItemsController < ApplicationController
   def item_params
     params.require(:item).permit(:item_name, :description, :category_id, :brand_name, :size, :condition,
                                   :shipping_fee_payer,:prefecture_id, :shipping_days, :price,
-                                  images_attributes: [:image, :_destroy, :id], categories_attributes: [:name]).merge(user_id: 1)
+                                  images_attributes: [:image, :_destroy, :id], categories_attributes: [:name]).merge(user_id: current_user.id)
   end
 end

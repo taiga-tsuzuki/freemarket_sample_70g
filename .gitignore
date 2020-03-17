@@ -28,4 +28,6 @@
 
 #画像が以下に保存されるたびにGitHub Desktopにあがってしまのを防ぐ
 /public/uploads/*
+
+# payjpの秘密鍵、公開鍵の漏洩防止
 /.env

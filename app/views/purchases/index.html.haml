@@ -1,0 +1,32 @@
+.wrapper
+  .header
+    %h2
+      購入を確定しますか？
+
+
+
+  .main
+    %p
+      Apple MacBook Pro 13インチ
+    %p
+      ¥135,000(送料込み)
+    %br
+    %h3
+      支払い方法
+    - if @default_card_information.blank?
+      %br /
+    - else
+      -#以下カード情報を表示
+      = "**** **** **** " + @default_card_information.last4
+      - exp_month = @default_card_information.exp_month.to_s
+      - exp_year = @default_card_information.exp_year.to_s.slice(2,3)
+      %br/
+      有効期限
+      %br/
+      = exp_month + " / " + exp_year
+    %br
+    = form_tag(action: :pay, method: :post) do
+      %button.purchase
+        購入するを確定する
+    = link_to confirm_items_path,class: "return" do
+      戻る
