@@ -112,7 +112,6 @@
               商品の編集
             .selection
               or
-            -# = link_to "この商品を削除する", item_path(item.id),method: :delete, class: "delete-btn"
             = link_to item_path(@item.id),method: :delete do
               .delete-btn
                 この商品を削除する
