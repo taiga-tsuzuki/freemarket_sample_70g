@@ -52,6 +52,9 @@ class ItemsController < ApplicationController
   end
 
   def destroy
+    item = Item.find(params[:id])
+    redirect_to user_path(user.id) and return unless item.destroy
+    redirect_to onsale_users_path
   end
 
   private

@@ -1,6 +1,6 @@
 class Item < ApplicationRecord
   has_many :comments
-  has_many :images
+  has_many :images, dependent: :destroy
   belongs_to :user
   belongs_to :category, dependent: :destroy, optional: true
 

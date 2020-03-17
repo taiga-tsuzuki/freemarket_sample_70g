@@ -20,6 +20,8 @@
         %ul.lists__right
           %li
             = link_to "ログアウト",destroy_user_session_path,method: :delete, class: 'login'
+          %li
+            = link_to "マイページ",user_path(current_user.id), class: 'login'
       - else
         %ul.lists__right
           %li
