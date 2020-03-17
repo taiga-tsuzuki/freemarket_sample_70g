@@ -38,4 +38,5 @@ Rails.application.routes.draw do
       get 'done', to: 'purchases#done'
     end
   end
+  resources :categories, only: [:show]
 end
