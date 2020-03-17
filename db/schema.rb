@@ -53,14 +53,14 @@ ActiveRecord::Schema.define(version: 2020_03_13_041808) do
     t.bigint "user_id"
     t.bigint "item_purchaser_id"
     t.bigint "category_id"
-    t.string "brand_name"
+    t.bigint "brand_id"
     t.string "item_name", null: false
     t.text "description", null: false
     t.string "price", null: false
     t.string "size"
     t.string "condition", null: false
     t.string "shipping_fee_payer", null: false
-    t.bigint "prefecture_id", null: false
+    t.string "shipping_location", null: false
     t.string "shipping_days", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
