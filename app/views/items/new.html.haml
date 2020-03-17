@@ -2,9 +2,11 @@
   .items-new-header
     =link_to root_path do
       = image_tag "/logo.png", size: "185x49"
+      
+  = render 'layouts/error_messages', model: @item
 
   .main-content
-    = form_with model: @item do |f|
+    = form_with model: @item,local: true do |f|
       .main-content__box
         .main-content__box__image-content
           .main-content__box__image-content__field
@@ -24,11 +26,10 @@
                     = icon('fas', 'camera', class: 'camera-icon img-file')
                     = i.file_field :image, type: 'file', name: "item[images_attributes][][image]", id:"img-file"
                     %br/
-
+                    
                     .image-upload-description-box
                       %p.first-line ドラッグアンドドロップ
                       %p.second-line またはクリックしてファイルをアップロード
-            
         .main-content__box__item-info-content
           .main-content__box__item-info-content__subtitle
             .index 商品名
@@ -72,13 +73,13 @@
               .caution 必須
             .condetion-form-field
               = f.select :condition,
-              {選択してください:"選択してください",
-              新品、未使用:"新品、未使用",
+              {新品、未使用:"新品、未使用",
               未使用に近い:"未使用に近い",
               目立った傷や汚れなし:"目立った傷や汚れなし",
               やや傷や汚れあり:"やや傷や汚れあり",
               傷や汚れあり:"傷や汚れあり",
-              全体的に状態が悪い:"全体的に状態が悪い",}
+              全体的に状態が悪い:"全体的に状態が悪い"},
+              { include_blank: "選択してください"}
 
         .main-content__box__delivery-info-content
           .main-content__box__delivery-info-content__field 
@@ -92,25 +93,24 @@
               .caution 必須
             .shipping-fee-payer-form-field
               = f.select :shipping_fee_payer,
-              {選択してください:"選択してください",
-              送料込み（出品者負担）:"送料込み（出品者負担）",
-              着払い（購入者負担）:"着払い（購入者負担）",}
-
+              {送料込み（出品者負担）:"送料込み（出品者負担）",
+              着払い（購入者負担）:"着払い（購入者負担）"},
+              { include_blank: "選択してください"}
             .shipping-location-box
               .index 配送元の地域
               .caution 必須
             .shipping-location-form-field
-              = f.collection_select :prefecture_id, Prefecture.all, :id, :name
+              = f.collection_select :prefecture_id, Prefecture.all, :id, :name,{ include_blank: "選択してください"}
 
             .shipping-fee-payer-box
               .index 発送までの日数
               .caution 必須
             .shipping-days-form-field
               = f.select :shipping_days,
-              {選択してください:"選択してください",
-              １〜２日で発送:"１〜２日で発送",
+              {１〜２日で発送:"１〜２日で発送",
               ２〜３日で発送:"２〜３日で発送",
-              ４〜７日で発送:"４〜７日で発送",}
+              ４〜７日で発送:"４〜７日で発送"},
+              { include_blank: "選択してください"}
       
         .main-content__box__cost-info-content
           .main-content__box__cost-info-content__subtitle-box
