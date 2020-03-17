@@ -104,7 +104,21 @@
               = icon('fa', 'flag',class: 'flag-icon')
             .product-contents__inner__mainbox__links__report__letter
               不適切な商品の通報
-      .product-contents__inner__commentbox
+
+      - if user_signed_in? && current_user.id == @item.user_id
+        .product-contents__inner__edit-delete-btn-content
+          .edit-btn
+            .edit-btn__text
+              商品の編集
+            .selection
+              or
+            -# = link_to "この商品を削除する", item_path(item.id),method: :delete, class: "delete-btn"
+            = link_to item_path(@item.id),method: :delete do
+              .delete-btn
+                この商品を削除する
+                
+              
+      .product-contents__inner__commentbox       
         .product-contents__inner__commentbox__content
         .product-contents__inner__commentbox__warning
           相手のことを考え丁寧なコメントを心がけましょう.
