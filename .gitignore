@@ -30,4 +30,4 @@
 /public/uploads/*
 
 # payjpの秘密鍵、公開鍵の漏洩防止
-/.env
+*.env
