@@ -314,7 +314,13 @@
                 (税込)
 
 
-= paginate @items
+
+= paginate(@items)
+  -# %span.previous_page.disabled &lt;
+  -# %em.current 1
+  -# %a{:href => "", :rel => "next"} 2
+  -# %a{:href => ""} 3
+  -# %a.next_page{:href => "", :rel => "next"} &gt;
 
 
 
