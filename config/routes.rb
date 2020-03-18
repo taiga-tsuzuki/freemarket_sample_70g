@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   
+  resources :categories, only: [:show]
   devise_for :users, controllers: {
     registrations: 'users/registrations',
   }
@@ -41,4 +42,5 @@ Rails.application.routes.draw do
       get 'done', to: 'purchases#done'
     end
   end
+  resources :categories, only: [:show]
 end
