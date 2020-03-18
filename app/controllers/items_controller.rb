@@ -1,7 +1,7 @@
 class ItemsController < ApplicationController
 
   def index
-    @items = Item.includes(:images).order(:item_purchaser_id, "id DESC").limit(3)   
+    @items = Item.includes(:images).order(:item_purchaser_id, "id DESC").limit(3)
   end
 
   def new
@@ -24,6 +24,7 @@ class ItemsController < ApplicationController
   def show
     @item = Item.includes(:user).find(params[:id])
     @items = @item.images
+
   end
 
   def done

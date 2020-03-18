@@ -42,10 +42,33 @@ a {
       .lists__left {
         line-height: 35px;
         display: flex;
-        .category {
+        .category {     
           margin-left: 10px;
-          color: black;
+          ul{
+            display: none;
+            display: block;
+          }
         }
+        .category:hover{
+          color: blue;
+          ul{
+            display: block;
+            text-decoration: none;
+            color: black;
+            li{
+              height: 40px;
+              background-color: whitesmoke;
+              z-index: 1000;
+              position: relative;
+              color: black;
+              a{
+                color: black;
+              }
+            }
+          }
+        }
+      }
+    }
         .brand {
           margin-left: 50px;
           color: black;
@@ -64,10 +87,6 @@ a {
         }
       }
     }
-  }
-}
-
-
 
 
 .main {

@@ -9,9 +9,12 @@
         = image_tag "/material/icon/icon-search 1.png", size: "24x24", class: "search__box__btn"
     .header__box__sub
       %ul.lists__left
-        %li
+        %li.category
           = link_to "#",class: "category" do
             カテゴリー
+          %ul.parents
+            %li.parent
+              レディース
         %li
           = link_to "#",class: "brand" do
             ブランド
