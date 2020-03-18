@@ -95,32 +95,26 @@
     &__inner {
       color: white;
       text-align: center;
-      .inner__title {
+      &__title {
         font-size: 24px;
         text-shadow: 0 0 5px rgba(0,0,0,0.4);
         font-weight: bold;
       }
-      .inner__text {
+      &__text {
         font-size: 35px;
         text-shadow: 0 0 5px rgba(0,0,0,0.4)
       }
-      .inner__btn {
+      &__btn {
         height: 70px;
-        .abtn {
+        &__abtn {
           height: 100%;
           width:  auto;
         }
-        .abtn:hover {
-          opacity: 0.5 ;
-        }  
-        .gbtn {
+        &__gbtn {
           height: 100%;
           width:  auto;
           margin-left: 50px;
           transform: scale(1.45);
-        }
-        .gbtn:hover {
-          opacity: 0.5 ;
         }
       }
     }

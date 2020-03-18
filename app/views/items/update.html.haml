@@ -32,15 +32,15 @@
       
   .appbanner
     .appbanner__inner
-      %h1.inner__title
+      %h1.appbanner__inner__title
         だれでもかんたん、人生を変えるフリマアプリ
-      %p.inner__text
+      %p.appbanner__inner__text
         今すぐ無料ダウンロード！
-      .inner__btn
+      .appbanner__inner__btn
         = link_to "#" do
-          = image_tag "/material/badge/Download_on_the_App_Store_Badge.svg", class: "abtn"
+          = image_tag "/material/badge/Download_on_the_App_Store_Badge.svg", class: "appbanner__inner__btn__abtn"
         = link_to "#" do
-          = image_tag "/material/badge/google-play-badge.png", class: "gbtn"
+          = image_tag "/material/badge/google-play-badge.png", class: "appbanner__inner__btn__gbtn"
 
   .footer
     %ul.footer__contents
