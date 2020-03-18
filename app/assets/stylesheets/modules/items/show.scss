@@ -68,7 +68,7 @@ a {
 }
 
 .product-contents{
-  height: 2100px;
+  height: 2300px; 
   width: 100%;
   padding-top: 20px;
   position: relative;
@@ -124,7 +124,8 @@ a {
           margin: auto;
           height: 300px;
           width: 600px;
-          background-image: url(first-view.jpeg);
+          background-image: url(https://tech-master.s3.amazonaws.com/uploads/curriculums/images/Rails1-4/sample.jpg);
+          background-size: cover;
         }
         &__other-images{
           margin: auto;
@@ -136,18 +137,20 @@ a {
             &__first{
               height: 150px;
               width: 183px;
-              background-image: url(AYA.jpeg);
-
+              background-image: url(https://tech-master.s3.amazonaws.com/uploads/curriculums/images/Rails1-4/sample.jpg);
+              background-size: cover;
             }
             &__second{
               height: 150px;
               width: 183px;
-              background-image: url(JIN.jpeg); 
+              background-image: url(https://tech-master.s3.amazonaws.com/uploads/curriculums/images/Rails1-4/sample.jpg);
+              background-size: cover;
             }
             &__third{
               height: 150px;
               width: 183px;
-              background-image: url(KEN.jpeg);
+              background-image: url(https://tech-master.s3.amazonaws.com/uploads/curriculums/images/Rails1-4/sample.jpg);
+              background-size: cover;
             }
           }
         }
@@ -266,6 +269,66 @@ a {
           }
         }
       }
+
+      &__edit-delete-btn-content{
+        height: 250px;
+        width: 700px;
+        background-color: white;
+        margin: 20px auto;
+        position: relative;
+
+        .edit-btn {
+          width: 600px;
+          height: 50px;
+          position: absolute;
+          margin: auto;
+          top: 0;
+          right: 0;
+          bottom: 110px;
+          left: 0;
+          background-color: #FF0000;
+
+          &__text {
+            width: 100%;
+            height: 100%;
+            line-height: 50px;
+            text-align: center;
+            color: white;
+          }
+          .selection {
+            width: 600px;
+            height: 50px;
+            margin: auto;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            line-height: 50px;
+            text-align: center;          
+          }
+          a {
+              .delete-btn {
+                width: 600px;
+              height: 50px;
+              margin: auto;
+              top: 0;
+              right: 0;
+              bottom: 0;
+              left: 0;
+              line-height: 50px;
+              text-align: center;
+              background-color: #AAAAAA;
+              color: white;                
+             }
+          }
+          
+        }
+
+        
+
+      
+
+      }
       &__commentbox{
         height: 400px;
         width: 700px;
@@ -343,14 +406,6 @@ a {
       }
     }
   }
-
-
-
-
-
-
-
-
 
   .appbanner {
     height: 150px;
