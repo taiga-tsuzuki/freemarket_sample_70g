@@ -12,9 +12,11 @@
         %li.category
           = link_to "#",class: "category" do
             カテゴリー
-          %ul.parents
-            %li.parent
-              レディース
+            - @category.each do |category|
+              %ul.parents
+                %li.parent
+                  = category.name
+            
         %li
           = link_to "#",class: "brand" do
             ブランド
