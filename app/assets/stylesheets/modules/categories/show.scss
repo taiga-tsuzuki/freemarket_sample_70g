@@ -8,6 +8,9 @@
     line-height: 50px;
     .list {
       margin-left: 15px;
+      &::before{
+        content:">";
+      }
     }
   }
 }

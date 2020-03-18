@@ -27,22 +27,82 @@
             = link_to "新規登録",new_user_registration_path, class: 'signin'
 .categories
   %ul.categories__lists
-    %li.list
+    %li.list__head 
       = link_to root_path do
-        フリマ >
+        フリマ
     %li.list
-      カテゴリー一覧 >
-    %li.list
-      - if 
-      = @category.parent.parent.name
-      >
-    %li.list
-      = link_to category_path(@category.parent.id) do
-        = @category.parent.name
-        >
-    %li.list
-      - if @category ==category.parent.id || @category ==category.parent.parent.id
-        = @category.name
+      カテゴリー一覧
+
+
+
+
+    -# - if @category.children.nil? &&  @category.children.children.nil?
+    -#   %li.list
+    -#     = @category.name
+
+    -# - elsif @category.children.nil?
+    -#   %li.list
+    -#     = link_to category_path(@category.parent.parent.id) do
+    -#       = @category.parent.name
+    -#   %li.list
+    -#     = @category.name
+
+    -# - else
+    -#   %li.list
+    -#     = link_to category_path(@category.parent.parent.id) do
+    -#       = @category.parent.parent.name
+    -#   %li.list
+    -#     = link_to category_path(@category.parent.id) do
+    -#       = @category.parent.name
+    -#   %li.list
+    -#     = @category.name
+
+
+
+
+
+
+
+
+      
+    -# - if @category.children.children.id.blank?
+    -#   %li.list
+    -#     = @category.parent.parent.name
+    -# - elsif @category.children.id.blank?
+    -#   %li.list
+    -#     = @category.parent.name
+    -# - else
+    -#   %li.list
+    -#     = @category.name
+
+
+
+
+
+
+    -# - if @category.parent.id.blank? && @category.children.id.blank?
+    -#   %li.list
+    -#     = link_to category_path(@category.parent.id) do
+    -#       = @category.parent.name
+    -# - else
+    -#   %li.list
+    -#     = link_to category_path(@category.parent.id) do
+    -#       = @category.name
+
+
+
+
+
+    -# -if @category.parent.parent.id.blank?
+    -#   %li.list
+    -#     = @category.name
+
+
+
+
+
+
+
 
 
 .category__main
