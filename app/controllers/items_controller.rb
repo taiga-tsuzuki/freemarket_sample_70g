@@ -7,6 +7,7 @@ class ItemsController < ApplicationController
   def new
     @item = Item.new
     @item.images.new
+    @category = Category.all.order("ancestry ASC").limit(13)
   end
 
   def create
@@ -14,6 +15,9 @@ class ItemsController < ApplicationController
     if @item.save
       redirect_to root_path
     else
+      # @item = Item.new(item_params)
+      @item.images.build
+      @category = Category.all.order("ancestry ASC").limit(13)
       render :new
     end  
   end

@@ -26,7 +26,7 @@
                     = icon('fas', 'camera', class: 'camera-icon img-file')
                     = i.file_field :image, type: 'file', name: "item[images_attributes][][image]", id:"img-file"
                     %br/
-                    
+
                     .image-upload-description-box
                       %p.first-line ドラッグアンドドロップ
                       %p.second-line またはクリックしてファイルをアップロード
@@ -51,7 +51,7 @@
               .index カテゴリー
               .caution 必須
             .product_category-select
-              = f.collection_select :category, Category.all.order("ancestry ASC").limit(13), :id, :name, { prompt: "選択してください" }, { class: "category_select-box", id: "category_select" }
+              = f.collection_select :category, @category, :id, :name, { prompt: "選択してください" }, { class: "category_select-box", id: "category_select" }
               %i.fa.fa-chevron-down
             .product_select-children
 
