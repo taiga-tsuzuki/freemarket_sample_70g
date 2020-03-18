@@ -15,7 +15,6 @@
         %li
           = link_to "#",class: "brand" do
             ブランド
-
       - if user_signed_in?
         %ul.lists__right
           %li
@@ -29,306 +28,49 @@
 .categories
   %ul.categories__lists
     %li.list
-      メルカリ >
+      = link_to root_path do
+        フリマ >
     %li.list
       カテゴリー一覧 >
     %li.list
-      親 >
+      = @category.parent.parent.name
+      >
     %li.list
-      子 >
+      = @category.parent.name
+      >
     %li.list
-      孫
-
-
-
-
-
-
-
+      = @category.name
 
 
 .category__main
   .product
     .product__lists
-      %h2 孫の商品一覧（１ページ目）
+      %h2 
+        = @category.name
+        の商品一覧（１ページ目）
       .product__lists__list
-        = link_to "#" do
-          .image
-          .item__text
-            .item__text__name
-              サンタ
-            .item__text__details
-              %ul
-                %li
-                  3000円
-                %li
-                  ★4
-              %p
-                (税込)
-        = link_to "#" do
-          .image
-          .item__text
-            .item__text__name
-              サンタ
-            .item__text__details
-              %ul
-                %li
-                  3000円
-                %li
-                  ★4
-              %p
-                (税込)
-        = link_to "#" do
-          .image
-          .item__text
-            .item__text__name
-              サンタ
-            .item__text__details
-              %ul
-                %li
-                  3000円
-                %li
-                  ★4
-              %p
-                (税込)
-        = link_to "#" do
-          .image
-          .item__text
-            .item__text__name
-              サンタ
-            .item__text__details
-              %ul
-                %li
-                  3000円
-                %li
-                  ★4
-              %p
-                (税込)
-        = link_to "#" do
-          .image
-          .item__text
-            .item__text__name
-              サンタ
-            .item__text__details
-              %ul
-                %li
-                  3000円
-                %li
-                  ★4
-              %p
-                (税込)
-        = link_to "#" do
-          .image
-          .item__text
-            .item__text__name
-              サンタ
-            .item__text__details
-              %ul
-                %li
-                  3000円
-                %li
-                  ★4
-              %p
-                (税込)
-        = link_to "#" do
-          .image
-          .item__text
-            .item__text__name
-              サンタ
-            .item__text__details
-              %ul
-                %li
-                  3000円
-                %li
-                  ★4
-              %p
-                (税込)
-        = link_to "#" do
-          .image
-          .item__text
-            .item__text__name
-              サンタ
-            .item__text__details
-              %ul
-                %li
-                  3000円
-                %li
-                  ★4
-              %p
-                (税込)
-        = link_to "#" do
-          .image
-          .item__text
-            .item__text__name
-              サンタ
-            .item__text__details
-              %ul
-                %li
-                  3000円
-                %li
-                  ★4
-              %p
-                (税込)
-        = link_to "#" do
-          .image
-          .item__text
-            .item__text__name
-              サンタ
-            .item__text__details
-              %ul
-                %li
-                  3000円
-                %li
-                  ★4
-              %p
-                (税込)
-        = link_to "#" do
-          .image
-          .item__text
-            .item__text__name
-              サンタ
-            .item__text__details
-              %ul
-                %li
-                  3000円
-                %li
-                  ★4
-              %p
-                (税込)
-        = link_to "#" do
-          .image
-          .item__text
-            .item__text__name
-              サンタ
-            .item__text__details
-              %ul
-                %li
-                  3000円
-                %li
-                  ★4
-              %p
-                (税込)
-        = link_to "#" do
-          .image
-          .item__text
-            .item__text__name
-              サンタ
-            .item__text__details
-              %ul
-                %li
-                  3000円
-                %li
-                  ★4
-              %p
-                (税込)
-        = link_to "#" do
-          .image
-          .item__text
-            .item__text__name
-              サンタ
-            .item__text__details
-              %ul
-                %li
-                  3000円
-                %li
-                  ★4
-              %p
-                (税込)
-        = link_to "#" do
-          .image
-          .item__text
-            .item__text__name
-              サンタ
-            .item__text__details
-              %ul
-                %li
-                  3000円
-                %li
-                  ★4
-              %p
-                (税込)
-        = link_to "#" do
-          .image
-          .item__text
-            .item__text__name
-              サンタ
-            .item__text__details
-              %ul
-                %li
-                  3000円
-                %li
-                  ★4
-              %p
-                (税込)
-        = link_to "#" do
-          .image
-          .item__text
-            .item__text__name
-              サンタ
-            .item__text__details
-              %ul
-                %li
-                  3000円
-                %li
-                  ★4
-              %p
-                (税込)
-        = link_to "#" do
-          .image
-          .item__text
-            .item__text__name
-              サンタ
-            .item__text__details
-              %ul
-                %li
-                  3000円
-                %li
-                  ★4
-              %p
-                (税込)
-        = link_to "#" do
-          .image
-          .item__text
-            .item__text__name
-              サンタ
-            .item__text__details
-              %ul
-                %li
-                  3000円
-                %li
-                  ★4
-              %p
-                (税込)
-        = link_to "#" do
-          .image
-          .item__text
-            .item__text__name
-              サンタ
-            .item__text__details
-              %ul
-                %li
-                  3000円
-                %li
-                  ★4
-              %p
-                (税込)
+        - @categories.each do |category|
+          - category.images.first(1).each do |image|
+            - if category.item_purchaser_id.blank?
+              = link_to item_path(category.id) do
+                .image
+                  = image_tag "#{image.image}", alt: "テスト", size: "200x150"
+                
+                .item__text
+                  .item__text__name
+                    = category.item_name
+                  .item__text__details
+                    %ul
+                      %li
+                        = category.price
+                        円
+                      %li
+                        ★2
+                    %p
+                      (税込)
 
 
-
-  = paginate(@items)
-
-
-
-
-
-
-
-
-
-
-
-
-
+  = paginate(@categories)
 
 
 .appbanner
@@ -394,6 +136,3 @@
       .text
         出品する
       = image_tag "/material/icon/icon_camera.png", class: "exhibit__icon"
-
-
-

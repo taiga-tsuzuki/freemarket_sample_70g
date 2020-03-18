@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   
-  get 'categories/show'
+  resources :categories, only: [:show]
   devise_for :users, controllers: {
     registrations: 'users/registrations',
   }

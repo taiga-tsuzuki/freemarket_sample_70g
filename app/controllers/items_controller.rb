@@ -22,8 +22,8 @@ class ItemsController < ApplicationController
   end
   
   def show
-    @categories = Item.includes(:user).find(params[:id])
-    @category = @item.images
+    @item = Item.includes(:user).find(params[:id])
+    @items = @item.images
   end
 
   def done
