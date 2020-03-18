@@ -4,4 +4,8 @@ class UsersController < ApplicationController
 
   def show
   end
+
+  def onsale
+    @items = Item.all
+  end
 end
