@@ -33,13 +33,16 @@
     %li.list
       カテゴリー一覧 >
     %li.list
+      - if 
       = @category.parent.parent.name
       >
     %li.list
-      = @category.parent.name
-      >
+      = link_to category_path(@category.parent.id) do
+        = @category.parent.name
+        >
     %li.list
-      = @category.name
+      - if @category ==category.parent.id || @category ==category.parent.parent.id
+        = @category.name
 
 
 .category__main
