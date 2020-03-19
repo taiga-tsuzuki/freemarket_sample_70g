@@ -28,7 +28,7 @@
         .product-contents__inner__mainbox__top
           .product-contents__inner__mainbox__top__name
             = @item.item_name
-          -# - if user_signed_in? && current_user.id == @item.user_id
+          - if 1 < 3
             .product-contents__inner__mainbox__top__itemManage
               = link_to "編集", edit_item_path(@item.id), class: "itemManage__edit"
               = link_to "削除", item_path(@item.id), method: :delete, class: "itemManage__delete"
@@ -61,7 +61,7 @@
             .leftbox
               カテゴリー
             .rightbox
-              = "#{@item.category.parent.parent.name}/#{@item.category.parent.name}/#{@item.category.name}"
+              -# = "#{@item.category.parent.parent.name}/#{@item.category.parent.name}/#{@item.category.name}"
               
           .product-contents__inner__mainbox__table__box
             .leftbox
