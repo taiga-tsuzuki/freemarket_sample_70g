@@ -2,8 +2,6 @@
   .items-new-header
     =link_to root_path do
       = image_tag "/logo.png", size: "185x49"
-
-
   .main-confirm-contents
     = form_with url:"#" do |f|
       .main-confirm-content
@@ -37,7 +35,15 @@
                 %h3 登録してください
             .main-confirm-content__payment__group__location
               %h2 配送先
-              %h3 登録してください
+              %h3
+                〒
+                = @location.postal_code
+                %br/
+                = @location.prefecture
+                = @location.city
+                = @location.building_name
+                %br/
+                = current_user.nickname
             .main-confirm-content__payment__group__submit
               = link_to "購入する", purchases_path, method: :get, class: "confirm-submit"
               = link_to "もどる", :back, class: "return-btn"
