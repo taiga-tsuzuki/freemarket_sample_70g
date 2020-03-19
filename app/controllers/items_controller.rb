@@ -18,7 +18,6 @@ before_action :set_user, only: [:edit, :update]
     if @item.save
       redirect_to root_path
     else
-      # @item = Item.new(item_params)
       @item.images.build
       @category = Category.all.order("ancestry ASC").limit(13)
       render :new
@@ -28,6 +27,7 @@ before_action :set_user, only: [:edit, :update]
   def confirm
     @item = Item.includes(:user).find(params[:id])
     @items = @item.images
+    @location = current_user.location
   end
   
   def show
