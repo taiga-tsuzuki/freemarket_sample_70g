@@ -1,3 +1,7 @@
+%link{:href => "https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.1/css/swiper.css", :rel => "stylesheet"}/
+%script{:src => "https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.1/js/swiper.js"}
+
+
 .product
   .header
     .header__box
@@ -33,6 +37,19 @@
               = link_to "編集", edit_item_path(@item.id), class: "itemManage__edit"
               = link_to "削除", item_path(@item.id), method: :delete, class: "itemManage__delete"
         .product-contents__inner__mainbox__main-image
+          .swiper-container.gallery-top
+            .swiper-wrapper
+              = @item.images.each do |image|
+                .swiper-slide
+                  = image_tag "#{image.image}", alt: "テスト", size: "600x300"
+            / Add Arrows
+            .swiper-button-next.swiper-button-white
+            .swiper-button-prev.swiper-button-white
+          .swiper-container.gallery-thumbs
+            .swiper-wrapper
+              - @item.images.each do |image|
+                .swiper-slide
+                  = image_tag "#{image.image}", alt: "テスト", size: "150x150"
           
         .product-contents__inner__mainbox__other-images
           .product-contents__inner__mainbox__other-images__three-images
@@ -199,3 +216,28 @@
       .text
         出品する
       = image_tag "/material/icon/icon_camera.png", class: "exhibit__icon"
+
+:javascript
+  var galleryThumbs = new Swiper('.gallery-thumbs', {
+      spaceBetween: 10,
+      slidesPerView: 4,
+      loop: false,
+      freeMode: true,
+      loopedSlides: 5, //looped slides should be the same
+      watchSlidesVisibility: true,
+      watchSlidesProgress: true,
+    });
+  var galleryTop = new Swiper('.gallery-top', {
+    spaceBetween: 10,
+    loop:　false,
+    loopedSlides: 5, //looped slides should be the same
+    navigation: {
+      nextEl: '.swiper-button-next',
+      prevEl: '.swiper-button-prev',
+    },
+    thumbs: {
+      swiper: galleryThumbs,
+    },
+  });
+
+
