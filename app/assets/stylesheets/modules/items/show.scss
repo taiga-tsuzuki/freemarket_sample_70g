@@ -1,5 +1,6 @@
 a {
   text-decoration: none;
+  color: black;
 }
 
 .header {
@@ -390,12 +391,29 @@ a {
           margin-top: 10px;
         }
         .comments {
-          // border:solid 1px black;
-          // height:300px;
-          // overflow: scroll;
           padding-top: 300px;
           h4 {
             text-align: center;
+          }
+          &__box {
+            height:450px;
+            overflow: scroll;
+            .upper-comment {
+              display: flex;
+              .upper-comment__user-name {
+                margin-right: 10px;
+                .link {
+                  text-decoration: none;
+                }
+              }
+              &__date {
+                color: #999999;
+                font-size: 12px;
+              }
+            }
+            .lower-comment {
+              margin-bottom: 20px;
+            }
           }
         }
       }

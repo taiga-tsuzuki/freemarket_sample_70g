@@ -34,7 +34,7 @@ before_action :set_user, only: [:edit, :update]
     @item = Item.includes(:user).find(params[:id])
     @items = @item.images
     @comment = Comment.new
-    @comments = @item.comments.includes(:user)
+    @comments = @item.comments.includes(:user).order("id DESC")
   end
 
   def done

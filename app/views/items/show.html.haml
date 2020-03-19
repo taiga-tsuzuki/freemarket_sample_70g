@@ -128,26 +128,19 @@
               = form.submit "SEND", class: "product-contents__inner__commentbox__comment__btn"
         .comments
           %h4 ＜コメント一覧＞
-          - if @comments
-            - @comments.each do |comment|
-              %div
-                %strong
-                  = link_to comment.user.nickname, "/users/#{comment.user_id}"
-                  ：
-                = comment.content
-        -# .product-contents__inner__commentbox__comment
-        -#   .product-contents__inner__commentbox__comment__icon
-        -#     = icon('fa', 'comment',class: 'comment-icon')
-        -#   .product-contents__inner__commentbox__comment__btn
-        -#     コメントする
-            
-      -# .product-contents__inner__lowerbox1
-      -#   .product-contents__inner__lowerbox1__left
-      -#     < 前の商品
-      -#   .product-contents__inner__lowerbox1__right
-      -#     次の商品 >
-      -# .product-contents__inner__lowerbox2
-      -#   レディースをもっと見る
+          .comments__box
+            - if @comments
+              - @comments.each do |comment|
+                .upper-comment
+                  .upper-comment__user-name
+                    = link_to comment.user.nickname, class: "link"
+                  .upper-comment__date
+                    = comment.created_at.strftime("%Y年%m月%d日 %H時%M分")
+                .lower-comment
+                  - if comment.content.present?
+                    .lower-comment__content
+                      = comment.content
+
   .appbanner
     .appbanner__inner
       %h1.inner__title
