@@ -32,7 +32,7 @@
         .product-contents__inner__mainbox__top
           .product-contents__inner__mainbox__top__name
             = @item.item_name
-          -# - if user_signed_in? && current_user.id == @item.user_id
+          - if 1 < 3
             .product-contents__inner__mainbox__top__itemManage
               = link_to "編集", edit_item_path(@item.id), class: "itemManage__edit"
               = link_to "削除", item_path(@item.id), method: :delete, class: "itemManage__delete"
@@ -112,11 +112,11 @@
           .item-buy-btn
             これはあなたの出品物です
         - else
-          = link_to confirm_items_path,class: "item-buy-btn" do
+          = link_to confirm_item_path(@item.id),class: "item-buy-btn" do
             購入画面に進む
         .product-contents__inner__mainbox__description
           = @item.description
-        
+
         .product-contents__inner__mainbox__links
           .product-contents__inner__mainbox__links__favorite
             .product-contents__inner__mainbox__links__favorite__icon

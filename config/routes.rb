@@ -10,8 +10,10 @@ Rails.application.routes.draw do
   
   root "items#index"
   resources :items do
-    collection do
+    member do
       get :confirm
+    end
+    collection do
       get :done
       get :category_children
       get :category_grandchildren
@@ -41,4 +43,5 @@ Rails.application.routes.draw do
       get 'done', to: 'purchases#done'
     end
   end
+  resources :categories, only: [:show]
 end
