@@ -45,12 +45,14 @@
             / Add Arrows
             .swiper-button-next.swiper-button-white
             .swiper-button-prev.swiper-button-white
+            .swiper-pagination
           .swiper-container.gallery-thumbs
             .swiper-wrapper
               - @item.images.each do |image|
                 .swiper-slide
                   = image_tag "#{image.image}", alt: "テスト", size: "150x150"
-          
+
+
         .product-contents__inner__mainbox__other-images
           .product-contents__inner__mainbox__other-images__three-images
             .product-contents__inner__mainbox__other-images__three-images__first
@@ -219,14 +221,14 @@
 
 :javascript
   var galleryThumbs = new Swiper('.gallery-thumbs', {
-      spaceBetween: 10,
-      slidesPerView: 4,
-      loop: false,
-      freeMode: true,
-      loopedSlides: 5, //looped slides should be the same
-      watchSlidesVisibility: true,
-      watchSlidesProgress: true,
-    });
+    spaceBetween: 10,
+    slidesPerView: 4,
+    loop: false,
+    freeMode: true,
+    loopedSlides: 5, //looped slides should be the same
+    watchSlidesVisibility: true,
+    watchSlidesProgress: true,
+  });
   var galleryTop = new Swiper('.gallery-top', {
     spaceBetween: 10,
     loop:　false,
@@ -237,6 +239,11 @@
     },
     thumbs: {
       swiper: galleryThumbs,
+    },
+    pagination: {
+    el: '.swiper-pagination',
+    type: 'bullets',
+    clickable: true,
     },
   });
 
