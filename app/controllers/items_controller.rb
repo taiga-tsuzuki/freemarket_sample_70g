@@ -33,6 +33,8 @@ before_action :set_user, only: [:edit, :update]
   def show
     @item = Item.includes(:user).find(params[:id])
     @items = @item.images
+    @comment = Comment.new
+    @comments = @item.comments.includes(:user)
   end
 
   def done
