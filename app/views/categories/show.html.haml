@@ -45,11 +45,9 @@
       %li.list
         = link_to category_path(@category.parent.parent.id) do
           = @category.parent.parent.name
-          = @category.parent.parent.id
       %li.list
         = link_to category_path(@category.parent.id) do
           = @category.parent.name
-          =@category.parent.id
       %li.list
         = @category.name
 
