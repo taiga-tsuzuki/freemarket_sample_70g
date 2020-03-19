@@ -44,14 +44,15 @@
           text-align: left;
         }
           &__details {
+            
             ul {
               display: flex;
               justify-content: space-between;
-              li {
-                .category-yen{
-                  &::after{
-                    content: '円';
-                  }
+              li{
+              }
+              .yen{
+                &::before{
+                  content: '¥';
                 }
               }
             }
@@ -64,7 +65,10 @@
     }
   }
 }
-
+.paginate-container{
+  height: 50px;
+  width: 100vw;
+}
 
 .pagination {
   height: 90px;
