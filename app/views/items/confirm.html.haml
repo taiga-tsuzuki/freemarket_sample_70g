@@ -10,12 +10,15 @@
         .main-confirm-content__header
           %h2 購入内容の確認
         .main-confirm-content__buy-item
-          =image_tag "https://cdn.pixabay.com/photo/2014/09/16/01/19/girl-447701_1280.jpg", class: "main-confirm-content__buy-item__photo"
+          = image_tag "#{@item.images.first.image}", alt: "テスト", size: "60x60"
           .main-confirm-content__buy-item__group
             .main-confirm-content__buy-item__group__item-name
-              %h3 ラストサンタ ラストサンタ ラストサンタ ラストサンタ
+              %h3 
+              = @item.item_name
             .main-confirm-content__buy-item__group__item-price
-              %h3 ¥3,000
+              %h3
+                ¥
+                = @item.price
             .main-confirm-content__buy-item__group__shipping-fee-payer
               %h3 （税込）送料込み
         .main-confirm-content__payment
@@ -23,7 +26,9 @@
             .main-confirm-content__payment__group__price-point
               .main-confirm-content__payment__group__price-point__price
                 %h2 支払い金額
-                %h2 ¥3,000
+                %h2
+                  ¥
+                  = @item.price
               .main-confirm-content__payment__group__price-point__point
                 %h3 ■ポイントを使用 (所持ポイント: P0)
             .main-confirm-content__payment__group__way
