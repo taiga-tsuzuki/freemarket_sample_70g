@@ -34,8 +34,7 @@
             = @item.item_name
           - if 1 < 3
             .product-contents__inner__mainbox__top__itemManage
-              = link_to "編集", edit_item_path(@item.id), class: "itemManage__edit"
-              = link_to "削除", item_path(@item.id), method: :delete, class: "itemManage__delete"
+
         .product-contents__inner__mainbox__main-upper-box
           .product-contents__inner__mainbox__main-upper-box__main-image
             .swiper-container.gallery-top
@@ -132,8 +131,9 @@
       - if user_signed_in? && current_user.id == @item.user_id
         .product-contents__inner__edit-delete-btn-content
           .edit-btn
-            .edit-btn__text
-              商品の編集
+            = link_to edit_item_path(@item.id), class: "itemManage__edit" do
+              .edit-btn__text
+                商品の編集
             .selection
               or
             = link_to item_path(@item.id),method: :delete do
@@ -141,24 +141,16 @@
                 この商品を削除する
                 
               
-      .product-contents__inner__commentbox       
-        .product-contents__inner__commentbox__content
+      .product-contents__inner__commentbox
         .product-contents__inner__commentbox__warning
           相手のことを考え丁寧なコメントを心がけましょう.
           %br/
-          不快な言葉遣いなどは利用制限や退会処分となることがあります。
+          不快な言葉遣いなどは利用制限や退会処分となることがあります。 
+        .product-contents__inner__commentbox__content       
         .product-contents__inner__commentbox__comment
-          .product-contents__inner__commentbox__comment__icon
-            = icon('fa', 'comment',class: 'comment-icon')
-          .product-contents__inner__commentbox__comment__btn
-            コメントする
-      .product-contents__inner__lowerbox1
-        .product-contents__inner__lowerbox1__left
-          < 前の商品
-        .product-contents__inner__lowerbox1__right
-          次の商品 >
-      .product-contents__inner__lowerbox2
-        レディースをもっと見る
+        .product-contents__inner__commentbox__comment__btn
+          コメントする
+
   .appbanner
     .appbanner__inner
       %h1.inner__title
@@ -212,7 +204,7 @@
           %li.list
             = link_to "#", class: "list" do
               お知らせ
-    = link_to "#" do
+    = link_to root_path do
       = image_tag "/material/logo/logo-white.png", size: "160x46", class: "footer__logo"
 
     %p
