@@ -26,6 +26,8 @@ before_action :set_user, only: [:edit, :update]
   end
 
   def confirm
+    @item = Item.includes(:user).find(params[:id])
+    @items = @item.images
   end
   
   def show
