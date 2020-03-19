@@ -6,6 +6,12 @@
   }
   .main {
     height: 400px;
+    .item__price {
+      &::before {
+        content: '¥';
+      }
+    }
+    
     .purchase {
       height: 40px;
       width: 50%;

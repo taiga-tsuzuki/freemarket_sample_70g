@@ -4,8 +4,8 @@
       購入が完了しました！
   .main
     %p
-      Apple MacBook Pro 13インチ
-    %p
-      ¥135,000(送料込み)
+      = @item.item_name
+    %p.item__price
+      = @item.price
     = link_to done_items_path, class: "return" do
       戻る

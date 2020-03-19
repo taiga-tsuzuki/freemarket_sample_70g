@@ -31,8 +31,8 @@
                 %h3 ■ポイントを使用 (所持ポイント: P0)
             .main-confirm-content__payment__group__way
               %h2 支払い方法
-              = link_to pay_creditcards_path do
-                %h3 登録してください
+              = link_to user_path(current_user.id) do
+                %h3 マイページより登録してください
             .main-confirm-content__payment__group__location
               %h2 配送先
               %h3
@@ -45,7 +45,7 @@
                 %br/
                 = current_user.nickname
             .main-confirm-content__payment__group__submit
-              = link_to "購入する", purchases_path, method: :get, class: "confirm-submit"
+              = link_to "購入する", purchase_path(@item.id), method: :get, class: "confirm-submit"
               = link_to "もどる", :back, class: "return-btn"
           
   .lower-content
