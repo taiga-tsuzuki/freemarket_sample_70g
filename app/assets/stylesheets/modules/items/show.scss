@@ -75,12 +75,12 @@ a {
   background-color: gainsboro;
     &__inner{
       height: 2100px;
-      width: 800px;
+      width: 1000px;
       background-color: gainsboro;
       margin: 0 auto;
       &__mainbox{
         height: 1500px;
-        width: 700px;
+        width: 920px;
         margin: auto;
         background-color: white;
         &__top{
@@ -120,68 +120,93 @@ a {
             }
           }
         }
-        &__main-image{
-          margin: auto;
-          height: 300px;
-          width: 600px;
-          // background-image: url(https://tech-master.s3.amazonaws.com/uploads/curriculums/images/Rails1-4/sample.jpg);
-          // background-size: cover;
 
+        &__main-upper-box {
+          display: flex;
+
+          &__main-image{
+            height: 400px;
+            width: 400px;
+            margin-left: 40px;
+            // background-image: url(https://tech-master.s3.amazonaws.com/uploads/curriculums/images/Rails1-4/sample.jpg);
+            // background-size: cover;
+            .swiper-container {
+              width: 100%;
+              height: 425px;
+              margin-left: auto;
+              margin-right: auto;
+            }
+            .swiper-slide {
+              background-size: cover;
+              background-position: center;
+            }
+            .gallery-top {
+              height: 100%;
+              width: 100%;
+            }
+            .gallery-thumbs {
+              height: 50%;
+              box-sizing: border-box;
+              padding: 10px 0;
+            }
+            .gallery-thumbs .swiper-slide {
+              height: 100%;
+              opacity: 0.4;
+            }
+            .gallery-thumbs .swiper-slide-thumb-active {
+              opacity: 1;
+            }           
+          }
           
+  
+          &__table{
+            height: 300px;
+            width: 425px;
+            background-color: darkslateblue;
+            border: solid 1px gainsboro;
+            font-size: 14px;
+            margin-left: 20px;
+            &__category-box{
+              display: flex;
+              .category-leftbox{
+                height: 100px;
+                line-height: 37.5px;
+                width: 150px;
+                background-color: lightgray;
+                text-align: center;
+                border-right: solid 1px gainsboro;
+                border-bottom: solid 1px gainsboro;
+              }
+              .category-rightbox{
+                height: 100px;
+                width: 450px;
+                background-color: white;
+                border-bottom: solid 1px gainsboro;
+              }
+            }
+            &__box{
+              display: flex;
+              .leftbox{
+                height: 40px;
+                line-height: 37.5px;
+                width: 150px;
+                background-color: lightgray;
+                text-align: center;
+                border-right: solid 1px gainsboro;
+                border-bottom: solid 1px gainsboro;
+              }
+              .rightbox{
+                height: 40px;
+                width: 450px;
+                background-color: white;
+                border-bottom: solid 1px gainsboro;
+              }
+            }
+          }
+
         }
-        .swiper-container {
-          width: 100%;
-          height: 300px;
-          margin-left: auto;
-          margin-right: auto;
-        }
-        .swiper-slide {
-          background-size: cover;
-          background-position: center;
-        }
-        .gallery-top {
-          height: 100%;
-          width: 100%;
-        }
-        .gallery-thumbs {
-          height: 50%;
-          box-sizing: border-box;
-          padding: 10px 0;
-        }
-        .gallery-thumbs .swiper-slide {
-          height: 100%;
-          opacity: 0.4;
-        }
-        .gallery-thumbs .swiper-slide-thumb-active {
-          opacity: 1;
-        }
-        // &__other-images{
-        //   margin: auto;
-        //   height: 150px;
-        //   background-color: cadetblue;
-        //   width: 550px;
-        //   &__three-images{
-        //     display: flex;
-        //     &__first{
-        //       height: 150px;
-        //       width: 183px;
-        //       background-image: url(https://tech-master.s3.amazonaws.com/uploads/curriculums/images/Rails1-4/sample.jpg);
-        //       background-size: cover;
-        //     }
-        //     &__second{
-        //       height: 150px;
-        //       width: 183px;
-        //       background-image: url(https://tech-master.s3.amazonaws.com/uploads/curriculums/images/Rails1-4/sample.jpg);
-        //       background-size: cover;
-        //     }
-        //     &__third{
-        //       height: 150px;
-        //       width: 183px;
-        //       background-image: url(https://tech-master.s3.amazonaws.com/uploads/curriculums/images/Rails1-4/sample.jpg);
-        //       background-size: cover;
-        //     }
-        //   }
-        // }
+        
+      
         &__price{
           height: 100px;
           line-height: 100px;
@@ -221,31 +246,7 @@ a {
           margin: auto;
           
         }
-        &__table{
-          height: 300px;
-          width: 600px;
-          background-color: darkslateblue;
-          margin: auto;
-          border: solid 1px gainsboro;
-          &__box{
-            display: flex;
-            .leftbox{
-              height: 37.5px;
-              line-height: 37.5px;
-              width: 150px;
-              background-color: lightgray;
-              text-align: center;
-              border-right: solid 1px gainsboro;
-              border-bottom: solid 1px gainsboro;
-            }
-            .rightbox{
-              height: 37.5px;
-              width: 450px;
-              background-color: white;
-              border-bottom: solid 1px gainsboro;
-            }
-          }
-        }
+        
         &__links{
           height: 50px;
           width: 600px;

@@ -36,21 +36,67 @@
             .product-contents__inner__mainbox__top__itemManage
               = link_to "編集", edit_item_path(@item.id), class: "itemManage__edit"
               = link_to "削除", item_path(@item.id), method: :delete, class: "itemManage__delete"
-        .product-contents__inner__mainbox__main-image
-          .swiper-container.gallery-top
-            .swiper-wrapper
-              = @item.images.each do |image|
-                .swiper-slide
-                  = image_tag "#{image.image}", alt: "テスト", size: "600x300"
-            / Add Arrows
-            .swiper-button-next.swiper-button-white
-            .swiper-button-prev.swiper-button-white
-            .swiper-pagination
-          .swiper-container.gallery-thumbs
-            .swiper-wrapper
-              - @item.images.each do |image|
-                .swiper-slide
-                  = image_tag "#{image.image}", alt: "テスト", size: "150x150"
+        .product-contents__inner__mainbox__main-upper-box
+          .product-contents__inner__mainbox__main-upper-box__main-image
+            .swiper-container.gallery-top
+              .swiper-wrapper
+                = @item.images.each do |image|
+                  .swiper-slide
+                    = image_tag "#{image.image}", alt: "テスト", size: "400x389"
+              / Add Arrows
+              .swiper-button-next.swiper-button-white
+              .swiper-button-prev.swiper-button-white
+              .swiper-pagination
+            .swiper-container.gallery-thumbs
+              .swiper-wrapper
+                - @item.images.each do |image|
+                  .swiper-slide
+                    = image_tag "#{image.image}", alt: "テスト", size: "100x100"
+
+          .product-contents__inner__mainbox__main-upper-box__table
+            .product-contents__inner__mainbox__main-upper-box__table__box
+              .leftbox
+                出品者
+              .rightbox
+                = @item.user.nickname
+            .product-contents__inner__mainbox__main-upper-box__table__category-box
+              .category-leftbox
+                カテゴリー
+              .category-rightbox
+                %p= "#{@item.category.parent.parent.name}"
+                %p= "#{@item.category.parent.name}"
+                %p= "#{@item.category.name}"
+                
+            .product-contents__inner__mainbox__main-upper-box__table__box
+              .leftbox
+                ブランド
+              .rightbox
+                = @item.brand_name
+            .product-contents__inner__mainbox__main-upper-box__table__box
+              .leftbox
+                商品のサイズ
+              .rightbox
+                = @item.size
+            .product-contents__inner__mainbox__main-upper-box__table__box
+              .leftbox
+                商品の状態
+              .rightbox
+                = @item.condition
+            .product-contents__inner__mainbox__main-upper-box__table__box
+              .leftbox
+                配送料の負担
+              .rightbox
+                = @item.shipping_fee_payer
+            .product-contents__inner__mainbox__main-upper-box__table__box
+              .leftbox
+                発送元の地域
+              .rightbox
+                = @item.prefecture.name
+            .product-contents__inner__mainbox__main-upper-box__table__box
+              .leftbox
+                発送日の目安
+              .rightbox
+                = @item.shipping_days
 
 
         .product-contents__inner__mainbox__other-images
@@ -70,48 +116,7 @@
             購入画面に進む
         .product-contents__inner__mainbox__description
           = @item.description
-        .product-contents__inner__mainbox__table
-          .product-contents__inner__mainbox__table__box
-            .leftbox
-              出品者
-            .rightbox
-              = @item.user.nickname
-          .product-contents__inner__mainbox__table__box
-            .leftbox
-              カテゴリー
-            .rightbox
-              = "#{@item.category.parent.parent.name}/#{@item.category.parent.name}/#{@item.category.name}"
-              
-          .product-contents__inner__mainbox__table__box
-            .leftbox
-              ブランド
-            .rightbox
-              = @item.brand_name
-          .product-contents__inner__mainbox__table__box
-            .leftbox
-              商品のサイズ
-            .rightbox
-              = @item.size
-          .product-contents__inner__mainbox__table__box
-            .leftbox
-              商品の状態
-            .rightbox
-              = @item.condition
-          .product-contents__inner__mainbox__table__box
-            .leftbox
-              配送料の負担
-            .rightbox
-              = @item.shipping_fee_payer
-          .product-contents__inner__mainbox__table__box
-            .leftbox
-              発送元の地域
-            .rightbox
-              = @item.prefecture.name
-          .product-contents__inner__mainbox__table__box
-            .leftbox
-              発送日の目安
-            .rightbox
-              = @item.shipping_days
+        
         .product-contents__inner__mainbox__links
           .product-contents__inner__mainbox__links__favorite
             .product-contents__inner__mainbox__links__favorite__icon
