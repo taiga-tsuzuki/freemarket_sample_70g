@@ -18,7 +18,6 @@ before_action :set_user, only: [:edit, :update]
     if @item.save
       redirect_to root_path
     else
-      # @item = Item.new(item_params)
       @item.images.build
       @category = Category.all.order("ancestry ASC").limit(13)
       render :new
