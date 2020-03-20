@@ -14,15 +14,18 @@
           %ul.firstmenu-parent
             - @parents.each do |parent|
               %li.parent-name
-                = parent.name
+                = link_to category_path(parent.id) do
+                  = parent.name
                 %ul.secondmenu-children
                   - parent.children.each do |child|
                     %li.children-name
-                      = child.name
+                      = link_to category_path(child.id) do
+                        = child.name
                       %ul.thirdmenu-grandchildren
                         - child.children.each do |grandchild|
                           %li.grandchildren-name
-                            = grandchild.name
+                            = link_to category_path(grandchild.id) do
+                              = grandchild.name
 
         %li
           = link_to "#",class: "brand" do
