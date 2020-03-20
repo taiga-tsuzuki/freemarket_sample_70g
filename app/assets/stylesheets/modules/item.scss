@@ -47,21 +47,22 @@ a {
           margin-left: 10px;
           color: black;
         }
-        .brand {
-          // margin-left: 10px;
+
+        .abnc{
           width: 300px;
           color: black;
-          // position: relative;
-          &__lists {
-            // height: 20px;
-            overflow: hidden;
-            background-color: red;
+          &:hover > .brand__lists{
+            visibility: visible;
+            opacity: 1;
           }
         }
-        .brand:hover .brand__lists{
-          border-top: solid 1px rgb(228, 228, 228);
-          height: 50px;
-          overflow: visible;
+
+        .brand__lists{
+          visibility: hidden;
+          background-color: white;
+          border-top: solid 1px rgb(221, 221, 221);
+          z-index: 1;
+          position: relative;
         }
 
         .abnc{
@@ -93,7 +94,7 @@ a {
 .main {
   &__visual {
     height: 570px;
-    // background-image: url("/material/pict/bg-mainVisual-pict_pc.jpg");
+    background-image: url("/material/pict/bg-mainVisual-pict_pc.jpg");
     background-size: cover;
     position: relative;
     z-index: -1;
