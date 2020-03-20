@@ -1,5 +1,6 @@
 a {
   text-decoration: none;
+  color: black;
 }
 
 .header {
@@ -68,7 +69,7 @@ a {
 }
 
 .product-contents{
-  height: 2100px; 
+  height: 2700px; 
   width: 100%;
   padding-top: 20px;
   position: relative;
@@ -347,19 +348,18 @@ a {
 
       }
       &__commentbox{
-        height: 330px;
+        height: 800px;
         width: 920px;
-        margin: 0 auto;
+        margin: auto;
         margin-top: 20px;
         background-color: white;
-        position: relative;       
+        position: relative;
         &__warning{
           height: 80px;
-          line-height: 40px;
-          width: 700px;
-          background-color: #FFF6DE;
-          color: #333333;
-          margin: 0 60px;
+          line-height: 30px;
+          width: 600px;
+          background-color: gainsboro;
+          margin: auto;
           position: absolute;
           left: 50px;
           top: 30px;
@@ -377,27 +377,56 @@ a {
           border: solid 1px black;
         }
         &__comment{
-          height: 50px;
-          width: 250px;
+          height: 100px;
+          width: 600px;
           background-color: white;
-          margin: 0 60px;
-          position: absolute;
+          margin: auto;
           left: 210px;
           top: 280px;
           display: flex; 
 
           &__btn{
-            width: 700px;
-            font-weight: 500;
-            font-size: 16px;
-            height: 50px;
-            line-height: 50px;
-            background-color: #AAAAAA;
+            width: 200px;
+            font-weight: bold;
+            font-size: 20px;
+            height: 30px;
+            line-height: 30px;
+            background-color: #3ccace;
             text-align: center;
             color: white;
-            position: absolute;
-            top: 230px;
-            left: 110px;
+            left: 200px;
+          }
+        }
+        .testclass {
+          margin: auto;
+          height: 50px;
+          width: 200px;
+          margin-top: 10px;
+        }
+        .comments {
+          padding-top: 300px;
+          h4 {
+            text-align: center;
+          }
+          &__box {
+            height:450px;
+            overflow: scroll;
+            .upper-comment {
+              display: flex;
+              .upper-comment__user-name {
+                margin-right: 10px;
+                .link {
+                  text-decoration: none;
+                }
+              }
+              &__date {
+                color: #999999;
+                font-size: 12px;
+              }
+            }
+            .lower-comment {
+              margin-bottom: 20px;
+            }
           }
         }
         

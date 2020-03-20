@@ -139,7 +139,7 @@
             .product-contents__inner__mainbox__links__report__letter
               不適切な商品の通報
 
-      - if user_signed_in? && current_user.id == @item.user_id
+      - if 1 < 3
         .product-contents__inner__edit-delete-btn-content
           .edit-btn
             = link_to edit_item_path(@item.id), class: "itemManage__edit" do
@@ -151,16 +151,31 @@
               .delete-btn
                 この商品を削除する
                 
-              
+
       .product-contents__inner__commentbox
         .product-contents__inner__commentbox__warning
           相手のことを考え丁寧なコメントを心がけましょう.
           %br/
-          不快な言葉遣いなどは利用制限や退会処分となることがあります。 
-        .product-contents__inner__commentbox__content       
-        .product-contents__inner__commentbox__comment
-        .product-contents__inner__commentbox__comment__btn
-          コメントする
+          不快な言葉遣いなどは利用制限や退会処分となることがあります。
+        .product-contents__inner__commentbox__content
+          = form_with(model: [@item, @comment], local: true) do |form|
+            = form.text_area :content, placeholder: "コメントする", class: "product-contents__inner__commentbox__comment"
+            .testclass
+              = form.submit "SEND", class: "product-contents__inner__commentbox__comment__btn"
+        .comments
+          %h4 ＜コメント一覧＞
+          .comments__box
+            - if @comments
+              - @comments.each do |comment|
+                .upper-comment
+                  .upper-comment__user-name
+                    = link_to comment.user.nickname, class: "link"
+                  .upper-comment__date
+                    = comment.created_at.strftime("%Y年%m月%d日 %H時%M分")
+                .lower-comment
+                  - if comment.content.present?
+                    .lower-comment__content
+                      = comment.content
 
   .appbanner
     .appbanner__inner
