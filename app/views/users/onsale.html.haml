@@ -1,34 +1,5 @@
 .body
-  .header
-    .header__box
-      .header__box__main
-        =link_to root_path do
-          = image_tag "/material/logo/logo.png", class: 'logo'
-        = form_with url: "#", class: "search__box" do |f|
-          = f.text_field :content, class: 'search__box__form', placeholder: ' キーワードから探す'
-        =link_to "#" do
-          = image_tag "/material/icon/icon-search 1.png", class: 'search__box__btn'
-      .header__box__sub
-        %ul.lists__left
-          %li
-            = link_to "#",class: "category" do
-              カテゴリー
-          %li
-            = link_to "#",class: "brand" do
-              ブランド
-        %ul.lists__right
-          %li
-            = link_to "#",class: "like__list" do
-              いいね！一覧
-          %li
-            = link_to "#",class: "info__list" do
-              お知らせ
-          %li
-            = link_to "#",class: "todo__list" do
-              やることリスト
-          %li
-            = link_to "#",class: "mypage" do
-              マイページ
+  = render partial:"shared/users_show_header"
   .nav
     %ul.nav__itemscope
       %li.nav__itemscope__itemtype
@@ -136,5 +107,5 @@
                         .onsale-sign
                           出品中
 
-  = render partial:"items/footer"
+  = render partial:"shared/index_footer"
   
