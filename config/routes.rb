@@ -10,6 +10,7 @@ Rails.application.routes.draw do
   
   root "items#index"
   resources :items do
+    resources :comments, only: :create
     member do
       get :confirm
     end
@@ -22,7 +23,7 @@ Rails.application.routes.draw do
     resources :images, only: [:index,:create]
   end
   resources :users, only: [:show] do
-    collection do
+    member do
       get :onsale
     end
     resources :profile, only: :index
