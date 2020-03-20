@@ -114,13 +114,6 @@ $bg-border-color: #EEEEEE;
           h3{
             font-size: 14px;
             margin-top: 5px;
-            color: rgb(75, 168, 211);
-            &::before{
-              content: '\f055';
-              font-family: "Font Awesome 5 Free";
-              font-weight: bold;
-              color: invert;
-            }
           }
         }
         &__submit{

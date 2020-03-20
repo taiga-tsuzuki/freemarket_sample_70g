@@ -73,16 +73,15 @@ a {
   width: 100%;
   padding-top: 20px;
   position: relative;
-  background-color: gainsboro;
+  background-color: #EEEEEE;
     &__inner{
-      height: 2100px;
-      width: 800px;
-      background-color: gainsboro;
+      width: 1000px;
+      background-color: #EEEEEE;
       margin: 0 auto;
       &__mainbox{
-        height: 1500px;
-        width: 700px;
-        margin: auto;
+        height: 1300px;
+        width: 920px;
+        margin: 50px auto;
         background-color: white;
         &__top{
           margin: auto;
@@ -96,65 +95,109 @@ a {
             height: 70px;
             font-size: 40px;
             line-height: 70px;
-          }
-          &__itemManage {
-            height: 30px;
-            text-decoration: none;
-            color: #3CCACE;
-            .itemManage__edit {
-              padding: 0 10px;
-              text-decoration: none;
-              color: #333;
-              background-color: #3CCACE;
-              border: 1 solid;
-              border-radius: 5%;
-              line-height: 30px;
-            }
-            .itemManage__delete {
-              padding: 0 10px;
-              text-decoration: none;
-              color: #333;
-              background-color: #3CCACE;
-              border: 1 solid;
-              border-radius: 5%;
-              line-height: 30px;
-            }
+            padding-top: 25px;
           }
         }
-        &__main-image{
-          margin: auto;
-          height: 300px;
-          width: 600px;
-          background-image: url(https://tech-master.s3.amazonaws.com/uploads/curriculums/images/Rails1-4/sample.jpg);
-          background-size: cover;
-        }
-        &__other-images{
-          margin: auto;
-          height: 150px;
-          background-color: cadetblue;
-          width: 550px;
-          &__three-images{
-            display: flex;
-            &__first{
-              height: 150px;
-              width: 183px;
-              background-image: url(https://tech-master.s3.amazonaws.com/uploads/curriculums/images/Rails1-4/sample.jpg);
-              background-size: cover;
+
+        &__main-upper-box {
+          display: flex;
+
+          &__main-image{
+            height: 400px;
+            width: 400px;
+            margin-left: 40px;
+            // background-image: url(https://tech-master.s3.amazonaws.com/uploads/curriculums/images/Rails1-4/sample.jpg);
+            // background-size: cover;
+            .swiper-container {
+              width: 100%;
+              height: 425px;
+              margin-left: auto;
+              margin-right: auto;
             }
-            &__second{
-              height: 150px;
-              width: 183px;
-              background-image: url(https://tech-master.s3.amazonaws.com/uploads/curriculums/images/Rails1-4/sample.jpg);
+            .swiper-slide {
               background-size: cover;
+              background-position: center;
             }
-            &__third{
-              height: 150px;
-              width: 183px;
-              background-image: url(https://tech-master.s3.amazonaws.com/uploads/curriculums/images/Rails1-4/sample.jpg);
-              background-size: cover;
+            .gallery-top {
+              height: 100%;
+              width: 100%;
+            }
+            .gallery-thumbs {
+              height: 50%;
+              box-sizing: border-box;
+              padding: 10px 0;
+            }
+            .gallery-thumbs .swiper-slide {
+              height: 100%;
+              opacity: 0.4;
+            }
+            .gallery-thumbs .swiper-slide-thumb-active {
+              opacity: 1;
+            }           
+          }
+          
+  
+          &__table{
+            height: 300px;
+            width: 425px;
+            background-color: darkslateblue;
+            border: solid 1px gainsboro;
+            font-size: 14px;
+            margin-left: 20px;
+            &__category-box{
+              display: flex;
+              .category-leftbox{
+                height: 100px;
+                line-height: 100px;
+                text-align: center;
+                width: 150px;
+                background-color: lightgray;
+                border-right: solid 1px gainsboro;
+                border-bottom: solid 1px gainsboro;
+              }
+              .category-rightbox{
+                height: 100px;
+                width: 450px;
+                line-height: 30px;
+                background-color: white;
+                border-bottom: solid 1px gainsboro;
+
+                .parent-name {
+                  display: block;
+                }
+                .children-name {
+                  display: block;
+                }
+                .grand-children-name{
+                  display: block
+                }
+              }
+            }
+            &__box{
+              display: flex;
+              .leftbox{
+                height: 40px;
+                line-height: 40px;
+                width: 150px;
+                background-color: lightgray;
+                text-align: center;
+                border-right: solid 1px gainsboro;
+                border-bottom: solid 1px gainsboro;
+              }
+              .rightbox{
+                height: 40px;
+                width: 450px;
+                line-height: 40px;
+                background-color: white;
+                border-bottom: solid 1px gainsboro;
+                border-right: solid 1px gainsboro;
+              }
             }
           }
+
         }
+        
+      
         &__price{
           height: 100px;
           line-height: 100px;
@@ -164,6 +207,7 @@ a {
           font-size: 50px;
           font-weight: bold;
           text-align: center;
+          margin-top: 130px;
           &::after{
             content: '円';
           }
@@ -177,47 +221,24 @@ a {
           background-color: white;
         }
         .item-buy-btn {
-          font-size: 24px;
-          line-height: 60px;
+          font-size: 20px;
+          line-height: 50px;
           background-color: #3CCACE;
           color: #fff;
           display: block;
           text-align: center;
-          font-weight: 600;
-          margin: 16px 40px;
+          font-weight: 500;
+          margin: 20px auto;
+          width: 700px;
+          height: 50px;
         }
         &__description{
-          height: 300px;
-          width: 600px;
+          height: 280px;
+          width: 700px;
           background-color: white;
-          margin: auto;
-          
+          margin: 30px auto;          
         }
-        &__table{
-          height: 300px;
-          width: 600px;
-          background-color: darkslateblue;
-          margin: auto;
-          border: solid 1px gainsboro;
-          &__box{
-            display: flex;
-            .leftbox{
-              height: 37.5px;
-              line-height: 37.5px;
-              width: 150px;
-              background-color: lightgray;
-              text-align: center;
-              border-right: solid 1px gainsboro;
-              border-bottom: solid 1px gainsboro;
-            }
-            .rightbox{
-              height: 37.5px;
-              width: 450px;
-              background-color: white;
-              border-bottom: solid 1px gainsboro;
-            }
-          }
-        }
+        
         &__links{
           height: 50px;
           width: 600px;
@@ -273,13 +294,13 @@ a {
 
       &__edit-delete-btn-content{
         height: 250px;
-        width: 700px;
+        width: 920px;
         background-color: white;
         margin: 20px auto;
         position: relative;
 
         .edit-btn {
-          width: 600px;
+          width: 700px;
           height: 50px;
           position: absolute;
           margin: auto;
@@ -297,7 +318,7 @@ a {
             color: white;
           }
           .selection {
-            width: 600px;
+            width: 700px;
             height: 50px;
             margin: auto;
             top: 0;
@@ -309,30 +330,26 @@ a {
           }
           a {
               .delete-btn {
-                width: 600px;
-              height: 50px;
-              margin: auto;
-              top: 0;
-              right: 0;
-              bottom: 0;
-              left: 0;
-              line-height: 50px;
-              text-align: center;
-              background-color: #AAAAAA;
-              color: white;                
+                width: 700px;
+                height: 50px;
+                margin: auto;
+                top: 0;
+                right: 0;
+                bottom: 0;
+                left: 0;
+                line-height: 50px;
+                text-align: center;
+                background-color: #AAAAAA;
+                color: white;                
               }
           }
           
         }
 
-        
-
-      
-
       }
       &__commentbox{
         height: 800px;
-        width: 700px;
+        width: 920px;
         margin: auto;
         margin-top: 20px;
         background-color: white;
@@ -350,13 +367,14 @@ a {
         }
         &__content{
           height: 100px;
-          width: 600px;
+          width: 700px;
           background-color:white;
-          margin: auto;
+          margin: 0 60px;
           box-sizing: border-box;
           position: absolute;
-          top: 140px;
+          top: 120px;
           left: 50px;
+          border: solid 1px black;
         }
         &__comment{
           height: 100px;
@@ -365,13 +383,8 @@ a {
           margin: auto;
           left: 210px;
           top: 280px;
-          display: flex;
-          &__icon{
-            width: 50px;
-            height: 50px;
-            line-height: 60px;
-            background-color: #3ccace;
-          }
+          display: flex; 
+
           &__btn{
             width: 200px;
             font-weight: bold;
@@ -416,24 +429,7 @@ a {
             }
           }
         }
-      }
-      &__lowerbox1{
-        height: 50px;
-        width: 700px;
-        margin: auto;
-        background-color: gainsboro;
-        display: flex;
-        justify-content: space-between;
-        font-size: 20px;
-        color: #3ccace;
-      }
-      &__lowerbox2{
-        height: 60px;
-        width: 700px;
-        margin: auto;
-        font-size: 35px;
-        background-color: gainsboro;
-        color: #3ccace;
+        
       }
     }
   }
@@ -508,7 +504,7 @@ a {
       }
     }
     .footer__logo {
-      margin-left: 750px;
+      margin-left: 640px;
     }
     p {
       color: white;

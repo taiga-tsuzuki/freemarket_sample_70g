@@ -19,13 +19,13 @@
       - if user_signed_in?
         %ul.lists__right
           %li
-            = link_to "ログアウト",destroy_user_session_path,method: :delete, class: 'login'
+            = link_to "ログアウト",destroy_user_session_path,method: :delete, class: 'logins'
           %li
-            = link_to "マイページ",user_path(current_user.id), class: 'login'
+            = link_to "マイページ",user_path(current_user.id), class: 'logins'
       - else
         %ul.lists__right
           %li
-            = link_to "ログイン",new_user_session_path, class: 'login'
+            = link_to "ログイン",new_user_session_path, class: 'logins'
           %li
             = link_to "新規登録",new_user_registration_path, class: 'signin'
 
@@ -266,7 +266,7 @@
         %li.list
           = link_to "#", class: "list" do
             お知らせ
-  = link_to "#" do
+  = link_to root_path do
     = image_tag "/material/logo/logo-white.png", size: "160x46", class: "footer__logo"
 
   %p
