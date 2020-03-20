@@ -40,6 +40,7 @@ a {
       display: flex;
       justify-content: space-between;
       .lists__left {
+        // width: 250px;
         line-height: 35px;
         display: flex;
         .category {
@@ -47,15 +48,25 @@ a {
           color: black;
         }
         .brand {
-          margin-left: 10px;
+          // margin-left: 10px;
+          width: 300px;
           color: black;
-          position: relative;
-          .brand__top {
-            visibility: hidden;
+          // position: relative;
+          &__lists {
+            // height: 20px;
+            overflow: hidden;
+            background-color: red;
           }
         }
+        .brand:hover .brand__lists{
+          border-top: solid 1px rgb(228, 228, 228);
+          height: 50px;
+          overflow: visible;
+        }
 
-
+        .abnc{
+          display: block;
+        }
 
 
 
@@ -82,7 +93,7 @@ a {
 .main {
   &__visual {
     height: 570px;
-    background-image: url("/material/pict/bg-mainVisual-pict_pc.jpg");
+    // background-image: url("/material/pict/bg-mainVisual-pict_pc.jpg");
     background-size: cover;
     position: relative;
     z-index: -1;
