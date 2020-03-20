@@ -40,13 +40,73 @@ a {
       font-size: 15px;
       display: flex;
       justify-content: space-between;
-      .lists__left {
+      .category-brand{
         line-height: 35px;
-        display: flex;
-        .category {
-          margin-left: 10px;
-          color: black;
+        .category{
+          width: 100px;
+          &:hover > .firstmenu-parent{
+            visibility: visible;
+            opacity: 1;
+          }
+            .firstmenu-parent{
+              display: flex;
+              flex-direction: column;
+              height: 665px;
+              width: 300px;
+              visibility: hidden;
+              z-index: 2;
+              position: relative;
+              .parent-name{
+                width: 250px;
+                height: 35px;
+                line-height: 35px;
+                font-size: 12px;
+                background-color: rgba(255, 247, 247, 0.9);
+                &:hover >.secondmenu-children{
+                  opacity: 1;
+                  visibility: visible;
+                  color: black;
+                  }
+                .secondmenu-children{
+                  opacity: 0;
+                  display: flex;
+                  flex-direction: column;
+                  visibility: hidden;
+                  position: absolute;
+                  top: 0;
+                  left: 248px;
+                  .children-name{
+                    width: 250px;
+                    height: 35px;
+                    background-color: rgba(255, 247, 247, 0.9);
+                    &:hover > .thirdmenu-grandchildren{
+                      opacity: 1;
+                      visibility: visible;
+                    }
+                    .thirdmenu-grandchildren{
+                      height: 1000px;
+                      opacity: 1;
+                      visibility: hidden;
+                      background-color: rgba(255, 247, 247, 0.9);
+                      display: flex;
+                      flex-direction: column;
+                      position: absolute;
+                      top: 0;
+                      left: 100%;
+                      .grandchildren-name{
+                        width: 200px;
+                      }
+                    }
+                  }
+                }
+              }
+            }
         }
+      }
+    }
+
+    
+
         .brand {
           margin-left: 50px;
           color: black;
@@ -65,10 +125,6 @@ a {
         }
       }
     }
-  }
-}
-
-
 
 
 .main {
