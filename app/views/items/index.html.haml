@@ -110,7 +110,7 @@
           新規投稿商品
         .product__lists
 
-          - @items.last(3).each do |item|
+          - @items.first(3).each do |item|
             - item.images.first(1).each do |image|
               .product__list
                 - if item.item_purchaser_id.blank?

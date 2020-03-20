@@ -3,7 +3,7 @@ class ItemsController < ApplicationController
   before_action :set_user, only: [:edit, :update]
 
   def index
-    @items = Item.includes(:images).order(:item_purchaser_id, "id DESC").limit(3)
+    @items = Item.includes(:images).order(:item_purchaser_id, "id DESC")
     @category = Category.all.order("ancestry ASC").limit(13)
     @parents = Category.where(ancestry:nil)
   end

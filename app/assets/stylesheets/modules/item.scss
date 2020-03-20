@@ -102,6 +102,9 @@ a {
               }
             }
         }
+
+        .abnc{
+          width: 300px;
       }
     }
 
@@ -110,7 +113,26 @@ a {
         .brand {
           margin-left: 50px;
           color: black;
+          &:hover > .brand__lists{
+            visibility: visible;
+            opacity: 1;
+          }
         }
+
+        .brand__lists{
+          visibility: hidden;
+          background-color: white;
+          border-top: solid 1px rgb(221, 221, 221);
+          z-index: 1;
+          position: relative;
+        }
+
+        .abnc{
+          display: block;
+        }
+
+
+
       }
       .lists__right {
         line-height: 35px;
@@ -133,6 +155,7 @@ a {
     background-image: url("/material/pict/bg-mainVisual-pict_pc.jpg");
     background-size: cover;
     position: relative;
+    z-index: -1;
     &__picture {
       height: 100%;
       width: 100vw;
