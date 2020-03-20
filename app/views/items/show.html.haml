@@ -64,18 +64,19 @@
               .leftbox
                 出品者
               .rightbox
-                = @item.user.nickname
+                = link_to "#" do
+                  = @item.user.nickname
             .product-contents__inner__mainbox__main-upper-box__table__category-box
               .category-leftbox
                 カテゴリー
               .category-rightbox
-                = link_to category_path(@item.category.parent.parent.id),class:"parent-name" do
-                  = @item.category.parent.parent.name
+                -# = link_to category_path(@item.category.parent.parent.id),class:"parent-name" do
+                -#   = @item.category.parent.parent.name
 
-                = link_to category_path(@item.category.parent.id), class:"children-name" do
-                  = @item.category.parent.name
-                = link_to category_path(@item.category.id), class:"grand-children-name" do
-                  = @item.category.name
+                -# = link_to category_path(@item.category.parent.id), class:"children-name" do
+                -#   = @item.category.parent.name
+                -# = link_to category_path(@item.category.id), class:"grand-children-name" do
+                -#   = @item.category.name
                 
             .product-contents__inner__mainbox__main-upper-box__table__box
               .leftbox

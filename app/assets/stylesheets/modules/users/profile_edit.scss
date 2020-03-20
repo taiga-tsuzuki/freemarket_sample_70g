@@ -1,0 +1,39 @@
+.main__right__top {
+  background-color: #fff;
+  height: 100px;
+  line-height: 100px;
+  font-weight: bold;
+}
+.main__right__form {
+  background-color: #fff;
+}
+
+.form-group-edi{
+  background-color: white;
+  width: 500px;
+  margin: auto;
+  &__require{
+    font-size: 5px;
+    background-color: red;
+    color: white;
+  }
+  &__input{
+    display: block;
+    margin: auto;
+    &--hqlf{
+      align-items: left;
+    }
+  }
+  &__info{
+    font-size: 5px;
+    height: 70px;
+    line-height: 70px;
+    &__extra{
+      font-size: 5px;
+      height: 30px;
+    }
+  }
+  &__text--center{
+    font-size: 5px;
+  }
+}

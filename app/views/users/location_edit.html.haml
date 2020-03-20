@@ -16,7 +16,7 @@
           %li
             = link_to "#",class: "brand" do
               ブランド
-        
+      
   .nav
     %ul.nav__itemscope
       %li.nav__itemscope__itemtype
@@ -34,7 +34,7 @@
             =link_to user_path(current_user.id), class: "moji" do
               マイページ
           %li.nav__lists__list
-            =link_to onsale_user_path,class: "moji" do
+            =link_to onsale_user_path(current_user.id),class: "moji" do
               出品した商品-出品中
           %li.nav__lists__list
             =link_to "#",class: "moji" do
@@ -46,31 +46,54 @@
             =link_to pay_creditcards_path,class: "moji" do
               支払い方法
           %li.nav__lists__list
-            =link_to edit_user_path(current_user.id),class: "moji" do
+            =link_to edit_user_profile_path(current_user.id),class: "moji" do
               本人情報の登録・変更
           %li.nav__lists__list
-            = link_to destroy_user_session_path,method: :delete, class: 'moji' do
-              ログアウト
+            = link_to "ログアウト",destroy_user_session_path,method: :delete, class: 'moji'
     .main__right
-      .main__right__head
-        プロフィール
-      .main__right__userIcon
-        .button
-          .button__top
-            -# = @item.user_image
-          .button__name
-            = current_user.nickname
-          .button__number
-            .button__number__box
-              .box1
-                評価 0
-              .box2
-                出品数 0
-      .main__right__name
-        自己紹介
-      .main__right__profile
-        = @profile.introduction
-
+      .main__right__top
+        発送元・お届け先住所変更
+      .main__right__form
+        = form_with(model: @location, url: locations_path, method: :post, local:true) do |f|
+          -# = render "devise/shared/error_messages", resource: @location
+          .form-group
+            = f.label :苗字
+            %span.form-group__require 必須
+            = f.text_field :family_name, {class:'form-group__input'}
+          .form-group
+            = f.label :名前
+            %span.form-group__require 必須
+            = f.text_field :first_name, {class:'form-group__input'}
+          .form-group
+            = f.label :苗字（カナ）
+            %span.form-group__require 必須
+            = f.text_field :family_name_kana, {class:'form-group__input'}
+          .form-group
+            = f.label :名前（カナ） 
+            %span.form-group__require 必須
+            = f.text_field :first_name_kana, {class:'form-group__input'}
+          .form-group
+            = f.label :郵便番号 
+            %span.form-group__require 必須
+            = f.text_field :postal_code, {class:'form-group__input'}
+          .form-group
+            = f.label :都道府県 
+            %span.form-group__require 必須
+            = f.text_field :prefecture, {class:'form-group__input'}
+          .form-group
+            = f.label :市町村
+            %span.form-group__require 必須
+            = f.text_field :city, {class:'form-group__input'}
+          .form-group
+            = f.label :建物名
+            %span.form-group__require 必須
+            = f.text_field :building_name, {class:'form-group__input'}
+          .form__group
+            = f.label :電話番号
+            %span.form-group__require 必須
+            = f.text_field :phone_name, {class:'form-group__input'}
+          .form_submit
+            = f.submit '変更する', class: "btn-default btn"
 
   .appbanner
     .appbanner__inner
@@ -125,7 +148,7 @@
             = link_to "#", class: "list" do
               お知らせ
     .footer__logo
-      =link_to root_path do
+      =link_to "#" do
         = image_tag "/material/logo/logo-white.png", width: "160px", height: "46px"
     %p.logo__under
       ©︎　FURIMA

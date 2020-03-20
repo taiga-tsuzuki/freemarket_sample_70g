@@ -10,7 +10,6 @@ Rails.application.routes.draw do
   
   root "items#index"
   resources :items do
-    # resources :comments, only: :create
     member do
       get :confirm
     end
@@ -22,11 +21,12 @@ Rails.application.routes.draw do
     resources :comments, only: :create
     resources :images, only: [:index,:create]
   end
-  resources :users, only: [:show] do
+  resources :users, only: [:show,:edit,:update] do
     member do
+      get :location_edit
       get :onsale
     end
-    resources :profile, only: :index
+    resources :profile, only: [:index,:edit,:update]
     resources :creditcards, only: :index
     resources :location, only: :index
   end
