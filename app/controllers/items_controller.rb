@@ -1,7 +1,6 @@
 class ItemsController < ApplicationController
-
-before_action :set_item, only: [:edit, :update]
-before_action :set_user, only: [:edit, :update]
+  before_action :set_item, only: [:edit, :update]
+  before_action :set_user, only: [:edit, :update]
 
   def index
     @items = Item.includes(:images).order(:item_purchaser_id, "id DESC").limit(3)
