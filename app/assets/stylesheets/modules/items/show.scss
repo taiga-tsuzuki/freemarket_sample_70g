@@ -160,7 +160,16 @@ a {
                 line-height: 30px;
                 background-color: white;
                 border-bottom: solid 1px gainsboro;
-                
+
+                .parent-name {
+                  display: block;
+                }
+                .children-name {
+                  display: block;
+                }
+                .grand-children-name{
+                  display: block
+                }
               }
             }
             &__box{
@@ -226,7 +235,7 @@ a {
           height: 280px;
           width: 700px;
           background-color: white;
-          margin: auto;          
+          margin: 30px auto;          
         }
         
         &__links{

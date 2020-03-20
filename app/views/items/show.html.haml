@@ -20,12 +20,19 @@
           %li
             = link_to "#",class: "brand" do
               ブランド
-        %ul.lists__right
-          %li
-            = link_to "ログアウト","#", method: :delete, class: 'logout'
-          %li
-            = link_to "#",class: "signin" do
-              新規会員登録
+        - if user_signed_in?
+          %ul.lists__right
+            %li
+              = link_to "ログアウト",destroy_user_session_path,method: :delete, class: 'logins'
+            %li
+              = link_to "マイページ",user_path(current_user.id), class: 'logins'
+        - else
+          %ul.lists__right
+            %li
+              = link_to "ログイン",new_user_session_path, class: 'logins'
+            %li
+              = link_to "新規登録",new_user_registration_path, class: 'signin'
+
   .product-contents
     .product-contents__inner
       .product-contents__inner__mainbox
@@ -62,9 +69,13 @@
               .category-leftbox
                 カテゴリー
               .category-rightbox
-                %p= "#{@item.category.parent.parent.name}"
-                %p= "#{@item.category.parent.name}"
-                %p= "#{@item.category.name}"
+                = link_to category_path(@item.category.parent.parent.id),class:"parent-name" do
+                  = @item.category.parent.parent.name
+
+                = link_to category_path(@item.category.parent.id), class:"children-name" do
+                  = @item.category.parent.name
+                = link_to category_path(@item.category.id), class:"grand-children-name" do
+                  = @item.category.name
                 
             .product-contents__inner__mainbox__main-upper-box__table__box
               .leftbox
