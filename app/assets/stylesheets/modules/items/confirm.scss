@@ -28,10 +28,6 @@ $bg-border-color: #EEEEEE;
       justify-content: center;
       align-items: center;
 
-      &__photo{
-        height: 60px;
-        width: 60px;
-      }
       &__group{
         margin-left: 15px;
         width: 280px;
@@ -118,13 +114,6 @@ $bg-border-color: #EEEEEE;
           h3{
             font-size: 14px;
             margin-top: 5px;
-            color: rgb(75, 168, 211);
-            &::before{
-              content: '\f055';
-              font-family: "Font Awesome 5 Free";
-              font-weight: bold;
-              color: invert;
-            }
           }
         }
         &__submit{

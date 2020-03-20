@@ -1,4 +1,6 @@
 class ItemsController < ApplicationController
+  before_action :set_item, only: [:edit, :update]
+  before_action :set_user, only: [:edit, :update]
 
   def index
     @items = Item.includes(:images).order(:item_purchaser_id, "id DESC").limit(3)
@@ -17,7 +19,6 @@ class ItemsController < ApplicationController
     if @item.save
       redirect_to root_path
     else
-      # @item = Item.new(item_params)
       @item.images.build
       @category = Category.all.order("ancestry ASC").limit(13)
       render :new
@@ -25,12 +26,16 @@ class ItemsController < ApplicationController
   end
 
   def confirm
+    @item = Item.includes(:user).find(params[:id])
+    @items = @item.images
+    @location = current_user.location
   end
   
   def show
     @item = Item.includes(:user).find(params[:id])
     @items = @item.images
-
+    @comment = Comment.new
+    @comments = @item.comments.includes(:user).order("id DESC")
   end
 
   def done
@@ -56,12 +61,17 @@ class ItemsController < ApplicationController
   end
 
   def edit
+
   end
 
+  def update
+    @item.update(item_params)
+    @user.update(user_params[:user])
+  end
   def destroy
     item = Item.find(params[:id])
-    redirect_to user_path(user.id) and return unless item.destroy
-    redirect_to onsale_users_path
+    redirect_to user_path(current_user.id) and return unless item.destroy
+    redirect_to onsale_user_path(current_user.id)
   end
 
   private
@@ -69,5 +79,17 @@ class ItemsController < ApplicationController
     params.require(:item).permit(:item_name, :description, :category_id, :brand_name, :size, :condition,
                                   :shipping_fee_payer,:prefecture_id, :shipping_days, :price,
                                   images_attributes: [:image, :_destroy, :id], categories_attributes: [:name]).merge(user_id: current_user.id)
+  end
+
+  def set_user
+    @user = User.find(params[:id])
+  end
+
+  def set_item
+    @item = Item.includes(:user).find(params[:id])
+  end
+
+  def user_params
+    params.require(:item).permit(user:[:nickname])
   end
 end

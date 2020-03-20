@@ -10,8 +10,11 @@ Rails.application.routes.draw do
   
   root "items#index"
   resources :items do
-    collection do
+    resources :comments, only: :create
+    member do
       get :confirm
+    end
+    collection do
       get :done
       get :category_children
       get :category_grandchildren
@@ -20,7 +23,7 @@ Rails.application.routes.draw do
     resources :images, only: [:index,:create]
   end
   resources :users, only: [:show] do
-    collection do
+    member do
       get :onsale
     end
     resources :profile, only: :index
@@ -35,10 +38,11 @@ Rails.application.routes.draw do
     end
   end
   resources :purchases, only: [:index] do
-    collection do
+    member do
       get 'index', to: 'purchases#index'
-      post 'pay', to: 'purchases#pay'
+      get 'pay', to: 'purchases#pay'
       get 'done', to: 'purchases#done'
     end
   end
+  resources :categories, only: [:show]
 end

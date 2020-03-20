@@ -1,0 +1,83 @@
+.product
+  = render partial:"shared/index_header"
+  .edit-product-contents
+    .edit-product-contents__inner
+      .edit-product-contents__inner__mainbox
+        = form_with(model: @item, local: true) do |form|
+          .edit-product-contents__inner__mainbox__best
+            .edit-product-contents__inner__mainbox__best__button
+              編集する
+          .edit-product-contents__inner__mainbox__top
+            .edit-product-contents__inner__mainbox__top__name
+              = form.text_field :item_name, size: 10
+            .edit-product-contents__inner__mainbox__top__itemManage
+              = link_to "もどる", :back, class: "itemManage__delete"
+          .edit-product-contents__inner__mainbox__main-image
+            
+          .edit-product-contents__inner__mainbox__other-images
+            .edit-product-contents__inner__mainbox__other-images__three-images
+              .edit-product-contents__inner__mainbox__other-images__three-images__first
+              .edit-product-contents__inner__mainbox__other-images__three-images__second
+              .edit-product-contents__inner__mainbox__other-images__three-images__thrid
+          .edit-product-contents__inner__mainbox__price
+            = form.text_field :price, size: 10
+          .edit-product-contents__inner__mainbox__additional-price
+            (税込) 送料込み
+          = form.submit "編集確定", class: "item-buy-btn"
+          .edit-product-contents__inner__mainbox__description
+            = form.text_area :description, size: 10
+          .edit-product-contents__inner__mainbox__table
+            .edit-product-contents__inner__mainbox__table__box
+              .leftbox
+                出品者
+              .rightbox
+                = form.fields_for @user do |i| 
+                  = i.text_field :nickname, size: 10,id: "user_id"
+            .edit-product-contents__inner__mainbox__table__box
+              .leftbox
+                カテゴリー
+              .rightbox
+                = form.text_field :category_id, size: 10
+            .edit-product-contents__inner__mainbox__table__box
+              .leftbox
+                ブランド
+              .rightbox
+                = form.text_field :brand_id, size: 10
+            .edit-product-contents__inner__mainbox__table__box
+              .leftbox
+                商品のサイズ
+              .rightbox
+                = form.text_field :size, size: 10
+            .edit-product-contents__inner__mainbox__table__box
+              .leftbox
+                商品の状態
+              .rightbox
+                = form.text_field :condition, size: 10
+            .edit-product-contents__inner__mainbox__table__box
+              .leftbox
+                配送料の負担
+              .rightbox
+                = form.text_field :shipping_fee_payer, size: 10
+            .edit-product-contents__inner__mainbox__table__box
+              .leftbox
+                発送元の地域
+              .rightbox
+                = form.text_field :shipping_location, size: 10
+            .edit-product-contents__inner__mainbox__table__box
+              .leftbox
+                発送日の目安
+              .rightbox
+                = form.text_field :shipping_days, size: 10
+          .edit-product-contents__inner__mainbox__links
+            .edit-product-contents__inner__mainbox__links__favorite
+              .edit-product-contents__inner__mainbox__links__favorite__icon
+                = icon('fa', 'star',class: 'star-icon')
+              .edit-product-contents__inner__mainbox__links__favorite__letter
+                お気に入り 0
+            .edit-product-contents__inner__mainbox__links__report
+              .edit-product-contents__inner__mainbox__links__report__icon
+                = icon('fa', 'flag',class: 'flag-icon')
+              .edit-product-contents__inner__mainbox__links__report__letter
+                不適切な商品の通報
+  = render partial:"shared/index_footer"
+

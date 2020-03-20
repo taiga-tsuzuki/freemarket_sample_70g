@@ -114,7 +114,7 @@ a {
       .lists__right {
         line-height: 35px;
         display: flex;
-        .login {
+        .logins {
           margin-right: 50px;
           color: black;
         }
@@ -361,8 +361,8 @@ a {
                   justify-content: space-between;
                   li {
                     .category-yen{
-                      &::after{
-                        content: '円';
+                      &::before{
+                        content: '¥';
                       }
                     }
                   }
