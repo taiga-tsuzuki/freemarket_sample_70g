@@ -8,10 +8,22 @@
       = link_to "#" do
         = image_tag "/material/icon/icon-search 1.png", size: "24x24", class: "search__box__btn"
     .header__box__sub
-      %ul.lists__left
-        %li
-          = link_to "#",class: "category" do
-            カテゴリー
+      %ul.category-brand
+        %li.category
+          = link_to "カテゴリー", root_path
+          %ul.firstmenu-parent
+            - @parents.each do |parent|
+              %li.parent-name
+                = parent.name
+                %ul.secondmenu-children
+                  - parent.children.each do |child|
+                    %li.children-name
+                      = child.name
+                      %ul.thirdmenu-grandchildren
+                        - child.children.each do |grandchild|
+                          %li.grandchildren-name
+                            = grandchild.name
+
         %li
           = link_to "#",class: "brand" do
             ブランド
