@@ -4,6 +4,9 @@ class CreateComments < ActiveRecord::Migration[5.2]
       t.bigint :user_id, foreign_key:true
       t.bigint :item_id, foreign_key:true
       t.text :content, null: false
+      # t.integer :user_id
+      # t.integer :tweet_id
+      # t.text :text
       t.timestamps
     end
   end
