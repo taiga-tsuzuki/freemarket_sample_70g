@@ -36,6 +36,9 @@ class ItemsController < ApplicationController
     @items = @item.images
     @comment = Comment.new
     @comments = @item.comments.includes(:user).order("id DESC")
+    @category = Category.all.order("ancestry ASC").limit(13)
+    @parents = Category.where(ancestry:nil)
+    @items = Item.includes(:images).order(:item_purchaser_id, "id DESC")
   end
 
   def done
