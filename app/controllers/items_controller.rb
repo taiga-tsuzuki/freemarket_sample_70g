@@ -3,6 +3,7 @@ class ItemsController < ApplicationController
   def index
     @items = Item.includes(:images).order(:item_purchaser_id, "id DESC").limit(3)
     @category = Category.all.order("ancestry ASC").limit(13)
+    @parents = Category.where(ancestry:nil)
   end
 
   def new

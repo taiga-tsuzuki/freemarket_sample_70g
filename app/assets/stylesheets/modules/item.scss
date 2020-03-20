@@ -13,17 +13,17 @@ a {
     &__main {
       height: 40px;
       width: 100%;
-      display: flex;
+      // display: flex;
       line-height: 40px;
       .logo {
         position: relative;
-        display: flex;
+        // display: flex;
         align-items: center;
       }
       .search__box {
         width: 100%;
         margin-left: 30px;
-        display: flex;
+        // display: flex;
         &__form {
           width: 100%;
         }
@@ -37,38 +37,75 @@ a {
       height: 35px;
       margin: 10px 0;
       font-size: 15px;
-      display: flex;
+      // display: flex;
       justify-content: space-between;
       .lists__left {
         line-height: 35px;
-        display: flex;
-        .category {     
-          margin-left: 10px;
-          ul{
-            display: none;
-            display: block;
+        .category{
+
+          &:hover > .firstmenu-parent{
+            visibility: visible;
+            opacity: 1;
           }
-        }
-        .category:hover{
-          color: blue;
-          ul{
-            display: block;
-            text-decoration: none;
-            color: black;
-            li{
-              height: 40px;
-              background-color: whitesmoke;
-              z-index: 1000;
+            .firstmenu-parent{
+              height: 665px;
+              width: 300px;
+              opacity: 1;
+              // visibility: hidden;
+              background-color: red;
+              z-index: 2;
               position: relative;
-              color: black;
-              a{
-                color: black;
+             
+            
+              .parent-name{
+                width: 250px;
+                height: 35px;
+                line-height: 35px;
+                font-size: 12px;
+                background-color: chartreuse;
+
+                &:hover >.secondmenu-children{
+                  opacity: 1;
+                  visibility: visible;
+                  color: black;
+                  border-left: 1px solid #f5f5f5
+                  }
+                .secondmenu-children{
+                  height: 100%;
+                  opacity: 0;
+                  // visibility: hidden;
+                  background-color: green;
+                  .children-name{
+                    width: 400px;
+                    background-color: yellow;
+                    &:hover > .thirdmenu-grandchildren{
+                      opacity: 1;
+                      visibility: visible;
+                      border-left: 1px solid #f5f5f5;
+                    }
+                    .thirdmenu-grandchildren{
+                      height: 100%;
+                      opacity: 1;
+                      // visibility: hidden;
+                      background-color: blue;
+                      .grandchildren-name{
+                        width: 300px;
+                      }
+                    }
+                  }
+                }
               }
             }
-          }
         }
       }
     }
+   
+    // .category:hover{
+    //   background-color: red;
+    // }
+
+    
+
         .brand {
           margin-left: 50px;
           color: black;
@@ -92,7 +129,7 @@ a {
 .main {
   &__visual {
     height: 570px;
-    background-image: url("/material/pict/bg-mainVisual-pict_pc.jpg");
+    // background-image: url("/material/pict/bg-mainVisual-pict_pc.jpg");
     background-size: cover;
     position: relative;
     &__picture {

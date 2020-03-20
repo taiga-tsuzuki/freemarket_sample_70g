@@ -10,14 +10,22 @@
     .header__box__sub
       %ul.lists__left
         %li.category
-          = link_to "#",class: "category" do
-            カテゴリー
-            - @category.each do |category|
-              %ul.parents
-                %li.parent
-                  = category.name
-            
-        %li
+          = link_to "カテゴリー", root_path
+          %ul.firstmenu-parent
+            - @parents.each do |parent|
+              %li.parent-name
+                = parent.name
+                %ul.secondmenu-children
+                  - parent.children.each do |child|
+                    %li.children-name
+                      = child.name
+                      %ul.thirdmenu-grandchildren
+                        - child.children.each do |grandchild|
+                          %li.grandchildren-name
+                            = grandchild.name
+
+                       
+        %li.brand
           = link_to "#",class: "brand" do
             ブランド
 
@@ -281,4 +289,3 @@
       .text
         出品する
       = image_tag "/material/icon/icon_camera.png", class: "exhibit__icon"
-

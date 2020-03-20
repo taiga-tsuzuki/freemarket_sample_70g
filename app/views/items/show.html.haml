@@ -2,7 +2,7 @@
   .header
     .header__box
       .header__box__main
-        = link_to root_path do
+        = link_to "#" do
           = image_tag "/material/logo/logo.png", size: "140x40"
         = form_with url: "#", class: "search__box" do |f|
           = f.text_field :content, class: 'search__box__form', placeholder: ' キーワードから探す'
@@ -104,20 +104,7 @@
               = icon('fa', 'flag',class: 'flag-icon')
             .product-contents__inner__mainbox__links__report__letter
               不適切な商品の通報
-
-      - if user_signed_in? && current_user.id == @item.user_id
-        .product-contents__inner__edit-delete-btn-content
-          .edit-btn
-            .edit-btn__text
-              商品の編集
-            .selection
-              or
-            = link_to item_path(@item.id),method: :delete do
-              .delete-btn
-                この商品を削除する
-                
-              
-      .product-contents__inner__commentbox       
+      .product-contents__inner__commentbox
         .product-contents__inner__commentbox__content
         .product-contents__inner__commentbox__warning
           相手のことを考え丁寧なコメントを心がけましょう.
