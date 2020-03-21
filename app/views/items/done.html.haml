@@ -1,7 +1,7 @@
 .body
-  .items-new-header
-    .items-new-header__logo
-      = image_tag "/logo.png", size: "185x49"
+  .items-done-header
+    .items-done-header__logo
+      = image_tag "/logo.png", size: "185x48"
 
   .main-confirm-contents
     = form_with url:"#" do |f|
@@ -9,7 +9,7 @@
         .main-confirm-content__header
           %h2 購入内容の確認
         .main-confirm-content__buy-item
-          =image_tag "https://cdn.pixabay.com/photo/2014/09/16/01/19/girl-447701_1280.jpg", class: "main-confirm-content__buy-item__photo"
+          =image_tag "https://cdn.pixabay.com/photo/2014/09/16/01/19/girl-447701_1280.jpg", class: "main-confirm-content__buy-item__photo", size: "70x70"
           .main-confirm-content__buy-item__group
             .main-confirm-content__buy-item__group__item-name
               %h3 ラストサンタ ラストサンタ ラストサンタ ラストサンタ
@@ -23,8 +23,6 @@
               .main-confirm-content__payment__group__price-point__price
                 %h2 支払い金額
                 %h2 ¥3,000
-              .main-confirm-content__payment__group__price-point__point
-                %h3 ■ポイントを使用 (所持ポイント: P0)
             .main-confirm-content__payment__group__way
               %h2 支払い方法
               %h3 登録してください
