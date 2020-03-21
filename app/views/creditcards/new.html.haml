@@ -1,5 +1,9 @@
 .wrapper
-  .creditcard-header
+  .creditcard-new-header
+    =link_to root_path do
+      = image_tag "/logo.png", size: "170x40", class:"done-logo"
+
+  .creditcard-upper-box
     クレジットカード情報入力
   .mains
     = form_tag(pay_creditcards_path, method: :post, id: 'charge-form',  name: "inputForm") do
@@ -72,3 +76,10 @@
 
         = link_to user_path(current_user.id), class: "return" do
           もどる
+
+  .lower-box
+    .legal-info-box
+    .footer__logo
+      .logo-img
+        = image_tag "/logo-white.png", size: "160x46"
+      .logo-text ©FURIMA
