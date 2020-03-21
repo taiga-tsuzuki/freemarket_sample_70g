@@ -3,7 +3,7 @@ $bg-border-color: #EEEEEE;
 .main-confirm-contents{
   background-color: $bg-border-color;
   .main-confirm-content{
-    height: 800px;
+    height: 850px;
     width: 700px;
     background-color: white;
     margin: 0 auto;
@@ -118,23 +118,30 @@ $bg-border-color: #EEEEEE;
         }
         &__submit{
           height: 60px;
-          width: 100%;
+          // width: 100%;
           margin-top:50px;
           margin: 0 auto;
+
           .confirm-submit{
-            height: 100%;
-            width: 100%;
-            margin-top: 40px;
+            display: block;
+            width: 360px;
+            height: 48px;
+            line-height: 48px;
+            text-align: center;
+            margin-top: 50px;
             color: white;
             font-weight: bold;
             border-radius: 4px;
             background-color: red;
           }
           .return-btn {
+            display: block;
             background-color: #DDDDDD;
             font-weight: bold;
-            width: 100%;
-            height: 55px;
+            width: 360px;
+            height: 48px;
+            line-height: 48px;
+            text-align: center;
             border-radius: 4px;
             outline: none;
             border-style: none;
