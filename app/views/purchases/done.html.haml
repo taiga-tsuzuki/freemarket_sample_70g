@@ -1,11 +1,25 @@
 .wrapper
-  .header
+  .items-new-header
+    =link_to root_path do
+      = image_tag "/logo.png", size: "170x40", class:"done-logo"
+
+  .upper-box
     %h2.abc
       購入が完了しました！
-  .main
-    %p
-      = @item.item_name
-    %p.item__price
-      = @item.price
-    = link_to done_items_path, class: "return" do
-      戻る
+  .done-main
+    - @item.images.first(1).each do |image|
+      .done-main__inner-content
+        %p
+          = image_tag "#{image.image}", alt: "テスト", size: "100x100"
+        %p.done-iyem-name
+          = @item.item_name
+        %p.item-price
+          = @item.price
+        = link_to done_items_path, class: "return" do
+          もどる
+  .lower-box
+    .legal-info-box
+    .footer__logo
+      .logo-img
+        = image_tag "/logo-white.png", size: "160x46"
+      .logo-text ©FURIMA
