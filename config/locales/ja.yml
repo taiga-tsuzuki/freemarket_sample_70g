@@ -205,7 +205,7 @@ ja:
       short: "%m/%d %H:%M"
     pm: 午後
   attributes:
-    image: 商品画像
+    images: 画像
     item_name: 商品名
     description: 商品の説明
     category_id: カテゴリー

@@ -8,7 +8,8 @@ class Item < ApplicationRecord
   belongs_to_active_hash :prefecture
 
 # allow_destroy: trueで、親(item)が削除されると紐づいているimage,category
-  accepts_nested_attributes_for :images, allow_destroy: true
+  accepts_nested_attributes_for :images, allow_destroy: true, reject_if: :all_blank
+  validates                     :images , presence: { message: "がありません" }
 
 # 商品名、商品詳細、商品状態、配送料、配送元、配送日時、商品化価格のバリデーション
   validates :item_name, :description, :price, presence: true
