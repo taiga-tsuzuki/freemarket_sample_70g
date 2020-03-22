@@ -99,6 +99,9 @@
         - if user_signed_in? && current_user.id == @item.user_id
           .item-buy-btn
             これはあなたの出品物です
+        - elsif @item.item_purchaser_id.present?
+          .item-sold-notice
+            この商品は売却済です
         - else
           = link_to confirm_item_path(@item.id),class: "item-buy-btn" do
             購入画面に進む
