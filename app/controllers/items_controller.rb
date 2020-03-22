@@ -59,13 +59,20 @@ class ItemsController < ApplicationController
   end
 
   def edit
-
+    @category = Category.all.order("ancestry ASC").limit(13)
+    @selected_grandchild_category = @item.category
+    @selected_child_category = @selected_grandchild_category.parent
+    @selected_parent_category = @selected_child_category.parent
   end
 
   def update
     @item.update(item_params)
-    @user.update(user_params[:user])
+      redirect_to item_path(@item.id)
+    # else
+    #   render :edit
+    # end
   end
+
   def destroy
     item = Item.find(params[:id])
     redirect_to user_path(current_user.id) and return unless item.destroy

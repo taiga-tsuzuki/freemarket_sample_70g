@@ -1,173 +1,218 @@
-.product
-  .header
-    .header__box
-      .header__box__main
-        = link_to "#" do
-          = image_tag "/material/logo/logo.png", size: "140x40"
-        = form_with url: "#", class: "search__box" do |f|
-          = f.text_field :content, class: 'search__box__form', placeholder: ' キーワードから探す'
-        = link_to "#" do
-          = image_tag "/material/icon/icon-search 1.png", size: "24x24", class: "search__box__btn"
-      .header__box__sub
-        %ul.lists__left
-          %li
-            = link_to "#",class: "category" do
-              カテゴリー
-          %li
-            = link_to "#",class: "brand" do
-              ブランド
-        %ul.lists__right
-          %li
-            = link_to "#",class: "login" do
-              ログイン
-          %li
-            = link_to "#",class: "signin" do
-              新規会員登録
-  .edit-product-contents
-    .edit-product-contents__inner
-      .edit-product-contents__inner__mainbox
-        = form_with(model: @item, local: true) do |form|
-          .edit-product-contents__inner__mainbox__best
-            .edit-product-contents__inner__mainbox__best__button
-              編集する
-          .edit-product-contents__inner__mainbox__top
-            .edit-product-contents__inner__mainbox__top__name
-              = form.text_field :item_name, size: 10
-            .edit-product-contents__inner__mainbox__top__itemManage
-              = link_to "もどる", :back, class: "itemManage__delete"
-          .edit-product-contents__inner__mainbox__main-image
+.body-edit
+  .items-new-header
+    =link_to root_path do
+      = image_tag "/logo.png", size: "185x49"
+      
+  = render 'layouts/error_messages', model: @item
+
+  .edit-main-content
+    = form_with model: @item,local: true do |f|
+      .edit-main-content__box
+        .edit-title
+          .edit-title__size
+            %h2 編集
+        .edit-main-content__box__image-content
+          .edit-main-content__box__image-content__field
+            .edit-main-content__box__image-content__field__subtitle
+              .index 商品画像
+              .caution 必須
+            %p.memo 
+              最大
+              /
+              10
+              /
+              枚までアップロードできます
+
+
+            -# -@item.images.each do |image|
+            -#   =image_tag image.image.url,size: "112x80"
+
+
+            .image-upload-group
+              - @item.images.each_with_index do |image, i|
+                .item-image
+                  .item-image__content
+                    .item-image__content--icon
+                      =image_tag image.image.url,size: "112x80"
+                  .item-image__operation
+                    .item-image__operation--delete
+                      削除
+
+              #image-box__container{class: "item-num-#{@item.images.count}"}
+                = f.fields_for :images do |i|
+                  = i.label :image, class: 'image-field__label' do
+                    = i.file_field :image, type: 'file', name: "item[images_attributes][][image]",id: "item_images_attributes_#{@item.images.count}_image",class:"img-file"
+                    = icon('fas', 'camera', class: 'camera-icon img-file')
+                    %br/
+
+
+
+
+
+
+
+            -# .image-upload-group
+            -#   - if @item.persisted?
+            -#     - @item.images.each_with_index do |image, i|
+            -#       .item-image
+            -#         .item-image__content
+            -#           .item-image__content--icon
+            -#             = image_tag image.image.url, data: { index: i }, size: "112x80"
+            -#         .item-image__operation
+            -#           .item-image__operation--delete
+            -#             削除
+
+                  -# #image-box__container{class: "item-num-#{i}"}
+                  -#   = icon('fas', 'camera', class: 'camera-icon img-file')
+                    -# = i.file_field :image, type: 'file', name: "item[images_attributes][#{i}][image]", id: "item_image_attributes_#{i}_image"
+                    %br/
+
+                    .image-upload-description-box
+                      %p.first-line ドラッグアンドドロップ
+                      %p.second-line またはクリックしてファイルをアップロード
+        .edit-main-content__box__item-info-content
+          .edit-main-content__box__item-info-content__subtitle
+            .index 商品名
+            .caution 必須
+          .item-info-form
+            = f.text_field :item_name, placeholder: "40文字まで", class: "name-input-box", size: 40
+
+          .edit-main-content__box__item-info-content__description
+            .index 商品の説明
+            .caution 必須
+          .item-descriptaion-form
+            = f.text_area :description, placeholder: "商品の説明(必須 1,000文字以内)(色、素材、重さ、低下、注意点など)例)2010年頃に1万円で購入したジャケットです。ライトグレーで傷はありません。合わせやすいのでおすすめです。", class: "description-input-box",rows:"25", cols:"40"
             
-          .edit-product-contents__inner__mainbox__other-images
-            .edit-product-contents__inner__mainbox__other-images__three-images
-              .edit-product-contents__inner__mainbox__other-images__three-images__first
-              .edit-product-contents__inner__mainbox__other-images__three-images__second
-              .edit-product-contents__inner__mainbox__other-images__three-images__thrid
-          .edit-product-contents__inner__mainbox__price
-            = form.text_field :price, size: 10
-          .edit-product-contents__inner__mainbox__additional-price
-            (税込) 送料込み
-          = form.submit "編集確定", class: "item-buy-btn"
-          .edit-product-contents__inner__mainbox__description
-            = form.text_area :description, size: 10
-          .edit-product-contents__inner__mainbox__table
-            .edit-product-contents__inner__mainbox__table__box
-              .leftbox
-                出品者
-              .rightbox
-                = form.fields_for @user do |i| 
-                  = i.text_field :nickname, size: 10,id: "user_id"
-            .edit-product-contents__inner__mainbox__table__box
-              .leftbox
-                カテゴリー
-              .rightbox
-                = form.text_field :category_id, size: 10
-            .edit-product-contents__inner__mainbox__table__box
-              .leftbox
-                ブランド
-              .rightbox
-                = form.text_field :brand_id, size: 10
-            .edit-product-contents__inner__mainbox__table__box
-              .leftbox
-                商品のサイズ
-              .rightbox
-                = form.text_field :size, size: 10
-            .edit-product-contents__inner__mainbox__table__box
-              .leftbox
-                商品の状態
-              .rightbox
-                = form.text_field :condition, size: 10
-            .edit-product-contents__inner__mainbox__table__box
-              .leftbox
-                配送料の負担
-              .rightbox
-                = form.text_field :shipping_fee_payer, size: 10
-            .edit-product-contents__inner__mainbox__table__box
-              .leftbox
-                発送元の地域
-              .rightbox
-                = form.text_field :shipping_location, size: 10
-            .edit-product-contents__inner__mainbox__table__box
-              .leftbox
-                発送日の目安
-              .rightbox
-                = form.text_field :shipping_days, size: 10
-          .edit-product-contents__inner__mainbox__links
-            .edit-product-contents__inner__mainbox__links__favorite
-              .edit-product-contents__inner__mainbox__links__favorite__icon
-                = icon('fa', 'star',class: 'star-icon')
-              .edit-product-contents__inner__mainbox__links__favorite__letter
-                お気に入り 0
-            .edit-product-contents__inner__mainbox__links__report
-              .edit-product-contents__inner__mainbox__links__report__icon
-                = icon('fa', 'flag',class: 'flag-icon')
-              .edit-product-contents__inner__mainbox__links__report__letter
-                不適切な商品の通報
-  .appbanner
-    .appbanner__inner
-      %h1.inner__title
-        だれでもかんたん、人生を変えるフリマアプリ
-      %p.inner__text
-        今すぐ無料ダウンロード！
-      .inner__btn
+        .edit-main-content__box__item-detail-content
+          .edit-main-content__box__item-detail-content__field 
+            .edit-main-content__box__item-detail-content__field__subtitle 商品詳細
+
+            .category-box
+              .index カテゴリー
+              .caution 必須
+            .selected_category
+              = @selected_parent_category.name
+              ＞
+              = @selected_child_category.name
+              ＞
+              = @selected_grandchild_category.name
+            .warning
+              %h4 ※変更する場合は、選び直してください
+            .product_category-select
+              = f.collection_select :category, @category, :id, :name, { prompt: "選択してください" }, { class: "category_select-box", id: "category_select" }
+              %i.fa.fa-chevron-down
+            .product_select-children
+
+            .brand-box
+              .index ブランド
+              .caution 任意
+            .brand-form-field
+              = f.text_field :brand_name, placeholder:"例）シャネル", class:"brand-input-box"
+
+
+            .size-box
+              .index サイズ
+              .caution 任意
+            .size-form-field
+              = f.text_field :size, placeholder:"サイズを入力してください", class:"size-input-box"
+
+            .condition-box
+              .index 商品の状態
+              .caution 必須
+            .condetion-form-field
+              = f.select :condition,
+              {新品、未使用:"新品、未使用",
+              未使用に近い:"未使用に近い",
+              目立った傷や汚れなし:"目立った傷や汚れなし",
+              やや傷や汚れあり:"やや傷や汚れあり",
+              傷や汚れあり:"傷や汚れあり",
+              全体的に状態が悪い:"全体的に状態が悪い"},
+              { include_blank: "選択してください"}
+
+        .edit-main-content__box__delivery-info-content
+          .edit-main-content__box__delivery-info-content__field 
+            .edit-main-content__box__delivery-info-content__field__subtitle-box
+              .edit-main-content__box__delivery-info-content__field__subtitle 配送について
+              = link_to "#", class:"faq-icon" do
+                = icon('fas', 'question-circle', class: 'faq-btn')
+
+            .shipping-fee-payer-box
+              .index 配送料の負担
+              .caution 必須
+            .shipping-fee-payer-form-field
+              = f.select :shipping_fee_payer,
+              {送料込み（出品者負担）:"送料込み（出品者負担）",
+              着払い（購入者負担）:"着払い（購入者負担）"},
+              { include_blank: "選択してください"}
+            .shipping-location-box
+              .index 配送元の地域
+              .caution 必須
+            .shipping-location-form-field
+              = f.collection_select :prefecture_id, Prefecture.all, :id, :name
+
+            .shipping-fee-payer-box
+              .index 発送までの日数
+              .caution 必須
+            .shipping-days-form-field
+              = f.select :shipping_days,
+              {１〜２日で発送:"１〜２日で発送",
+              ２〜３日で発送:"２〜３日で発送",
+              ４〜７日で発送:"４〜７日で発送"},
+              { include_blank: "選択してください"}
+      
+        .edit-main-content__box__cost-info-content
+          .edit-main-content__box__cost-info-content__subtitle-box
+            .edit-main-content__box__cost-info-content__subtitle-box__subtitle 販売価格 (¥300〜¥9,999,999)
+            = link_to "#", class:"faq-icon" do
+              = icon('fas', 'question-circle', class: 'faq-btn')
+            
+          .price-info-box
+            .price-info-box__left
+              .index 販売価格
+              .hoge
+                .caution 必須
+            .price-info-box__right
+              %span.currency ¥
+              = f.number_field :price, placeholder:"0", class:"price-input-box", min: 300, max:9999999
+          
+          .sales-commission-info
+            .sales-commission-tax 販売手数料（10%）
+            .sales-commission-calc
+            -if (@item.price.to_i) < 300
+              ー
+            -else
+              = (@item.price.to_i  * 0.1).floor
+            
+          .sales-profit-info
+            .sales-profit-subtitle 販売利益
+            .sales-profit-calc
+            -if (@item.price.to_i) < 300
+              ー
+            -else
+              =((@item.price.to_i) - ((@item.price.to_i  * 0.1).floor))
+
+          = f.submit "再出品する", class: "sell-btn"
+
+          %input.return-btn{type: "button", value: "もどる"}
+
+          .terms-info-box
+            %p.tems-info-description 
+              禁止されている行為および出品物を必ずご確認ください。
+              /
+              偽ブランドや盗品物などの販売は犯罪であり、法律により処罰される可能性があります。
+              /
+              また、出品をもちまして加盟店規約に同意したことになります。
+
+  .lower-content
+    .legal-info-box
+      .hoge
         = link_to "#" do
-          = image_tag "/material/badge/Download_on_the_App_Store_Badge.svg", class: "abtn"
+          .privacy-policy-box プライバシーポリシー
+        = link_to "#" do  
+          .terms-box FURIMA利用規約
         = link_to "#" do
-          = image_tag "/material/badge/google-play-badge.png", class: "gbtn"
-
-  .footer
-    %ul.footer__contents
-      %li.content
-        %h1.title
-          FURIMAについて
-        %ul.lists
-          %li.list
-            = link_to "#", class: "list" do
-              会社概要（運営会社）
-          %li.list
-            = link_to "#", class: "list" do
-              プライバシーポリシー
-          %li.list
-            = link_to "#", class: "list" do
-              FURIMA利用規約
-          %li.list
-            = link_to "#", class: "list" do
-              ポイントに関する特約
-      %li.content
-        %h1.title
-          FURIMAを見る
-        %ul.lists
-          %li.list
-            = link_to "#", class: "list" do
-              カテゴリー一覧
-          %li.list
-            = link_to "#", class: "list" do
-              ブランド一覧
-      %li.content
-        %h1.title
-          ヘルプ＆ガイド
-        %ul.lists
-          %li.list
-            = link_to "#", class: "list" do
-              FURIMAガイド
-          %li.list
-            = link_to "#", class: "list" do
-              FURIMAロゴ利用ガイドライン
-          %li.list
-            = link_to "#", class: "list" do
-              お知らせ
-    = link_to "#" do
-      = image_tag "/material/logo/logo-white.png", size: "160x46", class: "footer__logo"
-
-
-
-    %p
-      © FURIMA
-
-
-
-
-  = link_to "#" do
-    .exhibit
-      .text
-        出品する
-      = image_tag "/material/icon/icon_camera.png", class: "exhibit__icon"
+          .specified-commercial-transaction-act-box 特定商取引に関する表記
+    .footer__logo
+      .logo-img
+        = image_tag src="/logo-white.png", size: "160x46"
+      .logo-text ©FURIMA
