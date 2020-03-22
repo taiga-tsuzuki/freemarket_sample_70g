@@ -3,7 +3,9 @@ class ItemsController < ApplicationController
   before_action :set_user, only: [:edit, :update]
 
   def index
-    @items = Item.includes(:images).order(:item_purchaser_id, "id DESC").limit(3)
+    @items = Item.includes(:images).order(:item_purchaser_id, "id DESC")
+    @category = Category.all.order("ancestry ASC").limit(13)
+    @parents = Category.where(ancestry:nil)
   end
 
   def new
@@ -34,6 +36,9 @@ class ItemsController < ApplicationController
     @items = @item.images
     @comment = Comment.new
     @comments = @item.comments.includes(:user).order("id DESC")
+    @category = Category.all.order("ancestry ASC").limit(13)
+    @parents = Category.where(ancestry:nil)
+    @items = Item.includes(:images).order(:item_purchaser_id, "id DESC")
   end
 
   def done
@@ -77,6 +82,10 @@ class ItemsController < ApplicationController
     item = Item.find(params[:id])
     redirect_to user_path(current_user.id) and return unless item.destroy
     redirect_to onsale_user_path(current_user.id)
+  end
+
+  def search
+    @items = Item.search(params[:keyword])
   end
 
   private

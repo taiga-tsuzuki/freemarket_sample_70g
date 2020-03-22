@@ -3,71 +3,6 @@ a {
   color: black;
 }
 
-.header {
-  height: 100px;
-  width: 100%;
-  &__box {
-    height: 100%;
-    width: 65%;
-    margin: 0 auto;
-    padding: 15px 0 0;
-    &__main {
-      height: 40px;
-      width: 100%;
-      display: flex;
-      line-height: 40px;
-      .logo {
-        position: relative;
-        display: flex;
-        align-items: center;
-      }
-      .search__box {
-        width: 100%;
-        margin-left: 30px;
-        display: flex;
-        &__form {
-          width: 100%;
-        }
-        &__btn {
-          background-color: #3CCACE;
-          padding: 8px;
-        }
-      }
-    }
-    &__sub {
-      height: 35px;
-      margin: 10px 0;
-      font-size: 15px;
-      display: flex;
-      justify-content: space-between;
-      .lists__left {
-        line-height: 35px;
-        display: flex;
-        .category {
-          margin-left: 10px;
-          color: black;
-        }
-        .brand {
-          margin-left: 50px;
-          color: black;
-        }
-      }
-      .lists__right {
-        line-height: 35px;
-        display: flex;
-        .login {
-          margin-right: 50px;
-          color: black;
-        }
-        .signin {
-          margin-right: 10px;
-          color: black;
-        }
-      }
-    }
-  }
-}
-
 .product-contents{
   height: 2700px; 
   width: 100%;
@@ -106,8 +41,6 @@ a {
             height: 400px;
             width: 400px;
             margin-left: 40px;
-            // background-image: url(https://tech-master.s3.amazonaws.com/uploads/curriculums/images/Rails1-4/sample.jpg);
-            // background-size: cover;
             .swiper-container {
               width: 100%;
               height: 425px;
@@ -164,12 +97,15 @@ a {
 
                 .parent-name {
                   display: block;
+                  color: blue;
                 }
                 .children-name {
                   display: block;
+                  color: blue;
                 }
                 .grand-children-name{
-                  display: block
+                  display: block;
+                  color: blue;
                 }
               }
             }
@@ -358,15 +294,16 @@ a {
           height: 80px;
           line-height: 30px;
           width: 600px;
-          background-color: gainsboro;
-          margin: auto;
+          background-color: #FFF6DE;
+          color: #333333;
+          margin-left: 120px;
           position: absolute;
           left: 50px;
           top: 30px;
           text-align: center;
         }
         &__content{
-          height: 100px;
+          height: 200px;
           width: 700px;
           background-color:white;
           margin: 0 60px;
@@ -377,8 +314,8 @@ a {
           border: solid 1px black;
         }
         &__comment{
-          height: 100px;
-          width: 600px;
+          height: 200px;
+          width: 700px;
           background-color: white;
           margin: auto;
           left: 210px;
@@ -389,8 +326,8 @@ a {
             width: 200px;
             font-weight: bold;
             font-size: 20px;
-            height: 30px;
-            line-height: 30px;
+            height: 50px;
+            line-height: 50px;
             background-color: #3ccace;
             text-align: center;
             color: white;
@@ -409,7 +346,10 @@ a {
             text-align: center;
           }
           &__box {
-            height:450px;
+            padding-top: 100px;
+            height:350px;
+            width: 700px;
+            margin: 0 auto;
             overflow: scroll;
             .upper-comment {
               display: flex;
@@ -433,110 +373,6 @@ a {
       }
     }
   }
-
-  .appbanner {
-    height: 150px;
-    width: auto;
-    padding: 100px 40px;
-    background-image: url("/material/pict/bg-appBanner-pict.jpg");
-    background-size: cover;
-    background-position: center;
-    &__inner {
-      color: white;
-      text-align: center;
-      
-      .inner__title {
-        font-size: 24px;
-        text-shadow: 0 0 5px rgba(0,0,0,0.4);
-        font-weight: bold;
-      }
-      .inner__text {
-        font-size: 35px;
-        text-shadow: 0 0 5px rgba(0,0,0,0.4)
-      }
-      .inner__btn {
-        height: 70px;
-        .abtn {
-          height: 100%;
-          width:  auto;
-        }
-        .abtn:hover {
-          opacity: 0.5 ;
-        }  
-        .gbtn {
-          height: 100%;
-          width:  auto;
-          margin-left: 50px;
-          transform: scale(1.45);
-        }
-        .gbtn:hover {
-          opacity: 0.5 ;
-        }
-      }
-    }
-  }
-  
-  
-  
-  
-  .footer {
-    height: 230px;
-    padding: 60px 0;
-    background-color: black;
-    &__contents {
-      padding: 0 350px;
-      display: flex;
-      justify-content: space-around;
-      .content {
-        .title {
-          margin-bottom: 23px;
-          font-weight: bold;
-          color: white;
-        }
-        .lists {
-          text-align: center;
-          .list {
-            font-size: 10px;
-            margin-top: 15px;
-            color: white;
-          }
-        }
-      }
-    }
-    .footer__logo {
-      margin-left: 640px;
-    }
-    p {
-      color: white;
-      text-align: center;
-    }  
-  }
-  
-  
-  
-  
-  
-  a {
-    .exhibit {
-      width: 85px;
-      padding: 15px;
-      background: #3CCACE;
-      text-align: center;
-      border-radius: 4%;
-      position: fixed;
-      bottom: 32px;
-      right: 32px;
-      .text {
-        margin-bottom: 5px;
-        font-size: 18px;
-        color: #fff;
-      }
-      &__icon {
-        width: 60%;
-      }
-    }
-  }
-
 
 .comment-icon{
   color: white;

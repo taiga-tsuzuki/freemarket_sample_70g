@@ -30,6 +30,23 @@
       
       .edit-title{
         height: 100px;
+
+.edit-product-contents{
+  height: 1700px;
+  width: 100%;
+  position: relative;
+  background-color: gainsboro;
+    &__inner{
+      height: 1600px;
+      width: 800px;
+      background-color: gainsboro;
+      margin: auto;
+      position: absolute;
+      left: 400px;
+      &__mainbox{
+        height: 1600px;
+        width: 700px;
+        margin: auto;
         background-color: white;
         display: flex;
         justify-content: center;
@@ -745,6 +762,4 @@
       }
     }
   }
-
 }
-
