@@ -9,6 +9,9 @@ Rails.application.routes.draw do
   end
   
   root "items#index"
+  namespace :items do
+    resources :searches, only: :index
+  end
   resources :items do
     resources :comments, only: :create
     member do
