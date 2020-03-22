@@ -77,6 +77,10 @@ class ItemsController < ApplicationController
     redirect_to onsale_user_path(current_user.id)
   end
 
+  def search
+    @items = Item.search(params[:keyword])
+  end
+
   private
   def item_params
     params.require(:item).permit(:item_name, :description, :category_id, :brand_name, :size, :condition,
