@@ -51,6 +51,26 @@ a {
             .swiper-slide {
               background-size: cover;
               background-position: center;
+
+              .items-box_photo__sold {
+                width: 0;
+                height: 0;
+                border-top: 100px solid #ea352d ;
+                border-right: 100px solid transparent;
+                border-bottom: 100px solid transparent;
+                border-left: 100px solid #ea352d ;
+                z-index:100;
+                position: relative;
+                top:-395px;
+                &__inner{
+                  transform: rotate(-45deg);
+                  font-size: 32px;
+                  margin:-50px 10px 0px -75px;
+                  color: #fff;
+                  letter-spacing: 2px;
+                  font-weight: 600;
+                }
+              }
             }
             .gallery-top {
               height: 100%;
