@@ -4,6 +4,13 @@ class Item < ApplicationRecord
   belongs_to :user
   belongs_to :category, dependent: :destroy, optional: true
 
+  def self.search(search)
+    return Item.all unless search
+    Item.where('item_name LIKE(?)', "%#{search}%")
+  end
+
+
+
   extend ActiveHash::Associations::ActiveRecordExtensions
   belongs_to_active_hash :prefecture
 

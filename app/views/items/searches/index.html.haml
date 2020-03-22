@@ -1,0 +1,29 @@
+= render partial: "shared/index_header"
+
+.search__content
+  - @items.each do |item|
+    - item.images.first(1).each do |image|
+      .search__content__list
+        - if item.item_purchaser_id.blank?
+          = link_to item_path(item.id) do
+            .search__content__list__img
+              = image_tag "#{image.image}", alt: "テスト", size: "200x150"
+            
+            .search__content__list__text
+              .item__name
+                = item.item_name
+              .item__details
+                %ul
+                  %li
+                    .category-yen
+                      = item.price
+                  %li
+                    ★2
+                %p
+                  (税込)
+
+
+= paginate(@a)
+
+
+= render partial: "shared/index_footer"
