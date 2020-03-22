@@ -1,7 +1,8 @@
 .body
   .items-purchases-done-header
     .items-purchases-done-header__logo
-      = image_tag "/logo.png", size: "185x48"
+      = link_to root_path do
+        = image_tag "/logo.png", size: "185x48"
 
   .main-purchases-done-contents
     = form_with url:"#" do |f|
