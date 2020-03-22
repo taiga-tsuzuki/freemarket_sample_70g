@@ -18,8 +18,15 @@
             .swiper-container.gallery-top
               .swiper-wrapper
                 = @item.images.each do |image|
-                  .swiper-slide
-                    = image_tag "#{image.image}", alt: "テスト", size: "400x389"
+                  - if @item.item_purchaser_id.present?
+                    .swiper-slide
+                      = image_tag "#{image.image}", alt: "テスト", size: "400x389"
+                      .items-box_photo__sold
+                        .items-box_photo__sold__inner
+                          SOLD
+                  - else
+                    .swiper-slide
+                      = image_tag "#{image.image}", alt: "テスト", size: "400x389"
               / Add Arrows
               .swiper-button-next.swiper-button-white
               .swiper-button-prev.swiper-button-white
@@ -92,6 +99,9 @@
         - if user_signed_in? && current_user.id == @item.user_id
           .item-buy-btn
             これはあなたの出品物です
+        - elsif @item.item_purchaser_id.present?
+          .item-sold-notice
+            この商品は売却済です
         - else
           = link_to confirm_item_path(@item.id),class: "item-buy-btn" do
             購入画面に進む

@@ -1,16 +1,204 @@
-.wrapper {
-  .header {
-    color: red;;
+$bg-border-color: #f1f1f1;
+
+.items-purchases-done-header {
+  height: 128px;
+  background-color: #f1f1f1;
+
+  a{
+    margin:0 auto;
+    display:block;
+    width: 200px;
+    padding-top: 35px;
   }
-  .main {
-    height: 300px;
-    .item__price {
-      &::before {
-        content: '¥';
-      }
-    }
-    .return {
-      margin-top: 150px;
-    }
+  &__logo {
+    display:block;
+    padding: 12px 0 0 15px
   }
 }
+.main-purchases-done-contents{
+  background-color: $bg-border-color;
+  .main-purchases-done-content{
+    height: 500px;
+    width: 700px;
+    background-color: white;
+    margin: 0 auto;
+
+    &__header{
+      height: 90px;
+      width: 100%;
+      border-bottom: 1px solid $bg-border-color;
+      h2{
+        font-size:23px;
+        font-weight: bold;
+        text-align: center;
+        line-height: 90px;
+        
+      }
+    }
+    &__buy-item{
+      height: 100px;
+      width: 100%;
+      border-bottom: 1px solid $bg-border-color;
+      padding: 20px 0px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      &__group{
+        margin-left: 15px;
+        width: 280px;
+        &__item-name{
+          font-size: 16px;
+          margin-bottom: 5px;
+          color: #333333;
+        }
+        &__item-price{
+          font-size: 16px;
+          display: inline-block;
+          float: left;
+          h3{
+            font-weight: bold;
+            display: inline-block;
+          }
+        }
+        &__shipping-fee-payer{
+          float: left;
+          margin-left: 5px;
+          h3.purchases-done-tax {
+            margin-top: 3px;
+            font-size: 13px;
+            font-weight: bold;
+          }
+        }
+      }
+    }
+    &__submit{
+      height: 60px;
+      // width: 100%;
+      margin-top:50px;
+      margin: 0 auto;
+
+      .purchases-done-confirm-submit{
+        display: block;
+        width: 360px;
+        height: 48px;
+        line-height: 48px;
+        text-align: center;
+        margin: 50px auto;
+        font-weight: bold;
+        border-radius: 4px;
+        background-color: #87ceeb;
+      }
+      .purchases-done-return-btn {
+        display: block;
+        background-color: #afeeee;
+        font-weight: bold;
+        width: 360px;
+        height: 48px;
+        line-height: 48px;
+        text-align: center;
+        border-radius: 4px;
+        outline: none;
+        border-style: none;
+        margin: 30px auto;
+      }
+    }
+
+  }
+}
+
+// .wrapper {
+
+//   .items-new-header {
+//     height: 80px;
+//     width: 100%;
+//     background-color: #f1f1f1;
+
+//     .done-logo {
+//       margin: 20px 0 0 620px;
+//     }
+//   }
+
+//   .upper-box {
+//     color: red;
+//     width: 700px;
+//     height: 60px;
+//     font-size: 24px;
+//     font-weight: bold;
+//     line-height: 60px;
+//     text-align: center;
+//     background-color: white;
+//     margin: 0 auto;
+//   }
+//   .done-main {
+//     box-sizing: border-box;
+//     height: 330px;
+//     width: 700px;
+//     margin: 3px auto;
+//     background-color: white;
+//     font-size: 20px;
+//     text-align: center;
+
+//     &__inner-content {
+//       height: 200px;
+//       width: 600px;
+//       padding: 50px 50px;
+//       display: flex;
+//       justify-content: center;
+
+//       .done-iyem-name {
+//         font-size: 16px;
+//         font-weight: bold;
+//       }
+
+//       .item-price {
+//         font-size: 20px;
+//         color: #333333;
+//         &::before {
+//           content: '¥';
+//         }
+//       }
+//     }
+//     .return {
+//       margin: 30px auto;
+//       background-color: #DDDDDD;
+//       font-size: 16px;
+//       font-weight: bold;
+//       width: 300px;
+//       height: 48px;
+//       border-radius: 4px;
+//       outline: none;
+//       border-style: none;
+//       display: block;
+//       cursor: pointer;
+//       line-height: 48px;
+//       text-align: center;
+//     }   
+//   }
+
+  
+
+//   .lower-box {
+//     height: 150px;
+//     bottom: 0;
+//     background-color: #f1f1f1;
+//     padding: 10px 0 41px;
+    
+//     .legal-info-box {
+//       width: 100%;      
+//       font-size: 12px;
+//     } 
+//     .footer__logo {
+
+//       .logo-img {
+//         text-align: center;
+//         padding-top: 50px;
+//       }
+
+//       .logo-text {
+//         font-size: 12px;
+//         text-align: center;
+//       }
+//     }
+//   }
+// }

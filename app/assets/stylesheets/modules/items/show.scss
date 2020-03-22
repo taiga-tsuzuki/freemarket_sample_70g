@@ -8,10 +8,10 @@ a {
   width: 100%;
   padding-top: 20px;
   position: relative;
-  background-color: #EEEEEE;
+  background-color: #f1f1f1;
     &__inner{
       width: 1000px;
-      background-color: #EEEEEE;
+      background-color: #f1f1f1;
       margin: 0 auto;
       &__mainbox{
         height: 1300px;
@@ -31,6 +31,7 @@ a {
             font-size: 40px;
             line-height: 70px;
             padding-top: 25px;
+            color: #333333;
           }
         }
 
@@ -50,6 +51,26 @@ a {
             .swiper-slide {
               background-size: cover;
               background-position: center;
+
+              .items-box_photo__sold {
+                width: 0;
+                height: 0;
+                border-top: 100px solid #ea352d ;
+                border-right: 100px solid transparent;
+                border-bottom: 100px solid transparent;
+                border-left: 100px solid #ea352d ;
+                z-index:100;
+                position: relative;
+                top:-395px;
+                &__inner{
+                  transform: rotate(-45deg);
+                  font-size: 32px;
+                  margin:-50px 10px 0px -75px;
+                  color: #fff;
+                  letter-spacing: 1px;
+                  font-weight: 600;
+                }
+              }
             }
             .gallery-top {
               height: 100%;
@@ -160,6 +181,18 @@ a {
           font-size: 20px;
           line-height: 50px;
           background-color: #3CCACE;
+          color: #fff;
+          display: block;
+          text-align: center;
+          font-weight: 500;
+          margin: 20px auto;
+          width: 700px;
+          height: 50px;
+        }
+        .item-sold-notice {
+          font-size: 20px;
+          line-height: 50px;
+          background-color: red;
           color: #fff;
           display: block;
           text-align: center;
@@ -299,7 +332,7 @@ a {
           margin-left: 120px;
           position: absolute;
           left: 50px;
-          top: 30px;
+          top: 20px;
           text-align: center;
         }
         &__content{

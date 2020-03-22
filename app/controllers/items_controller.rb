@@ -41,9 +41,6 @@ class ItemsController < ApplicationController
     @items = Item.includes(:images).order(:item_purchaser_id, "id DESC")
   end
 
-  def done
-  end
-
   def category_children
     @category_children = Category.find(params[:productcategory]).children
     end
