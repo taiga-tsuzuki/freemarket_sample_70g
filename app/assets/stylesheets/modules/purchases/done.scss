@@ -53,7 +53,8 @@ $bg-border-color: #f1f1f1;
           color: #333333;
         }
         &__item-price{
-          font-size: 16px;
+          font-size: 15px;
+          font-weight: bold;
           display: inline-block;
           float: left;
           h3{
@@ -66,7 +67,7 @@ $bg-border-color: #f1f1f1;
           margin-left: 5px;
           h3.purchases-done-tax {
             margin-top: 3px;
-            font-size: 13px;
+            font-size: 15px;
             font-weight: bold;
           }
         }

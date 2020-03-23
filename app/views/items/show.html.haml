@@ -17,7 +17,7 @@
           .product-contents__inner__mainbox__main-upper-box__main-image
             .swiper-container.gallery-top
               .swiper-wrapper
-                = @item.images.each do |image|
+                - @item.images.each do |image|
                   - if @item.item_purchaser_id.present?
                     .swiper-slide
                       = image_tag "#{image.image}", alt: "テスト", size: "400x389"
