@@ -1,29 +1,37 @@
 = render partial: "shared/index_header"
 
-.search__content
-  - @items.each do |item|
-    - item.images.first(1).each do |image|
-      .search__content__list
-        - if item.item_purchaser_id.blank?
-          = link_to item_path(item.id) do
-            .search__content__list__img
-              = image_tag "#{image.image}", alt: "テスト", size: "200x150"
-            
-            .search__content__list__text
-              .item__name
-                = item.item_name
-              .item__details
-                %ul
-                  %li
-                    .category-yen
-                      = item.price
-                  %li
-                    ★2
-                %p
-                  (税込)
+.left__search__box
+  = search_form_for @q do |f|
+    = f.label :item_name, "キーワードを追加する"
+    = f.search_field :item_name_cont
+    = f.submit "検索"
 
 
-= paginate(@page)
+.right__seach__box
+  .search__content
+    - @items.each do |item|
+      - item.images.first(1).each do |image|
+        .search__content__list
+          - if item.item_purchaser_id.blank?
+            = link_to item_path(item.id) do
+              .search__content__list__img
+                = image_tag "#{image.image}", alt: "テスト", size: "200x150"
+              
+              .search__content__list__text
+                .item__name
+                  = item.item_name
+                .item__details
+                  %ul
+                    %li
+                      .category-yen
+                        = item.price
+                    %li
+                      ★2
+                  %p
+                    (税込)
+
+
+  = paginate(@page)
 
 
 = render partial: "shared/index_footer"
