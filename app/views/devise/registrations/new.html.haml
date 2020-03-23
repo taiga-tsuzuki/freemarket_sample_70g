@@ -3,18 +3,10 @@
     %h1.container__header__logo
     =link_to image_tag("/material/logo/logo.png",width:"134",height:"36"), root_path 
     %ul.container__header__progress
-      %li.container__header__progress__text--active{ id: "first" }
+      %li.container__header__progress__red
         会員情報
-        .container__header__progress__round--red
       %li.container__header__progress__text
-        お届け先住所入力
-        .container__header__progress__round    
-      %li.container__header__progress__text
-        支払い方法
-        .container__header__progress__round    
-      %li.container__header__progress__text{ id: "end" }
-        完了
-        .container__header__progress__round
+        住所入力
   .container__main
     .container__main__registration
       登録情報入力
