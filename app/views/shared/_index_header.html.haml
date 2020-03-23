@@ -26,14 +26,13 @@
                             = link_to category_path(grandchild.id) do
                               = grandchild.name
 
-        %li
+        %li.brand
+          = link_to "ブランド一覧",root_path
           %ul.abnc
-            = link_to "#",class: "brand" do
-              ブランド一覧
-              - @items.first(6).each do |item|
-                %li.brand__lists
-                  = link_to category_path(item.category_id) do
-                    = item.brand_name
+            - @items.first(6).each do |item|
+              %li.brand__lists
+                = link_to category_path(item.category_id) do
+                  = item.brand_name
 
       - if user_signed_in?
         %ul.lists__right
