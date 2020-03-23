@@ -26,7 +26,7 @@
       %br/
       = exp_month + " / " + exp_year
     %br
-    = link_to pay_purchase_path(@item.id) do
+    = link_to pay_purchase_path(@item.id),class: "purchase" do
       購入を確定する
     = link_to confirm_item_path(@item.id),class: "return" do
       戻る

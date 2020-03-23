@@ -48,54 +48,53 @@ a {
             visibility: visible;
             opacity: 1;
           }
-            .firstmenu-parent{
-              display: flex;
-              flex-direction: column;
-              height: 665px;
-              width: 300px;
-              visibility: hidden;
-              z-index: 2;
-              position: relative;
-              .parent-name{
-                width: 250px;
-                height: 35px;
-                line-height: 35px;
-                font-size: 12px;
-                background-color: rgba(255, 247, 247, 0.9);
-                &:hover >.secondmenu-children{
-                  opacity: 1;
-                  visibility: visible;
-                  color: black;
+          .firstmenu-parent{
+            display: flex;
+            flex-direction: column;
+            height: 665px;
+            width: 300px;
+            visibility: hidden;
+            z-index: 2;
+            position: relative;
+            .parent-name{
+              width: 250px;
+              height: 35px;
+              line-height: 35px;
+              font-size: 12px;
+              background-color: rgba(255, 247, 247, 0.9);
+              &:hover >.secondmenu-children{
+                opacity: 1;
+                visibility: visible;
+                color: black;
+                }
+              .secondmenu-children{
+                opacity: 0;
+                display: flex;
+                flex-direction: column;
+                visibility: hidden;
+                position: absolute;
+                top: 0;
+                left: 248px;
+                .children-name{
+                  width: 250px;
+                  height: 35px;
+                  background-color: rgba(255, 247, 247, 0.9);
+                  &:hover > .thirdmenu-grandchildren{
+                    opacity: 1;
+                    visibility: visible;
                   }
-                .secondmenu-children{
-                  opacity: 0;
-                  display: flex;
-                  flex-direction: column;
-                  visibility: hidden;
-                  position: absolute;
-                  top: 0;
-                  left: 248px;
-                  .children-name{
-                    width: 250px;
-                    height: 35px;
+                  .thirdmenu-grandchildren{
+                    height: 1000px;
+                    opacity: 1;
+                    visibility: hidden;
                     background-color: rgba(255, 247, 247, 0.9);
-                    &:hover > .thirdmenu-grandchildren{
-                      opacity: 1;
-                      visibility: visible;
-                    }
-                    .thirdmenu-grandchildren{
-                      height: 1000px;
-                      opacity: 1;
-                      visibility: hidden;
-                      background-color: rgba(255, 247, 247, 0.9);
-                      display: flex;
-                      flex-direction: column;
-                      position: absolute;
-                      top: 0;
-                      left: 100%;
-                      .grandchildren-name{
-                        width: 200px;
-                      }
+                    display: flex;
+                    flex-direction: column;
+                    position: absolute;
+                    top: 0;
+                    left: 100%;
+                    .grandchildren-name{
+                      width: 200px;
                     }
                   }
                 }
@@ -103,37 +102,22 @@ a {
             }
           }
         }
-
-        .abnc{
-          width: 300px;
-      }
-    }
-
-    
-
-        .abnc {
+        .brand {
           margin-left: 50px;
           color: black;
-          &:hover > .brand__lists{
+          &:hover > .abnc {
             visibility: visible;
             opacity: 1;
           }
+          .abnc {
+            display: block;
+            visibility: hidden;
+            background-color: white;
+            border-top: solid 1px rgb(221, 221, 221);
+            z-index: 1;
+            position: relative;
+          }
         }
-
-        .brand__lists{
-          visibility: hidden;
-          background-color: white;
-          border-top: solid 1px rgb(221, 221, 221);
-          z-index: 1;
-          position: relative;
-        }
-
-        .abnc{
-          display: block;
-        }
-
-
-
       }
       .lists__right {
         line-height: 35px;
@@ -148,6 +132,8 @@ a {
         }
       }
     }
+  }
+}
 
 
 .main {
