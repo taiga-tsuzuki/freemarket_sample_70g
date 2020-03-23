@@ -8,4 +8,40 @@
 }
 .main__right__form {
   background-color: #fff;
+  .form-group-edit2 {
+    width: 500px;
+    margin: auto;
+    &__label {
+      display: flex;
+      &__moji {
+        width: 105px;
+      }
+      &__require {
+        width: 20px;
+        height: 15px;
+        background-color: red;
+        color: white;
+        font-size: 5px;
+      }
+    }
+    &__input{
+      display: block;
+      margin: auto;
+      &--hqlf{
+        align-items: left;
+      }
+    }
+    &__info{
+      font-size: 5px;
+      height: 70px;
+      line-height: 70px;
+      &__extra{
+        font-size: 5px;
+        height: 30px;
+      }
+    }
+    &__text--center{
+      font-size: 5px;
+    }
+  }
 }

@@ -46,7 +46,7 @@
             =link_to pay_creditcards_path,class: "moji" do
               支払い方法
           %li.nav__lists__list
-            =link_to edit_user_profile_path(current_user.id),class: "moji" do
+            =link_to profile_edit_user_path,class: "moji" do
               本人情報の登録・変更
           %li.nav__lists__list
             = link_to "ログアウト",destroy_user_session_path,method: :delete, class: 'moji'
@@ -54,46 +54,64 @@
       .main__right__top
         発送元・お届け先住所変更
       .main__right__form
-        = form_with(model: @location, url: locations_path, method: :post, local:true) do |f|
-          -# = render "devise/shared/error_messages", resource: @location
-          .form-group
-            = f.label :苗字
-            %span.form-group__require 必須
-            = f.text_field :family_name, {class:'form-group__input'}
-          .form-group
-            = f.label :名前
-            %span.form-group__require 必須
-            = f.text_field :first_name, {class:'form-group__input'}
-          .form-group
-            = f.label :苗字（カナ）
-            %span.form-group__require 必須
-            = f.text_field :family_name_kana, {class:'form-group__input'}
-          .form-group
-            = f.label :名前（カナ） 
-            %span.form-group__require 必須
-            = f.text_field :first_name_kana, {class:'form-group__input'}
-          .form-group
-            = f.label :郵便番号 
-            %span.form-group__require 必須
-            = f.text_field :postal_code, {class:'form-group__input'}
-          .form-group
-            = f.label :都道府県 
-            %span.form-group__require 必須
-            = f.text_field :prefecture, {class:'form-group__input'}
-          .form-group
-            = f.label :市町村
-            %span.form-group__require 必須
-            = f.text_field :city, {class:'form-group__input'}
-          .form-group
-            = f.label :建物名
-            %span.form-group__require 必須
-            = f.text_field :building_name, {class:'form-group__input'}
-          .form__group
-            = f.label :電話番号
-            %span.form-group__require 必須
-            = f.text_field :phone_name, {class:'form-group__input'}
+        = form_with(model: @location, url: location_update_user_path, method: :post, local:true) do |f|
+          = render "devise/shared/error_messages", resource: @location
+          .form-group-edit2
+            .form-group-edit2__label
+              .form-group-edit2__label__moji
+                苗字
+              %span.form-group-edit2__label__require 必須
+            = f.text_field :family_name, {class:'form-group-edit2__input'}
+          .form-group-edit2
+            .form-group-edit2__label
+              .form-group-edit2__label__moji
+                名前
+              %span.form-group-edit2__label__require 必須
+            = f.text_field :first_name, {class:'form-group-edit2__input'}
+          .form-group-edit2
+            .form-group-edit2__label
+              .form-group-edit2__label__moji
+                苗字 (カナ)
+              %span.form-group-edit2__label__require 必須
+            = f.text_field :family_name_kana, {class:'form-group-edit2__input'}
+          .form-group-edit2
+            .form-group-edit2__label
+              .form-group-edit2__label__moji
+                名前（カナ）
+              %span.form-group-edit2__label__require 必須
+            = f.text_field :first_name_kana, {class:'form-group-edit2__input'}
+          .form-group-edit2
+            .form-group-edit2__label
+              .form-group-edit2__label__moji
+                郵便番号
+              %span.form-group-edit2__label__require 必須
+            = f.text_field :postal_code, {class:'form-group-edit2__input'}
+          .form-group-edit2
+            .form-group-edit2__label
+              .form-group-edit2__label__moji
+                都道府県
+              %span.form-group-edit2__label__require 必須
+            = f.text_field :prefecture, {class:'form-group-edit2__input'}
+          .form-group-edit2
+            .form-group-edit2__label
+              .form-group-edit2__label__moji
+                市町村
+              %span.form-group-edit2__label__require 必須
+            = f.text_field :city, {class:'form-group-edit2__input'}
+          .form-group-edit2
+            .form-group-edit2__label
+              .form-group-edit2__label__moji
+                建物名
+              %span.form-group-edit2__label__require 必須
+            = f.text_field :building_name, {class:'form-group-edit2__input'}
+          .form-group-edit2
+            .form-group-edit2__label
+              .form-group-edit2__label__moji
+                電話番号
+              %span.form-group-edit2__label__require 必須
+            = f.text_field :phone_name, {class:'form-group-edit2__input'}
           .form_submit
-            = f.submit '変更する', class: "btn-default btn"
+            = f.submit '変更する', class: "edit-btn-default-btn"
 
   .appbanner
     .appbanner__inner

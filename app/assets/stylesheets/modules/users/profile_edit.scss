@@ -6,34 +6,36 @@
 }
 .main__right__form {
   background-color: #fff;
+  .form-group-edit {
+    width: 500px;
+    margin: auto;
+    &__input{
+      display: block;
+      margin: auto;
+      &--hqlf{
+        align-items: left;
+      }
+    }
+    &__info{
+      font-size: 5px;
+      height: 70px;
+      line-height: 70px;
+      &__extra{
+        font-size: 5px;
+        height: 30px;
+      }
+    }
+    &__text--center{
+      font-size: 5px;
+    }
+  }
+  .edit-btn-default-btn {
+    background-color: #66FFFF;
+    color: black;
+    margin: 50px 250px 50px 250px;
+    height: 40px;
+    width: 200px;
+  }
 }
 
-.form-group-edi{
-  background-color: white;
-  width: 500px;
-  margin: auto;
-  &__require{
-    font-size: 5px;
-    background-color: red;
-    color: white;
-  }
-  &__input{
-    display: block;
-    margin: auto;
-    &--hqlf{
-      align-items: left;
-    }
-  }
-  &__info{
-    font-size: 5px;
-    height: 70px;
-    line-height: 70px;
-    &__extra{
-      font-size: 5px;
-      height: 30px;
-    }
-  }
-  &__text--center{
-    font-size: 5px;
-  }
-}
+

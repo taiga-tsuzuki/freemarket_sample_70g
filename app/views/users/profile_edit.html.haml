@@ -54,38 +54,31 @@
       .main__right__top
         本人情報の登録・変更
       .main__right__form
-        = form_with(model: @profile, method: :post, local:true) do |f|
+        = form_with(url: profile_update_user_path,model: @profile, method: :post, local:true) do |f|
           -# = render "devise/shared/error_messages", resource: @location
           .form-group-edit
-            = f.label :苗字
-            %span.form-group-edit__require 必須
+            苗字
             = f.text_field :family_name, {class:'form-group-edit__input'}
           .form-group-edit
-            = f.label :名前
-            %span.form-group-edit__require 必須
+            名前
             = f.text_field :first_name, {class:'form-group-edit__input'}
           .form-group-edit
-            = f.label :苗字（カナ）
-            %span.form-group-edit__require 必須
+            苗字（カナ）
             = f.text_field :family_name_kana, {class:'form-group-edit__input'}
           .form-group-edit
-            = f.label :名前（カナ） 
-            %span.form-group-edit__require 必須
+            名前（カナ） 
             = f.text_field :first_name_kana, {class:'form-group-edit__input'}
           .form-group-edit
-            = f.label :誕生日
-            %span.form-group-edit__require 必須
-            = f.text_field :postal_code, {class:'form-group-edit__input'}
+            誕生日
+            = f.text_field :birth_year, {class:'form-group-edit__input'}
           .form-group-edit
-            = f.label :自己紹介
-            %span.form-group-edit__require 必須
+            自己紹介
             = f.text_field :introduction, {class:'form-group-edit__input'}
           .form-group-edit
-            = f.label :アイコン画像
-            %span.form-group-edit__require 必須
-            = f.text_field :city, {class:'form-group-edit__input'}
+            アイコン画像
+            = f.text_field :user_image, {class:'form-group-edit__input'}
           .form_submit
-            = f.submit '変更する', class: "btn-default btn"
+            = f.submit '変更する', class: "edit-btn-default-btn"
 
   .appbanner
     .appbanner__inner
