@@ -9,6 +9,7 @@
     .header__box__sub
       %ul.category-brand
         %li.category
+          = image_tag "/material/icon/icon_category.png", size: "15x15"
           = link_to "カテゴリー", root_path
           %ul.firstmenu-parent
             - @parents.each do |parent|
@@ -27,6 +28,7 @@
                               = grandchild.name
 
         %li.brand
+          = image_tag "/material/icon/icon_brand.png", size: "15x15"
           = link_to "ブランド一覧",root_path
           %ul.abnc
             - @items.first(6).each do |item|
