@@ -30,20 +30,20 @@
       円
 
       -# 商品状態の絞り込み
-      = f.label :condition, '状態'
+      = f.label :condition, '状態',class: "condition__label"
       = f.radio_button :condition_eq, '', {:checked => true}
       指定なし
-      = f.radio_button :condition_eq, '新品、未使用'
+      = f.radio_button :condition_eq, '新品、未使用',class: "condition"
       新品、未使用
-      = f.radio_button :condition_eq, '未使用に近い'
+      = f.radio_button :condition_eq, '未使用に近い',class: "condition"
       未使用に近い
-      = f.radio_button :condition_eq, '目立った傷や汚れなし'
+      = f.radio_button :condition_eq, '目立った傷や汚れなし',class: "condition"
       目立った傷や汚れなし
-      = f.radio_button :condition_eq, 'やや傷や汚れあり'
+      = f.radio_button :condition_eq, 'やや傷や汚れあり',class: "condition"
       やや傷や汚れあり
-      = f.radio_button :condition_eq, '傷や汚れあり'
+      = f.radio_button :condition_eq, '傷や汚れあり',class: "condition"
       傷や汚れあり
-      = f.radio_button :condition_eq, '全体的に状態が悪い'
+      = f.radio_button :condition_eq, '全体的に状態が悪い',class: "condition"
       全体的に状態が悪い
 
       -# 配送料の絞り込み
