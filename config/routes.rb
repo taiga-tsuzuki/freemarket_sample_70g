@@ -13,7 +13,6 @@ Rails.application.routes.draw do
     resources :searches, only: :index
   end
   resources :items do
-    resources :comments, only: :create
     member do
       get :confirm
     end
@@ -26,10 +25,14 @@ Rails.application.routes.draw do
   end
   resources :users, only: [:show] do
     member do
+      get :profile_edit
+      post :profile_update
+      get :location_edit
+      post :location_update
       get :onsale
       get :done
     end
-    resources :profile, only: :index
+    resources :profile, only: [:index]
     resources :creditcards, only: :index
     resources :location, only: :index
   end
