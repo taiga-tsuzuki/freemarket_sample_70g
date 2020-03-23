@@ -16,6 +16,7 @@
     &__progress{
       margin: auto;
       font-size: 5px;
+      display: flex;
     }
   }
   &__main{
@@ -35,7 +36,6 @@
     }
     &__form-frame{
       margin: auto;
-      
     }
   }
   &__footer{
@@ -77,10 +77,15 @@
   }
 }
 
-
-ul{
-  display: flex;
+.form_submit{
+  height: 50px;
+  line-height: 50px;
 }
+
+
+// ul{
+//   display: flex;
+// }
 
 li{
   margin-left: 5px;

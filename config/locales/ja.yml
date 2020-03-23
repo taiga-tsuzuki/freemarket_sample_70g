@@ -1,5 +1,7 @@
 ja:
   activerecord:
+    models:
+      location: 住所
     errors:
       messages:
         record_invalid: 'バリデーションに失敗しました: %{errors}'

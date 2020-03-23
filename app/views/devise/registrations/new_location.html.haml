@@ -20,7 +20,7 @@
       住所情報登録
     .container__location__form
       = form_with(model: @location, url: locations_path, method: :post, local:true) do |f|
-        = render "devise/shared/error_messages", resource: @location
+        = render "shared/error_messages", resource: @location
         .form-group
           = f.label :苗字
           %span.form-group__require 必須
@@ -58,6 +58,6 @@
           %span.form-group__require 必須
           = f.text_field :phone_name, {class:'form-group__input'}
         .form_submit
-          = f.submit '登録する', class: "btn-default btn"
+          = f.submit '登録する', class: "location-btn"
   .container__footer
     = image_tag("logo-white.png",width:"134",height:"36")
