@@ -1,5 +1,5 @@
-%link{:href => "https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.1/css/swiper.css", :rel => "stylesheet"}/
-%script{:src => "https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.1/js/swiper.js"}
+%link{:href => "https://unpkg.com/swiper/css/swiper.min.css", :rel => "stylesheet"}/
+%script{:src => "https://unpkg.com/swiper/js/swiper.min.js"}
 
 .product
   = render partial:"shared/index_header"
@@ -42,18 +42,19 @@
               .leftbox
                 出品者
               .rightbox
-                = @item.user.nickname
+                = link_to "#" do
+                  = @item.user.nickname
             .product-contents__inner__mainbox__main-upper-box__table__category-box
               .category-leftbox
                 カテゴリー
               .category-rightbox
-                = link_to category_path(@item.category.parent.parent.id),class:"parent-name" do
-                  = @item.category.parent.parent.name
+                -# = link_to category_path(@item.category.parent.parent.id),class:"parent-name" do
+                -#   = @item.category.parent.parent.name
 
-                = link_to category_path(@item.category.parent.id), class:"children-name" do
-                  = @item.category.parent.name
-                = link_to category_path(@item.category.id), class:"grand-children-name" do
-                  = @item.category.name
+                -# = link_to category_path(@item.category.parent.id), class:"children-name" do
+                -#   = @item.category.parent.name
+                -# = link_to category_path(@item.category.id), class:"grand-children-name" do
+                -#   = @item.category.name
                 
             .product-contents__inner__mainbox__main-upper-box__table__box
               .leftbox
@@ -135,30 +136,33 @@
                 
 
       .product-contents__inner__commentbox
+        - if current_user
+          .product-contents__inner__commentbox__warning
+            相手のことを考え丁寧なコメントを心がけましょう.
+            %br/
+            不快な言葉遣いなどは利用制限や退会処分となることがあります。
+          .product-contents__inner__commentbox__content
+            = form_with(model: [@item, @comment], local: true) do |form|
+              = form.text_area :content, placeholder: "コメントする", class: "product-contents__inner__commentbox__comment"
+              .testclass
+                = form.submit "SEND", class: "product-contents__inner__commentbox__comment__btn"
+          .comments
+            %h4 ＜コメント一覧＞
+            .comments__box
+              - if @comments
+                - @comments.each do |comment|
+                  .upper-comment
+                    .upper-comment__user-name
+                      = link_to comment.user.nickname, class: "link"
+                    .upper-comment__date
+                      = comment.created_at.strftime("%Y年%m月%d日 %H時%M分")
+                  .lower-comment
+                    - if comment.content.present?
+                      .lower-comment__content
+                        = comment.content
+                    - else 
+                      %p ※※※ コメントの投稿には新規登録/ログインが必要です ※※※
 
-        .product-contents__inner__commentbox__warning
-          相手のことを考え丁寧なコメントを心がけましょう.
-          %br/
-          不快な言葉遣いなどは利用制限や退会処分となることがあります。
-        .product-contents__inner__commentbox__content
-          = form_with(model: [@item, @comment], local: true) do |form|
-            = form.text_area :content, placeholder: "コメントする", class: "product-contents__inner__commentbox__comment"
-            .testclass
-              = form.submit "SEND", class: "product-contents__inner__commentbox__comment__btn"
-        .comments
-          %h4 ＜コメント一覧＞
-          .comments__box
-            - if @comments
-              - @comments.each do |comment|
-                .upper-comment
-                  .upper-comment__user-name
-                    = link_to comment.user.nickname, class: "link"
-                  .upper-comment__date
-                    = comment.created_at.strftime("%Y年%m月%d日 %H時%M分")
-                .lower-comment
-                  - if comment.content.present?
-                    .lower-comment__content
-                      = comment.content
 
   = render partial:"shared/index_footer"
   
