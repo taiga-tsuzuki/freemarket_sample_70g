@@ -19,15 +19,15 @@
 
     = search_form_for @q do |f|
       -# キーワード検索
-      = f.label :item_name, 'キーワードを追加'
-      = f.search_field :item_name_cont
+      = f.label :item_name, 'キーワードを追加',class: "keyword__label"
+      = f.search_field :item_name_cont,class: "keyword"
 
       -# 価格の絞り込み
-      = f.label :price, '価格'
-      = f.number_field :price_gteq
-      以上〜
-      = f.number_field :price_lt
-      未満
+      = f.label :price, '価格',class: "price__label"
+      = f.number_field :price_gteq,class: "price__one"
+      〜
+      = f.number_field :price_lt,class: "price__two"
+      円
 
       -# 商品状態の絞り込み
       = f.label :condition, '状態'
