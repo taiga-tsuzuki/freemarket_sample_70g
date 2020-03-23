@@ -32,6 +32,7 @@ class PurchasesController < ApplicationController
   
   def done
     @item = Item.includes(:user).find(params[:id])
+    @item.update(item_purchaser_id: current_user.id)
   end
 
 end

@@ -199,7 +199,7 @@
           &__todo-lists {
             width: 350px;
             height: 74px;
-            background-color: #eeeeee;
+            background-color: #f1f1f1;
             line-height: 74px;
             text-align: center;
           }
@@ -215,7 +215,7 @@
           &__go-lists {
             width: 636px;
             height: 56px;
-            background-color: #eeeeee;
+            background-color: #f1f1f1;
             margin: 16px;
             .go-list {
               text-decoration: none;
@@ -253,7 +253,7 @@
           }
           &__past {
             width: 350px;
-            background-color: #eeeeee;
+            background-color: #f1f1f1;
             &__moji {
               text-decoration: none;
               color: #333;
@@ -266,106 +266,6 @@
           height: 236px;
           background-color: #fff;
         }
-      }
-    }
-  }
-
-
-  .appbanner {
-    height: 150px;
-    width: auto;
-    padding: 100px 40px;
-    background-image: url("/material/pict/bg-appBanner-pict.jpg");
-    background-size: cover;
-    background-position: center;
-    &__inner {
-      color: white;
-      text-align: center;
-      .inner__title {
-        font-size: 24px;
-        text-shadow: 0 0 5px rgba(0,0,0,0.4);
-        font-weight: bold;
-      }
-      .inner__text {
-        font-size: 35px;
-        text-shadow: 0 0 5px rgba(0,0,0,0.4)
-      }
-      .inner__btn {
-        height: 70px;
-        .abtn {
-          height: 100%;
-          width:  auto;
-        }
-        .abtn:hover {
-          opacity: 0.5 ;
-        }  
-        .gbtn {
-          height: 100%;
-          width:  auto;
-          margin-left: 50px;
-          transform: scale(1.45);
-        }
-        .gbtn:hover {
-          opacity: 0.5 ;
-        }
-      }
-    }
-  }
-  .footer {
-    height: 230px;
-    padding: 60px 0;
-    background-color: #333;
-    &__contents {
-      padding: 0 350px;
-      display: flex;
-      justify-content: space-around;
-      .content {
-        .title {
-          margin-bottom: 23px;
-          font-weight: bold;
-          color: white;
-        }
-        .lists {
-          text-align: center;
-          display: block;
-          .list {
-            font-size: 10px;
-            margin-top: 15px;
-            color: white;
-          }
-        }
-      }
-    }
-    &__logo {
-      width: 160px;
-      height: 46px;
-      margin: 0 auto;
-    }
-    .logo__under {
-      text-align: center;
-      height: 16px;
-      color: #fff;
-
-    }
-  }
-
-  a {
-    .exhibit {
-      width: 85px;
-      padding: 15px;
-      background: #3CCACE;
-      text-align: center;
-      border-radius: 4%;
-      position: fixed;
-      bottom: 32px;
-      right: 32px;
-      .text {
-        margin-bottom: 5px;
-        font-size: 18px;
-        color: #fff;
-      }
-      &__icon {
-        width: 60%;
       }
     }
   }

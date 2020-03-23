@@ -9,12 +9,14 @@ Rails.application.routes.draw do
   end
   
   root "items#index"
+  namespace :items do
+    resources :searches, only: :index
+  end
   resources :items do
     member do
       get :confirm
     end
     collection do
-      get :done
       get :category_children
       get :category_grandchildren
     end
@@ -28,6 +30,7 @@ Rails.application.routes.draw do
       get :location_edit
       post :location_update
       get :onsale
+      get :done
     end
     resources :profile, only: [:index]
     resources :creditcards, only: :index

@@ -30,6 +30,7 @@ a {
         &__btn {
           background-color: #3CCACE;
           padding: 8px;
+          
         }
       }
     }
@@ -39,17 +40,100 @@ a {
       font-size: 15px;
       display: flex;
       justify-content: space-between;
-      .lists__left {
+      .category-brand{
         line-height: 35px;
-        display: flex;
-        .category {
-          margin-left: 10px;
-          color: black;
+        .category{
+          width: 100px;
+          &:hover > .firstmenu-parent{
+            visibility: visible;
+            opacity: 1;
+          }
+            .firstmenu-parent{
+              display: flex;
+              flex-direction: column;
+              height: 665px;
+              width: 300px;
+              visibility: hidden;
+              z-index: 2;
+              position: relative;
+              .parent-name{
+                width: 250px;
+                height: 35px;
+                line-height: 35px;
+                font-size: 12px;
+                background-color: rgba(255, 247, 247, 0.9);
+                &:hover >.secondmenu-children{
+                  opacity: 1;
+                  visibility: visible;
+                  color: black;
+                  }
+                .secondmenu-children{
+                  opacity: 0;
+                  display: flex;
+                  flex-direction: column;
+                  visibility: hidden;
+                  position: absolute;
+                  top: 0;
+                  left: 248px;
+                  .children-name{
+                    width: 250px;
+                    height: 35px;
+                    background-color: rgba(255, 247, 247, 0.9);
+                    &:hover > .thirdmenu-grandchildren{
+                      opacity: 1;
+                      visibility: visible;
+                    }
+                    .thirdmenu-grandchildren{
+                      height: 1000px;
+                      opacity: 1;
+                      visibility: hidden;
+                      background-color: rgba(255, 247, 247, 0.9);
+                      display: flex;
+                      flex-direction: column;
+                      position: absolute;
+                      top: 0;
+                      left: 100%;
+                      .grandchildren-name{
+                        width: 200px;
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
         }
-        .brand {
+
+        .abnc{
+          width: 300px;
+      }
+    }
+
+    
+
+        .abnc {
           margin-left: 50px;
           color: black;
+          &:hover > .brand__lists{
+            visibility: visible;
+            opacity: 1;
+          }
         }
+
+        .brand__lists{
+          visibility: hidden;
+          background-color: white;
+          border-top: solid 1px rgb(221, 221, 221);
+          z-index: 1;
+          position: relative;
+        }
+
+        .abnc{
+          display: block;
+        }
+
+
+
       }
       .lists__right {
         line-height: 35px;
@@ -64,10 +148,6 @@ a {
         }
       }
     }
-  }
-}
-
-
 
 
 .main {
@@ -76,6 +156,7 @@ a {
     background-image: url("/material/pict/bg-mainVisual-pict_pc.jpg");
     background-size: cover;
     position: relative;
+    z-index: -1;
     &__picture {
       height: 100%;
       width: 100vw;
@@ -102,8 +183,8 @@ a {
           width:  auto;
         }
         .abtn:hover {
-          opacity: 0.5 ;
-        }    
+          opacity: 0.5;
+        }
         .gbtn {
           height: 100%;
           width:  auto;
@@ -111,7 +192,7 @@ a {
           transform: scale(1.45);
         }
         .gbtn:hover {
-          opacity: 0.5 ;
+          opacity: 0.5;
         }
       }
     }
@@ -208,8 +289,8 @@ a {
           width:  auto;
         }
         .abtn:hover {
-          opacity: 0.5 ;
-        }    
+          opacity: 0.5;
+        }
         .gbtn {
           height: 100%;
           width:  auto;
@@ -217,7 +298,7 @@ a {
           transform: scale(1.45);
         }
         .gbtn:hover {
-          opacity: 0.5 ;
+          opacity: 0.5;
         }
       }
     }
@@ -249,15 +330,9 @@ a {
       .item {
         width: calc(100% / 3);
         padding: 0 20px;
-        &__img {
-
-        }
         &__subtitle {
           font-size: large;
           font-weight: bold;
-        }
-        &__detail {
-
         }
       }
     }
@@ -358,9 +433,6 @@ a {
                 ul {
                   display: flex;
                   justify-content: space-between;
-                  li {
-
-                  }
                 }
                 p {
                   text-align: left;
@@ -403,7 +475,7 @@ a {
         width:  auto;
       }
       .abtn:hover {
-        opacity: 0.5 ;
+        opacity: 0.5;
       }  
       .gbtn {
         height: 100%;
@@ -412,7 +484,7 @@ a {
         transform: scale(1.45);
       }
       .gbtn:hover {
-        opacity: 0.5 ;
+        opacity: 0.5;
       }
     }
   }

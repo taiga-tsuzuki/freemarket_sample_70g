@@ -11,7 +11,7 @@
       background-color: #ffffff;
       width: 280px;
       margin-right: 40px;
-      height: 336px;
+      height: 1104px;
       &__nav {
         .nav__lists {
           &__list {
@@ -37,6 +37,7 @@
         width: 660px;
         height: 50px;
         font-weight: bold;
+        
         padding: 20px;
         background-color: #FAFAFA;
       }
@@ -48,17 +49,16 @@
           height: 74px;
           background-color: #fff;
           display: flex;
-          .onsale {
+          .done-onsale {
             width: 350px;
             height: 74px;
             line-height: 74px;
-            text-align: center;
-            border-top: 2px solid #ea352d;
+            text-align: center;            
             color: #333333;
             font-weight: bold;
             text-decoration: none;
+            background-color: #f1f1f1;
           }
-
           .dealing {
             width: 233px;
             height: 74px;
@@ -68,10 +68,11 @@
             color: #333333;
             font-weight: bold;
           }
-          .sold {
+          .done-sold {
             width: 350px;
             height: 74px;
-            background-color: #f1f1f1;
+            background-color: #fff;
+            border-top: 2px solid #ea352d;
             line-height: 74px;
             text-align: center;
             color: #333333;
@@ -95,16 +96,36 @@
 
             &__img {
 
+              .items-box_photo__sold {
+                width: 0;
+                height: 0;
+                border-top: 20px solid #ea352d;
+                border-right: 20px solid transparent;
+                border-bottom: 20px solid transparent;
+                border-left: 20px solid #ea352d;
+                z-index: 100;
+                position: relative;
+                top: -76px;
+                &__inner{
+                  transform: rotate(-45deg);
+                  font-size: 1px;
+                  margin: -5px 1px 0px -20px;
+                  color: #fff;
+                  letter-spacing: 1px;
+                  font-weight: 600;
+                }
+              }
+
             }
 
             &__product-name {
               color: #333333;
               margin-left: 2px;
 
-              .onsale-sign {
+              .sold-sign {
                 width: 40px;
                 height: 16px;
-                background-color: #1e90ff;
+                background-color: red;
                 font-size: 8px;
                 font-weight: bold;
                 color: white;

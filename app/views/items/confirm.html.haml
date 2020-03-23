@@ -1,5 +1,5 @@
-.body
-  .items-new-header
+.body-confirm
+  .items-confirm-header
     =link_to root_path do
       = image_tag "/logo.png", size: "185x49"
   .main-confirm-contents
@@ -8,7 +8,7 @@
         .main-confirm-content__header
           %h2 購入内容の確認
         .main-confirm-content__buy-item
-          = image_tag "#{@item.images.first.image}", alt: "テスト", size: "60x60"
+          = image_tag "#{@item.images.first.image}", alt: "テスト", size: "100x100"
           .main-confirm-content__buy-item__group
             .main-confirm-content__buy-item__group__item-name
               %h3 
@@ -27,8 +27,6 @@
                 %h2
                   ¥
                   = @item.price
-              .main-confirm-content__payment__group__price-point__point
-                %h3 ■ポイントを使用 (所持ポイント: P0)
             .main-confirm-content__payment__group__way
               %h2 支払い方法
               = link_to user_path(current_user.id) do
@@ -48,16 +46,4 @@
               = link_to "購入する", purchase_path(@item.id), method: :get, class: "confirm-submit"
               = link_to "もどる", :back, class: "return-btn"
           
-  .lower-content
-    .legal-info-box
-      .hoge
-        = link_to "#" do
-          .privacy-policy-box プライバシーポリシー
-        = link_to "#" do  
-          .terms-box FURIMA利用規約
-        = link_to "#" do
-          .specified-commercial-transaction-act-box 特定商取引に関する表記
-    .footer__logo
-      .logo-img
-        = image_tag "/logo-white.png", size: "160x46"
-      .logo-text ©FURIMA
+  = render partial:"shared/items_new_footer"

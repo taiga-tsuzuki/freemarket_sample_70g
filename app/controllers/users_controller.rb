@@ -11,7 +11,11 @@ class UsersController < ApplicationController
   end
 
   def onsale
-    @items = Item.all
+    @items = Item.includes(:user)
+  end
+
+  def done
+    @items = Item.includes(:user)
   end
 
   def location_edit
