@@ -47,12 +47,12 @@
       全体的に状態が悪い
 
       -# 配送料の絞り込み
-      = f.label :shipping_fee_payer, '配送料の負担'
+      = f.label :shipping_fee_payer, '配送料の負担',class: "shipping_fee_payer__label"
       = f.radio_button :shipping_fee_payer_eq, '', {:checked => true}
       指定なし
-      = f.radio_button :shipping_fee_payer_eq, '送料込み（出品者負担）'
+      = f.radio_button :shipping_fee_payer_eq, '送料込み（出品者負担）',class: "shipping_fee_payer"
       送料込み（出品者負担）
-      = f.radio_button :shipping_fee_payer_eq, '着払い（購入者負担）'
+      = f.radio_button :shipping_fee_payer_eq, '着払い（購入者負担）',class: "shipping_fee_payer"
       着払い（購入者負担）
 
 
