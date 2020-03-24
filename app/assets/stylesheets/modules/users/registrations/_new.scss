@@ -16,6 +16,7 @@
     &__progress{
       margin: auto;
       font-size: 5px;
+      display: flex;
     }
   }
   &__main{
@@ -78,9 +79,7 @@
 }
 
 
-ul{
-  display: flex;
-}
+
 
 li{
   margin-left: 5px;
@@ -98,4 +97,8 @@ label{
   margin-top: 50px;
   height: 40px;
   width: 100px;
+}
+
+.container__header__progress__red{
+  color: red;
 }

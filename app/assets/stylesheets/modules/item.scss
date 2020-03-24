@@ -42,6 +42,7 @@ a {
       justify-content: space-between;
       .category-brand{
         line-height: 35px;
+        display: flex;
         .category{
           width: 100px;
           &:hover > .firstmenu-parent{

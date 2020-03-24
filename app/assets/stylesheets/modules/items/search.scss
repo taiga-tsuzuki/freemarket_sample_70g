@@ -1,39 +1,103 @@
-.search__content {
-  padding: 25px;
-  padding-left: 550px;
+
+.search__main {
   background-color: rgb(235, 235, 235);
-  display: grid;
-  gap: 20px;
-  grid-template-columns: repeat(4, 200px);
-  &__list {
-    &__img {
-      height: 150px;
-      width: 200px;
-    }
-    &__text {
-      font-size: 16px;
-      padding: 16px;
-      color: #333;
-      background-color: white;
-      .item__name {
-        margin-left: 0px;
-        text-align: left;
+  display: flex;
+  padding-left: 200px;
+  .left__search__box {
+    background-color: white;
+    height: 700px;
+    padding: 10px;
+    border: solid .5px rgb(218, 218, 218);
+    .sort_lists {
+      .sort_link {
+        display: block;
+        border: solid .5px rgb(218, 218, 218);
       }
-      .item__details {
-        
-        ul {
-          display: flex;
-          justify-content: space-between;
-          li{
+    }
+    .keyword__label {
+      font-size: 15px;
+    }
+    .keyword {
+      display: block;
+    }
+    .price__label {
+      font-size: 15px;
+      display: block;
+    }
+    .price__one {
+      height: 30px;
+      width: 70px;
+    }
+    .price__two {
+      height: 30px;
+      width: 70px;
+    }
+    .condition__label {
+      font-size: 15px;
+      display: block;
+    }
+    .condition {
+      display: block;
+    }
+    .shipping_fee_payer__label {
+      font-size: 15px;
+      display: block;
+    }
+    .shipping_fee_payer {
+      display: block;
+    }
+    .ransack_submit {
+      height: 40px;
+      width: 60px;
+      margin-top: 10px;
+      margin-left: 20px;
+      margin-bottom: 10px;
+      display: block;
+      background-color: red;
+      color: white;
+      border-radius: 10px;
+    }
+  }
+
+
+
+  .right__search__box {
+    .search__content {
+      padding: 25px;
+      display: grid;
+      gap: 20px;
+      grid-template-columns: repeat(4, 200px);
+      &__list {
+        &__img {
+          height: 150px;
+          width: 200px;
+        }
+        &__text {
+          font-size: 16px;
+          padding: 16px;
+          color: #333;
+          background-color: white;
+          .item__name {
+            margin-left: 0px;
+            text-align: left;
           }
-          .yen{
-            &::before{
-              content: '¥';
+          .item__details {
+            
+            ul {
+              display: flex;
+              justify-content: space-between;
+              li{
+              }
+              .yen{
+                &::before{
+                  content: '¥';
+                }
+              }
+            }
+            p {
+              text-align: left;
             }
           }
-        }
-        p {
-          text-align: left;
         }
       }
     }

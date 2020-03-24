@@ -87,3 +87,4 @@ gem 'fog-aws'
 gem 'active_hash'
 gem 'dotenv-rails'
 gem "actionview", ">= 5.2.4.2"
+gem 'ransack'
