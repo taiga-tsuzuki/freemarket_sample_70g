@@ -6,6 +6,8 @@ class ItemsController < ApplicationController
     @items = Item.includes(:images).order(:item_purchaser_id, "id DESC")
     @category = Category.all.order("ancestry ASC").limit(13)
     @parents = Category.where(ancestry:nil)
+    @q = Item.ransack(params[:q])
+    @items_ransack = @q.result(distinct: true)
   end
 
   def new

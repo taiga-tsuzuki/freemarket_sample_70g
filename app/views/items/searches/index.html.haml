@@ -17,7 +17,7 @@
         %th{:colspan => "3"}
 
 
-    = search_form_for @q do |f|
+    = search_form_for @q, url: items_searches_path do |f|
       -# キーワード検索
       = f.label :item_name, 'キーワードを追加',class: "keyword__label"
       = f.search_field :item_name_cont,class: "keyword"
@@ -58,30 +58,52 @@
 
       = f.submit "検索", class: "ransack_submit"
 
+  - if @items_ransack.length > @items.length
+    .right__search__box
+      .search__content
+        - @items.each do |item|
+          - item.images.first(1).each do |image|
+            .search__content__list
+              - if item.item_purchaser_id.blank?
+                = link_to item_path(item.id) do
+                  .search__content__list__img
+                    = image_tag "#{image.image}", alt: "テスト", size: "200x150"
+                  
+                  .search__content__list__text
+                    .item__name
+                      = item.item_name
+                    .item__details
+                      %ul
+                        %li
+                          .category-yen
+                            = item.price
+                        %li
+                          ★2
+                      %p
+                        (税込)
 
-  .right__search__box
-    .search__content
-      - @items.each do |item|
-        - item.images.first(1).each do |image|
-          .search__content__list
-            - if item.item_purchaser_id.blank?
-              = link_to item_path(item.id) do
-                .search__content__list__img
-                  = image_tag "#{image.image}", alt: "テスト", size: "200x150"
-                
-                .search__content__list__text
-                  .item__name
-                    = item.item_name
-                  .item__details
-                    %ul
-                      %li
-                        .category-yen
-                          = item.price
-                      %li
-                        ★2
-                    %p
-                      (税込)
-
+  - else
+    .right__search__box
+      .search__content
+        - @items_ransack.each do |item|
+          - item.images.first(1).each do |image|
+            .search__content__list
+              - if item.item_purchaser_id.blank?
+                = link_to item_path(item.id) do
+                  .search__content__list__img
+                    = image_tag "#{image.image}", alt: "テスト", size: "200x150"
+                  .search__content__list__text
+                    .item__name
+                      = item.item_name
+                    .item__details
+                      %ul
+                        %il
+                          .item__yen
+                            = item.price
+                        %il
+                          ★2
+                        %p
+                          (税込)
 
     = paginate(@page)
 
