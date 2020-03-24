@@ -2,6 +2,8 @@ class UsersController < ApplicationController
   before_action :set_profile, only: [:profile_edit, :profile_update]
   before_action :set_location, only: [:location_edit, :location_update]
   before_action :set_header, only: [:show, :onsale, :done, :location_edit, :profile_edit]
+  before_action :set_item, only: [:onsale, :done]
+
 
 
 
@@ -13,11 +15,9 @@ class UsersController < ApplicationController
   end
 
   def onsale
-    @items = Item.includes(:user)
   end
 
   def done
-    @items = Item.includes(:user)
   end
 
   def location_edit
@@ -58,6 +58,10 @@ class UsersController < ApplicationController
 
   def location_params
     params.require(:location).permit(:family_name, :first_name, :family_name_kana, :first_name_kana, :postal_code, :prefecture, :city, :building_name, :phone_name)
+  end
+
+  def set_item
+    @items = Item.includes(:user)
   end
 
 end
