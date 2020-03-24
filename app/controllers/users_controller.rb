@@ -7,7 +7,7 @@ class UsersController < ApplicationController
   end
 
   def show
-    @profile = current_user.profile
+    @user = User.find(params[:id])
   end
 
   def onsale
@@ -31,7 +31,6 @@ class UsersController < ApplicationController
 
   def profile_update
     @user.update(user_params)
-    @profile.update(profile_params)
     redirect_to user_path
   end
 
@@ -39,7 +38,6 @@ class UsersController < ApplicationController
 
   def set_profile
     @user = User.find(params[:id])
-    @profile = Profile.find(params[:id])
   end
 
   def set_location
@@ -48,11 +46,6 @@ class UsersController < ApplicationController
 
   def user_params
     params.require(:user).permit(:user_family_name, :user_first_name, :user_family_name_kana, :user_first_name_kana, :birth, :introduction, :user_image)
-  end
-
-  def profile_params
-    params.require(:profile).permit(:introduction)
-    binding.pry
   end
   
   def location_params
