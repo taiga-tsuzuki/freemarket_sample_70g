@@ -16,10 +16,16 @@ class UsersController < ApplicationController
 
   def onsale
     @items = Item.includes(:user)
+    @items = Item.includes(:images).order(:item_purchaser_id, "id DESC")
+    @category = Category.all.order("ancestry ASC").limit(13)
+    @parents = Category.where(ancestry:nil)
   end
 
   def done
     @items = Item.includes(:user)
+    @items = Item.includes(:images).order(:item_purchaser_id, "id DESC")
+    @category = Category.all.order("ancestry ASC").limit(13)
+    @parents = Category.where(ancestry:nil)
   end
 
   def location_edit
