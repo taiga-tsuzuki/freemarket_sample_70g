@@ -30,6 +30,7 @@ class UsersController < ApplicationController
   end
 
   def profile_update
+    @user.update(user_params)
     @profile.update(profile_params)
     redirect_to user_path
   end
@@ -37,6 +38,7 @@ class UsersController < ApplicationController
   private
 
   def set_profile
+    @user = User.find(params[:id])
     @profile = Profile.find(params[:id])
   end
 
@@ -44,10 +46,15 @@ class UsersController < ApplicationController
     @location = Location.find(params[:id])
   end
 
-  def profile_params
-    params.require(:profile).permit(:family_name, :first_name, :family_name_kana, :first_name_kana, :birth_year, :introduction, :user_image)
+  def user_params
+    params.require(:user).permit(:user_family_name, :user_first_name, :user_family_name_kana, :user_first_name_kana, :birth, :introduction, :user_image)
   end
 
+  def profile_params
+    params.require(:profile).permit(:introduction)
+    binding.pry
+  end
+  
   def location_params
     params.require(:location).permit(:family_name, :first_name, :family_name_kana, :first_name_kana, :postal_code, :prefecture, :city, :building_name, :phone_name)
   end

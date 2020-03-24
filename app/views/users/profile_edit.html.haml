@@ -54,26 +54,27 @@
       .main__right__top
         本人情報の登録・変更
       .main__right__form
-        = form_with(url: profile_update_user_path,model: @profile, method: :post, local:true) do |f|
+        = form_with(url: profile_update_user_path,model: @user, method: :post, local:true) do |f|
           -# = render "devise/shared/error_messages", resource: @location
           .form-group-edit
             苗字
-            = f.text_field :family_name, {class:'form-group-edit__input'}
+            = f.text_field :user_family_name, {class:'form-group-edit__input'}
           .form-group-edit
             名前
-            = f.text_field :first_name, {class:'form-group-edit__input'}
+            = f.text_field :user_first_name, {class:'form-group-edit__input'}
           .form-group-edit
             苗字（カナ）
-            = f.text_field :family_name_kana, {class:'form-group-edit__input'}
+            = f.text_field :user_family_name_kana, {class:'form-group-edit__input'}
           .form-group-edit
             名前（カナ） 
-            = f.text_field :first_name_kana, {class:'form-group-edit__input'}
+            = f.text_field :user_first_name_kana, {class:'form-group-edit__input'}
           .form-group-edit
             誕生日
-            = f.text_field :birth_year, {class:'form-group-edit__input'}
+            = f.text_field :birth, {class:'form-group-edit__input'}
           .form-group-edit
             自己紹介
-            = f.text_field :introduction, {class:'form-group-edit__input'}
+            = f.fields_for :profiles do |p|
+              = p.text_field :introduction, class:'form-group-edit__input'
           .form_submit
             = f.submit '変更する', class: "edit-btn-default-btn"
 
