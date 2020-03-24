@@ -1,17 +1,17 @@
 class ItemsController < ApplicationController
   before_action :set_item, only: [:edit, :update]
   before_action :set_user, only: [:edit, :update]
+  before_action :set_category, only: [:index, :new, :create, :show, :edit]
+
 
   def index
     @items = Item.includes(:images).order(:item_purchaser_id, "id DESC")
-    @category = Category.all.order("ancestry ASC").limit(13)
     @parents = Category.where(ancestry:nil)
   end
 
   def new
     @item = Item.new
     @item.images.new
-    @category = Category.all.order("ancestry ASC").limit(13)
   end
 
   def create
@@ -20,7 +20,6 @@ class ItemsController < ApplicationController
       redirect_to root_path
     else
       @item.images.build
-      @category = Category.all.order("ancestry ASC").limit(13)
       render :new
     end
   end
@@ -35,7 +34,6 @@ class ItemsController < ApplicationController
     @item = Item.includes(:user).find(params[:id])
     @comment = Comment.new
     @comments = @item.comments.includes(:user).order("id DESC")
-    @category = Category.all.order("ancestry ASC").limit(13)
     @parents = Category.where(ancestry:nil)
     @items = Item.includes(:images).order(:item_purchaser_id, "id DESC")
   end
@@ -60,7 +58,6 @@ class ItemsController < ApplicationController
   end
 
   def edit
-    @category = Category.all.order("ancestry ASC").limit(13)
     @selected_grandchild_category = @item.category
     @selected_child_category = @selected_grandchild_category.parent
     @selected_parent_category = @selected_child_category.parent
@@ -102,4 +99,9 @@ class ItemsController < ApplicationController
   def user_params
     params.require(:item).permit(user:[:nickname])
   end
+
+  def set_category
+    @category = Category.all.order("ancestry ASC").limit(13)
+  end
+
 end
