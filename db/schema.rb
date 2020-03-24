@@ -75,7 +75,7 @@ ActiveRecord::Schema.define(version: 2020_03_13_041808) do
     t.integer "postal_code", null: false
     t.string "prefecture", null: false
     t.string "city", null: false
-    t.string "building_name", null: false
+    t.integer "building_name", null: false
     t.integer "phone_name", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -87,13 +87,6 @@ ActiveRecord::Schema.define(version: 2020_03_13_041808) do
   end
 
   create_table "profiles", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.string "first_name", null: false
-    t.string "family_name", null: false
-    t.string "first_name_kana", null: false
-    t.string "family_name_kana", null: false
-    t.date "birth_year", null: false
-    t.date "birth_month", null: false
-    t.date "birth_day", null: false
     t.text "introduction"
     t.string "user_image"
     t.bigint "user_id"
@@ -114,6 +107,7 @@ ActiveRecord::Schema.define(version: 2020_03_13_041808) do
     t.string "user_first_name", null: false
     t.string "user_family_name_kana", null: false
     t.string "user_first_name_kana", null: false
+    t.date "birth", null: false
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
