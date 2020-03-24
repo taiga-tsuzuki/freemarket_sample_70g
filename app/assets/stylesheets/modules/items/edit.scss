@@ -31,7 +31,7 @@
       .edit-title{
         height: 100px;
         &__size{
-          margin-top: 10px;
+          margin: 0 auto;
           height: 80px;
           width: 230px;
           color: white;
@@ -47,7 +47,8 @@
       }
       
       &__image-content {
-        height: 350px;
+        height: 500px;
+        max-height: 750px;
         width: 700px;
         background-color: #FFF;
         position: relative;
@@ -89,159 +90,80 @@
           }
 
 
-          .image-upload-group{
-            // width: 600px;
-            height: 232px;
-            margin: 0 auto;
-            box-sizing: border-box;
-            overflow: hidden;
 
-            .item-num-0{
-              height: 226px;
-              width: 596px;
-            }
-            .item-num-1{
-              float: right;
-              height: 112px;
-              width: 476px;
-              margin-right: 20px;
-              .image-upload-description-box{
-                opacity: 0;
-              }
-            }
-            .item-num-2{
-              float: right;
-              height: 112px;
-              width: 354px;
-              margin-right: 20px;
-              .image-upload-description-box{
-                opacity: 0;
-              }
-            }
-            .item-num-3{
-              float: right;
-              height: 112px;
-              width: 232px;
-              margin-right: 20px;
-              .image-upload-description-box{
-                opacity: 0;
-              }
-            }
-            .item-num-4{
-              float: right;
-              height: 112px;
-              width: 110px;
-              margin-right: 20px;
-              .image-upload-description-box{
-                opacity: 0;
-              }
-            }
-            //下段のfile_field
-            .item-num-5{
-              height: 112px;
-              width: 598px;
-              margin-right: 20px;
-              .image-upload-description-box{
-                opacity: 0;
-              }
-            }
-            .item-num-6{
-              float: right;
-              height: 112px;
-              width: 476px;
-              margin-right: 20px;
-              .image-upload-description-box{
-                opacity: 0;
-              }
-            }
-            .item-num-7{
-              float: right;
-              height: 112px;
-              width: 354px;
-              margin-right: 20px;
-              .image-upload-description-box{
-                opacity: 0;
-              }
-            }
-            .item-num-8{
-              float: right;
-              height: 112px;
-              width: 232px;
-              margin-right: 20px;
-              .image-upload-description-box{
-                opacity: 0;
-              }
-            }
-            .item-num-9{
-              float: right;
-              height: 112px;
-              width: 110px;
-              margin-right: 20px;
-              .image-upload-description-box{
-                opacity: 0;
-              }
-            }
-            #item_photos_attributes_10_image{
-              // display: none;
-              height: 100%;
-              width: 100%;
-              cursor: pointer;
-              opacity: 0;
-            }
-
-            .item-image{
-              display: inline-block;
-              border: 1px solid rgb(151, 151, 151);
-              margin: 1px;
-              width: 112px;
-              height: 112px;
-              background-color: rgb(243, 243, 243);
-              &__operation--delete{
-                font-weight: bold;
-                color: rgb(39, 180, 192);
-                
-                text-align: center;
-                cursor: pointer;
-                // box-sizing: border-box;
-              }
-              
-            }
-            #image-box__container {
-              background-color: #EEEEEE;
-              border: dashed 2px #CCCCCC;
-              text-align: center;
-              position: relative;
-              // box-sizing: border-box;
-  
-              .image-field__label{
-                width:100%;
-                height: 100%;
+          .exmain-box{
+            &__main{
+              &__previews{
+                margin-left:8px;
                 display: flex;
-                justify-content: center;
-                align-items: center;
-                i {
-                  position: absolute;
-                  top: 40%;
-                  font-size: 30px;
+                flex-flow: wrap;
+                position: relative;
+                &__view{
+                  border: 1px solid black;
+                  margin: 10px 3px;
+                  &__delete{
+                    border-top: 1px solid black;
+                  }
                 }
-                // #img-file {
-                //   height: 100%;
-                //   width: 100%;
-                //   opacity: 0;
-                //   outline: none;
-                //   cursor: pointer;
-                // }
-                .image-upload-description-box {
-                  font-size: 12px;
-                  height: 16px;
-                  color: #333333;
-                  position: absolute;
-                  top: 60%;
-                  left: 30%;
+              }
+              &__uploader{
+                height: 150px;
+                max-height: 150px;
+                overflow: hidden;
+                cursor: pointer;
+                &__label{
+                  .js-file_group{
+                    height: 146px;
+                    background-color: rgb(250, 255, 254);
+                      border: 2px dashed rgba(88, 95, 94, 0.3);
+                    position: relative;
+                    i{
+                      font-size: 40px;
+                      position: absolute;
+                      left: 46%;
+                      top: 25%;
+                      cursor: pointer;
+                    }
+                    .js-file{
+                      cursor: pointer;
+                      width: 100%;
+                      height: 150px;
+                      opacity: 0;
+                    }
+                  }
+                  .image-upload-description-box{
+                    position: absolute;
+                    left: 215px;
+                    top: 160px;
+                    p{
+                      font-size:13px;
+                      text-align: center;
+                    }
+                  }
                 }
-              } 
+              }
             }
           }
+        
+          .js-remove{
+            color: rgb(80, 168, 161);
+            font-weight: bold;
+            border-top: 1px solid black;
+            text-align: center;
+            cursor: pointer;
+          }
+
+
+
+
+
+
+
+
+
+
+
+
         }
       }
 
@@ -705,7 +627,7 @@
     padding: 40px 0 41px;
     
     .legal-info-box {
-      width: 100%;      
+      width: 100%;
       font-size: 12px;
 
       .hoge {
@@ -719,17 +641,16 @@
           color: #333333;
 
           .privacy-policy-box {
-            margin-right: 50px;   
+            margin-right: 50px;
           }
     
           .terms-box {
-            margin-right: 50px;    
+            margin-right: 50px;
           }
         }
       }
     } 
     .footer__logo {
-
       .logo-img {
         text-align: center;
         padding-top: 50px;
@@ -742,3 +663,8 @@
     }
   }
 }
+
+
+
+
+
