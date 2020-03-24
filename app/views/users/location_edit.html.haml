@@ -1,31 +1,14 @@
 .body
-  .header
-    .header__box
-      .header__box__main
-        =link_to root_path do
-          = image_tag "/material/logo/logo.png", class: 'logo'
-        = form_with url: "#", class: "search__box" do |f|
-          = f.text_field :content, class: 'search__box__form', placeholder: ' キーワードから探す'
-        =link_to "#" do
-          = image_tag "/material/icon/icon-search 1.png", class: 'search__box__btn'
-      .header__box__sub
-        %ul.lists__left
-          %li
-            = link_to "#",class: "category" do
-              カテゴリー
-          %li
-            = link_to "#",class: "brand" do
-              ブランド
-      
+  = render partial:"shared/index_header"
   .nav
     %ul.nav__itemscope
       %li.nav__itemscope__itemtype
-        = link_to "#",class: "navgation" do
+        = link_to root_path,class: "navgation" do
           FURIMA
         .nav__itemscope__itemtype__right
           　>　
       %li.nav__itemscope__itemtype2
-        マイページ
+        発送元・お届け先住所変更
   .main
     .main__left
       .main__left__nav

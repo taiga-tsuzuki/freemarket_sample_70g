@@ -2,30 +2,22 @@ class UsersController < ApplicationController
 
   before_action :set_profile, only: [:profile_edit, :profile_update]
   before_action :set_location, only: [:location_edit, :location_update]
-
+  before_action :set_header, only: [:show, :onsale, :done, :location_edit, :profile_edit]
+  
   def index
     
   end
 
   def show
     @user = User.find(params[:id])
-    @items = Item.includes(:images).order(:item_purchaser_id, "id DESC")
-    @category = Category.all.order("ancestry ASC").limit(13)
-    @parents = Category.where(ancestry:nil)
   end
 
   def onsale
     @items = Item.includes(:user)
-    @items = Item.includes(:images).order(:item_purchaser_id, "id DESC")
-    @category = Category.all.order("ancestry ASC").limit(13)
-    @parents = Category.where(ancestry:nil)
   end
 
   def done
     @items = Item.includes(:user)
-    @items = Item.includes(:images).order(:item_purchaser_id, "id DESC")
-    @category = Category.all.order("ancestry ASC").limit(13)
-    @parents = Category.where(ancestry:nil)
   end
 
   def location_edit
@@ -52,6 +44,12 @@ class UsersController < ApplicationController
 
   def set_location
     @location = Location.find(params[:id])
+  end
+
+  def set_header
+    @items = Item.includes(:images).order(:item_purchaser_id, "id DESC")
+    @category = Category.all.order("ancestry ASC").limit(13)
+    @parents = Category.where(ancestry:nil)
   end
 
   def user_params
