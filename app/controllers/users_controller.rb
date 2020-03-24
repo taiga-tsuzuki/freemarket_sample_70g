@@ -1,11 +1,11 @@
 class UsersController < ApplicationController
-
   before_action :set_profile, only: [:profile_edit, :profile_update]
   before_action :set_location, only: [:location_edit, :location_update]
   before_action :set_header, only: [:show, :onsale, :done, :location_edit, :profile_edit]
-  
+
+
+
   def index
-    
   end
 
   def show
@@ -36,8 +36,8 @@ class UsersController < ApplicationController
     redirect_to user_path
   end
 
-  private
 
+  private
   def set_profile
     @user = User.find(params[:id])
   end
@@ -55,7 +55,7 @@ class UsersController < ApplicationController
   def user_params
     params.require(:user).permit(:user_family_name, :user_first_name, :user_family_name_kana, :user_first_name_kana, :birth, :introduction, :user_image)
   end
-  
+
   def location_params
     params.require(:location).permit(:family_name, :first_name, :family_name_kana, :first_name_kana, :postal_code, :prefecture, :city, :building_name, :phone_name)
   end
