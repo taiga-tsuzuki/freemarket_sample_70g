@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
   
+  get 'like/user_id:integer'
+  get 'like/item_id:integer'
   devise_for :users, controllers: {
     registrations: 'users/registrations',
   }

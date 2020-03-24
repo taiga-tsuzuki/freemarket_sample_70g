@@ -3,6 +3,7 @@ class Item < ApplicationRecord
   has_many :images, dependent: :destroy
   belongs_to :user
   belongs_to :category, dependent: :destroy, optional: true
+  has_many :likes, dependent: :destroy
 
   def self.search(search)
     return Item.all unless search
