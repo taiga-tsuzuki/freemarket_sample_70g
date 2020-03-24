@@ -69,9 +69,9 @@ class ItemsController < ApplicationController
   def update
     @item.update(item_params)
       redirect_to item_path(@item.id)
-    # else
-    #   render :edit
-    # end
+    else
+      render :edit
+    end
   end
 
   def destroy
