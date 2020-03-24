@@ -1,9 +1,10 @@
 class ItemsController < ApplicationController
-  before_action :set_item, only: [:edit, :update]
+  before_action :set_item, only: [:confirm, :show, :edit, :update]
   before_action :set_user, only: [:edit, :update]
   before_action :set_category, only: [:index, :new, :create, :show, :edit]
   before_action :set_category_parent, only: [:index, :show]
   before_action :set_items_image, only: [:index, :show]
+
 
 
 
@@ -27,13 +28,11 @@ class ItemsController < ApplicationController
   end
 
   def confirm
-    @item = Item.includes(:user).find(params[:id])
     @items = @item.images
     @location = current_user.location
   end
 
   def show
-    @item = Item.includes(:user).find(params[:id])
     @comment = Comment.new
     @comments = @item.comments.includes(:user).order("id DESC")
   end
