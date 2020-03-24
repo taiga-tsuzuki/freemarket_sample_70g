@@ -44,12 +44,12 @@ class UsersController < ApplicationController
     @location = Location.find(params[:id])
   end
 
-  def profile_params
-    params.require(:profile).permit(:family_name, :first_name, :family_name_kana, :first_name_kana, :birth_year, :introduction, :user_image)
-  end
+  # def profile_params
+  #   params.require(:profile).permit(:family_name, :first_name, :family_name_kana, :first_name_kana, :birth_year, :introduction, :user_image)
+  # end
 
-  def location_params
-    params.require(:location).permit(:family_name, :first_name, :family_name_kana, :first_name_kana, :postal_code, :prefecture, :city, :building_name, :phone_name)
-  end
+  # def location_params
+  #   params.require(:location).permit(:family_name, :first_name, :family_name_kana, :first_name_kana, :postal_code, :prefecture, :city, :building_name, :phone_name)
+  # end
 
 end
