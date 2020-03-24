@@ -33,7 +33,6 @@ class ItemsController < ApplicationController
   
   def show
     @item = Item.includes(:user).find(params[:id])
-    @items = @item.images
     @comment = Comment.new
     @comments = @item.comments.includes(:user).order("id DESC")
     @category = Category.all.order("ancestry ASC").limit(13)
