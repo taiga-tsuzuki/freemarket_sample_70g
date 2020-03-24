@@ -185,3 +185,26 @@
                     (税込)
 
 = render partial: "shared/index_footer"
+
+%h1
+  検索結果
+
+- @items_ransack.each do |item|
+  - item.images.first(1).each do |image|
+    .ransack__list
+      - if item.item_purchaser_id.blank?
+        = link_to item_path(item.id) do
+          .ransack__list__img
+            = image_tag "#{image.image}", alt: "テスト", size: "220x150"
+          .ransack__list__text
+            .item__name
+              = item.item_name
+            .item__details
+              %ul
+                %il
+                  .item__yen
+                    = item.price
+                %il
+                  ★2
+                %p
+                  (税込)
