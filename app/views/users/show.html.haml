@@ -30,7 +30,7 @@
               支払い方法
           %li.nav__lists__list
             =link_to profile_edit_user_path,class: "moji" do
-              本人情報の登録・変更
+              本人情報の変更
           %li.nav__lists__list
             = link_to destroy_user_session_path,method: :delete, class: 'moji' do
               ログアウト
@@ -40,7 +40,6 @@
       .main__right__userIcon
         .button
           .button__top
-            -# = @item.user_image
           .button__name
             = current_user.nickname
           .button__number
@@ -50,8 +49,32 @@
               .box2
                 出品数 0
 
-      .main__right__name
-        自己紹介
+      
       .main__right__profile
-        = @profile.introduction
+        .main__right__profile__box
+          .main__right__profile__box__list1
+            .main__right__profile__box__list1__label
+              苗字
+            .main__right__profile__box__list1__content
+              = @user.user_family_name
+          .main__right__profile__box__list
+            .main__right__profile__box__list__label
+              名前
+            .main__right__profile__box__list__content
+              = @user.user_first_name
+          .main__right__profile__box__list
+            .main__right__profile__box__list__label
+              苗字（かな）
+            .main__right__profile__box__list__content
+              = @user.user_family_name_kana
+          .main__right__profile__box__list
+            .main__right__profile__box__list__label
+              名前（かな）
+            .main__right__profile__box__list__content
+              = @user.user_first_name_kana
+          .main__right__profile__box__list
+            .main__right__profile__box__list__label
+              誕生日
+            .main__right__profile__box__list__content
+              = @user.birth
   = render partial: "shared/index_footer"

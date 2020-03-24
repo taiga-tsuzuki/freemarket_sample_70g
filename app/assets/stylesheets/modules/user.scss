@@ -182,8 +182,46 @@
       }
       &__profile {
         width: 700px;
-        height: 400px;
+        height: 500px;
         background-color: #fff;
+        &__box {
+          width: 600px;
+          height: 400px;
+          padding: 50px;
+          &__list1 {
+            height: 80px;
+            display: flex;
+            border: 1px solid;
+            border-color: #3CCACE;
+            &__label {
+              width: 100px;
+              line-height: 80px;
+              border-right: 1px solid;
+              border-color: #3CCACE;
+            }
+            &__content {
+              width: 500px;
+              line-height: 80px;
+            }
+          }
+          &__list {
+            height: 80px;
+            display: flex;
+            border: 1px solid;
+            border-top: none;
+            border-color: #3CCACE;
+            &__label {
+              width: 100px;
+              line-height: 80px;
+              border-right: 1px solid;
+              border-color: #3CCACE;
+            }
+            &__content {
+              width: 500px;
+              line-height: 80px;
+            }
+          }
+        }
         .profile {
           height: 200px;
           width: 700px;
