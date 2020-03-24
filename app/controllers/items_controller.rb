@@ -1,11 +1,8 @@
 class ItemsController < ApplicationController
   before_action :set_item, only: [:confirm, :show, :edit, :update]
-  before_action :set_user, only: [:edit, :update]
   before_action :set_category, only: [:index, :new, :create, :show, :edit]
   before_action :set_category_parent, only: [:index, :show]
   before_action :set_items_image, only: [:index, :show]
-
-
 
 
 
@@ -84,10 +81,6 @@ class ItemsController < ApplicationController
     params.require(:item).permit(:item_name, :description, :category_id, :brand_name, :size, :condition,
                                   :shipping_fee_payer,:prefecture_id, :shipping_days, :price,
                                   images_attributes: [:image, :_destroy, :id], categories_attributes: [:name]).merge(user_id: current_user.id)
-  end
-
-  def set_user
-    @user = User.find(params[:id])
   end
 
   def set_item
