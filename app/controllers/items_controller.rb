@@ -2,11 +2,12 @@ class ItemsController < ApplicationController
   before_action :set_item, only: [:edit, :update]
   before_action :set_user, only: [:edit, :update]
   before_action :set_category, only: [:index, :new, :create, :show, :edit]
+  before_action :set_category_parent, only: [:index, :show]
+
 
 
   def index
     @items = Item.includes(:images).order(:item_purchaser_id, "id DESC")
-    @parents = Category.where(ancestry:nil)
   end
 
   def new
@@ -34,7 +35,6 @@ class ItemsController < ApplicationController
     @item = Item.includes(:user).find(params[:id])
     @comment = Comment.new
     @comments = @item.comments.includes(:user).order("id DESC")
-    @parents = Category.where(ancestry:nil)
     @items = Item.includes(:images).order(:item_purchaser_id, "id DESC")
   end
 
@@ -102,6 +102,10 @@ class ItemsController < ApplicationController
 
   def set_category
     @category = Category.all.order("ancestry ASC").limit(13)
+  end
+
+  def set_category_parent
+    @parents = Category.where(ancestry:nil)
   end
 
 end
