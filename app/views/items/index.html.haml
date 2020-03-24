@@ -185,3 +185,9 @@
                     (税込)
 
 = render partial: "shared/index_footer"
+
+%h1
+  検索結果
+
+- @items.each do |item|
+  = item.item_name
