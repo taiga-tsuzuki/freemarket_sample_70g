@@ -3,11 +3,12 @@ class ItemsController < ApplicationController
   before_action :set_user, only: [:edit, :update]
   before_action :set_category, only: [:index, :new, :create, :show, :edit]
   before_action :set_category_parent, only: [:index, :show]
+  before_action :set_items_image, only: [:index, :show]
+
 
 
 
   def index
-    @items = Item.includes(:images).order(:item_purchaser_id, "id DESC")
   end
 
   def new
@@ -30,12 +31,11 @@ class ItemsController < ApplicationController
     @items = @item.images
     @location = current_user.location
   end
-  
+
   def show
     @item = Item.includes(:user).find(params[:id])
     @comment = Comment.new
     @comments = @item.comments.includes(:user).order("id DESC")
-    @items = Item.includes(:images).order(:item_purchaser_id, "id DESC")
   end
 
   def category_children
@@ -81,6 +81,7 @@ class ItemsController < ApplicationController
     @items = Item.search(params[:keyword])
   end
 
+
   private
   def item_params
     params.require(:item).permit(:item_name, :description, :category_id, :brand_name, :size, :condition,
@@ -106,6 +107,10 @@ class ItemsController < ApplicationController
 
   def set_category_parent
     @parents = Category.where(ancestry:nil)
+  end
+
+  def set_items_image
+    @items = Item.includes(:images).order(:item_purchaser_id, "id DESC")
   end
 
 end
