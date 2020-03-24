@@ -28,7 +28,6 @@ class ItemsController < ApplicationController
   end
 
   def confirm
-    @items = @item.images
     @location = current_user.location
   end
 
