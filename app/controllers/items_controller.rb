@@ -38,7 +38,7 @@ class ItemsController < ApplicationController
 
   def category_children
     @category_children = Category.find(params[:productcategory]).children
-    end
+  end
 
   # Ajax通信で送られてきたデータをparamsで受け取り､childrenで子を取得
   def category_grandchildren
@@ -50,7 +50,6 @@ class ItemsController < ApplicationController
       format.html
       format.json do
         @children = Category.find(params[:parent_id]).children
-        #親ボックスのidから子ボックスのidの配列を作成してインスタンス変数で定義
       end
     end
   end
