@@ -24,7 +24,6 @@ class UsersController < ApplicationController
   end
 
   def like
-    @like = Like.find(params[:id])
   end
 
   def location_edit
