@@ -45,24 +45,15 @@
       .main__right__tabTodo
         .tabContent
           .tabContent__info
-            - @items.each do |item|
-              - item.images.first(1).each do |image|  
-                - if user_signed_in? && current_user.id && item.likes_count.present? && current_user.id == item.user_id
-                  = link_to item_path(item.id) do
-                    .tabContent__lists
-                      .tabContent__lists__img
-                        - if user_signed_in? && current_user.id && item.item_purchaser_id.present?
-                          = image_tag "#{image.image}", alt: "テスト", size: "100x70"
-                          .items-box_photo__sold
-                            .items-box_photo__sold__inner
-                              SOLD
-                        -else 
-                          = image_tag "#{image.image}", alt: "テスト", size: "100x70"
-                      .tabContent__lists__product-name
-                        = item.item_name
-                        .like-sign
-                          お気に入り済
-                        
+            - current_user.like_items.each do |item|
+              = link_to item_path(item.id) do
+                .tabContent__lists
+                  .tabContent__lists__img
+                    = image_tag asset_path(item.images[0].image), :size =>'100x70'
+                  .tabContent__lists__product-name
+                    = item.item_name           
+                    .like-sign
+                      お気に入り済                        
 
   = render partial:"shared/index_footer"
   
