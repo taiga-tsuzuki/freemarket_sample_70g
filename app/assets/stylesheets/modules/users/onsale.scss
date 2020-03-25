@@ -1,119 +1,71 @@
-.body {
-  background-color: #f5f5f5;
-  
-  .main {
-    width: auto;
-    height: 1292px;
-    background-color: #f5f5f5;
-    display: flex;
-    margin: 40px 210px 0 210px;
-    &__left {
-      width: 280px;
-      margin-right: 40px;
-      height: 336px;
-      &__nav {
-        background-color: #ffffff;
-        .nav__lists {
-          &__list {
-            width: 248px;
-            height: 15px;
-            border-bottom: 1px solid #eee;
-            padding: 16px;
-            .moji {             
-              width: 280px;
-              height: 48px;
-              font-weight: 600;
-              text-decoration: none;
-              color: #333;
-            }
-          }
-        }
+.main__right {
+  height: 865px;
+  width: 700px;
+  &__title {
+    width: 660px;
+    height: 50px;
+    font-weight: bold;
+    padding: 20px;
+    background-color: $whiteColer;
+  }
+  &__tabTodo {
+    width: 700px;
+    height: 76px;
+    .tabTodo {
+      height: 74px;
+      background-color: $whiteColer;
+      display: flex;
+      .onsale {
+        width: 350px;
+        height: 74px;
+        line-height: 74px;
+        text-align: center;
+        border-top: 2px solid $redColer;
+        font-weight: bold;
+        text-decoration: none;
+      }
+
+      .dealing {
+        width: 233px;
+        height: 74px;
+        line-height: 74px;
+        text-align: center;
+        font-weight: bold;
+      }
+      .sold {
+        width: 350px;
+        height: 74px;
+        background-color: $grayColer;
+        line-height: 74px;
+        text-align: center;
+        color: $blackColer;
+        font-weight: bold;
       }
     }
-    &__right {
-      height: 865px;
-      width: 700px;
-      &__title {
-        width: 660px;
-        height: 50px;
-        font-weight: bold;
-        padding: 20px;
-        background-color: #FAFAFA;
-      }
-      &__tabTodo {
+
+    .tabContent {
+      height: 81px;
+      &__info {
         width: 700px;
-        height: 76px;
-        background-color: hotpink;
-        .tabTodo {
-          height: 74px;
-          background-color: #fff;
-          display: flex;
-          .onsale {
-            width: 350px;
-            height: 74px;
-            line-height: 74px;
-            text-align: center;
-            border-top: 2px solid #ea352d;
-            color: #333333;
+        height: 81px;
+        border-bottom: 1px solid $grayColer;
+      }
+      &__lists {
+        width: 700px;
+        height: 70px;
+        display: flex;
+        &__product-name {
+          margin-left: 2px;
+          .onsale-sign {
+            width: 40px;
+            height: 16px;
+            background-color: $grrenColer;
+            font-size: 8px;
             font-weight: bold;
-            text-decoration: none;
-          }
-
-          .dealing {
-            width: 233px;
-            height: 74px;
-            background-color: #f1f1f1;
-            line-height: 74px;
+            color: $whiteColer;
+            line-height: 16px;
             text-align: center;
-            color: #333333;
-            font-weight: bold;
-          }
-          .sold {
-            width: 350px;
-            height: 74px;
-            background-color: #f1f1f1;
-            line-height: 74px;
-            text-align: center;
-            color: #333333;
-            font-weight: bold;
-          }
-        }
-
-        .tabContent {
-          height: 81px;
-          background-color: #ffffff;
-          &__info {
-            width: 700px;
-            height: 81px;
-            border-bottom: 1px solid #eee;
-          }
-          &__lists {
-            width: 700px;
-            height: 70px;
-            background-color: white;
-            display: flex;
-
-            &__img {
-
-            }
-
-            &__product-name {
-              color: #333333;
-              margin-left: 2px;
-
-              .onsale-sign {
-                width: 40px;
-                height: 16px;
-                background-color: #1e90ff;
-                font-size: 8px;
-                font-weight: bold;
-                color: white;
-                line-height: 16px;
-                text-align: center;
-                margin-left: 2px;
-              }
-
-            }
+            margin-left: 2px;
           }
         }
       }
