@@ -1,11 +1,11 @@
 .main__right__top {
-  background-color: #fff;
+  background-color: $whiteColer;
   height: 100px;
   line-height: 100px;
   font-weight: bold;
 }
 .main__right__form {
-  background-color: #fff;
+  background-color: $whiteColer;
   .form-group-edit {
     width: 500px;
     margin: auto;
@@ -30,8 +30,8 @@
     }
   }
   .edit-btn-default-btn {
-    background-color: #66FFFF;
-    color: black;
+    background-color: $grrenColer;
+    color: $blackColer;
     margin: 50px 250px 50px 250px;
     height: 40px;
     width: 200px;
