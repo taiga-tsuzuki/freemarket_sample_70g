@@ -1,5 +1,5 @@
 .main__right__top {
-  background-color: #fff;
+  background-color: $whiteColer;
   height: 100px;
   line-height: 100px;
   font-weight: bold;
@@ -7,7 +7,7 @@
   text-align: center;
 }
 .main__right__form {
-  background-color: #fff;
+  background-color: $whiteColer;
   .form-group-edit2 {
     width: 500px;
     margin: auto;
@@ -19,8 +19,8 @@
       &__require {
         width: 20px;
         height: 15px;
-        background-color: red;
-        color: white;
+        background-color: $redColer;
+        color: $whiteColer;
         font-size: 5px;
       }
     }
