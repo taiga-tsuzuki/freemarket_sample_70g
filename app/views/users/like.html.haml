@@ -47,7 +47,7 @@
           .tabContent__info
             - @items.each do |item|
               - item.images.first(1).each do |image|  
-                - if user_signed_in? && current_user.id && item.likes_count.present? && current_user.id == item.user_id
+                - if user_signed_in? && current_user.id && item.likes_count.present? && current_user.id == @like.user_id
                   = link_to item_path(item.id) do
                     .tabContent__lists
                       .tabContent__lists__img
