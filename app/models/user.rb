@@ -13,4 +13,6 @@ class User < ApplicationRecord
   has_one :profile
   has_many :creditcards
   has_one :location
+  has_many :likes, dependent: :destroy
+  has_many :like_items, through: :likes, source: :item
 end
