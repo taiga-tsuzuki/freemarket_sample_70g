@@ -59,31 +59,12 @@
             display: flex;
 
             &__img {
-
-              .items-box_photo__sold {
-                width: 0;
-                height: 0;
-                border-top: 20px solid #ea352d;
-                border-right: 20px solid transparent;
-                border-bottom: 20px solid transparent;
-                border-left: 20px solid #ea352d;
-                z-index: 100;
-                position: relative;
-                top: -76px;
-                &__inner{
-                  transform: rotate(-45deg);
-                  font-size: 1px;
-                  margin: -5px 1px 0px -20px;
-                  color: #fff;
-                  letter-spacing: 1px;
-                  font-weight: 600;
-                }
-              }
-
             }
 
             &__product-name {
               color: #333333;
+              font-size: 15px;
+              font-weight: bold;
               margin-left: 2px;
 
               .like-sign {
