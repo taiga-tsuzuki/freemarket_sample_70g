@@ -34,6 +34,7 @@ Rails.application.routes.draw do
       get :onsale
       get :done
       get :bought
+      get :like
     end
     resources :profile, only: [:index]
     resources :creditcards, only: :index
