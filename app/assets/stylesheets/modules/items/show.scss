@@ -216,27 +216,7 @@ a {
           margin-top: 50px;
           display: flex;
           justify-content: space-between;
-          // &__favorite{
-          //   height: 50px;
-          //   line-height: 50px;
-          //   width:170px;
-          //   background-color:white;
-          //   display: flex;
-          //   text-align: center;
-          //   color: #3ccace;
-          //   border: solid 1px #3ccace;
-            // &__icon{
-            //   height: 50px;
-            //   width: 50px;
-            //   background-color: white;
-            //   color:  #3ccace;
-            // }
-            // &__letter{
-            //   height: 50px;
-            //   line-height: 50px;
-            //   width: 120px;
-            //   background-color: white;
-
+            &__favorite {
               .option {
                 display: flex;
                 justify-content: space-between;
@@ -245,8 +225,8 @@ a {
                     text-decoration: none;
                     padding: 11px 10px;
                     border-radius: 40px;
-                    color: #3CCACE;
-                    border: 1px solid #ffb340;
+                    color: #FF5192;
+                    border: 1px solid #3CCACC;
                     display: flex;
                     line-height: 16px;
                     .fas.fa-heart {
@@ -274,8 +254,8 @@ a {
                   }
                 }
               }
-            // }
-          // }
+            }
+
           &__report{
             height: 50px;
             width: 200px;

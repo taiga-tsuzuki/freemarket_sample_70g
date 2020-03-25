@@ -111,11 +111,8 @@
 
         .product-contents__inner__mainbox__links
           .product-contents__inner__mainbox__links__favorite
-            .product-contents__inner__mainbox__links__favorite__icon
-              -# = icon('fa', 'star',class: 'star-icon')
-            .product-contents__inner__mainbox__links__favorite__letter
-              = render partial: 'shared/like', locals: { item: @item }
-              
+            = render partial: 'shared/like', locals: { item: @item }
+                            
           .product-contents__inner__mainbox__links__report
             .product-contents__inner__mainbox__links__report__icon
               = icon('fa', 'flag',class: 'flag-icon')
