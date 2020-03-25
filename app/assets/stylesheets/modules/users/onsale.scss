@@ -8,18 +8,18 @@
     display: flex;
     margin: 40px 210px 0 210px;
     &__left {
-      background-color: #ffffff;
       width: 280px;
       margin-right: 40px;
       height: 336px;
       &__nav {
+        background-color: #ffffff;
         .nav__lists {
           &__list {
             width: 248px;
             height: 15px;
             border-bottom: 1px solid #eee;
             padding: 16px;
-            .moji {
+            .moji {             
               width: 280px;
               height: 48px;
               font-weight: 600;

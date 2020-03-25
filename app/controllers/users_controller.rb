@@ -1,8 +1,8 @@
 class UsersController < ApplicationController
   before_action :set_profile, only: [:profile_edit, :profile_update]
   before_action :set_location, only: [:location_edit, :location_update]
-  before_action :set_header, only: [:show, :onsale, :done, :location_edit, :profile_edit]
-  before_action :set_item, only: [:onsale, :done]
+  before_action :set_header, only: [:show, :onsale, :done, :bought, :location_edit, :profile_edit]
+  before_action :set_item, only: [:onsale, :done, :bought]
 
 
 
@@ -18,6 +18,9 @@ class UsersController < ApplicationController
   end
 
   def done
+  end
+
+  def bought
   end
 
   def location_edit
