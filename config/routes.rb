@@ -31,6 +31,7 @@ Rails.application.routes.draw do
       post :location_update
       get :onsale
       get :done
+      get :bought
     end
     resources :profile, only: [:index]
     resources :creditcards, only: :index
