@@ -13,6 +13,8 @@ class User < ApplicationRecord
   has_one :profile
   has_many :creditcards
   has_one :location
+  has_many :likes, dependent: :destroy
+  has_many :like_items, through: :likes, source: :item
   has_many :sns_credentials
 
   def self.from_omniauth(auth)
@@ -30,5 +32,4 @@ class User < ApplicationRecord
     end
     user
   end
-
 end

@@ -16,6 +16,8 @@ Rails.application.routes.draw do
   resources :items do
     member do
       get :confirm
+      post   '/like/:item_id' => 'likes#like',   as: 'like'
+      delete '/like/:item_id' => 'likes#unlike', as: 'unlike'
     end
     collection do
       get :category_children
@@ -33,6 +35,7 @@ Rails.application.routes.draw do
       get :onsale
       get :done
       get :bought
+      get :like
     end
     resources :profile, only: [:index]
     resources :creditcards, only: :index
