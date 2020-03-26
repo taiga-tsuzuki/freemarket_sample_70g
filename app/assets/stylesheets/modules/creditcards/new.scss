@@ -7,10 +7,8 @@
     height: 80px;
     width: 100%;
     background-color: #f1f1f1;
-
-    .done-logo {
-      margin: 20px 0 0 620px;
-    }
+    text-align: center;
+    line-height: 100px;
   }
 
   .creditcard-upper-box{
@@ -119,4 +117,11 @@
     }
   }
   
+}
+
+.logo-img {
+  text-align: center;
+}
+.logo-text {
+  text-align: center;
 }

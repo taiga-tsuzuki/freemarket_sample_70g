@@ -42,8 +42,7 @@
               .leftbox
                 出品者
               .rightbox
-                = link_to "#" do
-                  = @item.user.nickname
+                = @item.user.nickname
             .product-contents__inner__mainbox__main-upper-box__table__category-box
               .category-leftbox
                 カテゴリー
@@ -107,7 +106,7 @@
           = link_to confirm_item_path(@item.id),class: "item-buy-btn" do
             購入画面に進む
         .product-contents__inner__mainbox__description
-          = @item.description
+          = simple_format @item.description
 
         - if user_signed_in?
           .product-contents__inner__mainbox__links

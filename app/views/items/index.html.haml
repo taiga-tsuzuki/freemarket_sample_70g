@@ -13,9 +13,9 @@
         %br/
         フリマアプリです
       .content__btn
-        = link_to "#" do
+        = link_to "https://www.apple.com/jp/ios/app-store" do
           = image_tag "/material/badge/Download_on_the_App_Store_Badge.svg", class: "abtn"
-        = link_to "#" do
+        = link_to "https://play.google.com/store?hl=ja" do
           = image_tag "/material/badge/google-play-badge.png", class: "gbtn"
 
 
@@ -73,9 +73,9 @@
         %br/
         ほしかったあの商品に出会えるかもしれません。
       .content__btn
-        = link_to "#" do
+        = link_to "https://www.apple.com/jp/ios/app-store" do
           = image_tag "/material/badge/Download_on_the_App_Store_Badge.svg", class: "abtn"
-        = link_to "#" do
+        = link_to "https://play.google.com/store?hl=ja" do
           = image_tag "/material/badge/google-play-badge.png", class: "gbtn"
 
   .top__key__features
@@ -123,11 +123,16 @@
                         = item.item_name
                       .item__details
                         %ul
-                          %li
+                          %li.flex-two
                             .category-yen
                               = item.price
-                        %p
-                          (税込)
+                            %p
+                              (税込)
+                          %li.like-counts
+                            - if item.likes_count.blank?
+                              = 0
+                            -else
+                              = item.likes_count
 
 
     .pickup__container__brand

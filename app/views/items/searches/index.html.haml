@@ -79,7 +79,7 @@
                             = item.price
                             
                         %li
-                          ★2
+                          = item.like
                       %p
                         (税込)
 
@@ -98,13 +98,16 @@
                       = item.item_name
                     .item__details
                       %ul
-                        %il
+                        %li
                           .item__yen
                             = item.price
-                        %il
-                          ★2
                         %p
                           (税込)
+                        %li.like_counts
+                          - if item.likes_count.blank?
+                            = 0
+                          -else
+                            = item.likes_count
 
     = paginate(@page)
 

@@ -97,8 +97,16 @@ label{
   margin-top: 50px;
   height: 40px;
   width: 100px;
+  cursor: pointer;
+  &:hover{
+    color: gray;
+    background-color: rgb(162, 255, 255);
+  }
 }
 
 .container__header__progress__red{
   color: red;
+}
+#user_birth_1i,#user_birth_2i,#user_birth_3i{
+  cursor: pointer;
 }
