@@ -123,11 +123,16 @@
                         = item.item_name
                       .item__details
                         %ul
-                          %li
+                          %li.flex-two
                             .category-yen
                               = item.price
-                        %p
-                          (税込)
+                            %p
+                              (税込)
+                          %li.like-counts
+                            - if item.likes_count.blank?
+                              = 0
+                            -else
+                              = item.likes_count
 
 
     .pickup__container__brand

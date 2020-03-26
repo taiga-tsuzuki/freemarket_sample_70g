@@ -376,18 +376,24 @@ a {
               }
               .item__details {
                 ul {
-                  display: flex;
-                  justify-content: space-between;
-                  li {
+                  .flex-two {
+                    width: 100%;
+                    display: flex;
+                    justify-content: space-between;
                     .category-yen{
                       &::before{
                         content: '¥';
                       }
                     }
                   }
-                }
-                p {
-                  text-align: left;
+                  .like-counts{
+                    text-align: right;
+                    &::before{
+                      font-family: "Font Awesome 5 Free";
+                      font-weight: bold;
+                      content: '\f004';
+                    }
+                  }
                 }
               }
             }
