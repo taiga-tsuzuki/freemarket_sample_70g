@@ -7,10 +7,31 @@
     margin-left: 240px;
     line-height: 50px;
     display: flex;
+    .list__head {
+      .FURIMA-bottom{
+        &:hover{
+          border-bottom:1px solid black;
+        }
+      }
+    }
     .list {
       margin-left: 15px;
+
+    }
+    .font-color{
+      color: #349699;
       &::before{
-        content:">";
+        content:"> ";
+      }
+      &:hover{
+        border-bottom:1px solid #349699;
+        color: #6ac2c7;
+      }
+    }
+    .font-weight-bold{
+      font-weight: bold;
+      &::before{
+        content:"> ";
       }
     }
   }

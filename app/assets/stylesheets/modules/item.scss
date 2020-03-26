@@ -51,6 +51,9 @@ a {
             visibility: visible;
             opacity: 1;
           }
+          &:hover{
+            cursor: pointer;
+          }
           .firstmenu-parent{
             display: flex;
             flex-direction: column;
@@ -111,6 +114,9 @@ a {
           &:hover > .abnc {
             visibility: visible;
             opacity: 1;
+          }
+          &:hover{
+            cursor: pointer;
           }
           .abnc {
             display: block;

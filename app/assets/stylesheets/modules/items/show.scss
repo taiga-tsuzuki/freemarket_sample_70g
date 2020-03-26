@@ -124,6 +124,9 @@ a {
                 .parent-name {
                   display: block;
                   color: rgb(70, 165, 165);
+                  &:hover{
+                    color: rgb(157, 214, 214);
+                  }
                 }
                 .children-name {
                   display: block;
@@ -133,6 +136,9 @@ a {
                     content:"\f054";
                     font-weight: bold;
                   }
+                  &:hover{
+                    color: rgb(157, 214, 214);
+                  }
                 }
                 .grand-children-name{
                   display: block;
@@ -141,6 +147,9 @@ a {
                     font-family: "Font Awesome 5 Free";
                     content:"\f054";
                     font-weight: bold;
+                  }
+                  &:hover{
+                    color: rgb(157, 214, 214);
                   }
                 }
               }
@@ -401,6 +410,7 @@ a {
             text-align: center;
             color: white;
             left: 200px;
+            cursor: pointer;
           }
         }
         .testclass {
