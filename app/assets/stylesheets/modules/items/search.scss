@@ -91,9 +91,16 @@
               justify-content: space-between;
               li{
               }
-              .yen{
+              .item__yen{
                 &::before{
                   content: '¥';
+                }
+              }
+              .like_counts{
+                &::before{
+                  font-family: "Font Awesome 5 Free";
+                  font-weight: bold;
+                  content: '\f004';
                 }
               }
             }
