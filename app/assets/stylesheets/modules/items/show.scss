@@ -4,20 +4,24 @@ a {
 }
 
 .product-contents{
-  height: 2700px; 
+  height: auto;
+  max-height: 3800px;
   width: 100%;
   padding-top: 20px;
   position: relative;
   background-color: #f1f1f1;
+  padding-bottom: 90px;
     &__inner{
       width: 1000px;
       background-color: #f1f1f1;
       margin: 0 auto;
       &__mainbox{
-        height: 1300px;
+        height: auto;
+        max-height: 2500px;
         width: 920px;
         margin: 50px auto;
         background-color: white;
+        padding-bottom: 30px;
         &__top{
           margin: auto;
           height: 100px;
@@ -115,18 +119,38 @@ a {
                 line-height: 30px;
                 background-color: white;
                 border-bottom: solid 1px gainsboro;
+                padding-left: 7px;
 
                 .parent-name {
                   display: block;
-                  color: blue;
+                  color: rgb(70, 165, 165);
+                  &:hover{
+                    color: rgb(157, 214, 214);
+                  }
                 }
                 .children-name {
                   display: block;
-                  color: blue;
+                  color: rgb(70, 165, 165);
+                  &::before{
+                    font-family: "Font Awesome 5 Free";
+                    content:"\f054";
+                    font-weight: bold;
+                  }
+                  &:hover{
+                    color: rgb(157, 214, 214);
+                  }
                 }
                 .grand-children-name{
                   display: block;
-                  color: blue;
+                  color: rgb(70, 165, 165);
+                  &::before{
+                    font-family: "Font Awesome 5 Free";
+                    content:"\f054";
+                    font-weight: bold;
+                  }
+                  &:hover{
+                    color: rgb(157, 214, 214);
+                  }
                 }
               }
             }
@@ -148,6 +172,7 @@ a {
                 background-color: white;
                 border-bottom: solid 1px gainsboro;
                 border-right: solid 1px gainsboro;
+                padding-left: 7px;
               }
             }
           }
@@ -165,8 +190,8 @@ a {
           font-weight: bold;
           text-align: center;
           margin-top: 130px;
-          &::after{
-            content: '円';
+          &::before{
+            content: '¥';
           }
         }
         &__additional-price{
@@ -202,7 +227,8 @@ a {
           height: 50px;
         }
         &__description{
-          height: 280px;
+          height: auto;
+          max-height: 1000px;
           width: 700px;
           background-color: white;
           margin: 30px auto;          
@@ -335,12 +361,13 @@ a {
 
       }
       &__commentbox{
-        height: 800px;
+        height: auto;
         width: 920px;
         margin: auto;
         margin-top: 20px;
         background-color: white;
         position: relative;
+        padding-bottom: 30px;
         &__warning{
           height: 80px;
           line-height: 30px;
@@ -362,9 +389,9 @@ a {
           position: absolute;
           top: 120px;
           left: 50px;
-          border: solid 1px black;
         }
         &__comment{
+          resize: none;
           height: 200px;
           width: 700px;
           background-color: white;
@@ -383,6 +410,7 @@ a {
             text-align: center;
             color: white;
             left: 200px;
+            cursor: pointer;
           }
         }
         .testclass {
@@ -398,7 +426,7 @@ a {
           }
           &__box {
             padding-top: 100px;
-            height:350px;
+            height:auto;
             width: 700px;
             margin: 0 auto;
             overflow: scroll;

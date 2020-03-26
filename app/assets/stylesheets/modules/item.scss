@@ -30,7 +30,9 @@ a {
         &__btn {
           background-color: #3CCACE;
           padding: 8px;
-          
+          &:hover{
+            cursor: pointer;
+          }
         }
       }
     }
@@ -48,6 +50,9 @@ a {
           &:hover > .firstmenu-parent{
             visibility: visible;
             opacity: 1;
+          }
+          &:hover{
+            cursor: pointer;
           }
           .firstmenu-parent{
             display: flex;
@@ -111,6 +116,9 @@ a {
             visibility: visible;
             opacity: 1;
           }
+          &:hover{
+            cursor: pointer;
+          }
           .abnc {
             display: block;
             visibility: hidden;
@@ -147,7 +155,7 @@ a {
     background-image: url("/material/pict/bg-mainVisual-pict_pc.jpg");
     background-size: cover;
     position: relative;
-    z-index: -1;
+
     &__picture {
       height: 100%;
       width: 100vw;

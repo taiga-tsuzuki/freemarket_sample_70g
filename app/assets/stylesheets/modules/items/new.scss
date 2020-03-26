@@ -226,7 +226,7 @@
             display: flex;
             padding-top: 10px;
             margin-bottom: 20px;
-
+            
             .index {
               font-size: 14px;
               font-weight: bold;
@@ -242,6 +242,11 @@
               background-color: red;
               color: white;
               text-align: center;
+            }
+          }
+          .product_category-select{
+            .category_select-box{
+              cursor: pointer;
             }
           }
           select {
@@ -338,6 +343,9 @@
           }
           .condetion-form-field {
             margin-top: 20px;
+            #item_condition{
+              cursor: pointer;
+            }
           }       
         }
       }
@@ -389,6 +397,11 @@
               text-align: center;
             }
           }
+          .shipping-fee-payer-form-field{
+            #item_shipping_fee_payer{
+              cursor: pointer;
+            }
+          }
           select {
             -webkit-appearance: none; 
             -moz-appearance: none; 
@@ -428,6 +441,9 @@
               text-align: center;
             }
           }  
+          #item_prefecture_id{
+            cursor: pointer;
+          }
         }
           .shipping-fee-payer-box {
             height: 19px;
@@ -435,6 +451,11 @@
             display: flex;
             padding-top: 10px;
             margin-bottom: 20px;
+          }
+          .shipping-days-form-field{
+            #item_shipping_days{
+              cursor: pointer;
+            }
           }
       }
 //-------------販売価格について-------------------
