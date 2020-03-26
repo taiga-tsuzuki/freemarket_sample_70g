@@ -130,18 +130,10 @@
           .sales-commission-info
             .sales-commission-tax 販売手数料（10%）
             .sales-commission-calc 
-            -if (@item.price.to_i) < 300
-              ー
-            -else
-              = (@item.price.to_i  * 0.1).floor
             
           .sales-profit-info
             .sales-profit-subtitle 販売利益
             .sales-profit-calc
-            -if (@item.price.to_i) < 300
-              ー
-            -else
-              =((@item.price.to_i) - ((@item.price.to_i  * 0.1).floor))
 
           = f.submit "出品する", class: "sell-btn"
 

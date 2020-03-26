@@ -2,12 +2,14 @@
 .search__main {
   background-color: rgb(235, 235, 235);
   display: flex;
-  padding-left: 200px;
+  padding-left: 40px;
   .left__search__box {
     background-color: white;
-    height: 700px;
-    padding: 10px;
+    height: 690px;
+    width: 270px;
+    padding: 20px;
     border: solid .5px rgb(218, 218, 218);
+    margin-bottom: 10px;
     .sort_lists {
       .sort_link {
         display: block;
@@ -47,11 +49,12 @@
       display: block;
     }
     .ransack_submit {
-      height: 40px;
-      width: 60px;
-      margin-top: 10px;
-      margin-left: 20px;
-      margin-bottom: 10px;
+      height: 50px;
+      width: 140px;
+      margin: 15px auto;
+      // margin-top: 10px;
+      // margin-left: 20px;
+      // margin-bottom: 10px;
       display: block;
       background-color: red;
       color: white;
