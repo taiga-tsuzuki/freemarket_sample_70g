@@ -405,10 +405,10 @@ a {
               }
               .item__details {
                 ul {
+                  width: 100%;
+                  display: flex;
+                  justify-content: space-between;
                   .flex-two {
-                    width: 100%;
-                    display: flex;
-                    justify-content: space-between;
                     .category-yen{
                       &::before{
                         content: '¥';
@@ -421,8 +421,13 @@ a {
                       font-family: "Font Awesome 5 Free";
                       font-weight: bold;
                       content: '\f004';
+                      color: rgb(255, 112, 195);
                     }
                   }
+                }
+                p{
+                  text-align: left;
+                  margin-left: 6px;
                 }
               }
             }
