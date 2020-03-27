@@ -51,6 +51,7 @@ belongs_to :user
 |shipping_fee_payer|string|null: false|
 |prefecture_id|string|null: false|
 |shipping_days|string|null: false|
+|likes_count|integer| - |
 
 ### Association
 - belongs_to :user
