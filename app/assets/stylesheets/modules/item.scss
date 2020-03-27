@@ -77,6 +77,9 @@ a {
                 color: black;
               }
               .categories__name {
+                display: block;
+                height: 35px;
+                width: 250px;
                 &:hover{
                   height: 35px;
                   width: 250px;
@@ -151,6 +154,11 @@ a {
               cursor: pointer;
               height: 35px;
               width: 250px;
+              .brands__name {
+                display: block;
+                height: 35px;
+                width: 250px;
+              }
               &:hover {
                 background-color: #3CCACE;
               }
