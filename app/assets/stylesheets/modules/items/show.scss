@@ -284,22 +284,25 @@ a {
 
           &__report{
             height: 50px;
-            width: 200px;
-            background-color: lightcoral;
+            width: 230px;
             display: flex;
             border: solid 1px black;
+            border-radius: 5px;
             &__icon{
               height: 50px;
               line-height: 50px;
               width: 50px;
               background-color: white;
+              margin-right: 5px;
+              border-radius: 5px;
             }
             &__letter{
               height: 50px;
               line-height: 50px;
               width: 150px;
               background-color: white;
-              
+              margin-right: 20px;
+              border-radius: 5px;
             }
           }
         }
@@ -339,7 +342,7 @@ a {
             bottom: 0;
             left: 0;
             line-height: 50px;
-            text-align: center;          
+            text-align: center;
           }
           a {
               .delete-btn {
@@ -353,7 +356,7 @@ a {
                 line-height: 50px;
                 text-align: center;
                 background-color: #AAAAAA;
-                color: white;                
+                color: white;
               }
           }
           
