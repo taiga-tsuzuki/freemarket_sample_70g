@@ -78,6 +78,15 @@
                   content: '¥';
                 }
               }
+              .like_counts{
+                text-align: right;
+                &::before{
+                  font-family: "Font Awesome 5 Free";
+                  font-weight: bold;
+                  content: '\f004';
+                  color: rgb(255, 112, 195);
+                }
+              }
             }
             p {
               text-align: left;

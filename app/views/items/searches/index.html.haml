@@ -101,13 +101,13 @@
                         %li
                           .item__yen
                             = item.price
-                        %p
-                          (税込)
                         %li.like_counts
                           - if item.likes_count.blank?
                             = 0
                           -else
                             = item.likes_count
+                      %p
+                        (税込)
 
     = paginate(@page)
 
