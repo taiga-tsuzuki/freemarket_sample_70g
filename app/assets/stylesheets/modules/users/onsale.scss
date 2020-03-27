@@ -67,6 +67,16 @@
             text-align: center;
             margin-left: 2px;
           }
+          .like-counts{
+            font-size: 13px;
+            margin-top: 4px;
+            &::before{
+              font-family: "Font Awesome 5 Free";
+              font-weight: bold;
+              content: '\f004';
+              color: rgb(255, 112, 195);
+            }
+          }
         }
       }
     }

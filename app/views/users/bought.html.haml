@@ -59,6 +59,11 @@
                         = item.item_name
                         .bought-sign
                           購入済
+                        .like-counts
+                          - if item.likes_count.blank?
+                            = 0
+                          -else
+                            = item.likes_count 
 
   = render partial:"shared/index_footer"
   

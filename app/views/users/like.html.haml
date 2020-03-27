@@ -53,7 +53,12 @@
                   .tabContent__lists__product-name
                     = item.item_name           
                     .like-sign
-                      お気に入り済                        
+                      お気に入り済
+                    .like-counts
+                      - if item.likes_count.blank?
+                        = 0
+                      -else
+                        = item.likes_count                        
 
   = render partial:"shared/index_footer"
   
