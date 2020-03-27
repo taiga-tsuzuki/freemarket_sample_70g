@@ -33,7 +33,7 @@
           %ul.abnc
             - @items.first(6).each do |item|
               %li.brand__lists
-                = link_to category_path(item.category_id) do
+                = link_to category_path(item.category_id),class: "brands__name" do
                   = item.brand_name
 
       - if user_signed_in?
