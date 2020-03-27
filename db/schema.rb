@@ -12,6 +12,12 @@
 
 ActiveRecord::Schema.define(version: 2020_03_25_044730) do
 
+  create_table "brands", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "name", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "categories", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name", null: false
     t.string "ancestry"
@@ -62,8 +68,8 @@ ActiveRecord::Schema.define(version: 2020_03_25_044730) do
   end
 
   create_table "likes", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.bigint "user_id"
-    t.bigint "item_id"
+    t.integer "user_id"
+    t.integer "item_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -78,7 +84,7 @@ ActiveRecord::Schema.define(version: 2020_03_25_044730) do
     t.string "prefecture", null: false
     t.string "city", null: false
     t.string "building_name"
-    t.integer "phone_name", null: false
+    t.string "phone_name", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
