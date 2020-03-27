@@ -48,8 +48,11 @@
                         %ul
                           %li.yen
                             = category.price
-                          %li
-                            ★2
+                          %li.like_counts
+                            - if category.likes_count.blank?
+                              = 0
+                            -else
+                              = category.likes_count
                         %p
                           (税込)
 
@@ -74,8 +77,11 @@
                         %li
                           .yen
                             = category.price
-                        %li
-                          ★2
+                        %li.like_counts
+                          - if category.likes_count.blank?
+                            = 0
+                          -else
+                            = category.likes_count
                       %p
                         (税込)
     -else
@@ -97,8 +103,11 @@
                     %ul
                       %li.yen
                         = category.price
-                      %li
-                        ★2
+                      %li.like_counts
+                        - if category.likes_count.blank?
+                          = 0
+                        -else
+                          = category.likes_count
                     %p
                       (税込)
   = paginate(@categories)
