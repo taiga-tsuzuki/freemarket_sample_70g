@@ -554,7 +554,8 @@ a {
     }
   }
   .footer__logo {
-    margin-left: 640px;
+    display: block;
+    margin: 0 auto;
   }
   p {
     color: white;
