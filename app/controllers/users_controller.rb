@@ -49,7 +49,7 @@ class UsersController < ApplicationController
   end
 
   def set_location
-    @location = Location.find(params[:id])
+    @location = current_user.location
   end
 
   def set_header
