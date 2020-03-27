@@ -563,10 +563,9 @@
           outline: none;
           border-style: none;
           margin: 20px 170px;
-          cursor: pointer;
+          cursor: pointer; 
         }
-
-        .return-btn {
+        .new-return-btn {
           background-color: #DDDDDD;
           font-weight: bold;
           width: 360px;
@@ -577,6 +576,8 @@
           margin: 5px 170px;
           cursor: pointer;
         }
+
+        
 
         .terms-info-box {
           font-size: 12px;

@@ -164,7 +164,8 @@
 
           = f.submit "再出品する", class: "sell-btn"
 
-          %input.return-btn{type: "button", value: "もどる"}
+          = link_to :back do
+            %input.edit-return-btn{type: "button", value: "もどる"}
 
           .terms-info-box
             %p.tems-info-description 
