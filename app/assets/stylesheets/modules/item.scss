@@ -538,6 +538,9 @@ a {
     position: fixed;
     bottom: 32px;
     right: 32px;
+    &:hover {
+      background: rgb(115, 208, 211);
+    }
     .text {
       margin-bottom: 5px;
       font-size: 18px;
